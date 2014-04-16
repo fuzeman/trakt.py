@@ -10,6 +10,26 @@ class Interface(object):
         self.client = client
 
 
+class InterfaceProxy(object):
+    def __init__(self, interface, args):
+        self.interface = interface
+        self.args = list(args)
+
+    def __getattr__(self, name):
+        value = getattr(self.interface, name)
+
+        if not hasattr(value, '__call__'):
+            return value
+
+        @wraps(value)
+        def wrap(*args, **kwargs):
+            args = self.args + list(args)
+
+            return value(*args, **kwargs)
+
+        return wrap
+
+
 def authenticated(func):
     @wraps(func)
     def wrap(*args, **kwargs):

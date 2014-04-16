@@ -1,5 +1,6 @@
 from trakt.helpers import parse_credentials
 from trakt.interfaces import construct_map
+from trakt.interfaces.base import InterfaceProxy
 from trakt.request import TraktRequest
 
 import requests
@@ -46,15 +47,19 @@ class TraktClient(object):
 
         cur = self.interfaces
 
-        while parts:
+        while parts and type(cur) is dict:
             key = parts.pop(0)
+
             if key not in cur:
                 return None
 
             cur = cur[key]
 
         if type(cur) is dict:
-            return cur.get(None)
+            cur = cur.get(None)
+
+        if parts:
+            return InterfaceProxy(cur, parts)
 
         return cur
 

@@ -14,4 +14,5 @@ if __name__ == '__main__':
     #print Trakt['account'].test(credentials=('blah', 'blah'))
 
     print Trakt['user']
-    print Trakt['user/library']
+    print Trakt['user/library/movies'].watched()
+    print Trakt['user/library/shows'].all()
