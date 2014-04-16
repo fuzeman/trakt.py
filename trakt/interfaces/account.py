@@ -1,7 +1,9 @@
-from .base import Interface, authenticated
+from trakt.interfaces.base import Interface, authenticated
 
 
 class AccountInterface(Interface):
+    path = '/account'
+
     @authenticated
     def test(self, credentials=None):
         response = self.client.request('account/test', credentials=credentials)

@@ -10,5 +10,8 @@ if __name__ == '__main__':
     Trakt.api_key = os.environ.get('API_KEY')
     Trakt.credentials = ('test', 'test')
 
-    print Trakt['account'].test()
-    print Trakt['account'].test(credentials=('blah', 'blah'))
+    #print Trakt['account'].test()
+    #print Trakt['account'].test(credentials=('blah', 'blah'))
+
+    print Trakt['user']
+    print Trakt['user/library']

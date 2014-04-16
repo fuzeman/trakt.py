@@ -4,6 +4,8 @@ from functools import wraps
 
 
 class Interface(object):
+    path = None
+
     def __init__(self, client):
         self.client = client
 

@@ -1,5 +1,5 @@
 from trakt.helpers import parse_credentials
-from trakt.interfaces.account import AccountInterface
+from trakt.interfaces import construct_map
 from trakt.request import TraktRequest
 
 import requests
@@ -7,10 +7,7 @@ import requests
 
 class TraktClient(object):
     base_url = 'http://api.trakt.tv'
-
-    interfaces = {
-        'account': AccountInterface
-    }
+    interfaces = None
 
     def __init__(self):
         self.api_key = None
@@ -25,8 +22,7 @@ class TraktClient(object):
         self._get_credentials = None
 
         # Construct interfaces
-        for key, value in self.interfaces.items():
-            self.interfaces[key] = value(self)
+        self.interfaces = construct_map(self)
 
     def request(self, path, params=None, data=None, credentials=None, **kwargs):
         request = TraktRequest(
@@ -45,8 +41,23 @@ class TraktClient(object):
         # TODO retrying requests on 502, 503 errors
         return self._session.send(prepared)
 
-    def __getitem__(self, key):
-        return self.interfaces.get(key)
+    def __getitem__(self, path):
+        parts = path.strip('/').split('/')
+
+        cur = self.interfaces
+
+        while parts:
+            key = parts.pop(0)
+            if key not in cur:
+                return None
+
+            cur = cur[key]
+
+        if type(cur) is dict:
+            return cur.get(None)
+
+        return cur
+
 
     @property
     def credentials(self):
