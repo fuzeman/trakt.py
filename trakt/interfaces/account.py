@@ -2,20 +2,14 @@ from trakt.interfaces.base import Interface, authenticated
 
 
 class AccountInterface(Interface):
-    path = '/account'
+    path = 'account'
 
     @authenticated
     def test(self, credentials=None):
-        response = self.client.request('account/test', credentials=credentials)
+        response = self.request('test', credentials=credentials)
+        data = self.get_data(response)
 
-        # unknown result - no response or server error
-        if response is None or response.status_code >= 500:
-            return None
-
-        data = response.json()
-
-        # unknown result - no json data returned
-        if not data:
+        if data is None:
             return None
 
         return data.get('status') == 'success'

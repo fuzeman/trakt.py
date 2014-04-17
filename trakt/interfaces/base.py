@@ -9,6 +9,25 @@ class Interface(object):
     def __init__(self, client):
         self.client = client
 
+    def request(self, path, params=None, data=None, credentials=None, **kwargs):
+        path = '%s/%s' % (self.path, path)
+
+        return self.client.request(path, params, data, credentials, **kwargs)
+
+    @staticmethod
+    def get_data(response):
+        # unknown result - no response or server error
+        if response is None or response.status_code >= 500:
+            return None
+
+        data = response.json()
+
+        # unknown result - no json data returned
+        if not data:
+            return None
+
+        return data
+
 
 class InterfaceProxy(object):
     def __init__(self, interface, args):
