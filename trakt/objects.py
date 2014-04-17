@@ -1,69 +1,46 @@
-from trakt.helpers import build_repr
+from trakt.helpers import update_attributes
 
 
-PRIMARY_KEY = 'imdb'
-
-
-class TraktMedia(object):
+class Media(object):
     def __init__(self, keys=None):
         self.keys = keys
 
         self.rating = None
-        self.rating_advanced = None
-        self.rating_timestamp = None
-
-        self.is_watched = None
-        self.is_collected = None
-        self.is_local = None
 
     @property
     def pk(self):
         if not self.keys:
             return None
 
-        for key, value in self.keys:
-            if key == PRIMARY_KEY:
-                return value
+        return self.keys[0]
 
-        return None
+    def update(self, info=None, **kwargs):
+        self.rating = Rating.create(info) or self.rating
 
-    def update(self, info, keys):
-        for key in keys:
-            if key not in info:
-                continue
+    def __str__(self):
+        return self.__repr__()
 
-            if getattr(self, key) is not None:
-                continue
 
-            setattr(self, key, info[key])
+class Video(Media):
+    def __init__(self, keys=None):
+        super(Video, self).__init__(keys)
 
-    def update_states(self, is_watched=None, is_collected=None):
+        self.is_watched = None
+        self.is_collected = None
+
+    def update(self, info=None, is_watched=None, is_collected=None):
+        super(Video, self).update(info)
+
         if is_watched is not None:
             self.is_watched = is_watched
 
         if is_collected is not None:
             self.is_collected = is_collected
 
-    def fill(self, info):
-        self.update(info, ['rating', 'rating_advanced'])
 
-        if 'rating' in info:
-            self.rating_timestamp = info.get('inserted')
-
-    @staticmethod
-    def get_repr_keys():
-        return ['keys', 'rating', 'rating_advanced', 'rating_timestamp', 'is_watched', 'is_collected', 'is_local']
-
-    def __repr__(self):
-        return build_repr(self, self.get_repr_keys() or [])
-
-    def __str__(self):
-        return self.__repr__()
-
-
-class TraktShow(TraktMedia):
+class Show(Media):
     def __init__(self, keys):
-        super(TraktShow, self).__init__(keys)
+        super(Show, self).__init__(keys)
 
         self.title = None
         self.year = None
@@ -78,73 +55,55 @@ class TraktShow(TraktMedia):
             'year': self.year
         }
 
-    def fill(self, info, is_watched=None, is_collected=None):
-        TraktMedia.fill(self, info)
+    def update(self, info=None, **kwargs):
+        super(Show, self).update(info, **kwargs)
 
-        self.update(info, ['title', 'year', 'tvdb_id'])
-
-        if 'seasons' in info:
-            self.update_seasons(info['seasons'], is_watched, is_collected)
-
-        return self
-
-    def update_seasons(self, seasons, is_watched=None, is_collected=None):
-        for season, episodes in [(x.get('season'), x.get('episodes')) for x in seasons]:
-            # For each episode, create if doesn't exist, otherwise just update is_watched and is_collected
-            for episode in episodes:
-                key = season, episode
-
-                if key not in self.episodes:
-                    self.episodes[key] = TraktEpisode.create(season, episode, is_watched, is_collected)
-                else:
-                    self.episodes[key].update_states(is_watched, is_collected)
+        update_attributes(self, info, ['title', 'year', 'tvdb_id'])
 
     @classmethod
-    def create(cls, keys, info, is_watched=None, is_collected=None):
+    def create(cls, keys, info=None, **kwargs):
         show = cls(keys)
-        return cls.fill(show, info, is_watched, is_collected)
+        show.update(info, **kwargs)
 
-    @staticmethod
-    def get_repr_keys():
-        return TraktMedia.get_repr_keys() + ['title', 'year', 'tvdb_id', 'episodes']
+        return show
+
+    def __repr__(self):
+        return '<Show "%s" (%s)>' % (self.title, self.year)
 
 
-class TraktEpisode(TraktMedia):
-    def __init__(self, season, number):
-        super(TraktEpisode, self).__init__()
-
-        self.season = season
-        self.number = number
-
-    @property
-    def pk(self):
-        return self.season, self.number
+class Episode(Video):
+    def __init__(self, pk):
+        super(Episode, self).__init__([pk])
 
     def to_info(self):
+        season, episode = self.pk
+
         return {
-            'season': self.season,
-            'episode': self.number
+            'season': season,
+            'episode': episode
         }
 
     @classmethod
-    def create(cls, season, number, is_watched=None, is_collected=None):
-        episode = cls(season, number)
-        episode.update_states(is_watched, is_collected)
+    def create(cls, pk, info=None, **kwargs):
+        episode = cls(pk)
+        episode.update(info, **kwargs)
 
         return episode
 
-    @staticmethod
-    def get_repr_keys():
-        return TraktMedia.get_repr_keys() + ['season', 'number']
+    def __repr__(self):
+        return '<Episode S%02dE%02d>' % self.pk
 
 
-class TraktMovie(TraktMedia):
+class Movie(Video):
     def __init__(self, keys):
-        super(TraktMovie, self).__init__(keys)
+        super(Movie, self).__init__(keys)
 
         self.title = None
         self.year = None
         self.imdb_id = None
+
+        self.is_watched = None
+        self.is_collected = None
 
     def to_info(self):
         return {
@@ -153,21 +112,43 @@ class TraktMovie(TraktMedia):
             'imdb_id': self.imdb_id
         }
 
-    def fill(self, info, is_watched=None, is_collected=None):
-        TraktMedia.fill(self, info)
+    def update(self, info=None, **kwargs):
+        super(Movie, self).update(info, **kwargs)
 
-        self.update(info, ['title', 'year', 'imdb_id'])
-        self.update_states(is_watched, is_collected)
-
-        return self
+        update_attributes(self, info, ['title', 'year', 'imdb_id'])
 
     @classmethod
-    def create(cls, keys, info, is_watched=None, is_collected=None):
+    def create(cls, keys, info, **kwargs):
         movie = cls(keys)
-        movie.update_states(is_watched, is_collected)
+        movie.update(info, **kwargs)
 
-        return cls.fill(movie, info)
+        return movie
 
-    @staticmethod
-    def get_repr_keys():
-        return TraktMedia.get_repr_keys() + ['title', 'year', 'imdb_id']
+    def __repr__(self):
+        return '<Movie "%s" (%s)>' % (self.title, self.year)
+
+
+class Rating(object):
+    def __init__(self):
+        self.basic = None
+        self.advanced = None
+
+        self.timestamp = None
+
+    @classmethod
+    def create(cls, info):
+        if not info or 'rating' not in info:
+            return
+
+        r = cls()
+        r.basic = info.get('rating')
+        r.advanced = info.get('rating_advanced')
+
+        r.timestamp = info.get('inserted')
+        return r
+
+    def __repr__(self):
+        return '<Rating %s (%s/10)>' % (self.basic, self.advanced)
+
+    def __str__(self):
+        return self.__repr__()

@@ -1,4 +1,5 @@
 from trakt.helpers import parse_credentials
+from trakt.media_mapper import MediaMapper
 
 from functools import wraps
 
@@ -27,6 +28,21 @@ class Interface(object):
             return None
 
         return data
+
+    @staticmethod
+    def media_mapper(store, media, items, **kwargs):
+        if items is None:
+            return
+
+        if store is None:
+            store = {}
+
+        mapper = MediaMapper(store)
+
+        for item in items:
+            mapper.process(media, item, **kwargs)
+
+        return store
 
 
 class InterfaceProxy(object):
