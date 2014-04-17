@@ -74,4 +74,4 @@ class TraktRequest(object):
         path = [self.path, self.client.api_key]
         path.extend(self.params)
 
-        return self.client.base_url + '/'.join(path)
+        return self.client.base_url + '/'.join(x for x in path if x)
