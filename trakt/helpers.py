@@ -1,16 +1,8 @@
-def build_repr(obj, keys):
-    key_part = ', '.join([
-        ('%s: %s' % (key, repr(getattr(obj, key))))
-        for key in keys
-    ])
-
-    cls = getattr(obj, '__class__')
-
-    return '<%s %s>' % (getattr(cls, '__name__'), key_part)
-
-
-def setdefault(d, defaults):
+def setdefault(d, defaults, func=None):
     for key, value in defaults.items():
+        if func and not func(key, value):
+            continue
+
         d.setdefault(key, value)
 
 
@@ -25,3 +17,25 @@ def parse_credentials(value):
         }
 
     return value
+
+
+def has_attribute(obj, name):
+    try:
+        object.__getattribute__(obj, name)
+        return True
+    except AttributeError:
+        return False
+
+
+def update_attributes(obj, dictionary, keys):
+    if not dictionary:
+        return
+
+    for key in keys:
+        if key not in dictionary:
+            continue
+
+        if getattr(obj, key) is not None:
+            continue
+
+        setattr(obj, key, dictionary[key])

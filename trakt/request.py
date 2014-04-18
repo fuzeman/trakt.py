@@ -60,13 +60,6 @@ class TraktRequest(object):
         if self.kwargs.get('credentials'):
             setdefault(self.data, self.kwargs['credentials'])
 
-        # Set scrobbling parameters (if `scrobble` or `watching` request)
-        if self.path.endswith('/scrobble') or self.path.endswith('/watching'):
-            setdefault(self.data, {
-                'plugin_version': self.client.plugin_version,
-                'media_center_version': self.client.media_center_version
-            })
-
         return self.data
 
     def construct_url(self):
@@ -74,4 +67,4 @@ class TraktRequest(object):
         path = [self.path, self.client.api_key]
         path.extend(self.params)
 
-        return self.client.base_url + '/'.join(path)
+        return self.client.base_url + '/'.join(x for x in path if x)

@@ -1,19 +1,21 @@
-from .base import Interface, authenticated
+from trakt.interfaces.base import Interface, authenticated
 
 
 class AccountInterface(Interface):
+    path = 'account'
+
     @authenticated
     def test(self, credentials=None):
-        response = self.client.request('account/test', credentials=credentials)
+        """Test trakt credentials.
 
-        # unknown result - no response or server error
-        if response is None or response.status_code >= 500:
-            return None
+        This is useful for your configuration screen and is a simple way to test
+        someone's trakt account.
+        """
+        response = self.request('test', credentials=credentials)
 
-        data = response.json()
+        data = self.get_data(response, catch_errors=False)
 
-        # unknown result - no json data returned
-        if not data:
+        if data is None:
             return None
 
         return data.get('status') == 'success'

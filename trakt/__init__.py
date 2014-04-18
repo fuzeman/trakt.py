@@ -1,9 +1,12 @@
 from trakt.client import TraktClient
+from trakt.helpers import has_attribute
+
+__version__ = '0.5.0-beta'
 
 
 class TraktMeta(type):
     def __getattr__(self, name):
-        if self.__hasattr(self, name):
+        if has_attribute(self, name):
             return super(TraktMeta, self).__getattribute__(name)
 
         if self.client is None:
@@ -12,7 +15,7 @@ class TraktMeta(type):
         return getattr(self.client, name)
 
     def __setattr__(self, name, value):
-        if self.__hasattr(self, name):
+        if has_attribute(self, name):
             return super(TraktMeta, self).__setattr__(name, value)
 
         if self.client is None:
@@ -25,13 +28,6 @@ class TraktMeta(type):
             self.construct()
 
         return self.client[key]
-
-    def __hasattr(self, obj, name):
-        try:
-            object.__getattribute__(obj, name)
-            return True
-        except AttributeError:
-            return False
 
 
 class Trakt(object):
