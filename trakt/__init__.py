@@ -1,6 +1,8 @@
 from trakt.client import TraktClient
 from trakt.helpers import has_attribute
 
+__version__ = '0.5.0-beta'
+
 
 class TraktMeta(type):
     def __getattr__(self, name):
