@@ -1,4 +1,4 @@
-from trakt.interfaces.base import Interface
+from trakt.interfaces.base import Interface, authenticated
 
 
 class MediaInterface(Interface):
