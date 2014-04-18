@@ -27,6 +27,10 @@ class Interface(object):
         if not data:
             return None
 
+        # invalid result - request failure
+        if type(data) is dict and data.get('status') == 'failure':
+            return None
+
         return data
 
     @staticmethod

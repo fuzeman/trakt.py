@@ -26,6 +26,9 @@ class TraktClient(object):
         self.interfaces = construct_map(self)
 
     def request(self, path, params=None, data=None, credentials=None, **kwargs):
+        if not self.api_key:
+            raise ValueError('Missing "api_key", unable to send requests to trakt.tv')
+
         request = TraktRequest(
             self,
             path=path,
