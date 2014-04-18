@@ -2,28 +2,22 @@ from trakt.interfaces.base import authenticated, media_center
 from trakt.interfaces.base.media import MediaInterface
 
 
-class ShowInterface(MediaInterface):
-    path = 'show'
+class MovieInterface(MediaInterface):
+    path = 'movie'
 
     @media_center
     @authenticated
-    def scrobble(self, title, year, season, episode, duration, progress, credentials=None, **kwargs):
-        """Notify trakt that a user has finished watching a show.
+    def scrobble(self, title, year, duration, progress, credentials=None, **kwargs):
+        """Notify trakt that a user has finished watching a movie.
 
-        This commits the show to the users profile. You should use show/watching
+        This commits the movie to the users profile. You should use movie/watching
         prior to calling this method.
 
-        :param title: Show title.
+        :param title: Movie title.
         :type title: str
 
-        :param year: Show year.
+        :param year: Movie year.
         :type year: int
-
-        :param season: Show season. Send 0 if watching a special.
-        :type season: int
-
-        :param episode: Show episode.
-        :type episode: int
 
         :param duration: Duration in minutes.
         :type duration: int
@@ -34,9 +28,6 @@ class ShowInterface(MediaInterface):
         data = {
             'title': title,
             'year': year,
-
-            'season': season,
-            'episode': episode,
 
             'duration': duration,
             'progress': progress
@@ -51,20 +42,14 @@ class ShowInterface(MediaInterface):
 
     @media_center
     @authenticated
-    def watching(self, title, year, season, episode, duration, progress, credentials=None, **kwargs):
-        """Notify trakt that a user has started watching a show.
+    def watching(self, title, year, duration, progress, credentials=None, **kwargs):
+        """Notify trakt that a user has started watching a movie.
 
-        :param title: Show title.
+        :param title: Movie title.
         :type title: str
 
-        :param year: Show year.
+        :param year: Movie year.
         :type year: int
-
-        :param season: Show season. Send 0 if watching a special.
-        :type season: int
-
-        :param episode: Show episode.
-        :type episode: int
 
         :param duration: Duration in minutes.
         :type duration: int
@@ -75,9 +60,6 @@ class ShowInterface(MediaInterface):
         data = {
             'title': title,
             'year': year,
-
-            'season': season,
-            'episode': episode,
 
             'duration': duration,
             'progress': progress
