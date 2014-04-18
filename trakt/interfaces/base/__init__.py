@@ -1,7 +1,10 @@
-from trakt.helpers import parse_credentials
+from trakt.helpers import parse_credentials, setdefault
 from trakt.media_mapper import MediaMapper
 
 from functools import wraps
+import logging
+
+log = logging.getLogger(__name__)
 
 
 class Interface(object):
@@ -16,7 +19,7 @@ class Interface(object):
         return self.client.request(path, params, data, credentials, **kwargs)
 
     @staticmethod
-    def get_data(response):
+    def get_data(response, catch_errors=True):
         # unknown result - no response or server error
         if response is None or response.status_code >= 500:
             return None
@@ -29,7 +32,10 @@ class Interface(object):
 
         # invalid result - request failure
         if type(data) is dict and data.get('status') == 'failure':
-            return None
+            log.warning('request failure (error: "%s")', data.get('error'))
+
+            if catch_errors:
+                return False
 
         return data
 
@@ -79,6 +85,24 @@ def authenticated(func):
                 kwargs['credentials'] = interface.client.credentials
             else:
                 kwargs['credentials'] = parse_credentials(kwargs['credentials'])
+
+        return func(*args, **kwargs)
+
+    return wrap
+
+
+def media_center(func):
+    @wraps(func)
+    def wrap(*args, **kwargs):
+        if args and isinstance(args[0], Interface):
+            interface = args[0]
+
+            setdefault(kwargs, {
+                'plugin_version': interface.client.plugin_version,
+
+                'media_center_version': interface.client.media_center_version,
+                'media_center_date': interface.client.media_center_date
+            }, lambda key, value: value)
 
         return func(*args, **kwargs)
 

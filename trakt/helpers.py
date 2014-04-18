@@ -1,5 +1,8 @@
-def setdefault(d, defaults):
+def setdefault(d, defaults, func=None):
     for key, value in defaults.items():
+        if func and not func(key, value):
+            continue
+
         d.setdefault(key, value)
 
 

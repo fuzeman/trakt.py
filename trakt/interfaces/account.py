@@ -7,7 +7,8 @@ class AccountInterface(Interface):
     @authenticated
     def test(self, credentials=None):
         response = self.request('test', credentials=credentials)
-        data = self.get_data(response)
+
+        data = self.get_data(response, catch_errors=False)
 
         if data is None:
             return None
