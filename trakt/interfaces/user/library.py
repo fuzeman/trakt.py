@@ -33,6 +33,22 @@ class UserLibraryInterface(Interface):
 
     @authenticated
     def all(self, media, username=None, extended=None, store=None, credentials=None):
+        """Returns all the items in a user's library.
+
+        Each item will indicate if it's in the user's collection and how many plays
+        it has.
+
+        :param username: User to fetch details on, defaults to authenticated user.
+        :type username: str
+
+        :param extended: Returns complete movie info if set to `true`. Returns only
+                         the minimal info required for media center syncing if set
+                         to `min`.
+        :param extended: str
+
+        :param store: Existing dictionary to use, allows the merging of multiple data sources.
+        :type store: dict
+        """
         return self.get(
             media, 'all',
             username, extended,
@@ -42,6 +58,21 @@ class UserLibraryInterface(Interface):
 
     @authenticated
     def collection(self, media, username=None, extended=None, store=None, credentials=None):
+        """Returns all the items in a user's collection.
+
+        Collection items might include blu-rays, dvds, and digital downloads.
+
+        :param username: User to fetch details on, defaults to authenticated user.
+        :type username: str
+
+        :param extended: Returns complete movie info if set to `true`. Returns only
+                         the minimal info required for media center syncing if set
+                         to `min`.
+        :param extended: str
+
+        :param store: Existing dictionary to use, allows the merging of multiple data sources.
+        :type store: dict
+        """
         return self.get(
             media, 'collection',
             username, extended,
@@ -51,6 +82,21 @@ class UserLibraryInterface(Interface):
 
     @authenticated
     def watched(self, media, username=None, extended=None, store=None, credentials=None):
+        """Returns all items that a user has watched.
+
+        This method is useful to sync trakt's data with local media center.
+
+        :param username: User to fetch details on, defaults to authenticated user.
+        :type username: str
+
+        :param extended: Returns complete movie info if set to `true`. Returns only
+                         the minimal info required for media center syncing if set
+                         to `min`.
+        :param extended: str
+
+        :param store: Existing dictionary to use, allows the merging of multiple data sources.
+        :type store: dict
+        """
         return self.get(
             media, 'watched',
             username, extended,
