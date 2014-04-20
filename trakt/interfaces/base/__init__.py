@@ -13,6 +13,12 @@ class Interface(object):
     def __init__(self, client):
         self.client = client
 
+    def __getitem__(self, name):
+        if hasattr(self, name):
+            return getattr(self, name)
+
+        raise ValueError('Unknown action "%s" on %s', name, self)
+
     def request(self, path, params=None, data=None, credentials=None, **kwargs):
         path = '%s/%s' % (self.path, path)
 
