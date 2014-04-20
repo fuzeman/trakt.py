@@ -7,6 +7,40 @@ import logging
 log = logging.getLogger(__name__)
 
 
+def authenticated(func):
+    @wraps(func)
+    def wrap(*args, **kwargs):
+        if args and isinstance(args[0], Interface):
+            interface = args[0]
+
+            if 'credentials' not in kwargs:
+                kwargs['credentials'] = interface.client.credentials
+            else:
+                kwargs['credentials'] = parse_credentials(kwargs['credentials'])
+
+        return func(*args, **kwargs)
+
+    return wrap
+
+
+def media_center(func):
+    @wraps(func)
+    def wrap(*args, **kwargs):
+        if args and isinstance(args[0], Interface):
+            interface = args[0]
+
+            setdefault(kwargs, {
+                'plugin_version': interface.client.plugin_version,
+
+                'media_center_version': interface.client.media_center_version,
+                'media_center_date': interface.client.media_center_date
+            }, lambda key, value: value)
+
+        return func(*args, **kwargs)
+
+    return wrap
+
+
 class Interface(object):
     path = None
 
@@ -88,37 +122,3 @@ class InterfaceProxy(object):
             return value(*args, **kwargs)
 
         return wrap
-
-
-def authenticated(func):
-    @wraps(func)
-    def wrap(*args, **kwargs):
-        if args and isinstance(args[0], Interface):
-            interface = args[0]
-
-            if 'credentials' not in kwargs:
-                kwargs['credentials'] = interface.client.credentials
-            else:
-                kwargs['credentials'] = parse_credentials(kwargs['credentials'])
-
-        return func(*args, **kwargs)
-
-    return wrap
-
-
-def media_center(func):
-    @wraps(func)
-    def wrap(*args, **kwargs):
-        if args and isinstance(args[0], Interface):
-            interface = args[0]
-
-            setdefault(kwargs, {
-                'plugin_version': interface.client.plugin_version,
-
-                'media_center_version': interface.client.media_center_version,
-                'media_center_date': interface.client.media_center_date
-            }, lambda key, value: value)
-
-        return func(*args, **kwargs)
-
-    return wrap
