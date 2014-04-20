@@ -18,6 +18,15 @@ class Interface(object):
 
         return self.client.request(path, params, data, credentials, **kwargs)
 
+    @authenticated
+    def action(self, action, data=None, credentials=None):
+        response = self.request(
+            action, data=data,
+            credentials=credentials
+        )
+
+        return self.get_data(response, catch_errors=False)
+
     @staticmethod
     def get_data(response, catch_errors=True):
         # unknown result - no response or server error
