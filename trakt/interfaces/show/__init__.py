@@ -31,27 +31,23 @@ class ShowInterface(MediaInterface):
         :param progress: % progress, integer 0-100.
         :type progress: int
         """
-        data = {
-            'title': title,
-            'year': year,
+        return self.action(
+            'scrobble', {
+                'title': title,
+                'year': year,
 
-            'season': season,
-            'episode': episode,
+                'season': season,
+                'episode': episode,
 
-            'duration': duration,
-            'progress': progress
-        }
-
-        data.update(kwargs)
-
-        return self.send(
-            'scrobble', data,
-            credentials=credentials
+                'duration': duration,
+                'progress': progress
+            },
+            **kwargs
         )
 
     @media_center
     @authenticated
-    def watching(self, title, year, season, episode, duration, progress, credentials=None, **kwargs):
+    def watching(self, title, year, season, episode, duration, progress, **kwargs):
         """Notify trakt that a user has started watching a show.
 
         :param title: Show title.
@@ -72,20 +68,34 @@ class ShowInterface(MediaInterface):
         :param progress: % progress, integer 0-100.
         :type progress: int
         """
-        data = {
-            'title': title,
-            'year': year,
+        return self.action(
+            'watching', {
+                'title': title,
+                'year': year,
 
-            'season': season,
-            'episode': episode,
+                'season': season,
+                'episode': episode,
 
-            'duration': duration,
-            'progress': progress
-        }
+                'duration': duration,
+                'progress': progress
+            },
+            **kwargs
+        )
 
-        data.update(kwargs)
+    @authenticated
+    def unlibrary(self, title, year, **kwargs):
+        """Remove an entire show (including all episodes) from your library collection.
 
-        return self.send(
-            'watching', data,
-            credentials=credentials
+        :param title: Show title.
+        :type title: str
+
+        :param year: Show year.
+        :type year: int
+        """
+        return self.action(
+            'unlibrary', {
+                'title': title,
+                'year': year
+            },
+            **kwargs
         )
