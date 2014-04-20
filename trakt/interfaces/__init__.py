@@ -11,8 +11,9 @@ from trakt.interfaces.user.ratings import UserRatingsInterface
 INTERFACES = [
     # /
     AccountInterface,
-    MovieInterface,
     RateInterface,
+
+    MovieInterface,
     ShowInterface,
 
     # /user
