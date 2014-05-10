@@ -64,7 +64,17 @@ class Interface(object):
     @authenticated
     def action(self, action, data=None, credentials=None, **kwargs):
         if data:
+            # Merge kwargs (extra request parameters)
             data.update(kwargs)
+
+            # Strip any parameters with 'None' values
+            data = dict([
+                (key, value)
+                for key, value in data.items()
+                if value is not None
+            ])
+
+        self.validate_action(action, data)
 
         response = self.request(
             action, data=data,
@@ -72,6 +82,10 @@ class Interface(object):
         )
 
         return self.get_data(response, catch_errors=False)
+
+    @classmethod
+    def validate_action(cls, action, data):
+        pass
 
     @staticmethod
     def get_data(response, catch_errors=True):
@@ -82,7 +96,7 @@ class Interface(object):
         data = response.json()
 
         # unknown result - no json data returned
-        if not data:
+        if data is None:
             return None
 
         # invalid result - request failure
@@ -93,6 +107,19 @@ class Interface(object):
                 return False
 
         return data
+
+    @staticmethod
+    def data_requirements(data, *args):
+        for keys in args:
+            if type(keys) is not tuple:
+                keys = (keys,)
+
+            values = [data.get(key) for key in keys]
+
+            if all(values):
+                return
+
+        raise ValueError("Request doesn't match data requirements %s, one group of parameters is required." % (args,))
 
     @staticmethod
     def media_mapper(store, media, items, **kwargs):
