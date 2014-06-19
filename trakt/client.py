@@ -93,7 +93,6 @@ class TraktClient(object):
 
         return cur
 
-
     @property
     def credentials(self):
         return parse_credentials(self._get_credentials())
