@@ -10,13 +10,14 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 if __name__ == '__main__':
-    Trakt.api_key = os.environ.get('API_KEY')
-
     password = hashlib.sha1(os.environ.get('PASSWORD'))
 
-    Trakt.credentials = (
-        os.environ.get('USERNAME'),
-        password.hexdigest()
+    Trakt.configure(
+        api_key=os.environ.get('API_KEY'),
+        credentials=(
+            os.environ.get('USERNAME'),
+            password.hexdigest()
+        )
     )
 
     pprint(Trakt['show'].watching(
@@ -32,4 +33,4 @@ if __name__ == '__main__':
 
     time.sleep(10)
 
-    Trakt['show'].cancel_watching()
+    Trakt['show'].cancelwatching()

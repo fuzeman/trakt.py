@@ -7,8 +7,10 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 if __name__ == '__main__':
-    Trakt.api_key = os.environ.get('API_KEY')
-    Trakt.credentials = ('test', 'test')
+    Trakt.configure(
+        api_key=os.environ.get('API_KEY'),
+        credentials=('test', 'test')
+    )
 
     store = {}
 
