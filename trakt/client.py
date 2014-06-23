@@ -5,6 +5,7 @@ from trakt.request import TraktRequest
 
 import logging
 import requests
+import socket
 
 log = logging.getLogger(__name__)
 
@@ -30,6 +31,13 @@ class TraktClient(object):
         # Construct interfaces
         self.interfaces = construct_map(self)
 
+    def configure(self, **kwargs):
+        for key, value in kwargs.items():
+            if not hasattr(self, key):
+                raise ValueError('Unknown option "%s" specified' % key)
+
+            setattr(self, key, value)
+
     def request(self, path, params=None, data=None, credentials=None, **kwargs):
         if not self.api_key:
             raise ValueError('Missing "api_key", unable to send requests to trakt.tv')
@@ -49,8 +57,27 @@ class TraktClient(object):
 
         prepared = request.prepare()
 
-        # TODO retrying requests on 502, 503 errors
-        return self._session.send(prepared)
+        # TODO retrying requests on 502, 503 errors?
+
+        try:
+            return self._session.send(prepared)
+        except socket.gaierror, e:
+            code, _ = e
+
+            if code != 8:
+                raise e
+
+            log.warn('Encountered socket.gaierror (code: 8)')
+
+            return self._rebuild().send(prepared)
+
+    def _rebuild(self):
+        log.info('Rebuilding session and connection pools...')
+
+        # Rebuild the connection pool (old pool has stale connections)
+        self._session = requests.Session()
+
+        return self._session
 
     def __getitem__(self, path):
         parts = path.strip('/').split('/')
@@ -73,9 +100,11 @@ class TraktClient(object):
 
         return cur
 
-
     @property
     def credentials(self):
+        if not self._get_credentials:
+            return None
+
         return parse_credentials(self._get_credentials())
 
     @credentials.setter
