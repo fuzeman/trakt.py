@@ -120,7 +120,7 @@ class Interface(object):
             if all(values):
                 return True
 
-        log.warn("Request doesn't match data requirements %s, one group of parameters is required.", args)
+        log.warn("Request %s doesn't match data requirements %s, one group of parameters is required.", data, args)
         return False
 
     @staticmethod
