@@ -1,17 +1,19 @@
-from trakt.interfaces.account import AccountInterface
 from trakt.interfaces.movie import MovieInterface
+from trakt.interfaces.oauth import OAuthInterface
 from trakt.interfaces.rate import RateInterface
 from trakt.interfaces.show import ShowInterface
 from trakt.interfaces.show.episode import ShowEpisodeInterface
+from trakt.interfaces.sync import SyncInterface
+from trakt.interfaces.sync.collection import SyncCollectionInterface
+from trakt.interfaces.sync.watched import SyncWatchedInterface
 from trakt.interfaces.user import UserInterface
-from trakt.interfaces.user.library import UserLibraryInterface
 from trakt.interfaces.user.ratings import UserRatingsInterface
 
 
 # TODO automatic interface discovery
 INTERFACES = [
     # /
-    AccountInterface,
+    OAuthInterface,
     RateInterface,
 
     MovieInterface,
@@ -20,8 +22,12 @@ INTERFACES = [
 
     # /user
     UserInterface,
-    UserLibraryInterface,
-    UserRatingsInterface
+    UserRatingsInterface,
+
+    # /sync
+    SyncInterface,
+    SyncCollectionInterface,
+    SyncWatchedInterface
 ]
 
 
