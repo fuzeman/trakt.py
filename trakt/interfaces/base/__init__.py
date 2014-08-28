@@ -1,4 +1,4 @@
-from trakt.helpers import parse_credentials, setdefault
+from trakt.helpers import setdefault
 from trakt.media_mapper import MediaMapper
 
 from functools import wraps
@@ -13,10 +13,8 @@ def authenticated(func):
         if args and isinstance(args[0], Interface):
             interface = args[0]
 
-            if 'credentials' not in kwargs:
-                kwargs['credentials'] = interface.client.credentials
-            else:
-                kwargs['credentials'] = parse_credentials(kwargs['credentials'])
+            if 'access_token' not in kwargs:
+                kwargs['access_token'] = interface.client.access_token
 
         return func(*args, **kwargs)
 
@@ -53,11 +51,11 @@ class Interface(object):
 
         raise ValueError('Unknown action "%s" on %s', name, self)
 
-    def request(self, path, params=None, data=None, credentials=None, **kwargs):
+    def request(self, path=None, params=None, data=None, access_token=None, **kwargs):
         return self.client.request(
-            '%s/%s' % (self.path, path),
+            '/'.join([x for x in [self.path, path] if x]),
             params, data,
-            credentials,
+            access_token,
             **kwargs
         )
 
@@ -90,8 +88,7 @@ class Interface(object):
 
     @staticmethod
     def get_data(response, catch_errors=True):
-        # unknown result - no response or server error
-        if response is None or response.status_code >= 500:
+        if response is None:
             return None
 
         data = response.json()
@@ -100,12 +97,18 @@ class Interface(object):
         if data is None:
             return None
 
-        # invalid result - request failure
-        if type(data) is dict and data.get('status') == 'failure':
-            log.warning('request failure (error: "%s")', data.get('error'))
+        error = False
 
-            if catch_errors:
-                return False
+        # unknown result - no response or server error
+        if response.status_code >= 500:
+            log.warning('request failure (data: %s)', data)
+            error = True
+        elif type(data) is dict and data.get('status') == 'failure':
+            log.warning('request failure (error: "%s")', data.get('error'))
+            error = True
+
+        if error and catch_errors:
+            return False
 
         return data
 

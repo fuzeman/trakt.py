@@ -1,4 +1,3 @@
-from trakt.helpers import parse_credentials
 from trakt.interfaces import construct_map
 from trakt.interfaces.base import InterfaceProxy
 from trakt.request import TraktRequest
@@ -15,7 +14,10 @@ class TraktClient(object):
     interfaces = None
 
     def __init__(self):
-        self.api_key = None
+        self.client_id = None
+        self.client_secret = None
+
+        self.access_token = None
 
         # Scrobbling parameters
         self.plugin_version = None
@@ -25,8 +27,6 @@ class TraktClient(object):
 
         # Private
         self._session = requests.Session()
-
-        self._get_credentials = None
 
         # Construct interfaces
         self.interfaces = construct_map(self)
@@ -38,10 +38,7 @@ class TraktClient(object):
 
             setattr(self, key, value)
 
-    def request(self, path, params=None, data=None, credentials=None, **kwargs):
-        if not self.api_key:
-            raise ValueError('Missing "api_key", unable to send requests to trakt.tv')
-
+    def request(self, path, params=None, data=None, access_token=None, **kwargs):
         log.debug('"%s" - data: %s', path, data)
 
         request = TraktRequest(
@@ -51,7 +48,7 @@ class TraktClient(object):
             params=params,
             data=data,
 
-            credentials=credentials,
+            access_token=access_token,
             **kwargs
         )
 
@@ -99,19 +96,3 @@ class TraktClient(object):
             return InterfaceProxy(cur, parts)
 
         return cur
-
-    @property
-    def credentials(self):
-        if not self._get_credentials:
-            return None
-
-        return parse_credentials(self._get_credentials())
-
-    @credentials.setter
-    def credentials(self, value):
-        if hasattr(value, '__iter__'):
-            self._get_credentials = lambda: value
-        elif hasattr(value, '__call__'):
-            self._get_credentials = value
-        else:
-            raise ValueError('(<username>, <password>) iterable, or function is required')
