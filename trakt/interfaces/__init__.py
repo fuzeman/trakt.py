@@ -1,9 +1,9 @@
-from trakt.interfaces.movie import MovieInterface
+# from trakt.interfaces.movie import MovieInterface
 from trakt.interfaces.oauth import OAuthInterface
 from trakt.interfaces.rate import RateInterface
-from trakt.interfaces.show import ShowInterface
-from trakt.interfaces.show.episode import ShowEpisodeInterface
 from trakt.interfaces.scrobble import ScrobbleInterface
+# from trakt.interfaces.show import ShowInterface
+# from trakt.interfaces.show.episode import ShowEpisodeInterface
 from trakt.interfaces.sync import SyncInterface
 from trakt.interfaces.sync.collection import SyncCollectionInterface
 from trakt.interfaces.sync.history import SyncHistoryInterface
@@ -18,9 +18,9 @@ INTERFACES = [
     RateInterface,
     ScrobbleInterface,
 
-    MovieInterface,
-    ShowInterface,
-    ShowEpisodeInterface,
+    # MovieInterface,
+    # ShowInterface,
+    # ShowEpisodeInterface,
 
     # /sync
     SyncInterface,

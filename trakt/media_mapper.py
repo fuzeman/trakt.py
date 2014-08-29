@@ -51,9 +51,11 @@ class MediaMapper(object):
 
         # Process any episodes in the item
         for season in item.get('seasons', []):
-            season_num = season.get('season')
+            season_num = season.get('number')
 
-            for episode_num in season.get('episodes', []):
+            for episode in season.get('episodes', []):
+                episode_num = episode.get('number')
+
                 self.show_episode(show, (season_num, episode_num), **kwargs)
 
         return show

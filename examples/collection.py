@@ -1,36 +1,10 @@
-from trakt import Trakt
+from helpers import authenticate
 
+from trakt import Trakt
 import logging
 import os
 
 logging.basicConfig(level=logging.DEBUG)
-
-
-def authenticate():
-    access_token = os.environ.get('ACCESS_TOKEN')
-
-    if access_token:
-        return access_token
-
-    print Trakt['oauth'].authorize_url('urn:ietf:wg:oauth:2.0:oob')
-
-    code = raw_input('Authorization code:')
-    if not code:
-        exit(1)
-
-    result = Trakt['oauth'].token(code, 'urn:ietf:wg:oauth:2.0:oob')
-    if not result:
-        exit(1)
-
-    access_token = result.get('access_token')
-
-    if not access_token:
-        exit(1)
-
-    print 'Access token: "%s"' % access_token
-    return access_token
-
-
 
 
 if __name__ == '__main__':
@@ -47,10 +21,10 @@ if __name__ == '__main__':
     # Fetch movie library (watched, collection, ratings)
     movies = {}
 
-    Trakt['sync/watched'].movies(movies)
-    Trakt['sync/collection'].movies(movies)
-
-    Trakt['sync/ratings'].movies(movies)
+    # Trakt['sync/watched'].movies(movies)
+    # Trakt['sync/collection'].movies(movies)
+    #
+    # Trakt['sync/ratings'].movies(movies)
 
     for key, movie in movies.items():
         print movie
@@ -62,5 +36,31 @@ if __name__ == '__main__':
         print '\t', 'is_collected', '\t', movie.is_collected
         print '\t', 'collected_at', '\t', movie.collected_at
         print '\t', 'plays', '\t' * 3, movie.plays
+
+        print
+
+    # Fetch show/episode library (watched, collection, ratings)
+    shows = {}
+
+    Trakt['sync/watched'].shows(shows)
+    Trakt['sync/collection'].shows(shows)
+
+    Trakt['sync/ratings'].shows(shows)
+
+    for key, show in shows.items():
+        print show
+
+        print '\t', 'keys', '\t' * 3, show.keys
+        print '\t', 'rating', '\t' * 3, show.rating
+        print
+
+        for (episode_num, season_num), episode in show.episodes.items():
+            print '\t', episode
+
+            print '\t' * 2, 'is_watched', '\t' * 2, episode.is_watched
+            print '\t' * 2, 'is_collected', '\t', episode.is_collected
+            print '\t' * 2, 'collected_at', '\t', episode.collected_at
+            print '\t' * 2, 'plays', '\t' * 3, episode.plays
+            print
 
         print
