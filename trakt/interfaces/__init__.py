@@ -1,25 +1,69 @@
-from trakt.interfaces.oauth import OAuthInterface
-from trakt.interfaces.scrobble import ScrobbleInterface
-from trakt.interfaces.sync import SyncInterface
-from trakt.interfaces.sync.collection import SyncCollectionInterface
-from trakt.interfaces.sync.history import SyncHistoryInterface
-from trakt.interfaces.sync.ratings import SyncRatingsInterface
-from trakt.interfaces.sync.watched import SyncWatchedInterface
+from trakt.interfaces.base import Interface
+
+import inspect
+import os
+
+ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+INTERFACES_PATH = os.path.dirname(__file__)
+SELF_PATH, _ = os.path.splitext(__file__)
 
 
-# TODO automatic interface discovery
-INTERFACES = [
-    # /
-    OAuthInterface,
-    ScrobbleInterface,
+def discover():
+    for directory, _, files in os.walk(INTERFACES_PATH):
+        for filename in files:
+            if filename.startswith('base.'):
+                continue
 
-    # /sync
-    SyncInterface,
-    SyncCollectionInterface,
-    SyncHistoryInterface,
-    SyncRatingsInterface,
-    SyncWatchedInterface
-]
+            if not filename.endswith('.py'):
+                continue
+
+            path = os.path.join(directory, filename)
+
+            if path.startswith(SELF_PATH):
+                continue
+
+            yield path
+
+
+def load():
+    paths = discover()
+
+    def sort_key(path):
+        fragments = len(path.split('/'))
+
+        if path.endswith('__init__.py'):
+            return fragments - 1
+
+        return fragments
+
+    paths = sorted(paths, key=sort_key)
+
+    for path in paths:
+        path = os.path.realpath(path)
+
+        name, _ = os.path.splitext(os.path.relpath(path, ROOT_PATH))
+        name = name.replace('\\', '.')
+
+        mod = __import__(name, fromlist=['*'])
+
+        for key, value in mod.__dict__.items():
+            if key.startswith('_'):
+                continue
+
+            if not inspect.isclass(value):
+                continue
+
+            if not issubclass(value, Interface):
+                continue
+
+            if mod.__name__ != value.__module__:
+                continue
+
+            print 'Loaded %s from "%s"' % (value, name)
+            yield value
+
+
+INTERFACES = list(load())
 
 
 def get_interfaces():
