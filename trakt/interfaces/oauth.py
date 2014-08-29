@@ -1,7 +1,5 @@
 from trakt.helpers import build_url
-from trakt.interfaces.base import Interface, authenticated
-
-import urllib
+from trakt.interfaces.base import Interface
 
 
 class OAuthInterface(Interface):
