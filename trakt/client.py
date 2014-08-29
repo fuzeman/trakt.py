@@ -20,8 +20,6 @@ class TraktClient(object):
         self.access_token = None
 
         # Scrobbling parameters
-        self.plugin_version = None
-
         self.app_version = None
         self.app_date = None
 
