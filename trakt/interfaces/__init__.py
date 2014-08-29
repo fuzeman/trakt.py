@@ -8,8 +8,6 @@ from trakt.interfaces.sync.collection import SyncCollectionInterface
 from trakt.interfaces.sync.history import SyncHistoryInterface
 from trakt.interfaces.sync.ratings import SyncRatingsInterface
 from trakt.interfaces.sync.watched import SyncWatchedInterface
-from trakt.interfaces.user import UserInterface
-from trakt.interfaces.user.ratings import UserRatingsInterface
 
 
 # TODO automatic interface discovery
@@ -21,10 +19,6 @@ INTERFACES = [
     MovieInterface,
     ShowInterface,
     ShowEpisodeInterface,
-
-    # /user
-    UserInterface,
-    UserRatingsInterface,
 
     # /sync
     SyncInterface,
