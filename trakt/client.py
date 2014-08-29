@@ -22,8 +22,8 @@ class TraktClient(object):
         # Scrobbling parameters
         self.plugin_version = None
 
-        self.media_center_version = None
-        self.media_center_date = None
+        self.app_version = None
+        self.app_date = None
 
         # Private
         self._session = requests.Session()

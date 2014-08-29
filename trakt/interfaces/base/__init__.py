@@ -21,17 +21,15 @@ def authenticated(func):
     return wrap
 
 
-def media_center(func):
+def application(func):
     @wraps(func)
     def wrap(*args, **kwargs):
         if args and isinstance(args[0], Interface):
             interface = args[0]
 
             setdefault(kwargs, {
-                'plugin_version': interface.client.plugin_version,
-
-                'media_center_version': interface.client.media_center_version,
-                'media_center_date': interface.client.media_center_date
+                'app_version': interface.client.app_version,
+                'app_date': interface.client.app_date
             }, lambda key, value: value)
 
         return func(*args, **kwargs)
@@ -91,7 +89,11 @@ class Interface(object):
         if response is None:
             return None
 
-        data = response.json()
+        try:
+            data = response.json()
+        except ValueError:
+            log.warning('request failure (content: %s)', response.content)
+            return None
 
         # unknown result - no json data returned
         if data is None:
