@@ -2,10 +2,17 @@ from trakt.interfaces.base import Interface, authenticated
 
 
 class SyncBaseInterface(Interface):
+    flags = {}
+
     @authenticated
-    def get(self, media, store=None, access_token=None):
+    def get(self, media, store=None, parameters=None, access_token=None):
+        path = [media]
+
+        if parameters:
+            path.extend(parameters)
+
         response = self.request(
-            media,
+            params=path,
             access_token=access_token
         )
 
@@ -16,7 +23,7 @@ class SyncBaseInterface(Interface):
 
         return self.media_mapper(
             store, media, items,
-            is_collected=True
+            **self.flags
         )
 
     @authenticated

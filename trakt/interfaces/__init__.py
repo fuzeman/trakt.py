@@ -5,6 +5,8 @@ from trakt.interfaces.show import ShowInterface
 from trakt.interfaces.show.episode import ShowEpisodeInterface
 from trakt.interfaces.sync import SyncInterface
 from trakt.interfaces.sync.collection import SyncCollectionInterface
+from trakt.interfaces.sync.history import SyncHistoryInterface
+from trakt.interfaces.sync.ratings import SyncRatingsInterface
 from trakt.interfaces.sync.watched import SyncWatchedInterface
 from trakt.interfaces.user import UserInterface
 from trakt.interfaces.user.ratings import UserRatingsInterface
@@ -27,6 +29,8 @@ INTERFACES = [
     # /sync
     SyncInterface,
     SyncCollectionInterface,
+    SyncHistoryInterface,
+    SyncRatingsInterface,
     SyncWatchedInterface
 ]
 
