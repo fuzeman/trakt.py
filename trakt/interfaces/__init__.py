@@ -59,7 +59,6 @@ def load():
             if mod.__name__ != value.__module__:
                 continue
 
-            print 'Loaded %s from "%s"' % (value, name)
             yield value
 
 

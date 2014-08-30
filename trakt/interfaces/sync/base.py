@@ -5,15 +5,14 @@ class SyncBaseInterface(Interface):
     flags = {}
 
     @authenticated
-    def get(self, media, store=None, parameters=None, access_token=None):
+    def get(self, media, store=None, parameters=None):
         path = [media]
 
         if parameters:
             path.extend(parameters)
 
         response = self.request(
-            params=path,
-            access_token=access_token
+            params=path
         )
 
         items = self.get_data(response)
@@ -27,11 +26,10 @@ class SyncBaseInterface(Interface):
         )
 
     @authenticated
-    def post(self, data, access_token=None):
+    def post(self, data):
         response = self.request(
             method='POST',
-            data=data,
-            access_token=access_token
+            data=data
         )
 
         data = self.get_data(response)
@@ -42,7 +40,7 @@ class SyncBaseInterface(Interface):
         return data
 
     @authenticated
-    def delete(self, data, access_token=None):
+    def delete(self, data):
         pass
 
     #
@@ -50,17 +48,15 @@ class SyncBaseInterface(Interface):
     #
 
     @authenticated
-    def shows(self, store=None, access_token=None):
+    def shows(self, store=None):
         return self.get(
             'shows',
-            store=store,
-            access_token=access_token
+            store
         )
 
     @authenticated
-    def movies(self, store=None, access_token=None):
+    def movies(self, store=None):
         return self.get(
             'movies',
-            store=store,
-            access_token=access_token
+            store
         )

@@ -1,3 +1,4 @@
+from trakt.core.context import Context
 from trakt.interfaces import construct_map
 from trakt.interfaces.base import InterfaceProxy
 from trakt.request import TraktRequest
@@ -25,9 +26,20 @@ class TraktClient(object):
 
         # Private
         self._session = requests.Session()
+        self._context_stack = [Context(self)]
 
         # Construct interfaces
         self.interfaces = construct_map(self)
+
+    @property
+    def current(self):
+        if not self._context_stack:
+            return None
+
+        return self._context_stack[-1]
+
+    def context(self, access_token=None):
+        return Context(self, access_token)
 
     def configure(self, **kwargs):
         for key, value in kwargs.items():
@@ -36,17 +48,13 @@ class TraktClient(object):
 
             setattr(self, key, value)
 
-    def request(self, path, params=None, data=None, access_token=None, **kwargs):
-        log.debug('"%s" - data: %s', path, data)
-
+    def request(self, path, params=None, data=None, **kwargs):
         request = TraktRequest(
             self,
             path=path,
-
             params=params,
             data=data,
 
-            access_token=access_token,
             **kwargs
         )
 

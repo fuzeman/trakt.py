@@ -5,8 +5,8 @@ class SyncWatchedInterface(SyncBaseInterface):
     path = 'sync/watched'
     flags = {'is_watched': True}
 
-    def post(self, data, access_token=None):
+    def post(self, data):
         raise Exception("Invalid request")
 
-    def delete(self, data, access_token=None):
+    def delete(self, data):
         raise Exception("Invalid request")

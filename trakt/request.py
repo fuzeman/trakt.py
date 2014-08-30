@@ -65,11 +65,10 @@ class TraktRequest(object):
         headers['trakt-api-key'] = self.client.client_id
         headers['trakt-api-version'] = '2'
 
-        if self.client.access_token:
-            headers['Authorization'] = 'Bearer %s' % self.client.access_token
+        if self.client.current and self.client.current.access_token:
+            headers['Authorization'] = 'Bearer %s' % self.client.current.access_token
 
         return headers
-
 
     def transform_data(self):
         return self.kwargs.get('data') or None

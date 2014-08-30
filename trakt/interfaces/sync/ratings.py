@@ -6,42 +6,30 @@ class SyncRatingsInterface(SyncBaseInterface):
     path = 'sync/ratings'
 
     @authenticated
-    def get(self, media, store=None, rating=None, access_token=None):
+    def get(self, media, store=None, rating=None):
         parameters = []
 
         if rating is not None:
             parameters.append(rating)
 
-        super(SyncRatingsInterface, self).get(media, store, parameters, access_token=access_token)
+        super(SyncRatingsInterface, self).get(media, store, parameters)
 
     #
     # Shortcut methods
     #
 
     @authenticated
-    def shows(self, store=None, rating=None, access_token=None):
-        return self.get(
-            'shows', store, rating,
-            access_token=access_token
-        )
+    def shows(self, store=None, rating=None):
+        return self.get('shows', store, rating,)
 
     @authenticated
-    def seasons(self, store=None, rating=None, access_token=None):
-        return self.get(
-            'seasons', store, rating,
-            access_token=access_token
-        )
+    def seasons(self, store=None, rating=None):
+        return self.get('seasons', store, rating,)
 
     @authenticated
-    def episodes(self, store=None, rating=None, access_token=None):
-        return self.get(
-            'episodes', store, rating,
-            access_token=access_token
-        )
+    def episodes(self, store=None, rating=None):
+        return self.get('episodes', store, rating)
 
     @authenticated
-    def movies(self, store=None, rating=None, access_token=None):
-        return self.get(
-            'movies', store, rating,
-            access_token=access_token
-        )
+    def movies(self, store=None, rating=None):
+        return self.get('movies', store, rating)

@@ -13,9 +13,6 @@ def authenticated(func):
         if args and isinstance(args[0], Interface):
             interface = args[0]
 
-            if 'access_token' not in kwargs:
-                kwargs['access_token'] = interface.client.access_token
-
         return func(*args, **kwargs)
 
     return wrap
@@ -49,11 +46,10 @@ class Interface(object):
 
         raise ValueError('Unknown action "%s" on %s', name, self)
 
-    def request(self, path=None, params=None, data=None, access_token=None, **kwargs):
+    def request(self, path=None, params=None, data=None, **kwargs):
         return self.client.request(
             '/'.join([x for x in [self.path, path] if x]),
             params, data,
-            access_token,
             **kwargs
         )
 
