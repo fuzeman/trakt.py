@@ -29,11 +29,12 @@ class ScrobbleInterface(Interface):
             # TODO validate
             data['episode'] = episode
 
-        return self.get_data(self.request(
+        response = self.http.post(
             action,
-            method='POST',
             data=data
-        ), catch_errors=False)
+        )
+
+        return self.get_data(response, catch_errors=False)
 
     @application
     @authenticated

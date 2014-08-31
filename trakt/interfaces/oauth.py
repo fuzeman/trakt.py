@@ -19,7 +19,7 @@ class OAuthInterface(Interface):
         )
 
     def token(self, code=None, redirect_uri=None, grant_type='authorization_code'):
-        response = self.request('token', method='POST', data={
+        response = self.http.post('token', data={
             'client_id': self.client.client_id,
             'client_secret': self.client.client_secret,
 

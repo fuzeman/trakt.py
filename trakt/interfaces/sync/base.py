@@ -5,14 +5,14 @@ class SyncBaseInterface(Interface):
     flags = {}
 
     @authenticated
-    def get(self, media, store=None, parameters=None):
-        path = [media]
+    def get(self, media, store=None, params=None):
+        r_params = [media]
 
-        if parameters:
-            path.extend(parameters)
+        if params:
+            r_params.extend(params)
 
-        response = self.request(
-            params=path
+        response = self.http.get(
+            params=r_params
         )
 
         items = self.get_data(response)
@@ -27,8 +27,7 @@ class SyncBaseInterface(Interface):
 
     @authenticated
     def post(self, data):
-        response = self.request(
-            method='POST',
+        response = self.http.post(
             data=data
         )
 

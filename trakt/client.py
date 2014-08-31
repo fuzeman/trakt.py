@@ -1,11 +1,10 @@
 from trakt.core.context import Context
+from trakt.core.http import HttpClient
 from trakt.interfaces import construct_map
 from trakt.interfaces.base import InterfaceProxy
-from trakt.request import TraktRequest
 
 import logging
-import requests
-import socket
+
 
 log = logging.getLogger(__name__)
 
@@ -24,12 +23,12 @@ class TraktClient(object):
         self.app_version = None
         self.app_date = None
 
-        # Private
-        self._session = requests.Session()
-        self._context_stack = [Context(self)]
-
-        # Construct interfaces
+        # Construct
+        self.http = HttpClient(self)
         self.interfaces = construct_map(self)
+
+        # Private
+        self._context_stack = [Context(self)]
 
     @property
     def current(self):
@@ -47,40 +46,6 @@ class TraktClient(object):
                 raise ValueError('Unknown option "%s" specified' % key)
 
             setattr(self, key, value)
-
-    def request(self, path, params=None, data=None, **kwargs):
-        request = TraktRequest(
-            self,
-            path=path,
-            params=params,
-            data=data,
-
-            **kwargs
-        )
-
-        prepared = request.prepare()
-
-        # TODO retrying requests on 502, 503 errors?
-
-        try:
-            return self._session.send(prepared)
-        except socket.gaierror, e:
-            code, _ = e
-
-            if code != 8:
-                raise e
-
-            log.warn('Encountered socket.gaierror (code: 8)')
-
-            return self._rebuild().send(prepared)
-
-    def _rebuild(self):
-        log.info('Rebuilding session and connection pools...')
-
-        # Rebuild the connection pool (old pool has stale connections)
-        self._session = requests.Session()
-
-        return self._session
 
     def __getitem__(self, path):
         parts = path.strip('/').split('/')
