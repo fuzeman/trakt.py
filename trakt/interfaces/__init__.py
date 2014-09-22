@@ -7,6 +7,8 @@ ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 INTERFACES_PATH = os.path.dirname(__file__)
 SELF_PATH, _ = os.path.splitext(__file__)
 
+UNC_PREFIX = '\\\\?\\'
+
 
 def discover():
     for directory, _, files in os.walk(INTERFACES_PATH):
@@ -19,6 +21,11 @@ def discover():
 
             path = os.path.join(directory, filename)
 
+            # Remove UNC prefix (if it exists)
+            if path.startswith(UNC_PREFIX):
+                path = path[len(UNC_PREFIX):]
+
+            # Ignore current file
             if path.startswith(SELF_PATH):
                 continue
 
