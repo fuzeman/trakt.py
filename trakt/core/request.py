@@ -67,6 +67,11 @@ class TraktRequest(object):
         headers['trakt-api-key'] = self.client.configuration['client.id']
         headers['trakt-api-version'] = '2'
 
+        if self.configuration['auth.login'] and self.configuration['auth.token']:
+            # xAuth
+            headers['trakt-user-login'] = self.configuration['auth.login']
+            headers['trakt-user-token'] = self.configuration['auth.token']
+
         if self.configuration['oauth.token']:
             # OAuth
             headers['Authorization'] = 'Bearer %s' % self.configuration['oauth.token']
