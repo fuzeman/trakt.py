@@ -48,6 +48,7 @@ if __name__ == '__main__':
     Trakt['sync/collection'].shows(shows)
 
     Trakt['sync/ratings'].shows(shows)
+    Trakt['sync/ratings'].episodes(shows)
 
     for key, show in shows.items():
         print show
@@ -62,6 +63,8 @@ if __name__ == '__main__':
 
             for episode_num, episode in season.episodes.items():
                 print '\t' * 2, episode
+
+                print '\t' * 3, 'rating', '\t' * 3, episode.rating
 
                 print '\t' * 3, 'is_watched', '\t' * 2, episode.is_watched
                 print '\t' * 3, 'is_collected', '\t', episode.is_collected
