@@ -69,7 +69,7 @@ class Show(Media):
     def update(self, info=None, **kwargs):
         super(Show, self).update(info, **kwargs)
 
-        update_attributes(self, info['show'], ['title', 'year', 'tvdb_id'])
+        update_attributes(self, info, ['title', 'year', 'tvdb_id'])
 
     @classmethod
     def create(cls, keys, info=None, **kwargs):
