@@ -59,6 +59,12 @@ class Show(Media):
 
         self.seasons = {}
 
+    def episodes(self):
+        for sk, season in self.seasons.iteritems():
+            # Yield each episode in season
+            for ek, episode in season.episodes.iteritems():
+                yield (sk, ek), episode
+
     def to_info(self):
         return {
             'tvdb_id': self.tvdb_id,
