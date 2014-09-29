@@ -55,7 +55,6 @@ class Show(Media):
 
         self.title = None
         self.year = None
-        self.tvdb_id = None
 
         self.seasons = {}
 
@@ -67,7 +66,7 @@ class Show(Media):
 
     def to_info(self):
         return {
-            'tvdb_id': self.tvdb_id,
+            'ids': dict(self.keys),
             'title': self.title,
             'year': self.year
         }
@@ -75,7 +74,7 @@ class Show(Media):
     def update(self, info=None, **kwargs):
         super(Show, self).update(info, **kwargs)
 
-        update_attributes(self, info, ['title', 'year', 'tvdb_id'])
+        update_attributes(self, info, ['title', 'year'])
 
     @classmethod
     def create(cls, keys, info=None, **kwargs):
@@ -140,19 +139,18 @@ class Movie(Video):
 
         self.title = None
         self.year = None
-        self.imdb_id = None
 
     def to_info(self):
         return {
+            'ids': dict(self.keys),
             'title': self.title,
-            'year': self.year,
-            'imdb_id': self.imdb_id
+            'year': self.year
         }
 
     def update(self, info=None, **kwargs):
         super(Movie, self).update(info, **kwargs)
 
-        update_attributes(self, info['movie'], ['title', 'year', 'imdb_id'])
+        update_attributes(self, info['movie'], ['title', 'year'])
 
     @classmethod
     def create(cls, keys, info, **kwargs):
