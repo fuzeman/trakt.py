@@ -5,13 +5,14 @@ from setuptools import setup, find_packages
 setup(
     name='trakt.py',
     version=__version__,
+    license='MIT',
     url='https://github.com/fuzeman/trakt.py',
 
     author='Dean Gardiner',
     author_email='me@dgardiner.net',
 
-    description='',
-    packages=find_packages(),
+    description='Python interface for the trakt.tv API',
+    packages=['trakt'],
     platforms='any',
 
     install_requires=[

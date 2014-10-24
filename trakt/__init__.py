@@ -1,7 +1,7 @@
 from trakt.client import TraktClient
 from trakt.helpers import has_attribute
 
-__version__ = '0.6.1-beta'
+__version__ = '0.7.0'
 
 
 class TraktMeta(type):
