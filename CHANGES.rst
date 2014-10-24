@@ -1,3 +1,9 @@
+0.7.0 (2014-10-24)
+------------------
+ - "title" and "year" parameters are now optional on scrobble() and watching() methods
+ - [movie] Added unseen() method
+ - [show/episode] Added unseen() method
+
 0.6.1 (2014-07-10)
 ------------------
 - Return None if an action fails validation (instead of raising an exception)
