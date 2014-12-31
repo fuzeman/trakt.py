@@ -11,8 +11,6 @@ logging.basicConfig(level=logging.DEBUG)
 
 if __name__ == '__main__':
     # Configure
-    Trakt.base_url = 'http://api.v2.trakt.tv'
-
     Trakt.configuration.defaults.client(
         id=os.environ.get('CLIENT_ID'),
         secret=os.environ.get('CLIENT_SECRET')

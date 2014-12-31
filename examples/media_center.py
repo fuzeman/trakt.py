@@ -7,8 +7,6 @@ from trakt import Trakt
 
 if __name__ == '__main__':
     # Configure
-    Trakt.base_url = 'http://api.v2.trakt.tv'
-
     Trakt.configuration.defaults.client(
         id=os.environ.get('CLIENT_ID')
     )

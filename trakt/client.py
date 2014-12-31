@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 
 class TraktClient(object):
-    base_url = 'http://api.trakt.tv'
+    base_url = 'https://api.trakt.tv'
 
     __interfaces = None
 
