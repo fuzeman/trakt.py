@@ -1,7 +1,7 @@
-from trakt import Trakt
+from helpers import authenticate
 
 from pprint import pprint
-import hashlib
+from trakt import Trakt
 import logging
 import os
 import time
@@ -10,27 +10,67 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 if __name__ == '__main__':
-    password = hashlib.sha1(os.environ.get('PASSWORD'))
+    # Configure
+    Trakt.base_url = 'http://api.v2.trakt.tv'
 
-    Trakt.configure(
-        api_key=os.environ.get('API_KEY'),
-        credentials=(
-            os.environ.get('USERNAME'),
-            password.hexdigest()
-        )
+    Trakt.configuration.defaults.client(
+        id=os.environ.get('CLIENT_ID'),
+        secret=os.environ.get('CLIENT_SECRET')
     )
 
-    pprint(Trakt['show'].watching(
-        title='Community',
-        year=2009,
+    # Authenticate
+    Trakt.configuration.defaults.oauth(
+        token=authenticate()
+    )
 
-        season=5,
-        episode=13,
+    # movie = {
+    #     'title': 'Guardians of the Galaxy',
+    #     'year': 2014,
+    #     'ids': {
+    #         'trakt': 28,
+    #         'slug': 'guardians-of-the-galaxy-2014',
+    #         'imdb': 'tt2015381',
+    #         'tmdb': 118340
+    #     }
+    # }
 
-        duration=26,
+    show = {
+        "title": "Breaking Bad",
+        "year": 2008,
+        "ids": {
+            "trakt": 1,
+            "slug": "breaking-bad",
+            "tvdb": 81189,
+            "imdb": "tt0903747",
+            "tmdb": 1396,
+            "tvrage": 18164
+        }
+    }
+
+    episode = {
+        "season": 1,
+        "number": 1,
+        "title": "Pilot",
+        "ids": {
+            "trakt": 16,
+            "tvdb": 349232,
+            "imdb": "tt0959621",
+            "tmdb": 62085,
+            "tvrage": 637041
+        }
+    }
+
+    # - Start watching
+    pprint(Trakt['scrobble'].start(
+        show=show,
+        episode=episode,
         progress=45
     ))
 
     time.sleep(10)
 
-    Trakt['show'].cancelwatching()
+    pprint(Trakt['scrobble'].stop(
+        show=show,
+        episode=episode,
+        progress=90
+    ))
