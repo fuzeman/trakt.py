@@ -1,5 +1,3 @@
-from trakt.helpers import setdefault
-
 from requests import Request
 import json
 
