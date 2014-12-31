@@ -54,20 +54,3 @@ if __name__ == '__main__':
         print '\t', 'keys', '\t' * 3, show.keys
         print '\t', 'rating', '\t' * 3, show.rating
         print
-
-        for season_num, season in show.seasons.items():
-
-            print '\t', season
-
-            for episode_num, episode in season.episodes.items():
-                print '\t' * 2, episode
-
-                print '\t' * 3, 'rating', '\t' * 3, episode.rating
-
-                print '\t' * 3, 'is_watched', '\t' * 2, episode.is_watched
-                print '\t' * 3, 'is_collected', '\t', episode.is_collected
-                print '\t' * 3, 'collected_at', '\t', episode.collected_at
-                print '\t' * 3, 'plays', '\t' * 3, episode.plays
-                print
-
-        print
