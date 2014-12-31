@@ -1,3 +1,9 @@
+2.0.0 (2014-12-31)
+------------------
+ - Re-designed to support trakt 2.0 (note: this isn't a drop-in update - interfaces, objects and methods have changed to match the new API)
+ - Support for OAuth and xAuth authentication methods
+ - Simple configuration system
+
 0.7.0 (2014-10-24)
 ------------------
  - "title" and "year" parameters are now optional on scrobble() and watching() methods
