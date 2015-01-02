@@ -66,7 +66,7 @@ class Interface(object):
                 log.warning('unable to parse JSON response: %s', e)
                 return None
         else:
-            log.debug('response returned "%s" content, falling back to raw data')
+            log.debug('response returned "%s" content, falling back to raw data', response.headers['content-type'])
 
             # Fallback to raw content
             data = response.content

@@ -1,3 +1,7 @@
+2.0.2 (2015-01-02)
+------------------
+ - Fixed broken logging message
+
 2.0.1 (2015-01-02)
 ------------------
  - Properly handle responses where trakt.tv returns errors without a json body
