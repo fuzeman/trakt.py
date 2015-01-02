@@ -58,11 +58,18 @@ class Interface(object):
         if response is None:
             return None
 
-        try:
-            data = response.json()
-        except ValueError:
-            log.warning('request failure (content: %s)', response.content)
-            return None
+        if response.headers['content-type'] == 'application/json':
+            # Try parse json response
+            try:
+                data = response.json()
+            except Exception, e:
+                log.warning('unable to parse JSON response: %s', e)
+                return None
+        else:
+            log.debug('response returned "%s" content, falling back to raw data')
+
+            # Fallback to raw content
+            data = response.content
 
         # unknown result - no json data returned
         if data is None:
