@@ -1,3 +1,7 @@
+2.0.3 (2015-01-02)
+------------------
+ - Display request failed messages in log (with error name/desc)
+
 2.0.2 (2015-01-02)
 ------------------
  - Fixed broken logging message
