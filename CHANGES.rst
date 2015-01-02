@@ -1,3 +1,7 @@
+2.0.6 (2015-01-02)
+------------------
+ - Switched to manual interface importing to avoid security restrictions
+
 2.0.5 (2015-01-02)
 ------------------
  - Convert all datetime properties to UTC
