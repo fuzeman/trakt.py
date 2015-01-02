@@ -1,3 +1,7 @@
+2.0.1 (2015-01-02)
+------------------
+ - Properly handle responses where trakt.tv returns errors without a json body
+
 2.0.0 (2014-12-31)
 ------------------
  - Re-designed to support trakt 2.0 (note: this isn't a drop-in update - interfaces, objects and methods have changed to match the new API)
