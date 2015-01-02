@@ -1,3 +1,7 @@
+2.0.4 (2015-01-02)
+------------------
+ - Allow for charset definitions in "Content-Type" response header
+
 2.0.3 (2015-01-02)
 ------------------
  - Display request failed messages in log (with error name/desc)
