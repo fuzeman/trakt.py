@@ -1,3 +1,7 @@
+2.0.5 (2015-01-02)
+------------------
+ - Convert all datetime properties to UTC
+
 2.0.4 (2015-01-02)
 ------------------
  - Allow for charset definitions in "Content-Type" response header
