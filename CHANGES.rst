@@ -1,3 +1,7 @@
+2.0.7 (2015-01-04)
+------------------
+ - Handle a case where [media_mapper] processes an item with an empty "ids" dict
+
 2.0.6 (2015-01-02)
 ------------------
  - Switched to manual interface importing to avoid security restrictions
