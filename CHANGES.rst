@@ -1,3 +1,7 @@
+2.0.8 (2015-01-06)
+------------------
+ - Catch all response errors to avoid issues parsing the returned body
+
 2.0.7 (2015-01-04)
 ------------------
  - Handle a case where [media_mapper] processes an item with an empty "ids" dict
