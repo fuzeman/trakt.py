@@ -14,8 +14,9 @@ if __name__ == '__main__':
         secret=os.environ.get('CLIENT_SECRET')
     )
 
-    Trakt.configuration.defaults.oauth(
-        token=authenticate()
+    Trakt.configuration.defaults.auth(
+        os.environ.get('USERNAME'),
+        token=os.environ.get('TOKEN')
     )
 
     # Fetch movie library (watched, collection, ratings)
@@ -42,11 +43,11 @@ if __name__ == '__main__':
     # Fetch show/episode library (watched, collection, ratings)
     shows = {}
 
-    Trakt['sync/watched'].shows(shows)
-    Trakt['sync/collection'].shows(shows)
+    Trakt['sync/watched'].shows(shows, exceptions=True)
+    Trakt['sync/collection'].shows(shows, exceptions=True)
 
-    Trakt['sync/ratings'].shows(shows)
-    Trakt['sync/ratings'].episodes(shows)
+    Trakt['sync/ratings'].shows(shows, exceptions=True)
+    Trakt['sync/ratings'].episodes(shows, exceptions=True)
 
     for key, show in shows.items():
         print show
