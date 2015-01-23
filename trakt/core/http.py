@@ -40,10 +40,20 @@ class HttpClient(object):
 
         prepared = request.prepare()
 
-        # TODO retrying requests on 502, 503 errors?
+        # retrying requests on errors >= 500 
         try:
-            return self.session.send(prepared)
-        except socket.gaierror, e:
+            for i in range(5):
+                if i > 0 :
+                    log.warn('Retry # %s',i)
+                response = self.session.send(prepared)
+                
+                if response.status_code < 500:
+                    #log.warn('Breaking out of retries with status %s', response.status_code)
+                    break
+                else:
+                    log.warn('Continue retry since status is %s', response.status_code)
+                    time.sleep(5)
+            return response        except socket.gaierror, e:
             code, _ = e
 
             if code != 8:
