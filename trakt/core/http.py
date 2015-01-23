@@ -4,6 +4,7 @@ from trakt.core.request import TraktRequest
 import logging
 import requests
 import socket
+import time
 
 log = logging.getLogger(__name__)
 
