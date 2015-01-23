@@ -72,7 +72,8 @@ class Show(Media):
             'seasons': [
                 season.to_info()
                 for season in self.seasons.values()
-            ]
+            ],
+            'rating': self.rating 
         }
 
     def update(self, info=None, **kwargs):
