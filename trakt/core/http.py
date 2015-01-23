@@ -53,7 +53,8 @@ class HttpClient(object):
                 else:
                     log.warn('Continue retry since status is %s', response.status_code)
                     time.sleep(5)
-            return response        except socket.gaierror, e:
+            return response
+        except socket.gaierror, e:
             code, _ = e
 
             if code != 8:
