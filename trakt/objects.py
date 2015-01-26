@@ -81,6 +81,7 @@ class Show(Media):
 
         if self.rating:
             result['rating'] = self.rating.value
+            result['rated_at'] = self.rating.timestamp
 
         return result
 
@@ -120,6 +121,7 @@ class Season(Media):
 
         if self.rating:
             result['rating'] = self.rating.value
+            result['rated_at'] = self.rating.timestamp
 
         return result
 
@@ -157,6 +159,7 @@ class Episode(Video):
 
         if self.rating:
             result['rating'] = self.rating.value
+            result['rated_at'] = self.rating.timestamp
 
         return result
 
@@ -197,6 +200,7 @@ class Movie(Video):
 
         if self.rating:
             result['rating'] = self.rating.value
+            result['rated_at'] = self.rating.timestamp
 
         return result
 
