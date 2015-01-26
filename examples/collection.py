@@ -14,9 +14,13 @@ if __name__ == '__main__':
         secret=os.environ.get('CLIENT_SECRET')
     )
 
-    Trakt.configuration.defaults.auth(
-        os.environ.get('USERNAME'),
-        token=os.environ.get('TOKEN')
+    Trakt.configuration.defaults.http(
+        retry=True
+    )
+
+    # Authenticate
+    Trakt.configuration.defaults.oauth(
+        token=authenticate()
     )
 
     # Fetch movie library (watched, collection, ratings)

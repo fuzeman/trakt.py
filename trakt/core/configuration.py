@@ -21,6 +21,9 @@ class ConfigurationManager(object):
     def client(self, id=None, secret=None):
         return Configuration(self).client(id, secret)
 
+    def http(self, retry=False, max_retries=3):
+        return Configuration(self).http(retry, max_retries)
+
     def oauth(self, token=None):
         return Configuration(self).oauth(token)
 
@@ -64,6 +67,10 @@ class Configuration(object):
         self.data['client.secret'] = secret
 
         return self
+
+    def http(self, retry=False, max_retries=3):
+        self.data['http.retry'] = retry
+        self.data['http.max_retries'] = max_retries
 
     def oauth(self, token=None):
         self.data['oauth.token'] = token
