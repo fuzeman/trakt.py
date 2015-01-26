@@ -72,6 +72,8 @@ class Configuration(object):
         self.data['http.retry'] = retry
         self.data['http.max_retries'] = max_retries
 
+        return self
+
     def oauth(self, token=None):
         self.data['oauth.token'] = token
 
