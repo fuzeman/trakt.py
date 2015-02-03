@@ -1,6 +1,7 @@
 from trakt.core.context_stack import ContextStack
 from trakt.core.request import TraktRequest
 
+from requests.adapters import HTTPAdapter
 import logging
 import requests
 import socket
@@ -10,11 +11,18 @@ log = logging.getLogger(__name__)
 
 
 class HttpClient(object):
-    def __init__(self, client):
+    def __init__(self, client, adapter_kwargs=None):
         self.client = client
 
+        if adapter_kwargs is None:
+            adapter_kwargs = {}
+
+        # Build client
         self.configuration = ContextStack()
+
         self.session = requests.Session()
+        self.session.mount('http://', HTTPAdapter(**adapter_kwargs))
+        self.session.mount('https://', HTTPAdapter(**adapter_kwargs))
 
     def configure(self, path=None):
         self.configuration.push(base_path=path)
