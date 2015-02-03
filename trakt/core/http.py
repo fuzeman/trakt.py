@@ -1,4 +1,4 @@
-from trakt.core.context import ContextStack
+from trakt.core.context_stack import ContextStack
 from trakt.core.request import TraktRequest
 
 import logging
