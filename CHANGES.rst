@@ -1,3 +1,17 @@
+2.1.0 (2015-02-05)
+------------------
+**Changes**
+ - Added "exceptions" and "parse" parameter to `Interface.get_data()`
+ - Added additional error messages (502, 504, 520)
+ - Renamed media object `to_info()` method to `to_identifier()`
+ - Added new `to_dict()` method which returns a dictionary representation of the media object
+ - Request retrying (on 5xx errors) can now be enabled with `Trakt.configuration.http(retry=True)`
+ - requests/urllib3 now retries requests on connection errors (default: 3 retries)
+
+**Fixed**
+ - Thread synchronization issue with `trakt.core.configuration`
+ - [/sync] last_activities() used an incorrect path
+
 2.0.8 (2015-01-06)
 ------------------
  - Catch all response errors to avoid issues parsing the returned body
