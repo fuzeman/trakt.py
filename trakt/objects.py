@@ -1,4 +1,4 @@
-from trakt.core.helpers import to_datetime
+from trakt.core.helpers import from_iso8601, to_iso8601
 from trakt.helpers import update_attributes
 
 
@@ -39,7 +39,7 @@ class Video(Media):
             'plays'
         ])
 
-        self.collected_at = to_datetime(info.get('collected_at'))
+        self.collected_at = from_iso8601(info.get('collected_at'))
 
         # Set flags
         if is_watched is not None:
@@ -81,7 +81,7 @@ class Show(Media):
 
         if self.rating:
             result['rating'] = self.rating.value
-            result['rated_at'] = self.rating.timestamp
+            result['rated_at'] = to_iso8601(self.rating.timestamp)
 
         return result
 
@@ -121,7 +121,7 @@ class Season(Media):
 
         if self.rating:
             result['rating'] = self.rating.value
-            result['rated_at'] = self.rating.timestamp
+            result['rated_at'] = to_iso8601(self.rating.timestamp)
 
         return result
 
@@ -153,13 +153,13 @@ class Episode(Video):
             'watched': 1 if self.is_watched else 0,
             'collected': 1 if self.is_collected else 0,
             'plays': self.plays,
-            'collected_at': self.collected_at,
+            'collected_at': to_iso8601(self.collected_at),
             'ids': {}
         })
 
         if self.rating:
             result['rating'] = self.rating.value
-            result['rated_at'] = self.rating.timestamp
+            result['rated_at'] = to_iso8601(self.rating.timestamp)
 
         return result
 
@@ -195,12 +195,12 @@ class Movie(Video):
             'watched': 1 if self.is_watched else 0,
             'collected': 1 if self.is_collected else 0,
             'plays': self.plays,
-            'collected_at': self.collected_at
+            'collected_at': to_iso8601(self.collected_at)
         })
 
         if self.rating:
             result['rating'] = self.rating.value
-            result['rated_at'] = self.rating.timestamp
+            result['rated_at'] = to_iso8601(self.rating.timestamp)
 
         return result
 
@@ -232,7 +232,7 @@ class Rating(object):
 
         r = cls()
         r.value = info.get('rating')
-        r.timestamp = to_datetime(info.get('rated_at'))
+        r.timestamp = from_iso8601(info.get('rated_at'))
         return r
 
     def __repr__(self):
