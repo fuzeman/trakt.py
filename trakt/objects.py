@@ -1,4 +1,4 @@
-from trakt.core.helpers import from_iso8601, to_iso8601
+from trakt.core.helpers import from_iso8601, to_iso8601, deprecated
 from trakt.helpers import update_attributes
 
 
@@ -71,11 +71,15 @@ class Show(Media):
             'year': self.year
         }
 
+    @deprecated('Show.to_info() has been moved to Show.to_dict()')
     def to_info(self):
+        return self.to_dict()
+
+    def to_dict(self):
         result = self.to_identifier()
 
         result['seasons'] = [
-            season.to_info()
+            season.to_dict()
             for season in self.seasons.values()
         ]
 
@@ -111,12 +115,16 @@ class Season(Media):
         return {
             'number': self.pk,
             'episodes': [
-                episode.to_info()
+                episode.to_dict()
                 for episode in self.episodes.values()
             ]
         }
 
+    @deprecated('Season.to_info() has been moved to Season.to_dict()')
     def to_info(self):
+        return self.to_dict()
+
+    def to_dict(self):
         result = self.to_identifier()
 
         if self.rating:
@@ -145,7 +153,11 @@ class Episode(Video):
             'number': self.pk
         }
 
+    @deprecated('Episode.to_info() has been moved to Episode.to_dict()')
     def to_info(self):
+        return self.to_dict()
+
+    def to_dict(self):
         result = self.to_identifier()
 
         # add ids as well since trakt adds ids to the episodes as well
@@ -188,7 +200,11 @@ class Movie(Video):
             'year': self.year
         }
 
+    @deprecated('Movie.to_info() has been moved to Movie.to_dict()')
     def to_info(self):
+        return self.to_dict()
+
+    def to_dict(self):
         result = self.to_identifier()
 
         result.update({
