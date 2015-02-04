@@ -1,16 +1,14 @@
+from trakt.core.context_collection import ContextCollection
+
+
 class ConfigurationManager(object):
     def __init__(self):
-        self.stack = [
-            Configuration(self)
-        ]
+        self.defaults = Configuration(self)
+        self.stack = ContextCollection([self.defaults])
 
     @property
     def current(self):
         return self.stack[-1]
-
-    @property
-    def defaults(self):
-        return self.stack[0]
 
     def app(self, name=None, version=None, date=None):
         return Configuration(self).app(name, version, date)
@@ -20,6 +18,9 @@ class ConfigurationManager(object):
 
     def client(self, id=None, secret=None):
         return Configuration(self).client(id, secret)
+
+    def http(self, retry=False, max_retries=3):
+        return Configuration(self).http(retry, max_retries)
 
     def oauth(self, token=None):
         return Configuration(self).oauth(token)
@@ -65,6 +66,12 @@ class Configuration(object):
 
         return self
 
+    def http(self, retry=False, max_retries=3):
+        self.data['http.retry'] = retry
+        self.data['http.max_retries'] = max_retries
+
+        return self
+
     def oauth(self, token=None):
         self.data['oauth.token'] = token
 
@@ -79,7 +86,11 @@ class Configuration(object):
     def __exit__(self, exc_type, exc_val, exc_tb):
         item = self.manager.stack.pop()
 
-        assert item == self
+        assert item == self, 'Removed %r from stack, expecting %r' % (item, self)
+
+        # Clear old context lists
+        if len(self.manager.stack) == 1:
+            self.manager.stack.clear()
 
     def __getitem__(self, key):
         return self.data[key]

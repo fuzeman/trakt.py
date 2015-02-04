@@ -1,6 +1,6 @@
 from trakt import __version__
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='trakt.py',
@@ -12,7 +12,10 @@ setup(
     author_email='me@dgardiner.net',
 
     description='Python interface for the trakt.tv API',
-    packages=['trakt'],
+    packages=find_packages(exclude=[
+        'examples',
+        'tests'
+    ]),
     platforms='any',
 
     install_requires=[
