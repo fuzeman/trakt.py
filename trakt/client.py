@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 
 
 class TraktClient(object):
-    base_url = 'https://api.trakt.tv'
+    base_url = 'https://api-v2launch.trakt.tv'
     version = __version__
 
     __interfaces = None
