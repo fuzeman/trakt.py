@@ -7,6 +7,10 @@ trakt.py
 .. image:: https://coveralls.io/repos/fuzeman/trakt.py/badge.png?branch=master
     :target: https://coveralls.io/r/fuzeman/trakt.py?branch=master
 
+.. image:: https://pypip.in/version/trakt.py/badge.svg?style=flat
+    :target: https://pypi.python.org/pypi/trakt.py/
+    :alt: Latest Version
+
 Python interface for the trakt.tv API
 
 Examples
