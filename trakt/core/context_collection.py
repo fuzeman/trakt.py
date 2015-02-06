@@ -2,6 +2,7 @@ from trakt.core.helpers import synchronized
 
 from threading import RLock
 from six.moves import _thread as thread
+from six.moves import xrange
 import logging
 
 log = logging.getLogger(__name__)
