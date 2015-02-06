@@ -1,3 +1,14 @@
+2.1.1 (2015-02-06)
+------------------
+**Changes**
+ - Updated to use the new v2 API endpoint (api-v2launch.trakt.tv)
+ - Episode and Movie :code:`to_dict()` method now always returns "plays" as an integer
+ - Added "http.retry_sleep" and "http.timeout" configuration parameters
+ - Setup travis/coveralls services
+
+**Fixed**
+ - Python 3.x compatibility issues
+
 2.1.0 (2015-02-05)
 ------------------
 **Changes**
