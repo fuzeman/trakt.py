@@ -1,5 +1,12 @@
 trakt.py
 ========
+
+.. image:: https://travis-ci.org/fuzeman/trakt.py.svg?branch=master
+    :target: https://travis-ci.org/fuzeman/trakt.py
+
+.. image:: https://coveralls.io/repos/fuzeman/trakt.py/badge.png?branch=master
+    :target: https://coveralls.io/r/fuzeman/trakt.py?branch=master
+
 Python interface for the trakt.tv API
 
 Examples
