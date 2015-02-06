@@ -4,7 +4,7 @@ trakt.py
 .. image:: https://travis-ci.org/fuzeman/trakt.py.svg?branch=master
     :target: https://travis-ci.org/fuzeman/trakt.py
 
-.. image:: https://coveralls.io/repos/fuzeman/trakt.py/badge.png?branch=master
+.. image:: https://coveralls.io/repos/fuzeman/trakt.py/badge.svg?branch=master
     :target: https://coveralls.io/r/fuzeman/trakt.py?branch=master
 
 .. image:: https://pypip.in/version/trakt.py/badge.svg?style=flat
