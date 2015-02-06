@@ -20,7 +20,8 @@ setup(
 
     install_requires=[
         'arrow',
-        'requests>=2.4.0'
+        'requests>=2.4.0',
+        'six'
     ],
 
     classifiers=[
