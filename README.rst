@@ -23,14 +23,9 @@ Examples
     from trakt import Trakt
 
 
-    Trakt.configure(
-        api_key='<trakt-api-key>',
-
-        # `credentials` is optional (only required when updating your profile)
-        credentials=(
-            <username>,
-            <password>
-        )
+    Trakt.configuration.defaults.client(
+        id='<client-id>',
+        secret='<client-secret>'
     )
 
 
@@ -38,14 +33,31 @@ Examples
 
 .. code-block:: python
 
-    Trakt['show'].scrobble(
-        title='Community',
-        year=2009,
+    show = {
+        'title': 'Community',
+        'year': 2009
+    }
 
-        season=5,
-        episode=13,
+    episode = {
+        'season': 5,
+        'number': 13
+    }
 
-        duration=26,
+    # Send "start" event
+    Trakt['scrobble'].start(
+        show=show,
+        episode=episode,
+
+        progress=1
+    )
+
+    # [...] (watching episode)
+
+    # Send "stop" event (scrobble)
+    Trakt['scrobble'].stop(
+        show=show,
+        episode=episode,
+
         progress=93
     )
 
@@ -53,20 +65,25 @@ Examples
 
 .. code-block:: python
 
-    Trakt['movie'].library([
-        {
-            "imdb_id": "tt0114746",
-            "title": "Twelve Monkeys",
-            "year": 1995
-        }
-    ])
+    Trakt['sync/collection'].add({
+        'movies': [
+            {
+                'title': "Twelve Monkeys",
+                'year': 1995,
+
+                'ids': {
+                    'imdb': "tt0114746"
+                }
+            }
+        ]
+    })
 
 **Retrieve shows that a user has watched**
 
 .. code-block:: python
 
     # `watched` = {<key>: <Show>} dictionary
-    watched = Trakt['user/library/shows'].watched(<username>)
+    watched = Trakt['sync/watched'].movies()
 
     for key, show in watched.items():
         print '%s (%s)' % (show.title, show.year)
