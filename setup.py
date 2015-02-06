@@ -19,7 +19,8 @@ setup(
     platforms='any',
 
     install_requires=[
-        'requests'
+        'arrow',
+        'requests>=2.4.0'
     ],
 
     classifiers=[
