@@ -9,4 +9,4 @@ def test_ids_empty():
         'ids': {}
     }
 
-    assert mapper.process('shows', item) is None
+    assert mapper.process(item, 'shows') is None

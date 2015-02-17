@@ -27,7 +27,10 @@ class Video(Media):
         super(Video, self).__init__(keys)
 
         self.collected_at = None
+        self.paused_at = None
+
         self.plays = None
+        self.progress = None
 
         self.is_watched = None
         self.is_collected = None
@@ -36,10 +39,15 @@ class Video(Media):
         super(Video, self).update(info)
 
         update_attributes(self, info, [
-            'plays'
+            'plays',
+            'progress'
         ])
 
-        self.collected_at = from_iso8601(info.get('collected_at'))
+        if 'collected_at' in info:
+            self.collected_at = from_iso8601(info.get('collected_at'))
+
+        if 'paused_at' in info:
+            self.paused_at = from_iso8601(info.get('paused_at'))
 
         # Set flags
         if is_watched is not None:
