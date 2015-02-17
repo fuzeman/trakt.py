@@ -1,6 +1,7 @@
 from helpers import authenticate
 
 from trakt import Trakt
+from trakt.objects import Movie, Show
 import logging
 import os
 
@@ -23,13 +24,29 @@ if __name__ == '__main__':
         token=authenticate()
     )
 
+    # Fetch playback
+    playback = Trakt['sync'].playback(exceptions=True)
+
+    for key, item in playback.items():
+        print item
+
+        if type(item) is Movie:
+            print '\tprogress: %r' % item.progress
+            print '\tpaused_at: %r' % item.paused_at
+        elif type(item) is Show:
+            for (sk, ek), episode in item.episodes():
+                print '\t', episode
+
+                print '\t\tprogress: %r' % episode.progress
+                print '\t\tpaused_at: %r' % episode.paused_at
+
     # Fetch movie library (watched, collection, ratings)
     movies = {}
 
-    # Trakt['sync/watched'].movies(movies)
-    # Trakt['sync/collection'].movies(movies)
-    #
-    # Trakt['sync/ratings'].movies(movies)
+    Trakt['sync/watched'].movies(movies, exceptions=True)
+    Trakt['sync/collection'].movies(movies, exceptions=True)
+
+    Trakt['sync/ratings'].movies(movies, exceptions=True)
 
     for key, movie in movies.items():
         print movie
