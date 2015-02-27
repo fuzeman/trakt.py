@@ -1,4 +1,5 @@
 from trakt.core.configuration import ConfigurationManager
+from tests.core.semaphore import Semaphore
 
 from threading import Thread
 import threading
@@ -8,7 +9,7 @@ import uuid
 
 def test_threaded():
     id = uuid.uuid4()
-    lock = threading.Semaphore(value=0)
+    lock = Semaphore(value=0)
 
     configuration = ConfigurationManager()
     results = {}
@@ -33,10 +34,8 @@ def test_threaded():
     # Wait for threads to properly startup
     time.sleep(1)
 
-    with lock._Semaphore__cond:
-        # Wake up 2 threads
-        lock._Semaphore__value = 2
-        lock._Semaphore__cond.notify_all()
+    # Wake up threads
+    lock.release_multi(2)
 
     # Wait for threads to finish
     one.join()
