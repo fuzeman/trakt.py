@@ -55,6 +55,7 @@ if __name__ == '__main__':
         print '\t', 'rating', '\t' * 3, movie.rating
 
         print '\t', 'is_watched', '\t' * 2, movie.is_watched
+        print '\t', 'last_watched_at', '\t', movie.last_watched_at
         print '\t', 'is_collected', '\t', movie.is_collected
         print '\t', 'collected_at', '\t', movie.collected_at
         print '\t', 'plays', '\t' * 3, movie.plays
