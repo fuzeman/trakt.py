@@ -55,8 +55,8 @@ if __name__ == '__main__':
         print '\t', 'plays', '\t' * 3, movie.plays
 
         print
-		
-	    # Fetch playback for shows
+
+    # Fetch playback for shows
     playback = Trakt['sync/playback'].shows(exceptions=True)
 
     for key, item in playback.items():
