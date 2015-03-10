@@ -24,8 +24,8 @@ if __name__ == '__main__':
         token=authenticate()
     )
 
-    # Fetch playback
-    playback = Trakt['sync'].playback(exceptions=True)
+    # Fetch playback for movies
+    playback = Trakt['sync/playback'].movies(exceptions=True)
 
     for key, item in playback.items():
         print item
@@ -33,12 +33,6 @@ if __name__ == '__main__':
         if type(item) is Movie:
             print '\tprogress: %r' % item.progress
             print '\tpaused_at: %r' % item.paused_at
-        elif type(item) is Show:
-            for (sk, ek), episode in item.episodes():
-                print '\t', episode
-
-                print '\t\tprogress: %r' % episode.progress
-                print '\t\tpaused_at: %r' % episode.paused_at
 
     # Fetch movie library (watched, collection, ratings)
     movies = {}
@@ -61,6 +55,19 @@ if __name__ == '__main__':
         print '\t', 'plays', '\t' * 3, movie.plays
 
         print
+		
+	    # Fetch playback for shows
+    playback = Trakt['sync/playback'].shows(exceptions=True)
+
+    for key, item in playback.items():
+        print item
+
+        if type(item) is Show:
+            for (sk, ek), episode in item.episodes():
+                print '\t', episode
+
+                print '\t\tprogress: %r' % episode.progress
+                print '\t\tpaused_at: %r' % episode.paused_at
 
     # Fetch show/episode library (watched, collection, ratings)
     shows = {}

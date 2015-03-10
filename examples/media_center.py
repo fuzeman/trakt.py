@@ -23,3 +23,23 @@ if __name__ == '__main__':
 
     with Trakt.configuration.auth(username, token):
         print Trakt['sync/collection'].movies()
+
+    with Trakt.configuration.auth(username, token):
+            with Trakt.configuration.http(retry=True):
+                print Trakt['movies'].get('tron-legacy-2010') #use only traktId, trakt slug or imdbId
+
+    with Trakt.configuration.auth(username, token):
+            with Trakt.configuration.http(retry=True):
+                print Trakt['shows'].get(1390) #use only traktId, trakt slug or imdbId
+
+    with Trakt.configuration.auth(username, token):
+            with Trakt.configuration.http(retry=True):
+                print Trakt['shows'].seasons('tt0944947')
+
+    with Trakt.configuration.auth(username, token):
+            with Trakt.configuration.http(retry=True):
+                print Trakt['shows'].season('game-of-thrones', 1)
+
+    with Trakt.configuration.auth(username, token):
+            with Trakt.configuration.http(retry=True):
+                print Trakt['shows'].episode('game-of-thrones', 1, 1)
