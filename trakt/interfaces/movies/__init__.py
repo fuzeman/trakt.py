@@ -1,18 +1,16 @@
-from trakt.interfaces.base import Interface, authenticated, application
+from trakt.interfaces.base import Interface
+from trakt.mapper.summary import SummaryMapper
 
-__all__ = [
-    'MoviesInterface'
-]
 
 class MoviesInterface(Interface):
     path = 'movies'
 
-    @application
-    @authenticated
     def get(self, id):
         response = self.http.get(
-            path=id
+            str(id)
         )
 
-        return self.get_data(response)
-
+        # Parse response
+        return SummaryMapper.movie(
+            self.get_data(response)
+        )

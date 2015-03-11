@@ -1,45 +1,43 @@
 from trakt.interfaces.base import Interface, authenticated, application
+from trakt.mapper.summary import SummaryMapper
 
-__all__ = [
-    'ShowsInterface'
-]
 
 class ShowsInterface(Interface):
     path = 'shows'
 
-
-    @application
-    @authenticated
     def get(self, id):
         response = self.http.get(
-            path=str(id)
+            str(id)
         )
 
-        return self.get_data(response)
+        return SummaryMapper.show(
+            self.get_data(response)
+        )
 
-    @application
-    @authenticated
     def seasons(self, id):
-        response = self.http.get(
-            path=str(id)+'/seasons'
+        response = self.http.get(str(id), [
+            'seasons'
+        ])
+
+        return SummaryMapper.seasons(
+            self.get_data(response)
         )
 
-        return self.get_data(response)
-
-    @application
-    @authenticated
     def season(self, id, season):
-        response = self.http.get(
-            path=str(id)+'/seasons/'+str(season)
+        response = self.http.get(str(id), [
+            'seasons', str(season)
+        ])
+
+        return SummaryMapper.episodes(
+            self.get_data(response)
         )
 
-        return self.get_data(response)
-
-    @application
-    @authenticated
     def episode(self, id, season, episode):
-        response = self.http.get(
-            path=str(id)+'/seasons/'+str(season)+'/episodes/'+str(episode)
-        )
+        response = self.http.get(str(id), [
+            'seasons', str(season),
+            'episodes', str(episode)
+        ])
 
-        return self.get_data(response)
+        return SummaryMapper.episode(
+            self.get_data(response)
+        )
