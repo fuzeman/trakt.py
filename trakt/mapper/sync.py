@@ -69,7 +69,7 @@ class SyncMapper(Mapper):
     @staticmethod
     def show_season(show, pk, item=None, **kwargs):
         if pk not in show.seasons:
-            show.seasons[pk] = Season.create(pk, item, **kwargs)
+            show.seasons[pk] = Season.create([pk], item, **kwargs)
         else:
             show.seasons[pk].update(item, **kwargs)
 
@@ -78,7 +78,7 @@ class SyncMapper(Mapper):
     @staticmethod
     def show_episode(season, pk, item=None, **kwargs):
         if pk not in season.episodes:
-            season.episodes[pk] = Episode.create(pk, item, **kwargs)
+            season.episodes[pk] = Episode.create([(season.pk, pk)], item, **kwargs)
         else:
             season.episodes[pk].update(item, **kwargs)
 
