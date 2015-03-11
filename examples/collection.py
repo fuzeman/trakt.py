@@ -57,7 +57,7 @@ if __name__ == '__main__':
         print
 
     # Fetch playback for shows
-    playback = Trakt['sync/playback'].shows(exceptions=True)
+    playback = Trakt['sync/playback'].episodes(exceptions=True)
 
     for key, item in playback.items():
         print item
