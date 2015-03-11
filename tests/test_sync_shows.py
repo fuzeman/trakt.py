@@ -38,7 +38,7 @@ def test_playback():
         'paused_at': '2015-03-09T00:10:15.000-00:00',
 
         'number': 3,
-        'title': u'Chuck Versus the Tango',
+        'title': 'Chuck Versus the Tango',
 
         'ids': {
             'tvdb': '336271',
@@ -157,7 +157,7 @@ def test_ratings():
                 'paused_at': None,
 
                 'number': 1,
-                'title': u'Chuck Versus the Intersect',
+                'title': 'Chuck Versus the Intersect',
 
                 'ids': {
                     'tvdb': '332179',
