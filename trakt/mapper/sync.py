@@ -75,17 +75,15 @@ class SyncMapper(Mapper):
 
         return show.seasons[pk]
 
-    @staticmethod
-    def show_episode(season, pk, item=None, **kwargs):
-        if pk not in season.episodes:
-            season.episodes[pk] = Episode.create([(season.pk, pk)], item, **kwargs)
-        else:
-            season.episodes[pk].update(item, **kwargs)
+    @classmethod
+    def show_episode(cls, season, episode_num, item=None, **kwargs):
+        episode = cls.map_item(season.episodes, item, 'episode', key=episode_num, **kwargs)
 
+        # Update with root info
         if item and 'episode' in item:
-            season.episodes[pk].update(item['episode'])
+            episode.update(item)
 
-        return season.episodes[pk]
+        return episode
 
     #
     # Episode
@@ -135,13 +133,16 @@ class SyncMapper(Mapper):
         return store
 
     @classmethod
-    def map_item(cls, store, item, media, **kwargs):
-        if media in item:
+    def map_item(cls, store, item, media, key=None, **kwargs):
+        if item and media in item:
             i_data = item[media]
         else:
             i_data = item
 
         pk, keys = cls.get_ids(media, i_data)
+
+        if key is not None:
+            pk = key
 
         if pk is None:
             # Item has no keys
