@@ -163,8 +163,10 @@ class Episode(Video):
         self.title = None
 
     def to_identifier(self):
+        _, number = self.pk
+
         return {
-            'number': self.pk
+            'number': number
         }
 
     @deprecated('Episode.to_info() has been moved to Episode.to_dict()')
@@ -174,8 +176,9 @@ class Episode(Video):
     def to_dict(self):
         result = self.to_identifier()
 
-        # add ids as well since trakt adds ids to the episodes as well
         result.update({
+            'title': self.title,
+
             'watched': 1 if self.is_watched else 0,
             'collected': 1 if self.is_collected else 0,
 
@@ -186,7 +189,9 @@ class Episode(Video):
             'collected_at': to_iso8601(self.collected_at),
             'paused_at': to_iso8601(self.paused_at),
 
-            'ids': {}
+            'ids': dict([
+                (key, value) for (key, value) in self.keys[1:]  # NOTE: keys[0] is the (<season>, <episode>) identifier
+            ])
         })
 
         if self.rating:
