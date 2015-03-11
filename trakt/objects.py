@@ -118,8 +118,8 @@ class Show(Media):
 
 
 class Season(Media):
-    def __init__(self, number):
-        super(Season, self).__init__([number])
+    def __init__(self, keys=None):
+        super(Season, self).__init__(keys)
 
         self.episodes = {}
 
@@ -146,8 +146,8 @@ class Season(Media):
         return result
 
     @classmethod
-    def create(cls, number, info=None, **kwargs):
-        season = cls(number)
+    def create(cls, keys, info=None, **kwargs):
+        season = cls(keys)
         season.update(info, **kwargs)
 
         return season
@@ -157,8 +157,10 @@ class Season(Media):
 
 
 class Episode(Video):
-    def __init__(self, number):
-        super(Episode, self).__init__([number])
+    def __init__(self, keys=None):
+        super(Episode, self).__init__(keys)
+
+        self.title = None
 
     def to_identifier(self):
         return {
@@ -193,15 +195,23 @@ class Episode(Video):
 
         return result
 
+    def update(self, info=None, **kwargs):
+        super(Episode, self).update(info, **kwargs)
+
+        update_attributes(self, info, ['title'])
+
     @classmethod
-    def create(cls, pk, info=None, **kwargs):
-        episode = cls(pk)
+    def create(cls, keys, info=None, **kwargs):
+        episode = cls(keys)
         episode.update(info, **kwargs)
 
         return episode
 
     def __repr__(self):
-        return '<Episode E%02d>' % self.pk
+        if self.title:
+            return '<Episode S%02dE%02d - %r>' % (self.pk[0], self.pk[1], self.title)
+
+        return '<Episode S%02dE%02d>' % self.pk
 
 
 class Movie(Video):
@@ -246,7 +256,7 @@ class Movie(Video):
     def update(self, info=None, **kwargs):
         super(Movie, self).update(info, **kwargs)
 
-        update_attributes(self, info['movie'], ['title', 'year'])
+        update_attributes(self, info, ['title', 'year'])
 
     @classmethod
     def create(cls, keys, info, **kwargs):

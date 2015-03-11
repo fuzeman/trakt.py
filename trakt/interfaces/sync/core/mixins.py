@@ -1,4 +1,5 @@
 from trakt.interfaces.base import authenticated, Interface
+from trakt.mapper.sync import SyncMapper
 
 
 class Get(Interface):
@@ -20,7 +21,7 @@ class Get(Interface):
         if type(items) is not list:
             return None
 
-        return self.media_mapper(
+        return SyncMapper.process(
             store, items, media,
             **self.flags
         )
