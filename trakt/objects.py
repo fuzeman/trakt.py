@@ -139,6 +139,12 @@ class Season(Media):
     def to_dict(self):
         result = self.to_identifier()
 
+        result.update({
+            'ids': dict([
+                (key, value) for (key, value) in self.keys[1:]  # NOTE: keys[0] is the season identifier
+            ])
+        })
+
         if self.rating:
             result['rating'] = self.rating.value
             result['rated_at'] = to_iso8601(self.rating.timestamp)

@@ -33,9 +33,7 @@ def test_playback():
     assert episode.progress == 4.99
 
     # Validate `Episode.to_dict()`
-    data = episode.to_dict()
-
-    assert data == {
+    assert episode.to_dict() == {
         'progress': 4.99,
         'paused_at': '2015-03-09T00:10:15.000-00:00',
 
@@ -107,6 +105,12 @@ def test_ratings():
     )
 
     responses.add(
+        responses.GET, 'http://mock/sync/ratings/seasons',
+        body=read('fixtures/sync/ratings/seasons.json'), status=200,
+        content_type='application/json'
+    )
+
+    responses.add(
         responses.GET, 'http://mock/sync/ratings/episodes',
         body=read('fixtures/sync/ratings/episodes.json'), status=200,
         content_type='application/json'
@@ -117,6 +121,7 @@ def test_ratings():
     ratings = {}
 
     Trakt['sync/ratings'].shows(ratings)
+    Trakt['sync/ratings'].seasons(ratings)
     Trakt['sync/ratings'].episodes(ratings)
 
     assert len(ratings) == 6
@@ -130,8 +135,60 @@ def test_ratings():
     assert show.rating.value == 10
     assert show.rating.timestamp == datetime(2014, 10, 19, 23, 2, 23)
 
+    # Validate `Season`
+    season = show.seasons[1]
+
+    assert season.keys == [
+        1,
+        ('tvdb', '27985'),
+        ('tmdb', '3650'),
+        ('trakt', '3993')
+    ]
+
+    assert season.rating.value == 10
+    assert season.rating.timestamp == datetime(2015, 3, 11, 23, 29, 35)
+
+    # Validate `Season.to_dict()`
+    assert season.to_dict() == {
+        'number': 1,
+        'episodes': [
+            {
+                'progress': None,
+                'paused_at': None,
+
+                'number': 1,
+                'title': u'Chuck Versus the Intersect',
+
+                'ids': {
+                    'tvdb': '332179',
+                    'tmdb': '63425',
+                    'tvrage': '579282',
+                    'trakt': '74041'
+                },
+
+                'last_watched_at': None,
+                'watched': 0,
+                'plays': 0,
+
+                'collected_at': None,
+                'collected': 0,
+
+                'rating': 10,
+                'rated_at': '2014-10-19T23:02:24.000-00:00'
+            }
+        ],
+        'ids': {
+            'tvdb': '27985',
+            'tmdb': '3650',
+            'trakt': '3993'
+        },
+
+        'rating': 10,
+        'rated_at': '2015-03-11T23:29:35.000-00:00'
+    }
+
     # Validate `Episode`
-    episode = show.seasons[1].episodes[1]
+    episode = season.episodes[1]
 
     assert episode.rating.value == 10
     assert episode.rating.timestamp == datetime(2014, 10, 19, 23, 2, 24)

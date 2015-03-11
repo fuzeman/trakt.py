@@ -87,6 +87,32 @@ class SyncMapper(Mapper):
         return episode
 
     #
+    # Season
+    #
+
+    @classmethod
+    def seasons(cls, store, items, **kwargs):
+        return cls.map_items(store, items, cls.season, **kwargs)
+
+    @classmethod
+    def season(cls, store, item, **kwargs):
+        i_season = item.get('season', {})
+
+        season_num = i_season.get('number')
+
+        # Build `show`
+        show = cls.show(store, item['show'])
+
+        if show is None:
+            # Unable to create show
+            return None
+
+        # Build `season`
+        season = cls.show_season(show, season_num, item, **kwargs)
+
+        return season
+
+    #
     # Episode
     #
 
