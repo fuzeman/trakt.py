@@ -32,6 +32,31 @@ def test_playback():
     assert episode.paused_at == datetime(2015, 3, 9, 0, 10, 15)
     assert episode.progress == 4.99
 
+    # Validate `Episode.to_dict()`
+    data = episode.to_dict()
+
+    assert data == {
+        'progress': 4.99,
+        'paused_at': '2015-03-09T00:10:15.000-00:00',
+
+        'number': 3,
+        'title': u'Chuck Versus the Tango',
+
+        'ids': {
+            'tvdb': '336271',
+            'tmdb': '63434',
+            'tvrage': '595113',
+            'trakt': '74043'
+        },
+
+        'last_watched_at': None,
+        'watched': 0,
+        'plays': 0,
+
+        'collected_at': None,
+        'collected': 0,
+    }
+
 
 @responses.activate
 def test_collection():
