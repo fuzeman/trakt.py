@@ -1,0 +1,439 @@
+[
+  {
+    "plays": 12,
+    "last_watched_at": "2015-03-10T05:21:51.000Z",
+    "show": {
+      "title": "Chuck",
+      "year": 2007,
+      "ids": {
+        "trakt": 1395,
+        "slug": "chuck",
+        "tvdb": 80348,
+        "imdb": "tt0934814",
+        "tmdb": 1404,
+        "tvrage": 15614
+      }
+    },
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "plays": 1,
+            "last_watched_at": "2015-01-27T23:38:45.000Z"
+          },
+          {
+            "number": 2,
+            "plays": 9,
+            "last_watched_at": "2015-03-10T05:21:51.000Z"
+          },
+          {
+            "number": 3,
+            "plays": 1,
+            "last_watched_at": "2015-03-09T00:09:19.000Z"
+          },
+          {
+            "number": 4,
+            "plays": 1,
+            "last_watched_at": "2015-01-29T11:29:50.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "plays": 3,
+    "last_watched_at": "2015-02-28T01:16:26.000Z",
+    "show": {
+      "title": "30 Rock",
+      "year": 2006,
+      "ids": {
+        "trakt": 4584,
+        "slug": "30-rock",
+        "tvdb": 79488,
+        "imdb": "tt0496424",
+        "tmdb": 4608,
+        "tvrage": 11215
+      }
+    },
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "plays": 1,
+            "last_watched_at": "2015-01-26T05:37:03.000Z"
+          },
+          {
+            "number": 2,
+            "plays": 1,
+            "last_watched_at": "2015-02-24T00:50:41.000Z"
+          },
+          {
+            "number": 3,
+            "plays": 1,
+            "last_watched_at": "2015-02-28T01:16:26.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "plays": 2,
+    "last_watched_at": "2015-02-16T03:14:50.000Z",
+    "show": {
+      "title": "True Detective",
+      "year": 2014,
+      "ids": {
+        "trakt": 46375,
+        "slug": "true-detective",
+        "tvdb": 270633,
+        "imdb": "tt2356777",
+        "tmdb": 46648,
+        "tvrage": 31369
+      }
+    },
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "plays": 1,
+            "last_watched_at": "2014-04-14T08:32:03.000Z"
+          },
+          {
+            "number": 2,
+            "plays": 1,
+            "last_watched_at": "2015-02-16T03:14:50.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "plays": 2,
+    "last_watched_at": "2015-02-08T12:52:42.000Z",
+    "show": {
+      "title": "A Touch of Cloth",
+      "year": 2012,
+      "ids": {
+        "trakt": 45232,
+        "slug": "a-touch-of-cloth",
+        "tvdb": 260750,
+        "imdb": "tt2240991",
+        "tmdb": 45482,
+        "tvrage": null
+      }
+    },
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "plays": 1,
+            "last_watched_at": "2015-02-08T04:26:24.000Z"
+          },
+          {
+            "number": 2,
+            "plays": 1,
+            "last_watched_at": "2015-02-08T12:52:42.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "plays": 30,
+    "last_watched_at": "2015-01-28T20:26:27.000Z",
+    "show": {
+      "title": "The Office",
+      "year": 2005,
+      "ids": {
+        "trakt": 2302,
+        "slug": "the-office",
+        "tvdb": 73244,
+        "imdb": "tt0386676",
+        "tmdb": 2316,
+        "tvrage": null
+      }
+    },
+    "seasons": [
+      {
+        "number": 4,
+        "episodes": [
+          {
+            "number": 1,
+            "plays": 6,
+            "last_watched_at": "2015-01-28T20:26:25.000Z"
+          },
+          {
+            "number": 2,
+            "plays": 5,
+            "last_watched_at": "2015-01-28T20:26:25.000Z"
+          },
+          {
+            "number": 3,
+            "plays": 4,
+            "last_watched_at": "2015-01-28T20:26:26.000Z"
+          },
+          {
+            "number": 4,
+            "plays": 3,
+            "last_watched_at": "2015-01-28T20:26:26.000Z"
+          },
+          {
+            "number": 5,
+            "plays": 3,
+            "last_watched_at": "2015-01-28T20:26:26.000Z"
+          },
+          {
+            "number": 6,
+            "plays": 3,
+            "last_watched_at": "2015-01-28T20:26:26.000Z"
+          },
+          {
+            "number": 7,
+            "plays": 3,
+            "last_watched_at": "2015-01-28T20:26:27.000Z"
+          },
+          {
+            "number": 8,
+            "plays": 3,
+            "last_watched_at": "2015-01-28T20:26:27.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "plays": 8,
+    "last_watched_at": "2015-01-28T20:26:15.000Z",
+    "show": {
+      "title": "Parks and Recreation",
+      "year": 2009,
+      "ids": {
+        "trakt": 8546,
+        "slug": "parks-and-recreation",
+        "tvdb": 84912,
+        "imdb": "tt1266020",
+        "tmdb": 8592,
+        "tvrage": 21686
+      }
+    },
+    "seasons": [
+      {
+        "number": 5,
+        "episodes": [
+          {
+            "number": 2,
+            "plays": 3,
+            "last_watched_at": "2015-01-28T20:26:15.000Z"
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "episodes": [
+          {
+            "number": 1,
+            "plays": 1,
+            "last_watched_at": "2014-04-14T08:04:13.000Z"
+          },
+          {
+            "number": 2,
+            "plays": 4,
+            "last_watched_at": "2014-04-22T04:36:10.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "plays": 23,
+    "last_watched_at": "2015-01-17T04:37:22.000Z",
+    "show": {
+      "title": "Archer",
+      "year": 2009,
+      "ids": {
+        "trakt": 10234,
+        "slug": "archer",
+        "tvdb": 110381,
+        "imdb": "tt1486217",
+        "tmdb": 10283,
+        "tvrage": 23354
+      }
+    },
+    "seasons": [
+      {
+        "number": 0,
+        "episodes": [
+          {
+            "number": 1,
+            "plays": 2,
+            "last_watched_at": "2014-11-29T08:40:26.000Z"
+          },
+          {
+            "number": 4,
+            "plays": 1,
+            "last_watched_at": "2014-01-19T14:29:31.000Z"
+          },
+          {
+            "number": 5,
+            "plays": 2,
+            "last_watched_at": "2014-01-19T22:26:24.000Z"
+          },
+          {
+            "number": 6,
+            "plays": 2,
+            "last_watched_at": "2014-01-19T22:26:24.000Z"
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "plays": 3,
+            "last_watched_at": "2015-01-08T15:08:25.000Z"
+          },
+          {
+            "number": 2,
+            "plays": 1,
+            "last_watched_at": "2015-01-02T03:21:47.000Z"
+          },
+          {
+            "number": 3,
+            "plays": 1,
+            "last_watched_at": "2014-03-03T02:35:44.000Z"
+          },
+          {
+            "number": 5,
+            "plays": 1,
+            "last_watched_at": "2014-12-08T06:43:35.000Z"
+          },
+          {
+            "number": 7,
+            "plays": 1,
+            "last_watched_at": "2014-03-22T12:10:09.000Z"
+          },
+          {
+            "number": 9,
+            "plays": 1,
+            "last_watched_at": "2014-03-22T12:09:14.000Z"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "episodes": [
+          {
+            "number": 1,
+            "plays": 1,
+            "last_watched_at": "2015-01-10T08:24:43.000Z"
+          },
+          {
+            "number": 2,
+            "plays": 1,
+            "last_watched_at": "2015-01-10T08:26:00.000Z"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "episodes": [
+          {
+            "number": 1,
+            "plays": 1,
+            "last_watched_at": "2015-01-14T11:04:47.000Z"
+          },
+          {
+            "number": 2,
+            "plays": 1,
+            "last_watched_at": "2015-01-17T04:34:56.000Z"
+          },
+          {
+            "number": 5,
+            "plays": 1,
+            "last_watched_at": "2015-01-17T04:37:22.000Z"
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "episodes": [
+          {
+            "number": 5,
+            "plays": 2,
+            "last_watched_at": "2015-01-02T03:02:35.000Z"
+          },
+          {
+            "number": 13,
+            "plays": 1,
+            "last_watched_at": "2014-11-29T08:47:57.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2014-04-20T10:55:30.000Z",
+    "show": {
+      "title": "Game of Thrones",
+      "year": 2011,
+      "ids": {
+        "trakt": 1390,
+        "slug": "game-of-thrones",
+        "tvdb": 121361,
+        "imdb": "tt0944947",
+        "tmdb": 1399,
+        "tvrage": 24493
+      }
+    },
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "plays": 1,
+            "last_watched_at": "2014-04-20T10:55:30.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2014-04-18T07:07:19.000Z",
+    "show": {
+      "title": "Community",
+      "year": 2009,
+      "ids": {
+        "trakt": 18265,
+        "slug": "community",
+        "tvdb": 94571,
+        "imdb": "tt1439629",
+        "tmdb": 18347,
+        "tvrage": 22589
+      }
+    },
+    "seasons": [
+      {
+        "number": 5,
+        "episodes": [
+          {
+            "number": 13,
+            "plays": 1,
+            "last_watched_at": "2014-04-18T07:07:19.000Z"
+          }
+        ]
+      }
+    ]
+  }
+]
