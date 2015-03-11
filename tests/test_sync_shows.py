@@ -52,7 +52,7 @@ def test_playback():
         'plays': 0,
 
         'collected_at': None,
-        'collected': 0,
+        'collected': 0
     }
 
 
