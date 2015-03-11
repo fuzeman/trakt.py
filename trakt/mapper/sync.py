@@ -66,14 +66,15 @@ class SyncMapper(Mapper):
 
         return show
 
-    @staticmethod
-    def show_season(show, pk, item=None, **kwargs):
-        if pk not in show.seasons:
-            show.seasons[pk] = Season.create([pk], item, **kwargs)
-        else:
-            show.seasons[pk].update(item, **kwargs)
+    @classmethod
+    def show_season(cls, show, season_num, item=None, **kwargs):
+        season = cls.map_item(show.seasons, item, 'season', key=season_num, **kwargs)
 
-        return show.seasons[pk]
+        # Update with root info
+        if item and 'season' in item:
+            season.update(item)
+
+        return season
 
     @classmethod
     def show_episode(cls, season, episode_num, item=None, **kwargs):
@@ -143,6 +144,9 @@ class SyncMapper(Mapper):
 
         if key is not None:
             pk = key
+
+            if not keys:
+                keys = [pk]
 
         if pk is None:
             # Item has no keys

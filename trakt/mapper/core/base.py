@@ -66,9 +66,7 @@ class Mapper(object):
     @classmethod
     def create(cls, media, item, keys=None, **kwargs):
         if keys is None:
-            pk, keys = cls.get_ids(media, item)
-        else:
-            pk = keys[0]
+            _, keys = cls.get_ids(media, item)
 
         if media == 'movie':
             return Movie.create(keys, item, **kwargs)
