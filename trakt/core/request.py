@@ -1,5 +1,6 @@
 from requests import Request
 import json
+import six
 
 
 class TraktRequest(object):
@@ -46,7 +47,7 @@ class TraktRequest(object):
         # Transform `params` into list
         self.params = self.kwargs.get('params') or []
 
-        if isinstance(self.params, basestring):
+        if isinstance(self.params, six.string_types):
             self.params = [self.params]
 
     def transform_method(self):

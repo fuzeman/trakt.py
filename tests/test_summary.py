@@ -1,4 +1,4 @@
-from core.helpers import read
+from tests.core.helpers import read
 
 from trakt import Trakt
 import responses
