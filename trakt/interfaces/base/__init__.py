@@ -45,7 +45,7 @@ class Interface(object):
         if hasattr(self, name):
             return getattr(self, name)
 
-        raise ValueError('Unknown action "%s" on %s', name, self)
+        raise ValueError('Unknown action "%s" on %s' % (name, self))
 
     @property
     def http(self):

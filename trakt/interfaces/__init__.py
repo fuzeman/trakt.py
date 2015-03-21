@@ -6,6 +6,7 @@ from trakt.interfaces.scrobble import *
 from trakt.interfaces.sync import *
 from trakt.interfaces.shows import *
 from trakt.interfaces.movies import *
+from trakt.interfaces.users import *
 
 INTERFACES = [
     # /
@@ -27,7 +28,11 @@ INTERFACES = [
     ShowsInterface,
 
     # /movies/
-    MoviesInterface
+    MoviesInterface,
+
+    # /users/
+    UsersInterface,
+    UsersSettingsInterface
 ]
 
 
