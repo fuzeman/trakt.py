@@ -28,7 +28,7 @@ class HttpClient(object):
 
         return self
 
-    def request(self, method, path=None, params=None, data=None, **kwargs):
+    def request(self, method, path=None, params=None, data=None, query=None, **kwargs):
         # retrieve configuration
         ctx = self.configuration.pop()
 
@@ -46,9 +46,12 @@ class HttpClient(object):
         request = TraktRequest(
             self.client,
             method=method,
+
             path=path,
             params=params,
+
             data=data,
+            query=query,
 
             **kwargs
         )
