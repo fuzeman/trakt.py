@@ -21,7 +21,7 @@ class HttpClient(object):
         self.configuration = ContextStack()
         self.session = None
 
-        self._build_session()
+        self.rebuild()
 
     def configure(self, path=None):
         self.configuration.push(base_path=path)
@@ -75,7 +75,7 @@ class HttpClient(object):
 
                 log.warn('Encountered socket.gaierror (code: 8)')
 
-                response = self._build_session().send(prepared, timeout=timeout)
+                response = self.rebuild().send(prepared, timeout=timeout)
 
             if not retry or response.status_code < 500:
                 break
@@ -94,7 +94,7 @@ class HttpClient(object):
     def delete(self, path=None, params=None, data=None, **kwargs):
         return self.request('DELETE', path, params, data, **kwargs)
 
-    def _build_session(self):
+    def rebuild(self):
         if self.session:
             log.info('Rebuilding session and connection pools...')
 
