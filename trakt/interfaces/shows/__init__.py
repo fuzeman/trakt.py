@@ -1,4 +1,4 @@
-from trakt.interfaces.base import Interface, authenticated, application
+from trakt.interfaces.base import Interface
 from trakt.mapper.summary import SummaryMapper
 
 
