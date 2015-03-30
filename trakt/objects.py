@@ -6,7 +6,10 @@ class Media(object):
     def __init__(self, keys=None):
         self.keys = keys
 
+        self.images = None
+        self.overview = None
         self.rating = None
+        self.score = None
 
     @property
     def pk(self):
@@ -16,6 +19,12 @@ class Media(object):
         return self.keys[0]
 
     def update(self, info=None, **kwargs):
+        update_attributes(self, info, [
+            'overview',
+            'images',
+            'score'
+        ])
+
         self.rating = Rating.create(info) or self.rating
 
     def __str__(self):

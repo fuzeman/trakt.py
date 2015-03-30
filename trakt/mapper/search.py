@@ -36,6 +36,9 @@ class SearchMapper(Mapper):
         # Create object
         movie = cls.create('movie', i_movie, keys, **kwargs)
 
+        if 'movie' in item:
+            movie.update(item)
+
         return movie
 
     @classmethod
