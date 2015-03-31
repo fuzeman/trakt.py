@@ -72,35 +72,6 @@ class SearchMapper(Mapper):
         return show
 
     @classmethod
-    def seasons(cls, items, **kwargs):
-        return [cls.season(item, **kwargs) for item in items]
-
-    @classmethod
-    def season(cls, item, **kwargs):
-        if 'season' in item:
-            i_season = item['season']
-        else:
-            i_season = item
-
-        # Retrieve item keys
-        pk, keys = cls.get_ids('season', i_season)
-
-        if pk is None:
-            return None
-
-        # Create object
-        season = cls.create('season', i_season, keys, **kwargs)
-
-        if 'show' in item:
-            season.show = cls.show(item['show'])
-
-        # Update with root info
-        if 'season' in item:
-            season.update(item)
-
-        return season
-
-    @classmethod
     def episodes(cls, items, **kwargs):
         return [cls.episode(item, **kwargs) for item in items]
 
