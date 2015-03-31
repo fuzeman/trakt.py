@@ -130,6 +130,7 @@ class Season(Media):
     def __init__(self, keys=None):
         super(Season, self).__init__(keys)
 
+        self.show = None
         self.episodes = {}
 
     def to_identifier(self):
@@ -174,6 +175,9 @@ class Season(Media):
 class Episode(Video):
     def __init__(self, keys=None):
         super(Episode, self).__init__(keys)
+
+        self.show = None
+        self.season = None
 
         self.title = None
 

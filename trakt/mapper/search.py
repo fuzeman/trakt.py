@@ -91,6 +91,13 @@ class SearchMapper(Mapper):
         # Create object
         season = cls.create('season', i_season, keys, **kwargs)
 
+        if 'show' in item:
+            season.show = cls.show(item['show'])
+
+        # Update with root info
+        if 'season' in item:
+            season.update(item)
+
         return season
 
     @classmethod
@@ -112,5 +119,15 @@ class SearchMapper(Mapper):
 
         # Create object
         episode = cls.create('episode', i_episode, keys, **kwargs)
+
+        if 'show' in item:
+            episode.show = cls.show(item['show'])
+
+        if 'season' in item:
+            episode.season = cls.season(item['season'])
+
+        # Update with root info
+        if 'episode' in item:
+            episode.update(item)
 
         return episode
