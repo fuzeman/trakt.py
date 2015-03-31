@@ -113,7 +113,10 @@ class Show(Media):
     def update(self, info=None, **kwargs):
         super(Show, self).update(info, **kwargs)
 
-        update_attributes(self, info, ['title', 'year'])
+        update_attributes(self, info, ['title'])
+
+        if info.get('year'):
+            self.year = int(info['year'])
 
     @classmethod
     def create(cls, keys, info=None, **kwargs):
@@ -280,7 +283,10 @@ class Movie(Video):
     def update(self, info=None, **kwargs):
         super(Movie, self).update(info, **kwargs)
 
-        update_attributes(self, info, ['title', 'year'])
+        update_attributes(self, info, ['title'])
+
+        if info.get('year'):
+            self.year = int(info['year'])
 
     @classmethod
     def create(cls, keys, info, **kwargs):
