@@ -1,0 +1,29 @@
+[
+  {
+    "type":"movie",
+    "score":null,
+    "movie":{
+      "title":"The Avengers",
+      "overview":"When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+      "year":2012,
+      "images":{
+        "poster":{
+          "full":"https://walter.trakt.us/images/movies/000/014/701/posters/original/293ce7103a.jpg",
+          "medium":"https://walter.trakt.us/images/movies/000/014/701/posters/medium/293ce7103a.jpg",
+          "thumb":"https://walter.trakt.us/images/movies/000/014/701/posters/thumb/293ce7103a.jpg"
+        },
+        "fanart":{
+          "full":"https://walter.trakt.us/images/movies/000/014/701/fanarts/original/7d93500475.jpg",
+          "medium":"https://walter.trakt.us/images/movies/000/014/701/fanarts/medium/7d93500475.jpg",
+          "thumb":"https://walter.trakt.us/images/movies/000/014/701/fanarts/thumb/7d93500475.jpg"
+        }
+      },
+      "ids":{
+        "trakt":14701,
+        "slug":"the-avengers-2012",
+        "imdb":"tt0848228",
+        "tmdb":24428
+      }
+    }
+  }
+]

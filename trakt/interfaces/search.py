@@ -28,9 +28,7 @@ class SearchInterface(Interface):
         count = len(items)
 
         if count > 1:
-            return [
-                SearchMapper.process(item) for item in items
-            ]
+            return [SearchMapper.process(item) for item in items]
         elif count == 1:
             return SearchMapper.process(items[0])
 
@@ -54,9 +52,7 @@ class SearchInterface(Interface):
         # Parse response
         items = self.get_data(response, **kwargs)
 
-        if items and len(items) > 1:
-            return [
-                SearchMapper.process(item) for item in items
-            ]
+        if items is not None:
+            return [SearchMapper.process(item) for item in items]
 
         return None
