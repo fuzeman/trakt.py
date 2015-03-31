@@ -24,10 +24,19 @@ def test_playback():
     assert show.year == 2007
 
     assert len(show.seasons) == 1
-    assert len(show.seasons[1].episodes) == 2
+
+    # Validate `Season`
+    season = show.seasons[1]
+
+    assert season.show == show
+
+    assert len(season.episodes) == 2
 
     # Validate `Episode`
-    episode = show.seasons[1].episodes[3]
+    episode = season.episodes[3]
+
+    assert episode.show == show
+    assert episode.season == season
 
     assert episode.paused_at == datetime(2015, 3, 9, 0, 10, 15)
     assert episode.progress == 4.99
@@ -87,10 +96,19 @@ def test_collection():
     ]
 
     assert len(show.seasons) == 1
-    assert len(show.seasons[1].episodes) == 4
+
+    # Validate `Season`
+    season = show.seasons[1]
+
+    assert season.show == show
+
+    assert len(season.episodes) == 4
 
     # Validate `Episode`
-    episode = show.seasons[1].episodes[2]
+    episode = season.episodes[2]
+
+    assert episode.show == show
+    assert episode.season == season
 
     assert episode.is_collected
     assert episode.collected_at == datetime(2013, 10, 11, 1, 59, 5)
@@ -137,6 +155,8 @@ def test_ratings():
 
     # Validate `Season`
     season = show.seasons[1]
+
+    assert season.show == show
 
     assert season.keys == [
         1,
@@ -189,6 +209,9 @@ def test_ratings():
 
     # Validate `Episode`
     episode = season.episodes[1]
+
+    assert episode.show == show
+    assert episode.season == season
 
     assert episode.rating.value == 10
     assert episode.rating.timestamp == datetime(2014, 10, 19, 23, 2, 24)

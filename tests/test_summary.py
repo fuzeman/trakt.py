@@ -123,7 +123,7 @@ def test_season():
 
 
 @responses.activate
-def test_episode():
+def test_episode_basic():
     responses.add(
         responses.GET, 'http://mock/shows/game-of-thrones/seasons/1/episodes/1',
         body=read('fixtures/shows/game-of-thrones/seasons/1/episodes/1.json'), status=200,
@@ -133,6 +133,30 @@ def test_episode():
     Trakt.base_url = 'http://mock'
 
     episode = Trakt['shows'].episode('game-of-thrones', 1, 1)
+
+    assert episode.title == 'Winter Is Coming'
+    assert episode.pk == (1, 1)
+    assert episode.keys == [
+        (1, 1),
+        ('tvdb', '3254641'),
+        ('tmdb', '63056'),
+        ('imdb', 'tt1480055'),
+        ('tvrage', '1065008299'),
+        ('trakt', '73640')
+    ]
+
+
+@responses.activate
+def test_episode_proxy():
+    responses.add(
+        responses.GET, 'http://mock/shows/game-of-thrones/seasons/1/episodes/1',
+        body=read('fixtures/shows/game-of-thrones/seasons/1/episodes/1.json'), status=200,
+        content_type='application/json'
+    )
+
+    Trakt.base_url = 'http://mock'
+
+    episode = Trakt['shows/game-of-thrones'].episode(1, 1)
 
     assert episode.title == 'Winter Is Coming'
     assert episode.pk == (1, 1)
