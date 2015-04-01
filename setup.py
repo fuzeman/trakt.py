@@ -13,8 +13,7 @@ setup(
 
     description='Python interface for the trakt.tv API',
     packages=find_packages(exclude=[
-        'examples',
-        'tests'
+        'examples'
     ]),
     platforms='any',
 
