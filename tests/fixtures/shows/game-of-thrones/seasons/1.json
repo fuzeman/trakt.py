@@ -1,0 +1,122 @@
+[
+  {
+    "season": 1,
+    "number": 1,
+    "title": "Winter Is Coming",
+    "ids": {
+      "trakt": 73640,
+      "tvdb": 3254641,
+      "imdb": "tt1480055",
+      "tmdb": 63056,
+      "tvrage": 1065008299
+    }
+  },
+  {
+    "season": 1,
+    "number": 2,
+    "title": "The Kingsroad",
+    "ids": {
+      "trakt": 73641,
+      "tvdb": 3436411,
+      "imdb": "tt1668746",
+      "tmdb": 63057,
+      "tvrage": 1065023912
+    }
+  },
+  {
+    "season": 1,
+    "number": 3,
+    "title": "Lord Snow",
+    "ids": {
+      "trakt": 73642,
+      "tvdb": 3436421,
+      "imdb": "tt1829962",
+      "tmdb": 63058,
+      "tvrage": 1065027990
+    }
+  },
+  {
+    "season": 1,
+    "number": 4,
+    "title": "Cripples, Bastards, and Broken Things",
+    "ids": {
+      "trakt": 73643,
+      "tvdb": 3436431,
+      "imdb": "tt1829963",
+      "tmdb": 63059,
+      "tvrage": 1065029350
+    }
+  },
+  {
+    "season": 1,
+    "number": 5,
+    "title": "The Wolf and the Lion",
+    "ids": {
+      "trakt": 73644,
+      "tvdb": 3436441,
+      "imdb": "tt1829964",
+      "tmdb": 63060,
+      "tvrage": 1065036402
+    }
+  },
+  {
+    "season": 1,
+    "number": 6,
+    "title": "A Golden Crown",
+    "ids": {
+      "trakt": 73645,
+      "tvdb": 3436451,
+      "imdb": "tt1837862",
+      "tmdb": 63061,
+      "tvrage": 1065036403
+    }
+  },
+  {
+    "season": 1,
+    "number": 7,
+    "title": "You Win or You Die",
+    "ids": {
+      "trakt": 73646,
+      "tvdb": 3436461,
+      "imdb": "tt1837863",
+      "tmdb": 63062,
+      "tvrage": 1065036404
+    }
+  },
+  {
+    "season": 1,
+    "number": 8,
+    "title": "The Pointy End",
+    "ids": {
+      "trakt": 73647,
+      "tvdb": 3360391,
+      "imdb": "tt1837864",
+      "tmdb": 63063,
+      "tvrage": 1065039305
+    }
+  },
+  {
+    "season": 1,
+    "number": 9,
+    "title": "Baelor",
+    "ids": {
+      "trakt": 73648,
+      "tvdb": 4063481,
+      "imdb": "tt1851398",
+      "tmdb": 63064,
+      "tvrage": 1065039306
+    }
+  },
+  {
+    "season": 1,
+    "number": 10,
+    "title": "Fire and Blood",
+    "ids": {
+      "trakt": 73649,
+      "tvdb": 4063491,
+      "imdb": "tt1851397",
+      "tmdb": 63065,
+      "tvrage": 1065039307
+    }
+  }
+]

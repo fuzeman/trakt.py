@@ -1,0 +1,138 @@
+[
+  {
+    "last_collected_at": "2014-02-15T05:35:31.000Z",
+    "show": {
+      "title": "Parks and Recreation",
+      "year": 2009,
+      "ids": {
+        "trakt": 8546,
+        "slug": "parks-and-recreation",
+        "tvdb": 84912,
+        "imdb": "tt1266020",
+        "tmdb": 8592,
+        "tvrage": 21686
+      }
+    },
+    "seasons": [
+      {
+        "number": 6,
+        "episodes": [
+          {
+            "number": 1,
+            "collected_at": "2014-02-15T04:32:47.000Z"
+          },
+          {
+            "number": 2,
+            "collected_at": "2014-02-15T05:35:30.000Z"
+          },
+          {
+            "number": 3,
+            "collected_at": "2014-02-15T05:35:31.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "last_collected_at": "2014-01-29T12:56:35.000Z",
+    "show": {
+      "title": "True Detective",
+      "year": 2014,
+      "ids": {
+        "trakt": 46375,
+        "slug": "true-detective",
+        "tvdb": 270633,
+        "imdb": "tt2356777",
+        "tmdb": 46648,
+        "tvrage": 31369
+      }
+    },
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "collected_at": "2014-01-29T12:56:35.000Z"
+          },
+          {
+            "number": 2,
+            "collected_at": "2014-01-29T12:56:35.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "last_collected_at": "2014-01-23T02:05:53.000Z",
+    "show": {
+      "title": "Chuck",
+      "year": 2007,
+      "ids": {
+        "trakt": 1395,
+        "slug": "chuck",
+        "tvdb": 80348,
+        "imdb": "tt0934814",
+        "tmdb": 1404,
+        "tvrage": 15614
+      }
+    },
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "collected_at": "2013-10-11T01:59:05.000Z"
+          },
+          {
+            "number": 2,
+            "collected_at": "2013-10-11T01:59:05.000Z"
+          },
+          {
+            "number": 3,
+            "collected_at": "2013-10-11T01:59:05.000Z"
+          },
+          {
+            "number": 4,
+            "collected_at": "2014-01-23T02:05:53.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "last_collected_at": "2013-10-11T07:41:57.000Z",
+    "show": {
+      "title": "30 Rock",
+      "year": 2006,
+      "ids": {
+        "trakt": 4584,
+        "slug": "30-rock",
+        "tvdb": 79488,
+        "imdb": "tt0496424",
+        "tmdb": 4608,
+        "tvrage": 11215
+      }
+    },
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "collected_at": "2013-10-11T07:41:56.000Z"
+          },
+          {
+            "number": 2,
+            "collected_at": "2013-10-11T07:41:56.000Z"
+          },
+          {
+            "number": 3,
+            "collected_at": "2013-10-11T07:41:57.000Z"
+          }
+        ]
+      }
+    ]
+  }
+]

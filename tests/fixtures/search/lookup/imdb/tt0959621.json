@@ -1,0 +1,46 @@
+[
+  {
+    "type": "episode",
+    "score": null,
+    "episode": {
+      "season": 1,
+      "number": 1,
+      "title": "Pilot",
+      "overview": "When an unassuming high school chemistry teacher discovers he has a rare form of lung cancer, he decides to team up with a former student and create a top of the line crystal meth in a used RV, to provide for his family once he is gone.",
+      "images": {
+        "screenshot": {
+          "full": "https://walter.trakt.us/images/episodes/000/073/482/screenshots/original/ef3352bcb8.jpg",
+          "medium": "https://walter.trakt.us/images/episodes/000/073/482/screenshots/medium/ef3352bcb8.jpg",
+          "thumb": "https://walter.trakt.us/images/episodes/000/073/482/screenshots/thumb/ef3352bcb8.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 73482,
+        "tvdb": 349232,
+        "imdb": "tt0959621",
+        "tmdb": 62085,
+        "tvrage": 637041
+      }
+    },
+    "show": {
+      "title": "Breaking Bad",
+      "year": "2008",
+      "ids": {
+        "trakt": 1388,
+        "slug": "breaking-bad"
+      },
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/001/388/posters/original/fa39b59954.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/001/388/posters/medium/fa39b59954.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/001/388/posters/thumb/fa39b59954.jpg"
+        },
+        "fanart": {
+          "full": null,
+          "medium": "https://walter.trakt.us/images/shows/000/001/388/fanarts/medium/fdbc0cb02d.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/001/388/fanarts/thumb/fdbc0cb02d.jpg"
+        }
+      }
+    }
+  }
+]

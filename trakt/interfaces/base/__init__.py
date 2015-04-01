@@ -1,7 +1,6 @@
 from trakt.core.errors import ERRORS
 from trakt.core.exceptions import ServerError, ClientError
 from trakt.helpers import setdefault
-from trakt.media_mapper import MediaMapper
 
 from functools import wraps
 import logging
@@ -46,7 +45,7 @@ class Interface(object):
         if hasattr(self, name):
             return getattr(self, name)
 
-        raise ValueError('Unknown action "%s" on %s', name, self)
+        raise ValueError('Unknown action "%s" on %s' % (name, self))
 
     @property
     def http(self):
@@ -65,7 +64,9 @@ class Interface(object):
             return response
 
         # Parse response, return data
-        if response.headers['content-type'].startswith('application/json'):
+        content_type = response.headers.get('content-type')
+
+        if content_type and content_type.startswith('application/json'):
             # Try parse json response
             try:
                 data = response.json()
@@ -73,7 +74,7 @@ class Interface(object):
                 log.warning('unable to parse JSON response: %s', e)
                 return None
         else:
-            log.debug('response returned "%s" content, falling back to raw data', response.headers['content-type'])
+            log.debug('response returned content-type: %r, falling back to raw data', content_type)
 
             # Fallback to raw content
             data = response.content
@@ -102,24 +103,6 @@ class Interface(object):
             return None
 
         return data
-
-    @staticmethod
-    def media_mapper(store, media, items, **kwargs):
-        if items is None:
-            return
-
-        if store is None:
-            store = {}
-
-        mapper = MediaMapper(store)
-
-        for item in items:
-            result = mapper.process(media, item, **kwargs)
-
-            if result is None:
-                log.warn('Unable to map item: %s', item)
-
-        return store
 
 
 class InterfaceProxy(object):

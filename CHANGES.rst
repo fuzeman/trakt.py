@@ -1,3 +1,19 @@
+2.2.0 (2015-04-02)
+------------------
+**Changes**
+ - Added unit tests (with travis-ci.org and coveralls.io integrations)
+ - Added :code:`/movies`, :code:`/shows`, :code:`/search` and :code:`/users/settings` interfaces
+ - Added parent properties ("show", "season")
+ - Added "images", "overview" and "score" properties to the :code:`Media` class
+ - Added "last_watched_at" property to movies and episodes
+ - Updated :code:`/sync/playback` interface (to include type filtering)
+ - "progress" and "paused_at" properties are now included in :code:`to_dict()`
+
+**Fixed**
+ - "year" property could be returned as a string in some cases
+ - Catch an exception in :code:`trakt.media_mapper`
+ - Catch a case where :code:`Interface.get_data()` can raise a :code:`KeyError: 'content-type'` exception
+
 2.1.1 (2015-02-06)
 ------------------
 **Changes**

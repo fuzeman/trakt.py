@@ -1,0 +1,56 @@
+[
+  {
+    "number": 0,
+    "ids": {
+      "trakt": 3962,
+      "tvdb": 137481,
+      "tmdb": 3627,
+      "tvrage": null
+    }
+  },
+  {
+    "number": 1,
+    "ids": {
+      "trakt": 3963,
+      "tvdb": 364731,
+      "tmdb": 3624,
+      "tvrage": null
+    }
+  },
+  {
+    "number": 2,
+    "ids": {
+      "trakt": 3964,
+      "tvdb": 473271,
+      "tmdb": 3625,
+      "tvrage": null
+    }
+  },
+  {
+    "number": 3,
+    "ids": {
+      "trakt": 3965,
+      "tvdb": 488434,
+      "tmdb": 3626,
+      "tvrage": null
+    }
+  },
+  {
+    "number": 4,
+    "ids": {
+      "trakt": 3966,
+      "tvdb": 522882,
+      "tmdb": 3628,
+      "tvrage": null
+    }
+  },
+  {
+    "number": 5,
+    "ids": {
+      "trakt": 3967,
+      "tvdb": null,
+      "tmdb": 62090,
+      "tvrage": null
+    }
+  }
+]
