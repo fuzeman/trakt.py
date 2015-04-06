@@ -29,6 +29,15 @@ class TraktClient(object):
 
         self.__interfaces = construct_map(self)
 
+    @property
+    def site_url(self):
+        url = self.base_url
+
+        schema_end = url.find('://') + 3
+        domain_start = url.find('.', schema_end) + 1
+
+        return url[0:schema_end] + url[domain_start:]
+
     def __getitem__(self, path):
         parts = path.strip('/').split('/')
 

@@ -18,6 +18,17 @@ class OAuthInterface(Interface):
             username=username
         )
 
+    def pin_url(self):
+        app_id = self.client.configuration['app.id']
+
+        if not app_id:
+            raise ValueError('"app.id" configuration parameter is required to generate the PIN authentication url')
+
+        return build_url(
+            self.client.site_url,
+            'pin', app_id
+        )
+
     def token(self, code=None, redirect_uri=None, grant_type='authorization_code'):
         response = self.http.post('token', data={
             'client_id': self.client.configuration['client.id'],

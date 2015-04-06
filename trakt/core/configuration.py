@@ -15,8 +15,8 @@ class ConfigurationManager(object):
     def current(self):
         return self.stack[-1]
 
-    def app(self, name=None, version=None, date=None):
-        return Configuration(self).app(name, version, date)
+    def app(self, name=None, version=None, date=None, id=None):
+        return Configuration(self).app(name, version, date, id)
 
     def auth(self, login=None, token=None):
         return Configuration(self).auth(login, token)
@@ -54,10 +54,11 @@ class Configuration(object):
 
         self.data = {}
 
-    def app(self, name=None, version=None, date=None):
+    def app(self, name=None, version=None, date=None, id=None):
         self.data['app.name'] = name
         self.data['app.version'] = version
         self.data['app.date'] = date
+        self.data['app.id'] = id
 
         return self
 
