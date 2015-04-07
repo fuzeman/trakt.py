@@ -23,16 +23,22 @@ if __name__ == '__main__':
     pin = raw_input('Pin: ')
 
     # Exchange `code` for `access_token`
-    details = Trakt['oauth'].token(pin, 'urn:ietf:wg:oauth:2.0:oob')
+    details = Trakt['oauth'].token_exchange(pin, 'urn:ietf:wg:oauth:2.0:oob')
 
     if not details:
         print 'Token exchange failed'
         exit(1)
 
-    token = details.get('access_token')
+    access_token = details.get('access_token')
+    refresh_token = details.get('refresh_token')
 
     # Test authentication
-    print 'Using access_token: %r' % token
+    print 'Using access_token: %r' % access_token
 
-    with Trakt.configuration.oauth(token):
+    with Trakt.configuration.oauth(access_token):
         print Trakt['sync/collection'].movies()
+
+    # Refresh authentication with `refresh_token`
+    raw_input('[token_refresh]')
+
+    details = Trakt['oauth'].token_refresh(refresh_token, 'urn:ietf:wg:oauth:2.0:oob')

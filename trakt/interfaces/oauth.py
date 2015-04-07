@@ -1,3 +1,4 @@
+from trakt.core.helpers import deprecated
 from trakt.helpers import build_url
 from trakt.interfaces.base import Interface
 
@@ -34,7 +35,11 @@ class OAuthInterface(Interface):
             'pin', app_id
         )
 
+    @deprecated("Trakt['oauth'].token() method has been moved to Trakt['oauth'].token_exchange()")
     def token(self, code=None, redirect_uri=None, grant_type='authorization_code'):
+        return self.token_exchange(code, redirect_uri, grant_type)
+
+    def token_exchange(self, code=None, redirect_uri=None, grant_type='authorization_code'):
         client_id = self.client.configuration['client.id']
         client_secret = self.client.configuration['client.secret']
 
@@ -46,6 +51,29 @@ class OAuthInterface(Interface):
             'client_secret': client_secret,
 
             'code': code,
+            'redirect_uri': redirect_uri,
+            'grant_type': grant_type
+        })
+
+        data = self.get_data(response)
+
+        if not data:
+            return None
+
+        return data
+
+    def token_refresh(self, refresh_token=None, redirect_uri=None, grant_type='refresh_token'):
+        client_id = self.client.configuration['client.id']
+        client_secret = self.client.configuration['client.secret']
+
+        if not client_id or not client_secret:
+            raise ValueError('"client.id" and "client.secret" configuration parameters are required for token refresh')
+
+        response = self.http.post('token', data={
+            'client_id': client_id,
+            'client_secret': client_secret,
+
+            'refresh_token': refresh_token,
             'redirect_uri': redirect_uri,
             'grant_type': grant_type
         })
