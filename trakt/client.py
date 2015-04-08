@@ -1,4 +1,5 @@
 from trakt.core.configuration import ConfigurationManager
+from trakt.core.emitter import Emitter
 from trakt.core.http import HttpClient
 from trakt.interfaces import construct_map
 from trakt.interfaces.base import InterfaceProxy
@@ -10,7 +11,7 @@ __version__ = '2.2.0'
 log = logging.getLogger(__name__)
 
 
-class TraktClient(object):
+class TraktClient(Emitter):
     base_url = 'https://api-v2launch.trakt.tv'
     version = __version__
 
@@ -24,8 +25,8 @@ class TraktClient(object):
         adapter_kwargs.setdefault('max_retries', 3)
 
         # Construct
-        self.http = HttpClient(self, adapter_kwargs)
         self.configuration = ConfigurationManager()
+        self.http = HttpClient(self, adapter_kwargs)
 
         self.__interfaces = construct_map(self)
 

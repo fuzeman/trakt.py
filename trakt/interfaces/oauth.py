@@ -46,14 +46,18 @@ class OAuthInterface(Interface):
         if not client_id or not client_secret:
             raise ValueError('"client.id" and "client.secret" configuration parameters are required for token exchange')
 
-        response = self.http.post('token', data={
-            'client_id': client_id,
-            'client_secret': client_secret,
+        response = self.http.post(
+            'token',
+            data={
+                'client_id': client_id,
+                'client_secret': client_secret,
 
-            'code': code,
-            'redirect_uri': redirect_uri,
-            'grant_type': grant_type
-        })
+                'code': code,
+                'redirect_uri': redirect_uri,
+                'grant_type': grant_type
+            },
+            authenticated=False
+        )
 
         data = self.get_data(response)
 
@@ -69,14 +73,18 @@ class OAuthInterface(Interface):
         if not client_id or not client_secret:
             raise ValueError('"client.id" and "client.secret" configuration parameters are required for token refresh')
 
-        response = self.http.post('token', data={
-            'client_id': client_id,
-            'client_secret': client_secret,
+        response = self.http.post(
+            'token',
+            data={
+                'client_id': client_id,
+                'client_secret': client_secret,
 
-            'refresh_token': refresh_token,
-            'redirect_uri': redirect_uri,
-            'grant_type': grant_type
-        })
+                'refresh_token': refresh_token,
+                'redirect_uri': redirect_uri,
+                'grant_type': grant_type
+            },
+            authenticated=False
+        )
 
         data = self.get_data(response)
 
