@@ -137,8 +137,8 @@ class HttpClient(object):
         config = self.client.configuration
 
         if config['oauth.created_at'] is None or config['oauth.expires_in'] is None:
-            log.warn('OAuth - Missing "created_at" or "expires_in" parameters')
-            return False
+            log.debug('OAuth - Missing "created_at" or "expires_in" parameter, unable to determine if token is still valid')
+            return True
 
         current = calendar.timegm(datetime.datetime.utcnow().utctimetuple())
         expires_at = config['oauth.created_at'] + config['oauth.expires_in'] - (48 * 60 * 60)
@@ -147,14 +147,18 @@ class HttpClient(object):
             return True
 
         if not config['oauth.refresh']:
-            log.info('OAuth - Token has expired')
+            log.warn('OAuth - Unable to refresh expired token (token refreshing hasn\'t been enabled)')
+            return False
+
+        if not config['oauth.refresh_token']:
+            log.warn('OAuth - Unable to refresh expired token ("refresh_token" is parameter is missing)')
             return False
 
         # Refresh token
         response = self.client['oauth'].token_refresh(config['oauth.refresh_token'], 'urn:ietf:wg:oauth:2.0:oob')
 
         if not response:
-            log.warn('OAuth - Unable to refresh token')
+            log.warn('OAuth - Unable to refresh expired token (error occurred while trying to refresh the token)')
             return False
 
         # Update current configuration

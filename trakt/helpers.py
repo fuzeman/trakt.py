@@ -32,7 +32,11 @@ def update_attributes(obj, dictionary, keys):
 
 
 def build_url(*args, **kwargs):
-    parameters = filter(lambda key, value: value, kwargs.items())
+    parameters = [
+        (key, value)
+        for (key, value) in kwargs.items()
+        if value
+    ]
 
     return ''.join([
         '/'.join([str(x) for x in args]),

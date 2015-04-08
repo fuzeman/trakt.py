@@ -112,12 +112,12 @@ class OAuthConfiguration(object):
     def __init__(self, owner):
         self.owner = owner
 
-    def __call__(self, access_token=None, refresh_token=None, created_at=None, expires_in=None, refresh=False):
+    def __call__(self, token=None, refresh_token=None, created_at=None, expires_in=None, refresh=False):
         if type(self.owner) is ConfigurationManager:
-            return Configuration(self.owner).oauth(access_token, refresh_token, created_at, expires_in, refresh)
+            return Configuration(self.owner).oauth(token, refresh_token, created_at, expires_in, refresh)
 
         self.owner.data.update({
-            'oauth.token':          access_token,
+            'oauth.token':          token,
             'oauth.refresh_token':  refresh_token,
 
             'oauth.created_at':     created_at,
