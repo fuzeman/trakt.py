@@ -1,13 +1,14 @@
 from trakt import Trakt
 
+import json
 import os
 
 
 def authenticate():
-    access_token = os.environ.get('ACCESS_TOKEN')
+    authorization = os.environ.get('AUTHORIZATION')
 
-    if access_token:
-        return access_token
+    if authorization:
+        return json.loads(authorization)
 
     print Trakt['oauth'].authorize_url('urn:ietf:wg:oauth:2.0:oob')
 
@@ -15,14 +16,9 @@ def authenticate():
     if not code:
         exit(1)
 
-    result = Trakt['oauth'].token(code, 'urn:ietf:wg:oauth:2.0:oob')
-    if not result:
+    authorization = Trakt['oauth'].token(code, 'urn:ietf:wg:oauth:2.0:oob')
+    if not authorization:
         exit(1)
 
-    access_token = result.get('access_token')
-
-    if not access_token:
-        exit(1)
-
-    print 'Access token: "%s"' % access_token
-    return access_token
+    print "Authorization: %r" % authorization
+    return authorization

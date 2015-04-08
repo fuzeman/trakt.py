@@ -20,8 +20,8 @@ if __name__ == '__main__':
     )
 
     # Authenticate
-    Trakt.configuration.defaults.oauth(
-        token=authenticate()
+    Trakt.configuration.defaults.oauth.from_response(
+        authenticate()
     )
 
     # Fetch playback for movies
