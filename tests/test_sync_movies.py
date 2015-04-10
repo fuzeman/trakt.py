@@ -1,4 +1,4 @@
-from tests.core.helpers import read
+from tests.core.helpers import authenticated_response
 
 from datetime import datetime
 from trakt import Trakt
@@ -7,15 +7,18 @@ import responses
 
 @responses.activate
 def test_playback():
-    responses.add(
+    responses.add_callback(
         responses.GET, 'http://mock/sync/playback/movies',
-        body=read('fixtures/sync/playback/movies.json'), status=200,
+        callback=authenticated_response('fixtures/sync/playback/movies.json'),
         content_type='application/json'
     )
 
     Trakt.base_url = 'http://mock'
 
-    playback = Trakt['sync/playback'].movies()
+    with Trakt.configuration.auth('mock', 'mock'):
+        playback = Trakt['sync/playback'].movies()
+
+    assert playback is not None
 
     # TRON: Legacy (2010)
     assert playback[('imdb', 'tt1104001')].title == 'TRON: Legacy'
@@ -50,15 +53,18 @@ def test_playback():
 
 @responses.activate
 def test_collection():
-    responses.add(
+    responses.add_callback(
         responses.GET, 'http://mock/sync/collection/movies',
-        body=read('fixtures/sync/collection/movies.json'), status=200,
+        callback=authenticated_response('fixtures/sync/collection/movies.json'),
         content_type='application/json'
     )
 
     Trakt.base_url = 'http://mock'
 
-    collection = Trakt['sync/collection'].movies()
+    with Trakt.configuration.auth('mock', 'mock'):
+        collection = Trakt['sync/collection'].movies()
+
+    assert collection is not None
 
     # TRON: Legacy (2010)
     assert collection[('imdb', 'tt1104001')].title == 'TRON: Legacy'
@@ -93,15 +99,18 @@ def test_collection():
 
 @responses.activate
 def test_ratings():
-    responses.add(
+    responses.add_callback(
         responses.GET, 'http://mock/sync/ratings/movies',
-        body=read('fixtures/sync/ratings/movies.json'), status=200,
+        callback=authenticated_response('fixtures/sync/ratings/movies.json'),
         content_type='application/json'
     )
 
     Trakt.base_url = 'http://mock'
 
-    ratings = Trakt['sync/ratings'].movies()
+    with Trakt.configuration.auth('mock', 'mock'):
+        ratings = Trakt['sync/ratings'].movies()
+
+    assert ratings is not None
 
     # 100 Bloody Acres (2012)
     assert ratings[('imdb', 'tt2290065')].title == '100 Bloody Acres'
@@ -136,15 +145,18 @@ def test_ratings():
 
 @responses.activate
 def test_watched():
-    responses.add(
+    responses.add_callback(
         responses.GET, 'http://mock/sync/watched/movies',
-        body=read('fixtures/sync/watched/movies.json'), status=200,
+        callback=authenticated_response('fixtures/sync/watched/movies.json'),
         content_type='application/json'
     )
 
     Trakt.base_url = 'http://mock'
 
-    watched = Trakt['sync/watched'].movies()
+    with Trakt.configuration.auth('mock', 'mock'):
+        watched = Trakt['sync/watched'].movies()
+
+    assert watched is not None
 
     # 100 Bloody Acres (2012)
     assert watched[('imdb', 'tt2290065')].title == '100 Bloody Acres'
