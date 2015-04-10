@@ -1,4 +1,6 @@
+from six.moves.urllib_parse import urlparse, parse_qsl
 import os
+import pytest
 import six
 
 if six.PY2:
@@ -35,3 +37,16 @@ def authenticated_response(path):
         return 401, {}, ''
 
     return callback
+
+
+def assert_url(url, expected_path, expected_query=None):
+    __tracebackhide__ = True
+
+    parsed = urlparse(url)
+    query = dict(parse_qsl(parsed.query))
+
+    if parsed.path != expected_path:
+        pytest.fail("url.path is %r, expected %r" % (parsed.path, expected_path))
+
+    if expected_query is not None and query != expected_query:
+        pytest.fail('url.query is %r, expected %r' % (query, expected_query))
