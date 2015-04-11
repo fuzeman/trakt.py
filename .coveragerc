@@ -1,3 +1,5 @@
 [run]
 source=
     trakt
+omit=
+    trakt/core/emitter.py

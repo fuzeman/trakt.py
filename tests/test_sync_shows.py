@@ -1,4 +1,4 @@
-from tests.core.helpers import read
+from tests.core.helpers import authenticated_response
 
 from datetime import datetime
 from trakt import Trakt
@@ -7,15 +7,18 @@ import responses
 
 @responses.activate
 def test_playback():
-    responses.add(
+    responses.add_callback(
         responses.GET, 'http://mock/sync/playback/episodes',
-        body=read('fixtures/sync/playback/episodes.json'), status=200,
+        callback=authenticated_response('fixtures/sync/playback/episodes.json'),
         content_type='application/json'
     )
 
     Trakt.base_url = 'http://mock'
 
-    playback = Trakt['sync/playback'].episodes()
+    with Trakt.configuration.auth('mock', 'mock'):
+        playback = Trakt['sync/playback'].episodes()
+
+    assert playback is not None
 
     # Validate `Show`
     show = playback[('tvdb', '80348')]
@@ -67,16 +70,18 @@ def test_playback():
 
 @responses.activate
 def test_collection():
-    responses.add(
+    responses.add_callback(
         responses.GET, 'http://mock/sync/collection/shows',
-        body=read('fixtures/sync/collection/shows.json'), status=200,
+        callback=authenticated_response('fixtures/sync/collection/shows.json'),
         content_type='application/json'
     )
 
     Trakt.base_url = 'http://mock'
 
-    collection = Trakt['sync/collection'].shows()
+    with Trakt.configuration.auth('mock', 'mock'):
+        collection = Trakt['sync/collection'].shows()
 
+    assert collection is not None
     assert len(collection) == 4
 
     # Validate `Show`
@@ -116,21 +121,21 @@ def test_collection():
 
 @responses.activate
 def test_ratings():
-    responses.add(
+    responses.add_callback(
         responses.GET, 'http://mock/sync/ratings/shows',
-        body=read('fixtures/sync/ratings/shows.json'), status=200,
+        callback=authenticated_response('fixtures/sync/ratings/shows.json'),
         content_type='application/json'
     )
 
-    responses.add(
+    responses.add_callback(
         responses.GET, 'http://mock/sync/ratings/seasons',
-        body=read('fixtures/sync/ratings/seasons.json'), status=200,
+        callback=authenticated_response('fixtures/sync/ratings/seasons.json'),
         content_type='application/json'
     )
 
-    responses.add(
+    responses.add_callback(
         responses.GET, 'http://mock/sync/ratings/episodes',
-        body=read('fixtures/sync/ratings/episodes.json'), status=200,
+        callback=authenticated_response('fixtures/sync/ratings/episodes.json'),
         content_type='application/json'
     )
 
@@ -138,9 +143,10 @@ def test_ratings():
 
     ratings = {}
 
-    Trakt['sync/ratings'].shows(ratings)
-    Trakt['sync/ratings'].seasons(ratings)
-    Trakt['sync/ratings'].episodes(ratings)
+    with Trakt.configuration.auth('mock', 'mock'):
+        Trakt['sync/ratings'].shows(ratings)
+        Trakt['sync/ratings'].seasons(ratings)
+        Trakt['sync/ratings'].episodes(ratings)
 
     assert len(ratings) == 6
 
@@ -219,16 +225,18 @@ def test_ratings():
 
 @responses.activate
 def test_watched():
-    responses.add(
+    responses.add_callback(
         responses.GET, 'http://mock/sync/watched/shows',
-        body=read('fixtures/sync/watched/shows.json'), status=200,
+        callback=authenticated_response('fixtures/sync/watched/shows.json'),
         content_type='application/json'
     )
 
     Trakt.base_url = 'http://mock'
 
-    watched = Trakt['sync/watched'].shows()
+    with Trakt.configuration.auth('mock', 'mock'):
+        watched = Trakt['sync/watched'].shows()
 
+    assert watched is not None
     assert len(watched) == 9
 
     # Validate `Show`
