@@ -300,9 +300,9 @@ class Movie(Video):
 
 
 class Rating(object):
-    def __init__(self):
-        self.value = None
-        self.timestamp = None
+    def __init__(self, value=None, timestamp=None):
+        self.value = value
+        self.timestamp = timestamp
 
     @classmethod
     def create(cls, info):
@@ -313,6 +313,12 @@ class Rating(object):
         r.value = info.get('rating')
         r.timestamp = from_iso8601(info.get('rated_at'))
         return r
+
+    def __eq__(self, other):
+        if not isinstance(other, Rating):
+            return NotImplemented
+
+        return self.value == other.value and self.timestamp == other.timestamp
 
     def __repr__(self):
         return '<Rating %s/10 (%s)>' % (self.value, self.timestamp)
