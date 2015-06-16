@@ -4,7 +4,7 @@ from trakt.core.context_stack import ContextStack
 from trakt.core.helpers import synchronized
 from trakt.core.request import TraktRequest
 
-from requests.adapters import HTTPAdapter
+from requests.adapters import HTTPAdapter, DEFAULT_POOLBLOCK
 from threading import Lock
 import calendar
 import datetime
@@ -12,6 +12,11 @@ import logging
 import requests
 import socket
 import time
+
+try:
+    import ssl
+except ImportError:
+    ssl = None
 
 log = logging.getLogger(__name__)
 
@@ -132,7 +137,12 @@ class HttpClient(object):
 
         # Mount adapters
         self.session.mount('http://', HTTPAdapter(**self.adapter_kwargs))
-        self.session.mount('https://', HTTPAdapter(**self.adapter_kwargs))
+
+        if ssl is not None:
+            self.session.mount('https://', HTTPSAdapter(ssl_version=ssl.PROTOCOL_TLSv1, **self.adapter_kwargs))
+        else:
+            log.warn('"ssl" module is not available, unable to change "ssl_version"')
+            self.session.mount('https://', HTTPSAdapter(**self.adapter_kwargs))
 
         return self.session
 
@@ -185,3 +195,18 @@ class HttpClient(object):
         # Fire refresh event
         self.client.emit('oauth.token_refreshed', response)
         return True
+
+
+class HTTPSAdapter(HTTPAdapter):
+    def __init__(self, ssl_version=None, *args, **kwargs):
+        self._ssl_version = ssl_version
+
+        super(HTTPSAdapter, self).__init__(*args, **kwargs)
+
+    def init_poolmanager(self, connections, maxsize, block=DEFAULT_POOLBLOCK, **pool_kwargs):
+        pool_kwargs['ssl_version'] = self._ssl_version
+
+        return super(HTTPSAdapter, self).init_poolmanager(
+            connections, maxsize, block,
+            **pool_kwargs
+        )
