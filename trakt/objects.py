@@ -11,6 +11,9 @@ class Media(object):
         self.rating = None
         self.score = None
 
+        # Flags
+        self.in_watchlist = None
+
     @property
     def pk(self):
         if not self.keys:
@@ -18,7 +21,7 @@ class Media(object):
 
         return self.keys[0]
 
-    def update(self, info=None, **kwargs):
+    def update(self, info=None, in_watchlist=None, **kwargs):
         update_attributes(self, info, [
             'overview',
             'images',
@@ -26,6 +29,10 @@ class Media(object):
         ])
 
         self.rating = Rating.create(info) or self.rating
+
+        # Set flags
+        if in_watchlist is not None:
+            self.in_watchlist = in_watchlist
 
     def __str__(self):
         return self.__repr__()
@@ -42,11 +49,12 @@ class Video(Media):
         self.plays = None
         self.progress = None
 
+        # Flags
         self.is_watched = None
         self.is_collected = None
 
-    def update(self, info=None, is_watched=None, is_collected=None):
-        super(Video, self).update(info)
+    def update(self, info=None, is_watched=None, is_collected=None, **kwargs):
+        super(Video, self).update(info, **kwargs)
 
         update_attributes(self, info, [
             'plays',
