@@ -2,7 +2,7 @@ from trakt.interfaces.base import Interface
 from trakt.mapper import ListMapper
 
 # Import child interfaces
-from trakt.interfaces.users.lists.list import UsersListInterface
+from trakt.interfaces.users.lists.list_ import UsersListInterface
 
 __all__ = [
     'UsersListsInterface'
@@ -24,7 +24,7 @@ class UsersListsInterface(Interface):
         }
 
         # Remove attributes with `None` values
-        for key in data.keys():
+        for key in list(data.keys()):
             if data[key] is not None:
                 continue
 

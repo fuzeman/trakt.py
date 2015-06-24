@@ -78,7 +78,7 @@ class UsersListInterface(Interface):
         }
 
         # Remove attributes with `None` values
-        for key in data.keys():
+        for key in list(data.keys()):
             if data[key] is not None:
                 continue
 
