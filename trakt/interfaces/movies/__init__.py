@@ -12,5 +12,6 @@ class MoviesInterface(Interface):
 
         # Parse response
         return SummaryMapper.movie(
+            self.client,
             self.get_data(response)
         )

@@ -3,7 +3,7 @@ from trakt.mapper.core.base import Mapper
 
 class SearchMapper(Mapper):
     @classmethod
-    def process(cls, item, media=None, **kwargs):
+    def process(cls, client, item, media=None, **kwargs):
         if media is None:
             # Retrieve `media` from `item`
             media = item.get('type')
@@ -18,10 +18,10 @@ class SearchMapper(Mapper):
             raise ValueError('Unknown media type: %r', media)
 
         # Map item
-        return func(item, **kwargs)
+        return func(client, item, **kwargs)
 
     @classmethod
-    def movie(cls, item, **kwargs):
+    def movie(cls, client, item, **kwargs):
         if 'movie' in item:
             i_movie = item['movie']
         else:
@@ -34,23 +34,23 @@ class SearchMapper(Mapper):
             return None
 
         # Create object
-        movie = cls.create('movie', i_movie, keys, **kwargs)
+        movie = cls.construct(client, 'movie', i_movie, keys, **kwargs)
 
         if 'movie' in item:
-            movie.update(item)
+            movie._update(item)
 
         return movie
 
     @classmethod
-    def list(cls, item, **kwargs):
+    def list(cls, client, item, **kwargs):
         return None
 
     @classmethod
-    def officiallist(cls, item, **kwargs):
+    def officiallist(cls, client, item, **kwargs):
         return None
 
     @classmethod
-    def show(cls, item, **kwargs):
+    def show(cls, client, item, **kwargs):
         if 'show' in item:
             i_show = item['show']
         else:
@@ -63,20 +63,20 @@ class SearchMapper(Mapper):
             return None
 
         # Create object
-        show = cls.create('show', i_show, keys, **kwargs)
+        show = cls.construct(client, 'show', i_show, keys, **kwargs)
 
         # Update with root info
         if 'show' in item:
-            show.update(item)
+            show._update(item)
 
         return show
 
     @classmethod
-    def episodes(cls, items, **kwargs):
-        return [cls.episode(item, **kwargs) for item in items]
+    def episodes(cls, client, items, **kwargs):
+        return [cls.episode(client, item, **kwargs) for item in items]
 
     @classmethod
-    def episode(cls, item, **kwargs):
+    def episode(cls, client, item, **kwargs):
         if 'episode' in item:
             i_episode = item['episode']
         else:
@@ -89,16 +89,16 @@ class SearchMapper(Mapper):
             return None
 
         # Create object
-        episode = cls.create('episode', i_episode, keys, **kwargs)
+        episode = cls.construct(client, 'episode', i_episode, keys, **kwargs)
 
         if 'show' in item:
-            episode.show = cls.show(item['show'])
+            episode.show = cls.show(client, item['show'])
 
         if 'season' in item:
-            episode.season = cls.season(item['season'])
+            episode.season = cls.season(client, item['season'])
 
         # Update with root info
         if 'episode' in item:
-            episode.update(item)
+            episode._update(item)
 
         return episode

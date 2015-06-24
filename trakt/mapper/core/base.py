@@ -1,5 +1,4 @@
-from trakt.objects import Show, Episode, Season
-from trakt.objects import Movie
+from trakt.objects import Movie, Show, Episode, Season
 
 IDENTIFIERS = {
     'movie': [
@@ -67,20 +66,20 @@ class Mapper(object):
         return keys[0], keys
 
     @classmethod
-    def create(cls, media, item, keys=None, **kwargs):
+    def construct(cls, client, media, item, keys=None, **kwargs):
         if keys is None:
             _, keys = cls.get_ids(media, item)
 
         if media == 'movie':
-            return Movie.create(keys, item, **kwargs)
+            return Movie._construct(client, keys, item, **kwargs)
 
         if media == 'show':
-            return Show.create(keys, item, **kwargs)
+            return Show._construct(client, keys, item, **kwargs)
 
         if media == 'season':
-            return Season.create(keys, item, **kwargs)
+            return Season._construct(client, keys, item, **kwargs)
 
         if media == 'episode':
-            return Episode.create(keys, item, **kwargs)
+            return Episode._construct(client, keys, item, **kwargs)
 
         raise ValueError('Unknown media type provided')
