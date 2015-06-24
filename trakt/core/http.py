@@ -65,7 +65,10 @@ class HttpClient(object):
 
         # build request
         if ctx.base_path and path:
-            path = ctx.base_path + '/' + path
+            # Prepend `base_path` to relative `path`s
+            if not path.startswith('/'):
+                path = ctx.base_path + '/' + path
+
         elif ctx.base_path:
             path = ctx.base_path
 
@@ -118,14 +121,17 @@ class HttpClient(object):
 
         return response
 
+    def delete(self, path=None, params=None, data=None, **kwargs):
+        return self.request('DELETE', path, params, data, **kwargs)
+
     def get(self, path=None, params=None, data=None, **kwargs):
         return self.request('GET', path, params, data, **kwargs)
 
     def post(self, path=None, params=None, data=None, **kwargs):
         return self.request('POST', path, params, data, **kwargs)
 
-    def delete(self, path=None, params=None, data=None, **kwargs):
-        return self.request('DELETE', path, params, data, **kwargs)
+    def put(self, path=None, params=None, data=None, **kwargs):
+        return self.request('PUT', path, params, data, **kwargs)
 
     def rebuild(self):
         if self.session:
