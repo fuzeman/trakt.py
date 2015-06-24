@@ -25,6 +25,10 @@ class SummaryMapper(Mapper):
         # Create object
         movie = cls.construct(client, 'movie', i_movie, keys, **kwargs)
 
+        # Update with root info
+        if 'movie' in item:
+            movie._update(item)
+
         return movie
 
     @classmethod
@@ -79,6 +83,10 @@ class SummaryMapper(Mapper):
         # Create object
         season = cls.construct(client, 'season', i_season, keys, **kwargs)
 
+        # Update with root info
+        if 'season' in item:
+            season._update(item)
+
         return season
 
     @classmethod
@@ -103,5 +111,9 @@ class SummaryMapper(Mapper):
 
         # Create object
         episode = cls.construct(client, 'episode', i_episode, keys, **kwargs)
+
+        # Update with root info
+        if 'episode' in item:
+            episode._update(item)
 
         return episode
