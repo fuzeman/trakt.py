@@ -1,4 +1,4 @@
-from trakt.objects import Movie, Show, Episode, Season
+from trakt.objects import Movie, Show, Episode, Season, CustomList
 
 IDENTIFIERS = {
     'movie': [
@@ -30,6 +30,10 @@ IDENTIFIERS = {
         'tvrage',
 
         'trakt'
+    ],
+    'custom_list': [
+        'trakt',
+        'slug'
     ]
 }
 
@@ -81,5 +85,8 @@ class Mapper(object):
 
         if media == 'episode':
             return Episode._construct(client, keys, item, **kwargs)
+
+        if media == 'custom_list':
+            return CustomList._construct(client, keys, item, **kwargs)
 
         raise ValueError('Unknown media type provided')
