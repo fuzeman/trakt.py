@@ -19,6 +19,7 @@ def test_create():
     with Trakt.configuration.auth('mock', 'mock'):
         movies_list = Trakt['users/me/lists'].create(name="Movies")
 
+    # Validate movies list
     assert movies_list.name == 'Movies'
     assert movies_list.description is None
     assert movies_list.likes == 0
@@ -29,7 +30,7 @@ def test_create():
     assert movies_list.updated_at == datetime(2015, 6, 22, 2, 25, tzinfo=tzutc())
 
     assert movies_list.comment_count == 0
-    assert movies_list.item_count == 3
+    assert movies_list.item_count == 2
 
     assert movies_list.privacy == 'private'
 
@@ -68,6 +69,6 @@ def test_get():
     assert movies_list.updated_at == datetime(2015, 6, 22, 2, 25, tzinfo=tzutc())
 
     assert movies_list.comment_count == 0
-    assert movies_list.item_count == 3
+    assert movies_list.item_count == 2
 
     assert movies_list.privacy == 'private'
