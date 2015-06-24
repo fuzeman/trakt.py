@@ -1,3 +1,4 @@
+from trakt.core.helpers import from_iso8601
 from trakt.objects.core.helpers import update_attributes
 
 
@@ -40,6 +41,9 @@ class List(object):
         if not info:
             return
 
+        if 'updated_at' in info:
+            self.updated_at = from_iso8601(info.get('updated_at'))
+
         update_attributes(self, info, [
             'name',
             'description',
@@ -47,8 +51,6 @@ class List(object):
 
             'allow_comments',
             'display_numbers',
-
-            'updated_at',
 
             'comment_count',
             'item_count'
