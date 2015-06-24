@@ -42,14 +42,6 @@ class SearchMapper(Mapper):
         return movie
 
     @classmethod
-    def list(cls, client, item, **kwargs):
-        return None
-
-    @classmethod
-    def officiallist(cls, client, item, **kwargs):
-        return None
-
-    @classmethod
     def show(cls, client, item, **kwargs):
         if 'show' in item:
             i_show = item['show']

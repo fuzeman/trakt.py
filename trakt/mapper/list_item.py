@@ -72,6 +72,31 @@ class ListItemMapper(Mapper):
         return show
 
     @classmethod
+    def seasons(cls, client, items, **kwargs):
+        return [cls.season(client, item, **kwargs) for item in items]
+
+    @classmethod
+    def season(cls, client, item, **kwargs):
+        if 'season' in item:
+            i_season = item['season']
+        else:
+            i_season = item
+
+        # Retrieve item keys
+        pk, keys = cls.get_ids('season', i_season)
+
+        if pk is None:
+            return None
+
+        # Create object
+        season = cls.construct(client, 'season', i_season, keys, **kwargs)
+
+        if 'show' in item:
+            season.show = cls.show(client, item['show'])
+
+        return season
+
+    @classmethod
     def episodes(cls, client, items, **kwargs):
         return [cls.episode(client, item, **kwargs) for item in items]
 
