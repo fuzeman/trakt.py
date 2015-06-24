@@ -21,6 +21,7 @@ class ShowsInterface(Interface):
         )
 
         return SummaryMapper.shows(
+            self.client,
             self.get_data(response)
         )
 

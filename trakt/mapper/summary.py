@@ -3,6 +3,13 @@ from trakt.mapper.core.base import Mapper
 
 class SummaryMapper(Mapper):
     @classmethod
+    def movies(cls, client, items, **kwargs):
+        if not items:
+            return None
+
+        return [cls.movie(client, item, **kwargs) for item in items]
+
+    @classmethod
     def movie(cls, client, item, **kwargs):
         if 'movie' in item:
             i_movie = item['movie']
@@ -22,6 +29,9 @@ class SummaryMapper(Mapper):
 
     @classmethod
     def shows(cls, client, items, **kwargs):
+        if not items:
+            return None
+
         return [cls.show(client, item, **kwargs) for item in items]
 
     @classmethod
@@ -48,6 +58,9 @@ class SummaryMapper(Mapper):
 
     @classmethod
     def seasons(cls, client, items, **kwargs):
+        if not items:
+            return None
+
         return [cls.season(client, item, **kwargs) for item in items]
 
     @classmethod
@@ -70,6 +83,9 @@ class SummaryMapper(Mapper):
 
     @classmethod
     def episodes(cls, client, items, **kwargs):
+        if not items:
+            return None
+
         return [cls.episode(client, item, **kwargs) for item in items]
 
     @classmethod

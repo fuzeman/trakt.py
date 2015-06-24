@@ -15,3 +15,13 @@ class MoviesInterface(Interface):
             self.client,
             self.get_data(response)
         )
+
+    def trending(self):
+        response = self.http.get(
+            'trending'
+        )
+
+        return SummaryMapper.movies(
+            self.client,
+            self.get_data(response)
+        )

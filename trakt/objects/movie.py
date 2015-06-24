@@ -10,6 +10,8 @@ class Movie(Video):
         self.title = None
         self.year = None
 
+        self.watchers = None  # trending
+
     def to_identifier(self):
         return {
             'ids': dict(self.keys),
@@ -45,7 +47,10 @@ class Movie(Video):
     def _update(self, info=None, **kwargs):
         super(Movie, self)._update(info, **kwargs)
 
-        update_attributes(self, info, ['title'])
+        update_attributes(self, info, [
+            'title',
+            'watchers'  # trending
+        ])
 
         if info.get('year'):
             self.year = int(info['year'])
