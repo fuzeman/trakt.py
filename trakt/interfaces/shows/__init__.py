@@ -15,6 +15,15 @@ class ShowsInterface(Interface):
             self.get_data(response)
         )
 
+    def trending(self):
+        response = self.http.get(
+            'trending'
+        )
+
+        return SummaryMapper.shows(
+            self.get_data(response)
+        )
+
     def seasons(self, id):
         response = self.http.get(str(id), [
             'seasons'

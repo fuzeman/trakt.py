@@ -21,6 +21,10 @@ class SummaryMapper(Mapper):
         return movie
 
     @classmethod
+    def shows(cls, client, items, **kwargs):
+        return [cls.show(client, item, **kwargs) for item in items]
+
+    @classmethod
     def show(cls, client, item, **kwargs):
         if 'show' in item:
             i_show = item['show']
