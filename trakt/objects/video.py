@@ -26,6 +26,7 @@ class Video(Media):
             'progress'
         ])
 
+        # Set timestamps
         if 'last_watched_at' in info:
             self.last_watched_at = from_iso8601(info.get('last_watched_at'))
 
