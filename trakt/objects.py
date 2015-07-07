@@ -1,3 +1,5 @@
+from six import iteritems
+
 from trakt.core.helpers import from_iso8601, to_iso8601, deprecated
 from trakt.helpers import update_attributes
 
@@ -80,9 +82,9 @@ class Show(Media):
         self.seasons = {}
 
     def episodes(self):
-        for sk, season in self.seasons.iteritems():
+        for sk, season in iteritems(self.seasons):
             # Yield each episode in season
-            for ek, episode in season.episodes.iteritems():
+            for ek, episode in iteritems(season.episodes):
                 yield (sk, ek), episode
 
     def to_identifier(self):
