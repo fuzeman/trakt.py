@@ -1,3 +1,19 @@
+2.4.0 (2015-07-09)
+------------------
+**Added**
+ - :code:`trending()` method to :code:`Trakt['shows']` and :code:`Trakt['movies']` interfaces (#23)
+ - :code:`seasons()` and :code:`episodes()` methods to the :code:`Trakt['sync/watchlist']` interface (#26)
+ - Custom lists support (:code:`Trakt['users/*/lists']`, :code:`Trakt['users/*/lists/*']`) (#26)
+ - :code:`__eq__()` method on the :code:`Rating` class
+ - :code:`proxies` attribute on :code:`Trakt.http`
+
+**Changed**
+ - :code:`datetime` objects are now returned offset-aware **(make sure you use offset-aware `datetime` objects when comparing timestamps now)**
+ - Force requests to use :code:`ssl.PROTOCOL_TLSv1` connections for https:// (#25)
+ - Return site url from :code:`Trakt['oauth'].authorize_url()`
+ - Use season number from parent when one isn't defined in the episode
+
+
 2.3.0 (2015-04-11)
 ------------------
 **Changes**
