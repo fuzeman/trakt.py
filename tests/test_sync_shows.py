@@ -1,6 +1,7 @@
 from tests.core.helpers import authenticated_response
 
 from datetime import datetime
+from dateutil.tz import tzutc
 from trakt import Trakt
 import responses
 
@@ -41,7 +42,7 @@ def test_playback():
     assert episode.show == show
     assert episode.season == season
 
-    assert episode.paused_at == datetime(2015, 3, 9, 0, 10, 15)
+    assert episode.paused_at == datetime(2015, 3, 9, 0, 10, 15, tzinfo=tzutc())
     assert episode.progress == 4.99
 
     # Validate `Episode.to_dict()`
@@ -116,7 +117,7 @@ def test_collection():
     assert episode.season == season
 
     assert episode.is_collected
-    assert episode.collected_at == datetime(2013, 10, 11, 1, 59, 5)
+    assert episode.collected_at == datetime(2013, 10, 11, 1, 59, 5, tzinfo=tzutc())
 
 
 @responses.activate
@@ -157,7 +158,7 @@ def test_ratings():
     assert show.year == 2007
 
     assert show.rating.value == 10
-    assert show.rating.timestamp == datetime(2014, 10, 19, 23, 2, 23)
+    assert show.rating.timestamp == datetime(2014, 10, 19, 23, 2, 23, tzinfo=tzutc())
 
     # Validate `Season`
     season = show.seasons[1]
@@ -172,7 +173,7 @@ def test_ratings():
     ]
 
     assert season.rating.value == 10
-    assert season.rating.timestamp == datetime(2015, 3, 11, 23, 29, 35)
+    assert season.rating.timestamp == datetime(2015, 3, 11, 23, 29, 35, tzinfo=tzutc())
 
     # Validate `Season.to_dict()`
     assert season.to_dict() == {
@@ -220,7 +221,7 @@ def test_ratings():
     assert episode.season == season
 
     assert episode.rating.value == 10
-    assert episode.rating.timestamp == datetime(2014, 10, 19, 23, 2, 24)
+    assert episode.rating.timestamp == datetime(2014, 10, 19, 23, 2, 24, tzinfo=tzutc())
 
 
 @responses.activate
@@ -252,5 +253,5 @@ def test_watched():
     episode = show.seasons[1].episodes[2]
 
     assert episode.is_watched
-    assert episode.last_watched_at == datetime(2015, 3, 10, 5, 21, 51)
+    assert episode.last_watched_at == datetime(2015, 3, 10, 5, 21, 51, tzinfo=tzutc())
     assert episode.plays == 9

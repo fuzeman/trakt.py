@@ -1,6 +1,7 @@
 from tests.core.helpers import authenticated_response
 
 from datetime import datetime
+from dateutil.tz import tzutc
 from trakt import Trakt
 import responses
 
@@ -33,7 +34,7 @@ def test_playback():
     ]
 
     assert playback[('imdb', 'tt1104001')].progress == 64.0
-    assert playback[('imdb', 'tt1104001')].paused_at == datetime(2015, 2, 9, 5, 56, 58)
+    assert playback[('imdb', 'tt1104001')].paused_at == datetime(2015, 2, 9, 5, 56, 58, tzinfo=tzutc())
 
     # 100 Bloody Acres (2012)
     assert playback[('imdb', 'tt2290065')].title == '100 Bloody Acres'
@@ -48,7 +49,7 @@ def test_playback():
     ]
 
     assert playback[('imdb', 'tt2290065')].progress == 0.0
-    assert playback[('imdb', 'tt2290065')].paused_at == datetime(2015, 1, 10, 6, 44, 9)
+    assert playback[('imdb', 'tt2290065')].paused_at == datetime(2015, 1, 10, 6, 44, 9, tzinfo=tzutc())
 
 
 @responses.activate
@@ -79,7 +80,7 @@ def test_collection():
     ]
 
     assert collection[('imdb', 'tt1104001')].is_collected
-    assert collection[('imdb', 'tt1104001')].collected_at == datetime(2014, 9, 28, 22, 45, 23)
+    assert collection[('imdb', 'tt1104001')].collected_at == datetime(2014, 9, 28, 22, 45, 23, tzinfo=tzutc())
 
     # 100 Bloody Acres (2012)
     assert collection[('imdb', 'tt2290065')].title == '100 Bloody Acres'
@@ -94,7 +95,7 @@ def test_collection():
     ]
 
     assert collection[('imdb', 'tt2290065')].is_collected
-    assert collection[('imdb', 'tt2290065')].collected_at == datetime(2014, 1, 20, 7, 4, 4)
+    assert collection[('imdb', 'tt2290065')].collected_at == datetime(2014, 1, 20, 7, 4, 4, tzinfo=tzutc())
 
 
 @responses.activate
@@ -125,7 +126,7 @@ def test_ratings():
     ]
 
     assert ratings[('imdb', 'tt2290065')].rating.value == 8
-    assert ratings[('imdb', 'tt2290065')].rating.timestamp == datetime(2015, 1, 28, 2, 26, 37)
+    assert ratings[('imdb', 'tt2290065')].rating.timestamp == datetime(2015, 1, 28, 2, 26, 37, tzinfo=tzutc())
 
     # The Hobbit: The Desolation of Smaug (2013)
     assert ratings[('imdb', 'tt1170358')].title == 'The Hobbit: The Desolation of Smaug'
@@ -140,7 +141,7 @@ def test_ratings():
     ]
 
     assert ratings[('imdb', 'tt1170358')].rating.value == 10
-    assert ratings[('imdb', 'tt1170358')].rating.timestamp == datetime(2014, 11, 1, 0, 24, 54)
+    assert ratings[('imdb', 'tt1170358')].rating.timestamp == datetime(2014, 11, 1, 0, 24, 54, tzinfo=tzutc())
 
 
 @responses.activate
@@ -171,7 +172,7 @@ def test_watched():
     ]
 
     assert watched[('imdb', 'tt2290065')].plays == 2
-    assert watched[('imdb', 'tt2290065')].last_watched_at == datetime(2014, 4, 27, 13, 43, 59)
+    assert watched[('imdb', 'tt2290065')].last_watched_at == datetime(2014, 4, 27, 13, 43, 59, tzinfo=tzutc())
 
     # The Hobbit: The Desolation of Smaug (2013)
     assert watched[('imdb', 'tt1170358')].title == 'The Hobbit: The Desolation of Smaug'
@@ -186,7 +187,7 @@ def test_watched():
     ]
 
     assert watched[('imdb', 'tt1170358')].plays == 1
-    assert watched[('imdb', 'tt1170358')].last_watched_at == datetime(2014, 4, 20, 12, 32, 59)
+    assert watched[('imdb', 'tt1170358')].last_watched_at == datetime(2014, 4, 20, 12, 32, 59, tzinfo=tzutc())
 
     # TRON: Legacy (2010)
     assert watched[('imdb', 'tt1104001')].title == 'TRON: Legacy'
@@ -201,4 +202,4 @@ def test_watched():
     ]
 
     assert watched[('imdb', 'tt1104001')].plays == 1
-    assert watched[('imdb', 'tt1104001')].last_watched_at == datetime(2015, 1, 27, 23, 30, 16)
+    assert watched[('imdb', 'tt1104001')].last_watched_at == datetime(2015, 1, 27, 23, 30, 16, tzinfo=tzutc())

@@ -24,15 +24,15 @@ def read(path, mode='rb'):
         return BufferIO(fp.read())
 
 
-def authenticated_response(path):
+def authenticated_response(path=None, data=None):
     def callback(request):
         h = request.headers
 
         if h.get('trakt-user-login') == 'mock' and h.get('trakt-user-token') == 'mock':
-            return 200, {}, read(path)
+            return 200, {}, read(path) if path else data
 
         if h.get('Authorization') == 'Bearer mock':
-            return 200, {}, read(path)
+            return 200, {}, read(path) if path else data
 
         return 401, {}, ''
 
