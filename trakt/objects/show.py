@@ -2,6 +2,8 @@ from trakt.core.helpers import to_iso8601, deprecated
 from trakt.objects.core.helpers import update_attributes
 from trakt.objects.media import Media
 
+from six import iteritems
+
 
 class Show(Media):
     def __init__(self, client, keys):
@@ -15,9 +17,9 @@ class Show(Media):
         self.watchers = None  # trending
 
     def episodes(self):
-        for sk, season in self.seasons.iteritems():
+        for sk, season in iteritems(self.seasons):
             # Yield each episode in season
-            for ek, episode in season.episodes.iteritems():
+            for ek, episode in iteritems(season.episodes):
                 yield (sk, ek), episode
 
     def to_identifier(self):
