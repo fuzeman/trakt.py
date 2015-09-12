@@ -1,3 +1,9 @@
+2.4.1 (2015-09-12)
+------------------
+**Fixed**
+ - Issue where the "_client" attribute on objects was being serialized
+ - Issue installing trakt.py when "arrow" isn't available yet
+
 2.4.0 (2015-07-09)
 ------------------
 **Added**
