@@ -16,6 +16,7 @@ class List(object):
         self.allow_comments = None
         self.display_numbers = None
 
+        self.liked_at = None
         self.updated_at = None
 
         self.comment_count = None
@@ -40,6 +41,9 @@ class List(object):
     def _update(self, info=None):
         if not info:
             return
+
+        if 'liked_at' in info:
+            self.liked_at = from_iso8601(info.get('liked_at'))
 
         if 'updated_at' in info:
             self.updated_at = from_iso8601(info.get('updated_at'))
@@ -66,7 +70,7 @@ class List(object):
 
 
 class CustomList(List):
-    def __init__(self, client, keys, username):
+    def __init__(self, client, keys, username=None):
         super(CustomList, self).__init__(client, keys)
 
         self.username = username
@@ -82,6 +86,12 @@ class CustomList(List):
         update_attributes(self, info, [
             'privacy'
         ])
+
+        # Update with user details
+        user = info.get('user', {})
+
+        if user.get('username'):
+            self.username = user['username']
 
     @classmethod
     def _construct(cls, client, keys, info, **kwargs):
