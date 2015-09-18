@@ -33,9 +33,11 @@ class Media(object):
 
         update_attributes(self, info, [
             'overview',
-            'images',
             'score'
         ])
+
+        if 'images' in info:
+            self.images = info['images']
 
         # Set timestamps
         if 'listed_at' in info:
