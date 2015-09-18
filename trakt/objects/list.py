@@ -102,6 +102,9 @@ class CustomList(List):
         l._update(info)
         return l
 
+    def items(self, **kwargs):
+        return self._client['users/*/lists/*'].items(self.username, self.id, **kwargs)
+
     #
     # Owner actions
     #
@@ -109,8 +112,8 @@ class CustomList(List):
     def add(self, items, **kwargs):
         return self._client['users/*/lists/*'].add(self.username, self.id, items, **kwargs)
 
-    def delete(self):
-        return self._client['users/*/lists/*'].delete(self.username, self.id)
+    def delete(self, **kwargs):
+        return self._client['users/*/lists/*'].delete(self.username, self.id, **kwargs)
 
     def update(self, **kwargs):
         item = self._client['users/*/lists/*'].update(self.username, self.id, return_type='data', **kwargs)
