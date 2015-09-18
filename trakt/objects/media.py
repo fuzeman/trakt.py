@@ -4,10 +4,11 @@ from trakt.objects.rating import Rating
 
 
 class Media(object):
-    def __init__(self, client, keys=None):
+    def __init__(self, client, keys=None, index=None):
         self._client = client
 
         self.keys = keys
+        self.index = index
 
         self.images = None
         self.overview = None
