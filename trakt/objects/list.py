@@ -60,6 +60,14 @@ class List(object):
             'item_count'
         ])
 
+    def __getstate__(self):
+        state = self.__dict__
+
+        if hasattr(self, '_client'):
+            del state['_client']
+
+        return state
+
     def __repr__(self):
         _, sid = self.pk
 
