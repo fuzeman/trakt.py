@@ -1,0 +1,63 @@
+=================
+Source Code Index
+=================
+
+Trakt
+=====
+.. toctree::
+   :maxdepth: 1
+
+   trakt/trakt.client
+   trakt/trakt.helpers
+   trakt/trakt.sphinxext
+   trakt/trakt
+   trakt/trakt.core.configuration
+   trakt/trakt.core.context_collection
+   trakt/trakt.core.context_stack
+   trakt/trakt.core.emitter
+   trakt/trakt.core.errors
+   trakt/trakt.core.exceptions
+   trakt/trakt.core.helpers
+   trakt/trakt.core.http
+   trakt/trakt.core.request
+   trakt/trakt.core
+   trakt/trakt.interfaces.auth
+   trakt/trakt.interfaces.oauth
+   trakt/trakt.interfaces.scrobble
+   trakt/trakt.interfaces.search
+   trakt/trakt.interfaces
+   trakt/trakt.interfaces.base
+   trakt/trakt.interfaces.movies
+   trakt/trakt.interfaces.shows
+   trakt/trakt.interfaces.sync.collection
+   trakt/trakt.interfaces.sync.history
+   trakt/trakt.interfaces.sync.playback
+   trakt/trakt.interfaces.sync.ratings
+   trakt/trakt.interfaces.sync.watched
+   trakt/trakt.interfaces.sync.watchlist
+   trakt/trakt.interfaces.sync
+   trakt/trakt.interfaces.sync.core.mixins
+   trakt/trakt.interfaces.sync.core
+   trakt/trakt.interfaces.users.settings
+   trakt/trakt.interfaces.users
+   trakt/trakt.interfaces.users.lists.list_
+   trakt/trakt.interfaces.users.lists
+   trakt/trakt.mapper.list
+   trakt/trakt.mapper.list_item
+   trakt/trakt.mapper.search
+   trakt/trakt.mapper.summary
+   trakt/trakt.mapper.sync
+   trakt/trakt.mapper
+   trakt/trakt.mapper.core.base
+   trakt/trakt.mapper.core
+   trakt/trakt.objects.episode
+   trakt/trakt.objects.list
+   trakt/trakt.objects.media
+   trakt/trakt.objects.movie
+   trakt/trakt.objects.rating
+   trakt/trakt.objects.season
+   trakt/trakt.objects.show
+   trakt/trakt.objects.video
+   trakt/trakt.objects
+   trakt/trakt.objects.core.helpers
+   trakt/trakt.objects.core

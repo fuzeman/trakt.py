@@ -5,7 +5,7 @@ from trakt.mapper import ListMapper
 from trakt.interfaces.users.lists.list_ import UsersListInterface
 
 __all__ = [
-    'UsersListsInterface'
+    'UsersListsInterface',
     'UsersListInterface'
 ]
 
