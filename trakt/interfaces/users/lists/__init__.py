@@ -4,16 +4,12 @@ from trakt.mapper import ListMapper
 # Import child interfaces
 from trakt.interfaces.users.lists.list_ import UsersListInterface
 
-__all__ = [
-    'UsersListsInterface'
-    'UsersListInterface'
-]
-
 
 class UsersListsInterface(Interface):
     path = 'users/*/lists'
 
-    def create(self, username, name, description=None, privacy='private', display_numbers=False, allow_comments=True, **kwargs):
+    def create(self, username, name, description=None, privacy='private',
+               display_numbers=False, allow_comments=True, **kwargs):
         data = {
             'name': name,
             'description': description,
@@ -66,3 +62,9 @@ class UsersListsInterface(Interface):
                 self.client, item,
                 username=username
             )
+
+
+__all__ = [
+    UsersListsInterface,
+    UsersListInterface
+]

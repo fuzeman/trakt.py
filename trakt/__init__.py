@@ -1,10 +1,11 @@
 from trakt.core.errors import ERRORS
 from trakt.core.exceptions import RequestError, ClientError, ServerError
-from trakt.client import TraktClient, __version__
+from trakt.client import TraktClient
 from trakt.helpers import has_attribute
 
 from six import add_metaclass
 
+__version__ = '2.4.1'
 
 __all__ = [
     'Trakt',
@@ -47,4 +48,4 @@ class Trakt(object):
 
     @classmethod
     def construct(cls):
-        cls.client = TraktClient()
+        cls.client = TraktClient(__version__)

@@ -3,3 +3,12 @@ from trakt.mapper.list_item import ListItemMapper
 from trakt.mapper.search import SearchMapper
 from trakt.mapper.summary import SummaryMapper
 from trakt.mapper.sync import SyncMapper
+
+
+__all__ = [
+    ListMapper,
+    ListItemMapper,
+    SearchMapper,
+    SummaryMapper,
+    SyncMapper
+    ]

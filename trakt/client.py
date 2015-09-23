@@ -4,20 +4,16 @@ from trakt.core.http import HttpClient
 from trakt.interfaces import construct_map
 from trakt.interfaces.base import InterfaceProxy
 
-import logging
-
-__version__ = '2.4.1'
-
-log = logging.getLogger(__name__)
-
 
 class TraktClient(Emitter):
     base_url = 'https://api-v2launch.trakt.tv'
-    version = __version__
 
     __interfaces = None
 
-    def __init__(self, adapter_kwargs=None):
+    def __init__(self, version, adapter_kwargs=None):
+
+        self.version = version
+
         # Set parameter defaults
         if adapter_kwargs is None:
             adapter_kwargs = {}
