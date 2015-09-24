@@ -1,4 +1,4 @@
-from trakt import __version__
+from trakt.version import __version__
 
 from setuptools import setup, find_packages
 
