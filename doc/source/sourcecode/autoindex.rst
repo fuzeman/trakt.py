@@ -42,6 +42,7 @@ Trakt
    trakt/trakt.interfaces.users
    trakt/trakt.interfaces.users.lists.list_
    trakt/trakt.interfaces.users.lists
+   trakt/trakt.mapper.comment
    trakt/trakt.mapper.list
    trakt/trakt.mapper.list_item
    trakt/trakt.mapper.search
@@ -50,6 +51,7 @@ Trakt
    trakt/trakt.mapper
    trakt/trakt.mapper.core.base
    trakt/trakt.mapper.core
+   trakt/trakt.objects.comment
    trakt/trakt.objects.episode
    trakt/trakt.objects.list
    trakt/trakt.objects.media
