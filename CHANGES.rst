@@ -1,3 +1,23 @@
+2.5.0 (2015-09-24)
+------------------
+**Added**
+ - :code:`Trakt['users'].likes()` method
+ - :code:`CustomList.items()` method
+ - :code:`Comment` object
+ - :code:`Media.index` attribute (list item position/rank)
+ - Basic documentation generation (#29)
+ - :code:`NullHandler` to the logger to avoid "No handler found" warnings (#33)
+
+**Changed**
+ - 'movies' and 'shows' interface methods to support the :code:`exceptions=True` parameter (#32)
+ - :code:`Interface.get_data()` to only parse the response body if the request is successful (#32)
+
+**Fixed**
+ - :code:`TypeError` was raised in :code:`SummaryMapper` if the request failed (#30, #31)
+ - Constructing "Special" episodes could raise an :code:`AttributeError` (#38, #39)
+ - :code:`Media._update()` "images" attribute
+ - Issue serializing :code:`List` objects
+
 2.4.1 (2015-09-12)
 ------------------
 **Fixed**
