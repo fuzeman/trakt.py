@@ -30,6 +30,20 @@ def test_movie():
 
 
 @responses.activate
+def test_movie_not_found():
+    responses.add(
+        responses.GET, 'http://mock/movies/tron-fake-2010',
+        body='Not Found', status=404,
+        content_type='text/html'
+    )
+
+    Trakt.base_url = 'http://mock'
+
+    movie = Trakt['movies'].get('tron-fake-2010')
+    assert movie is None
+
+
+@responses.activate
 def test_show():
     responses.add(
         responses.GET, 'http://mock/shows/1390',
@@ -53,6 +67,20 @@ def test_show():
         ('slug', 'game-of-thrones'),
         ('trakt', '1390')
     ]
+
+
+@responses.activate
+def test_show_not_found():
+    responses.add(
+        responses.GET, 'http://mock/shows/0',
+        body='Not Found', status=404,
+        content_type='text/html'
+    )
+
+    Trakt.base_url = 'http://mock'
+
+    show = Trakt['shows'].get(0)
+    assert show is None
 
 
 @responses.activate
@@ -123,6 +151,20 @@ def test_season():
 
 
 @responses.activate
+def test_season_not_found():
+    responses.add(
+        responses.GET, 'http://mock/shows/fake-show/seasons/1',
+        body='Not Found', status=404,
+        content_type='text/html'
+    )
+
+    Trakt.base_url = 'http://mock'
+
+    season = Trakt['shows'].season('fake-show', 1)
+    assert season is None
+
+
+@responses.activate
 def test_episode_basic():
     responses.add(
         responses.GET, 'http://mock/shows/game-of-thrones/seasons/1/episodes/1',
@@ -144,6 +186,20 @@ def test_episode_basic():
         ('tvrage', '1065008299'),
         ('trakt', '73640')
     ]
+
+
+@responses.activate
+def test_episode_not_found():
+    responses.add(
+        responses.GET, 'http://mock/shows/fake-show/seasons/1/episodes/1',
+        body='{"error": "not found"}', status=404,
+        content_type='application/json'
+    )
+
+    Trakt.base_url = 'http://mock'
+
+    episode = Trakt['shows'].episode('fake-show', 1, 1)
+    assert episode is None
 
 
 @responses.activate
