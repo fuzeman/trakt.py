@@ -1,3 +1,8 @@
+2.5.1 (2015-09-25)
+------------------
+**Fixed**
+ - Issue installing trakt.py when "six" hasn't been installed yet
+
 2.5.0 (2015-09-24)
 ------------------
 **Added**

@@ -1,10 +1,15 @@
-from trakt import __version__
-
 from setuptools import setup, find_packages
+import os
+
+base_dir = os.path.dirname(__file__)
+
+version = {}
+with open(os.path.join(base_dir, "trakt", "version.py")) as f:
+    exec(f.read(), version)
 
 setup(
     name='trakt.py',
-    version=__version__,
+    version=version['__version__'],
     license='MIT',
     url='https://github.com/fuzeman/trakt.py',
 
