@@ -1,1 +1,16 @@
 git+git://github.com/fuzeman/responses.git
+
+# testing automation
+tox>=1.7.2
+
+# coding standards
+flake8
+
+# test coverage
+coverage>=4.0
+
+# testing
+pytest<=2.9.0
+
+# Docs Requirements
+Sphinx>=1.3.1
