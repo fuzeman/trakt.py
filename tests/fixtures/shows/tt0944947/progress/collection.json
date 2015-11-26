@@ -1,0 +1,77 @@
+{
+  "aired": 10,
+  "completed": 6,
+  "last_collected_at": "2015-03-21T19:03:58.000Z",
+  "seasons": [
+    {
+      "number": 1,
+      "aired": 8,
+      "completed": 6,
+      "episodes": [
+        {
+          "number": 1,
+          "completed": true,
+          "collected_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 2,
+          "completed": true,
+          "collected_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 3,
+          "completed": true,
+          "collected_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 4,
+          "completed": true,
+          "collected_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 5,
+          "completed": true,
+          "collected_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 6,
+          "completed": true,
+          "collected_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 7,
+          "completed": false,
+          "collected_at": null
+        },
+        {
+          "number": 8,
+          "completed": false,
+          "collected_at": null
+        },
+        {
+          "number": 9,
+          "completed": false,
+          "collected_at": null
+        },
+        {
+          "number": 10,
+          "completed": false,
+          "collected_at": null
+        }
+      ]
+    }
+  ],
+  "hidden_seasons": [],
+  "next_episode": {
+    "season": 1,
+    "number": 7,
+    "title": "You Win or You Die",
+    "ids": {
+      "trakt": 73646,
+      "tvdb": 3436461,
+      "imdb": "tt1837863",
+      "tmdb": 63062,
+      "tvrage": 1065036404
+    }
+  }
+}
