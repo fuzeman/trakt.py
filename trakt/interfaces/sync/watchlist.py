@@ -21,3 +21,19 @@ class SyncWatchlistInterface(Get, Add, Remove):
             store,
             **kwargs
         )
+
+    @authenticated
+    def shows(self, store=None, **kwargs):
+        return self.get(
+            'shows',
+            store,
+            **kwargs
+        )
+
+    @authenticated
+    def movies(self, store=None, **kwargs):
+        return self.get(
+            'movies',
+            store,
+            **kwargs
+        )
