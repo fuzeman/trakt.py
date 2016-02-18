@@ -1,3 +1,13 @@
+2.5.2 (2016-02-19)
+------------------
+**Added**
+ - :code:`in_watchlist` property to :code:`Movie`, :code:`Show`, :code:`Season` and :code:`Episode` objects (#45)
+ - :code:`Trakt.site_url` setter to override automatic detection
+ - :code:`HttpClient` now supports direct calls (#43)
+
+**Changed**
+ - Tests are now included in builds, but are excluded from installations
+
 2.5.1 (2015-09-25)
 ------------------
 **Fixed**
