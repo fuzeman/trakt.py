@@ -65,7 +65,9 @@ def test_playback():
         'plays': 0,
 
         'collected_at': None,
-        'collected': 0
+        'collected': 0,
+
+        'in_watchlist': 0
     }
 
 
@@ -201,7 +203,9 @@ def test_ratings():
                 'collected': 0,
 
                 'rating': 10,
-                'rated_at': '2014-10-19T23:02:24.000-00:00'
+                'rated_at': '2014-10-19T23:02:24.000-00:00',
+
+                'in_watchlist': 0
             }
         ],
         'ids': {
@@ -211,7 +215,9 @@ def test_ratings():
         },
 
         'rating': 10,
-        'rated_at': '2015-03-11T23:29:35.000-00:00'
+        'rated_at': '2015-03-11T23:29:35.000-00:00',
+
+        'in_watchlist': 0
     }
 
     # Validate `Episode`

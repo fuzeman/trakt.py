@@ -9,6 +9,8 @@ import responses
 
 
 def test_authorize_url():
+    Trakt.site_url = 'http://mock'
+
     with Trakt.configuration.client('mock', 'mock'):
         assert_url(Trakt['oauth'].authorize_url('urn:ietf:wg:oauth:2.0:oob'), '/oauth/authorize', {
             'redirect_uri': 'urn:ietf:wg:oauth:2.0:oob',
