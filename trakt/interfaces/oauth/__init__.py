@@ -3,10 +3,12 @@ from trakt.helpers import build_url
 from trakt.interfaces.base import Interface
 
 # Import child interfaces
+from trakt.interfaces.oauth.device import DeviceOAuthInterface
 from trakt.interfaces.oauth.pin import PinOAuthInterface
 
 __all__ = [
     'OAuthInterface',
+    'DeviceOAuthInterface',
     'PinOAuthInterface'
 ]
 
