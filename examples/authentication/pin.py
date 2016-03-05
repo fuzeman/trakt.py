@@ -38,7 +38,7 @@ class Application(object):
 
     def authenticate(self):
         # Request authentication
-        print 'Navigate to %s' % Trakt['oauth'].pin_url()
+        print 'Navigate to %s' % Trakt['oauth/pin'].url()
         pin = raw_input('Pin: ')
 
         # Exchange `code` for `access_token`
