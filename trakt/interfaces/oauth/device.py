@@ -1,7 +1,7 @@
+from trakt.core.emitter import Emitter
 from trakt.interfaces.base import Interface
 
 from datetime import datetime, timedelta
-from pyemitter import Emitter
 from threading import Thread
 import logging
 import time
