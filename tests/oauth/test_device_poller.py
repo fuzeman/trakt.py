@@ -22,7 +22,9 @@ def test_expired():
     poller.start()
 
     # Ensure "expired" event was fired
-    assert expired.wait(3) is True
+    expired.wait(3)
+
+    assert expired.is_set() is True
 
 
 def test_aborted():
@@ -42,7 +44,9 @@ def test_aborted():
     poller.start()
 
     # Ensure "aborted" event was fired
-    assert aborted.wait(3) is True
+    aborted.wait(3)
+
+    assert aborted.is_set() is True
 
 
 @responses.activate
@@ -97,7 +101,9 @@ def test_poll_authenticated():
         poller.start()
 
         # Ensure "authenticated" event was fired
-        assert authenticated.wait(10) is True
+        authenticated.wait(10)
+
+        assert authenticated.is_set() is True
     finally:
         # Reset client configuration
         Trakt.configuration.defaults.client()
@@ -152,7 +158,9 @@ def test_poll_expired():
         poller.start()
 
         # Ensure "authenticated" event was fired
-        assert expired.wait(10) is True
+        expired.wait(10)
+
+        assert expired.is_set() is True
     finally:
         # Reset client configuration
         Trakt.configuration.defaults.client()
