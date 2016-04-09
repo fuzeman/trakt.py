@@ -149,10 +149,10 @@ def test_seasons_extended():
     assert len(seasons[0].episodes) == 14
 
     assert seasons[0].episodes[5].pk == (0, 5)
-    assert seasons[0].episodes[5].title == u'2011 Comic Con Panel'
+    assert seasons[0].episodes[5].title == '2011 Comic Con Panel'
 
     assert seasons[0].episodes[13].pk == (0, 13)
-    assert seasons[0].episodes[13].title == u'World Premiere'
+    assert seasons[0].episodes[13].title == 'World Premiere'
 
     # Season 5
     assert seasons[5].pk == 5
@@ -165,10 +165,10 @@ def test_seasons_extended():
     assert len(seasons[5].episodes) == 10
 
     assert seasons[5].episodes[7].pk == (5, 7)
-    assert seasons[5].episodes[7].title == u'The Gift'
+    assert seasons[5].episodes[7].title == 'The Gift'
 
     assert seasons[5].episodes[9].pk == (5, 9)
-    assert seasons[5].episodes[9].title == u'The Dance of Dragons'
+    assert seasons[5].episodes[9].title == 'The Dance of Dragons'
 
 
 @responses.activate
