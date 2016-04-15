@@ -1,6 +1,7 @@
-import logging
-
+from trakt.core.errors import ERRORS
 from trakt.core.helpers import try_convert
+
+import logging
 
 log = logging.getLogger(__name__)
 
@@ -41,6 +42,13 @@ class PaginationIterator(object):
     def get(self, page):
         response = self.fetch(page)
 
+        if response.status_code < 200 or response.status_code >= 300:
+            # Lookup status code in trakt error definitions
+            name, desc = ERRORS.get(response.status_code, ("Unknown", "Unknown"))
+
+            log.warning('request failed: %s - "%s" (code: %s)', name, desc, response.status_code)
+            return None
+
         # Parse response, return data
         content_type = response.headers.get('content-type')
 
@@ -49,13 +57,11 @@ class PaginationIterator(object):
             try:
                 data = response.json()
             except Exception as e:
-                log.warning('unable to parse JSON response: %s', e)
+                log.warning('Unable to parse page: %s', e)
                 return None
         else:
-            log.debug('response returned content-type: %r, falling back to raw data', content_type)
-
-            # Fallback to raw content
-            data = response.content
+            log.warning('Received a page with an invalid content type: %r', content_type)
+            return None
 
         return data
 
@@ -63,7 +69,13 @@ class PaginationIterator(object):
         current = 1
 
         while current <= self.total_pages:
-            for item in self.get(current):
+            items = self.get(current)
+
+            if not items:
+                log.warning('Unable to retrieve page #%d, pagination iterator cancelled', current)
+                break
+
+            for item in items:
                 yield item
 
             current += 1
