@@ -1,5 +1,6 @@
 from tests.core.helpers import read
 
+from six.moves.urllib_parse import parse_qsl, urlparse
 from trakt import Trakt
 import responses
 
@@ -111,6 +112,63 @@ def test_seasons():
         ('tmdb', '62090'),
         ('trakt', '3967')
     ]
+
+
+@responses.activate
+def test_seasons_extended():
+    def callback(request):
+        uri = urlparse(request.url)
+        parameters = dict(parse_qsl(uri.query))
+
+        if parameters.get('extended') != 'episodes':
+            return 400, {}, None
+
+        return 200, {}, read('fixtures/shows/tt0944947/seasons_extended.json')
+
+    responses.add_callback(
+        responses.GET, 'http://mock/shows/tt0944947/seasons',
+        callback=callback,
+        content_type='application/json'
+    )
+
+    Trakt.base_url = 'http://mock'
+
+    seasons = Trakt['shows'].seasons('tt0944947', extended='episodes')
+
+    assert len(seasons) == 6
+
+    # Specials
+    assert seasons[0].pk == 0
+    assert seasons[0].keys == [
+        0,
+        ('tvdb', '137481'),
+        ('tmdb', '3627'),
+        ('trakt', '3962')
+    ]
+
+    assert len(seasons[0].episodes) == 14
+
+    assert seasons[0].episodes[5].pk == (0, 5)
+    assert seasons[0].episodes[5].title == '2011 Comic Con Panel'
+
+    assert seasons[0].episodes[13].pk == (0, 13)
+    assert seasons[0].episodes[13].title == 'World Premiere'
+
+    # Season 5
+    assert seasons[5].pk == 5
+    assert seasons[5].keys == [
+        5,
+        ('tmdb', '62090'),
+        ('trakt', '3967')
+    ]
+
+    assert len(seasons[5].episodes) == 10
+
+    assert seasons[5].episodes[7].pk == (5, 7)
+    assert seasons[5].episodes[7].title == 'The Gift'
+
+    assert seasons[5].episodes[9].pk == (5, 9)
+    assert seasons[5].episodes[9].title == 'The Dance of Dragons'
 
 
 @responses.activate

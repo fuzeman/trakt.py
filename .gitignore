@@ -71,4 +71,4 @@ pip-selfcheck.json
 
 /_html
 /.idea
-
+*.iml

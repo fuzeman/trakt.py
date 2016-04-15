@@ -16,7 +16,7 @@ def test_content_type():
 
     r = requests.get('http://mock/test')
 
-    data = Interface.get_data(r)
+    data = Interface(None).get_data(r)
     assert data is None
 
 
@@ -31,7 +31,7 @@ def test_server_error():
     r = requests.get('http://mock/test')
 
     with pytest.raises(exceptions.ServerError):
-        Interface.get_data(r, exceptions=True)
+        Interface(None).get_data(r, exceptions=True)
 
 
 @responses.activate
@@ -45,4 +45,4 @@ def test_client_error():
     r = requests.get('http://mock/test')
 
     with pytest.raises(exceptions.ClientError):
-        Interface.get_data(r, exceptions=True)
+        Interface(None).get_data(r, exceptions=True)

@@ -1,0 +1,32 @@
+[
+  {
+    "name":"Movies (2)",
+    "description":null,
+    "privacy":"private",
+    "display_numbers":false,
+    "allow_comments":true,
+    "updated_at":"2015-06-22T02:25:00.000Z",
+    "item_count":2,
+    "comment_count":0,
+    "likes":0,
+    "ids":{
+      "trakt":123456,
+      "slug":"movies"
+    }
+  },
+  {
+    "name":"Shows (2)",
+    "description":null,
+    "privacy":"private",
+    "display_numbers":false,
+    "allow_comments":true,
+    "updated_at":"2015-06-22T02:25:00.000Z",
+    "item_count":3,
+    "comment_count":0,
+    "likes":0,
+    "ids":{
+      "trakt":1195028,
+      "slug":"shows"
+    }
+  }
+]

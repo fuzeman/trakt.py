@@ -3,3 +3,4 @@ source=
     trakt
 omit=
     trakt/core/emitter.py
+    trakt/sphinxext.py
