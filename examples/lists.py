@@ -20,8 +20,14 @@ if __name__ == '__main__':
         authenticate()
     )
 
-    for liked_list in Trakt['users'].likes('lists'):
-        print liked_list
+    for x, liked_list in enumerate(Trakt['users'].likes('lists', pagination=True)):
+        print '[%s] %r' % (x + 1, liked_list)
 
-        for item in liked_list.items():
-            print '\t', item
+        items = liked_list.items()
+
+        if not items:
+            print ' - ERROR'
+            continue
+
+        items = list(items)
+        print ' - %d item(s)' % len(items)

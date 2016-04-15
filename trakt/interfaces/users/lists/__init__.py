@@ -59,7 +59,7 @@ class UsersListsInterface(Interface):
             return
 
         # Parse response
-        items = self.get_data(response)
+        items = self.get_data(response, **kwargs)
 
         # Map items to list objects
         for item in items:

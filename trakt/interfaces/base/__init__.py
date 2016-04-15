@@ -1,5 +1,7 @@
 from trakt.core.errors import ERRORS
 from trakt.core.exceptions import ServerError, ClientError
+from trakt.core.helpers import try_convert
+from trakt.core.pagination import PaginationIterator
 from trakt.helpers import setdefault
 
 from functools import wraps
@@ -53,8 +55,7 @@ class Interface(object):
 
         return self.client.http.configure(self.path)
 
-    @staticmethod
-    def get_data(response, exceptions=False, parse=True):
+    def get_data(self, response, exceptions=False, pagination=False, parse=True):
         if response is None:
             return None
 
@@ -84,6 +85,15 @@ class Interface(object):
         # Return `None` if we encountered an error, return response data
         if error:
             return None
+
+        # Check for pagination response
+        page_count = try_convert(response.headers.get('x-pagination-page-count'), int)
+
+        if page_count and page_count > 1:
+            if pagination:
+                return PaginationIterator(self.client, response)
+
+            log.warn('Unhandled pagination response, more pages are available')
 
         # Parse response, return data
         content_type = response.headers.get('content-type')
