@@ -55,6 +55,43 @@ def test_iterator():
 
 
 @responses.activate
+def test_invalid_content_type():
+    def on_request(request):
+        url = urlparse(request.url)
+        parameters = dict(parse_qsl(url.query))
+
+        page = try_convert(parameters.get('page'), int) or 1
+        limit = try_convert(parameters.get('limit'), int)
+
+        if limit is not None and limit != 2:
+            # Invalid limit provided
+            return 400, {}, ''
+
+        return 200, {
+            'X-Pagination-Limit':       '2',
+            'X-Pagination-Item-Count':  '6',
+            'X-Pagination-Page-Count':  '3'
+        }, read('fixtures/users/me/lists_p%d.json' % page)
+
+    responses.add_callback(
+        responses.GET, 'http://mock/users/me/lists',
+        callback=on_request,
+        content_type='text/plain'
+    )
+
+    Trakt.base_url = 'http://mock'
+
+    with Trakt.configuration.auth('mock', 'mock'):
+        lists = Trakt['users/me/lists'].get(pagination=True)
+
+    # Resolve all pages
+    items = list(lists)
+
+    # Ensure items were returned correctly
+    assert len(items) == 0
+
+
+@responses.activate
 def test_invalid_json():
     def on_request(request):
         url = urlparse(request.url)
