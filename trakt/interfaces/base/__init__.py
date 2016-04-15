@@ -6,6 +6,7 @@ from trakt.helpers import setdefault
 
 from functools import wraps
 import logging
+import warnings
 
 log = logging.getLogger(__name__)
 
@@ -93,7 +94,7 @@ class Interface(object):
             if pagination:
                 return PaginationIterator(self.client, response)
 
-            log.warn('Unhandled pagination response, more pages are available')
+            warnings.warn('Unhandled pagination response, more pages can be returned with `pagination=True`', stacklevel=3)
 
         # Parse response, return data
         content_type = response.headers.get('content-type')
