@@ -1,3 +1,4 @@
+from trakt.core.helpers import clean_username
 from trakt.interfaces.base import Interface
 from trakt.mapper import ListMapper
 
@@ -52,7 +53,7 @@ class UsersListsInterface(Interface):
     def get(self, username, **kwargs):
         # Send request
         response = self.http.get(
-            '/users/%s/lists' % username,
+            '/users/%s/lists' % clean_username(username),
         )
 
         if response.status_code < 200 or response.status_code >= 300:
