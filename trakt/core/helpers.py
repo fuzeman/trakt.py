@@ -86,3 +86,10 @@ def synchronized(f_lock, mode='full'):
         return wrapped
 
     return wrap
+
+
+def try_convert(value, value_type, default=None):
+    try:
+        return value_type(value)
+    except (ValueError, TypeError):
+        return default
