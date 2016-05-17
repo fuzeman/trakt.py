@@ -1,10 +1,25 @@
-from trakt import Trakt
 import logging
+logging.basicConfig(level=logging.DEBUG)
+
+from threading import Condition
+from trakt import Trakt
 import os
 
 
 class Application(object):
-    def login(self):
+    def __init__(self):
+        self.is_authenticating = Condition()
+
+        self.authorization = None
+
+        # Bind trakt events
+        Trakt.on('oauth.token_refreshed', self.on_token_refreshed)
+
+    def authenticate(self):
+        if not self.is_authenticating.acquire(blocking=False):
+            print 'Authentication has already been started'
+            return False
+
         # Request new device code
         code = Trakt['oauth/device'].code()
 
@@ -23,25 +38,71 @@ class Application(object):
         # Start polling for authentication token
         poller.start(daemon=False)
 
+        # Wait for authentication to complete
+        return self.is_authenticating.wait()
+
+    def run(self):
+        self.authenticate()
+
+        if not self.authorization:
+            print 'ERROR: Authentication required'
+            exit(1)
+
+        # Simulate expired token
+        self.authorization['expires_in'] = 0
+
+        # Test authenticated calls
+        with Trakt.configuration.oauth.from_response(self.authorization):
+            # Expired token, requests will return `None`
+            print Trakt['sync/collection'].movies()
+
+        with Trakt.configuration.oauth.from_response(self.authorization, refresh=True):
+            # Expired token will be refreshed automatically (as `refresh=True`)
+            print Trakt['sync/collection'].movies()
+
+        with Trakt.configuration.oauth.from_response(self.authorization):
+            # Current token is still valid
+            print Trakt['sync/collection'].movies()
+
     def on_aborted(self):
         """Triggered when device authentication was aborted (either with `DeviceOAuthPoller.stop()`
            or via the "poll" event)"""
 
         print 'Authentication aborted'
 
-    def on_authenticated(self, token):
+        # Authentication aborted
+        self.is_authenticating.acquire()
+        self.is_authenticating.notify_all()
+        self.is_authenticating.release()
+
+    def on_authenticated(self, authorization):
         """Triggered when device authentication has been completed
 
-        :param token: Authentication token details
-        :type token: dict
+        :param authorization: Authentication token details
+        :type authorization: dict
         """
 
-        print 'Authentication complete: %r' % token
+        # Acquire condition
+        self.is_authenticating.acquire()
+
+        # Store authorization for future calls
+        self.authorization = authorization
+
+        print 'Authentication successful - authorization: %r' % self.authorization
+
+        # Authentication complete
+        self.is_authenticating.notify_all()
+        self.is_authenticating.release()
 
     def on_expired(self):
         """Triggered when the device authentication code has expired"""
 
         print 'Authentication expired'
+
+        # Authentication expired
+        self.is_authenticating.acquire()
+        self.is_authenticating.notify_all()
+        self.is_authenticating.release()
 
     def on_poll(self, callback):
         """Triggered before each poll
@@ -53,10 +114,14 @@ class Application(object):
         # Continue polling
         callback(True)
 
+    def on_token_refreshed(self, authorization):
+        # OAuth token refreshed, store authorization for future calls
+        self.authorization = authorization
+
+        print 'Token refreshed - authorization: %r' % self.authorization
+
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG)
-
     # Configure
     Trakt.base_url = 'http://api.staging.trakt.tv'
 
@@ -66,4 +131,4 @@ if __name__ == '__main__':
     )
 
     app = Application()
-    app.login()
+    app.run()
