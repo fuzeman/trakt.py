@@ -1,9 +1,8 @@
 import logging
-import os
-
 logging.basicConfig(level=logging.DEBUG)
 
 from trakt import Trakt
+import os
 
 
 class Application(object):
