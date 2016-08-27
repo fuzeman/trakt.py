@@ -8,12 +8,7 @@ python:
   - "3.4"
 
 install:
-  - pip install .
-  - pip install -r requirements.txt
-  - pip install -r requirements_test.txt
-
-  - if [[ $TRAVIS_PYTHON_VERSION == '3.2' ]]; then travis_retry pip install coveralls==0.5; fi
-  - if [[ $TRAVIS_PYTHON_VERSION != '3.2' ]]; then travis_retry pip install -r requirements_travis.txt; fi
+  - ./travis_install.sh
 
 script:
   - coverage run -m py.test
