@@ -7,9 +7,29 @@ class Season(Media):
         super(Season, self).__init__(client, keys, index)
 
         self.show = None
+        """
+        :type: trakt.objects.Show
+
+        Show
+        """
+
         self.episodes = {}
+        """
+        :type: dict
+
+        Episodes, defined as :code:`{episode_num: Episode}`
+
+        **Note:** this field might not be available with some methods
+        """
 
     def to_identifier(self):
+        """Returns the season identifier which is compatible with requests that require
+        season definitions.
+
+        :return: Season identifier/definition
+        :rtype: dict
+        """
+
         return {
             'number': self.pk,
             'episodes': [
@@ -20,9 +40,16 @@ class Season(Media):
 
     @deprecated('Season.to_info() has been moved to Season.to_dict()')
     def to_info(self):
+        """**Deprecated:** use the :code:`to_dict()` method instead"""
         return self.to_dict()
 
     def to_dict(self):
+        """Dump season to a dictionary
+
+        :return: Season dictionary
+        :rtype: dict
+        """
+
         result = self.to_identifier()
 
         result.update({

@@ -7,26 +7,89 @@ class Comment(object):
         self._client = client
 
         self.keys = keys
+        """
+        :type: list of (str, str)
 
-        # Class attributes
+        Keys (for trakt, imdb, tvdb, etc..)
+        """
+
         self.parent_id = None
+        """
+        :type: int
+
+        Parent comment id
+        """
 
         self.comment = None
+        """
+        :type: str
+
+        Comment body
+        """
 
         self.spoiler = None
+        """
+        :type: boolean
+
+        Flag indicating this comment has a spoiler
+        """
+
         self.review = None
+        """
+        :type: boolean
+
+        Flag indicating this comment is a review
+        """
 
         self.replies = None
+        """
+        :type: int
+
+        Number of replies
+        """
+
         self.likes = None
+        """
+        :type: int
+
+        Number of likes
+        """
 
         self.created_at = None
+        """
+        :type: datetime
+
+        Timestamp of when this comment was created
+        """
+
         self.liked_at = None
+        """
+        :type: datetime
+
+        Timestamp of when this comment was liked
+        """
 
         self.user = None
+        """
+        :type: dict
+
+        Author details
+        """
+
         self.user_rating = None
+        """
+        :type: float
+
+        Author rating for the item
+        """
 
     @property
     def id(self):
+        """Returns the comment identifier
+
+        :rtype: int
+        """
+
         if self.pk is None:
             return None
 
@@ -36,6 +99,12 @@ class Comment(object):
 
     @property
     def pk(self):
+        """Primary Key (unique identifier for the comment)
+
+        :return: :code:`("trakt", <id>)` or :code:`None` if no primary key is available
+        :rtype: (str, str) or None
+        """
+
         if not self.keys:
             return None
 

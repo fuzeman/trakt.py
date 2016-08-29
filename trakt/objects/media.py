@@ -8,21 +8,110 @@ class Media(object):
         self._client = client
 
         self.keys = keys
+        """
+        :type: list of (str, str)
+
+        Keys (for imdb, tvdb, etc..)
+        """
+
         self.index = index
+        """
+        :type: int
+
+        Playlist item index
+        """
 
         self.images = None
+        """
+        :type: dict or None
+
+        Images, defined as:
+
+        .. code-block:: python
+
+            {
+                <type>: {
+                    <size>: <url>
+                }
+            }
+
+        +------------------+----------------+---------------------------------------+
+        | Type             | Size           | Dimensions                            |
+        +==================+================+=======================================+
+        | :code:`banner`   | :code:`full`   | 1000x185 (movie/show), 758x140 (show) |
+        +------------------+----------------+---------------------------------------+
+        | :code:`clearart` | :code:`full`   | 1000x562                              |
+        +------------------+----------------+---------------------------------------+
+        | :code:`fanart`   | :code:`full`   | 1920x1080 (typical), 1280x720         |
+        +------------------+----------------+---------------------------------------+
+        |                  | :code:`medium` | 1280x720                              |
+        +------------------+----------------+---------------------------------------+
+        |                  | :code:`thumb`  | 853x480                               |
+        +------------------+----------------+---------------------------------------+
+        | :code:`logo`     | :code:`full`   | 800x310                               |
+        +------------------+----------------+---------------------------------------+
+        | :code:`poster`   | :code:`full`   | 1000x1500                             |
+        +------------------+----------------+---------------------------------------+
+        |                  | :code:`medium` | 600x900                               |
+        +------------------+----------------+---------------------------------------+
+        |                  | :code:`thumb`  | 300x450                               |
+        +------------------+----------------+---------------------------------------+
+        | :code:`thumb`    | :code:`full`   | 1000x562 (movie), 500x281 (show)      |
+        +------------------+----------------+---------------------------------------+
+
+        """
+
         self.overview = None
+        """
+        :type: str or None
+
+        Overview
+        """
+
         self.rating = None
+        """
+        :type: int or None
+
+        Community rating (0 - 10)
+        """
+
         self.score = None
+        """
+        :type: float or None
+
+        Search score
+        """
 
         # Flags
         self.in_watchlist = None
+        """
+        :type: bool or None
+
+        Flag indicating this item is in your watchlist
+        """
 
         # Timestamps
         self.listed_at = None
+        """
+        :type: datetime or None
+
+        Timestamp of when this item was added to the list
+        """
 
     @property
     def pk(self):
+        """Primary Key (unique identifier for the item)
+
+        Provides the following identifiers (by media type):
+         - **movie:** imdb
+         - **show:** tvdb
+         - **season:** tvdb
+         - **episode:** tvdb
+         - **custom_list:** trakt
+
+        :return: :code:`(<service>, <value>)` or :code:`None` if no primary key is available
+        :rtype: (str, str) or None
+        """
         if not self.keys:
             return None
 

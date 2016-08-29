@@ -8,15 +8,54 @@ class Video(Media):
         super(Video, self).__init__(client, keys, index)
 
         self.last_watched_at = None
+        """
+        :type: datetime or None
+
+        Timestamp of when this item was last watched
+        """
+
         self.collected_at = None
+        """
+        :type: datetime or None
+
+        Timestamp of when this item was added to your collection
+        """
+
         self.paused_at = None
+        """
+        :type: datetime or None
+
+        Timestamp of when this item was paused
+        """
 
         self.plays = None
+        """
+        :type: int or None
+
+        Number of plays
+        """
+
         self.progress = None
+        """
+        :type: float
+
+        Playback progress for item
+        """
 
         # Flags
         self.is_watched = None
+        """
+        :type: bool or None
+
+        Flag indicating this item has been watched
+        """
+
         self.is_collected = None
+        """
+        :type: bool or None
+
+        Flag indicating this item has been collected
+        """
 
     def _update(self, info=None, is_watched=None, is_collected=None, **kwargs):
         super(Video, self)._update(info, **kwargs)
