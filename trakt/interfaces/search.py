@@ -1,11 +1,13 @@
 from trakt.interfaces.base import Interface
 from trakt.mapper.search import SearchMapper
 
+import six
+
 
 class SearchInterface(Interface):
     path = 'search'
 
-    def lookup(self, id, service=None, **kwargs):
+    def lookup(self, id, service=None, media=None, **kwargs):
         if type(id) is tuple:
             if len(id) != 2:
                 raise ValueError()
@@ -13,11 +15,19 @@ class SearchInterface(Interface):
             # Expand (<id>, <service>) identifier
             id, service = id
 
-        # Send request
-        response = self.http.get(query={
+        # Build query
+        query = {
             'id': id,
             'id_type': service
-        })
+        }
+
+        if isinstance(media, six.string_types):
+            query['type'] = media
+        elif isinstance(media, list):
+            query['type'] = ','.join(media)
+
+        # Send request
+        response = self.http.get(query=query)
 
         # Parse response
         items = self.get_data(response, **kwargs)
@@ -40,8 +50,10 @@ class SearchInterface(Interface):
         }
 
         # Set optional parameters
-        if media:
+        if isinstance(media, six.string_types):
             query['type'] = media
+        elif isinstance(media, list):
+            query['type'] = ','.join(media)
 
         if year:
             query['year'] = year
