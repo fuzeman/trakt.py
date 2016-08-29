@@ -8,6 +8,42 @@ class SearchInterface(Interface):
     path = 'search'
 
     def lookup(self, id, service=None, media=None, **kwargs):
+        """Lookup items by their Trakt, IMDB, TMDB, TVDB, or TVRage ID.
+
+        **Note:** If you lookup an identifier without a :code:`media` type specified it
+        might return multiple items if the :code:`service` is not globally unique.
+
+        :param id: Identifier value to lookup
+        :type id: str or int
+
+        :param service: Identifier service
+
+            **Possible values:**
+             - :code:`trakt`
+             - :code:`imdb`
+             - :code:`tmdb`
+             - :code:`tvdb`
+             - :code:`tvrage`
+
+        :type service: str
+
+        :param media: Desired media type (or :code:`None` to return all matching items)
+
+            **Possible values:**
+             - :code:`movie`
+             - :code:`show`
+             - :code:`episode`
+             - :code:`person`
+             - :code:`list`
+
+        :type media: str or list of str or None
+
+        :param kwargs: Extra request options
+        :type kwargs: dict
+
+        :return: Results
+        :rtype: Media or list of Media
+        """
         if type(id) is tuple:
             if len(id) != 2:
                 raise ValueError()
@@ -45,6 +81,33 @@ class SearchInterface(Interface):
         return None
 
     def query(self, query, media=None, year=None, **kwargs):
+        """Search by titles, descriptions, translated titles, aliases, and people.
+
+        **Note:** Results are ordered by the most relevant score.
+
+        :param query: Search title or description
+        :type query: str
+
+        :param media: Desired media type (or :code:`None` to return all matching items)
+
+            **Possible values:**
+             - :code:`movie`
+             - :code:`show`
+             - :code:`episode`
+             - :code:`person`
+             - :code:`list`
+
+        :type media: str or list of str or None
+
+        :param year: Desired media year (or :code:`None` to return all matching items)
+        :type year: str or int or None
+
+        :param kwargs: Extra request options
+        :type kwargs: dict
+
+        :return: Results
+        :rtype: list of Media
+        """
         query = {
             'query': query
         }
