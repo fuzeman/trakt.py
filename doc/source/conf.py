@@ -13,6 +13,7 @@
 # serve to show the default.
 from __future__ import print_function
 
+import inspect
 import sys
 import os
 
@@ -20,100 +21,151 @@ import os
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.abspath(os.path.join(BASE_DIR, '..', '..'))
+ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', '..'))
 
-sys.path.insert(0, ROOT)
+INTERFACES_DIR = os.path.join(ROOT_DIR, 'trakt', 'interfaces')
+OBJECTS_DIR = os.path.join(ROOT_DIR, 'trakt', 'objects')
+
+MODULE_TYPE_ORDER = [
+    'interfaces',
+    'objects',
+    'modules'
+]
+
+IGNORED_INTERFACE_MEMBERS = [
+    'http',
+    'path',
+
+    'get_data'
+]
+
+sys.path.insert(0, ROOT_DIR)
 sys.path.insert(0, BASE_DIR)
 
-def write_autodoc_index():
+from trakt.interfaces.base import Interface
 
+
+def refresh_autodoc_index():
     def find_autodoc_modules(module_name, sourcedir):
         """Return a list of modules in the SOURCE directory."""
-        modlist = []
+        result = []
+
         os.chdir(os.path.join(sourcedir, module_name))
+
         print('SEARCHING %s' % sourcedir)
+
         for root, dirs, files in os.walk('.'):
             for filename in files:
-                if filename.endswith('.py'):
-                    # remove the pieces of the root
-                    elements = root.split(os.path.sep)
-                    # replace the leading '.' with the module name
-                    elements[0] = module_name
-                    # and get the base module name
-                    base, extension = os.path.splitext(filename)
-                    if not (base == '__init__'):
-                        elements.append(base)
-                    result = '.'.join(elements)
-                    #print(result)
-                    modlist.append(result)
-        return modlist
+                if not filename.endswith('.py'):
+                    continue
+
+                # remove the pieces of the root
+                elements = root.split(os.path.sep)
+
+                # replace the leading '.' with the module name
+                elements[0] = module_name
+
+                # and get the base module name
+                base, extension = os.path.splitext(filename)
+
+                if not (base == '__init__'):
+                    elements.append(base)
+
+                result.append('.'.join(elements))
+
+        result.sort()
+
+        return result
 
     RSTDIR = os.path.abspath(os.path.join(BASE_DIR, 'sourcecode'))
-    SRCS = {'trakt': ROOT}
+    SRCS = {'trakt': ROOT_DIR}
 
     EXCLUDED_MODULES = ('trakt.tests',)
     CURRENT_SOURCES = {}
 
     if not(os.path.exists(RSTDIR)):
         os.mkdir(RSTDIR)
-    CURRENT_SOURCES[RSTDIR] = ['autoindex.rst']
 
-    INDEXOUT = open(os.path.join(RSTDIR, 'autoindex.rst'), 'w')
-    INDEXOUT.write('=================\n')
-    INDEXOUT.write('Source Code Index\n')
-    INDEXOUT.write('=================\n')
+    CURRENT_SOURCES[RSTDIR] = [
+        'interfaces.rst',
+        'modules.rst',
+        'objects.rst'
+    ]
 
-    for modulename, path in SRCS.items():
-        sys.stdout.write('Generating source documentation for %s\n' %
-                         modulename)
-        INDEXOUT.write('\n%s\n' % modulename.capitalize())
-        INDEXOUT.write('%s\n' % ('=' * len(modulename),))
-        INDEXOUT.write('.. toctree::\n')
-        INDEXOUT.write('   :maxdepth: 1\n')
-        INDEXOUT.write('\n')
+    # Open index files
+    def open_index(filename, name):
+        path = os.path.join(RSTDIR, filename)
 
-        MOD_DIR = os.path.join(RSTDIR, modulename)
+        fp = open(path, 'w')
+        fp.write('=================\n')
+        fp.write('%s\n' % name)
+        fp.write('=================\n')
+        return fp
+
+    fp_indices = {
+        'interfaces': open_index('interfaces.rst', 'Interfaces'),
+        'objects': open_index('objects.rst', 'Objects'),
+
+        'modules': open_index('modules.rst', 'Modules')
+    }
+
+    # Generate documentation for modules
+    for base, path in SRCS.items():
+        sys.stdout.write('Generating source documentation for %s\n' % base)
+
+        MOD_DIR = os.path.join(RSTDIR, base)
         CURRENT_SOURCES[MOD_DIR] = []
+
         if not(os.path.exists(MOD_DIR)):
             os.mkdir(MOD_DIR)
-        for module in find_autodoc_modules(modulename, path):
-            if any([module.startswith(exclude)
+
+        modules = {}
+
+        for module_name in find_autodoc_modules(base, path):
+            if any([module_name.startswith(exclude)
                     for exclude
                     in EXCLUDED_MODULES]):
-                print('Excluded module %s.' % module)
+                print('Excluded module %s.' % module_name)
                 continue
-            mod_path = os.path.join(path, *module.split('.'))
-            generated_file = os.path.join(MOD_DIR, '%s.rst' % module)
 
-            INDEXOUT.write('   %s/%s\n' % (modulename, module))
+            mod_path = os.path.join(path, *module_name.split('.'))
+            generated_path = os.path.join(MOD_DIR, '%s.rst' % module_name)
 
             # Find the __init__.py module if this is a directory
             if os.path.isdir(mod_path):
-                source_file = '.'.join((os.path.join(mod_path, '__init__'),
-                                        'py',))
+                source_path = '.'.join((os.path.join(mod_path, '__init__'), 'py',))
             else:
-                source_file = '.'.join((os.path.join(mod_path), 'py'))
+                source_path = '.'.join((os.path.join(mod_path), 'py'))
 
-            CURRENT_SOURCES[MOD_DIR].append('%s.rst' % module)
-            # Only generate a new file if the source has changed or we don't
-            # have a doc file to begin with.
-            if not os.access(generated_file, os.F_OK) or \
-                    os.stat(generated_file).st_mtime < \
-                    os.stat(source_file).st_mtime:
-                print('Module %s updated, generating new documentation.'
-                      % module)
-                FILEOUT = open(generated_file, 'w')
-                header = 'The :mod:`%s` Module' % module
-                FILEOUT.write('%s\n' % ('=' * len(header),))
-                FILEOUT.write('%s\n' % header)
-                FILEOUT.write('%s\n' % ('=' * len(header),))
-                FILEOUT.write('.. automodule:: %s\n' % module)
-                FILEOUT.write('  :members:\n')
-                FILEOUT.write('  :undoc-members:\n')
-                FILEOUT.write('  :show-inheritance:\n')
-                FILEOUT.close()
+            CURRENT_SOURCES[MOD_DIR].append('%s.rst' % module_name)
 
-    INDEXOUT.close()
+            # Refresh autodoc file
+            module_type = refresh_autodoc(source_path, generated_path, module_name)
+
+            if not module_type:
+                continue
+
+            # Append module to the `modules` dictionary
+            if module_type not in modules:
+                modules[module_type] = []
+
+            modules[module_type].append('%s/%s' % (base, module_name))
+
+        # Write modules to index
+        for module_type in MODULE_TYPE_ORDER:
+            if module_type not in modules:
+                continue
+
+            fp_index = fp_indices[module_type]
+            fp_index.write('.. toctree::\n')
+            fp_index.write('   :maxdepth: 1\n')
+            fp_index.write('\n')
+
+            for name in modules[module_type]:
+                fp_index.write('   %s\n' % name)
+
+    for fp in fp_indices.values():
+        fp.close()
 
     # Delete auto-generated .rst files for sources which no longer exist
     for directory, subdirs, files in list(os.walk(RSTDIR)):
@@ -123,7 +175,125 @@ def write_autodoc_index():
                 os.remove(os.path.join(directory, old_file))
 
 
-write_autodoc_index()
+def refresh_autodoc(source_path, generated_path, module_name):
+    # Only update documentation if file exists
+    if not os.access(generated_path, os.F_OK):
+        return None
+
+    fp = open(generated_path, 'w')
+
+    module_type = 'modules'
+
+    if source_path.startswith(INTERFACES_DIR) and write_autodoc_interface(fp, module_name):
+        module_type = 'interfaces'
+    elif source_path.startswith(OBJECTS_DIR) and write_autodoc_object(fp, module_name):
+        module_type = 'objects'
+    else:
+        write_autodoc_module(fp, module_name)
+
+    fp.close()
+
+    return module_type
+
+
+def write_autodoc_module(fp, module_name):
+    # Write header
+    header = ":mod:`%s`" % module_name
+
+    fp.write('%s\n' % ('=' * len(header),))
+    fp.write('%s\n' % header)
+    fp.write('%s\n' % ('=' * len(header),))
+
+    # Write modules
+    fp.write('.. automodule:: %s\n' % module_name)
+    fp.write('  :members:\n')
+    fp.write('  :undoc-members:\n')
+    fp.write('  :show-inheritance:\n')
+
+
+def write_autodoc_interface(fp, module_name):
+    # Import interface
+    interface = import_subclass(module_name, Interface)
+
+    if not interface:
+        print('Unable to find interface in module %r' % module_name)
+        return False
+
+    # Retrieve interface path
+    path = interface.path
+
+    if not path:
+        print('Invalid "path" property found on %r' % interface)
+        return False
+
+    # Retrieve interface members
+    members = [
+        name for name in dir(interface)
+        if not name.startswith('_') and name not in IGNORED_INTERFACE_MEMBERS
+    ]
+
+    # Write header
+    header = ":code:`Trakt['%s']`" % path
+
+    fp.write('%s\n' % ('=' * len(header),))
+    fp.write('%s\n' % header)
+    fp.write('%s\n\n' % ('=' * len(header),))
+
+    # Write modules
+    fp.write('.. automodule:: %s\n\n' % module_name)
+    fp.write('  .. autoclass:: %s\n' % interface.__name__)
+    fp.write('    :members: %s\n' % ', '.join(members))
+    fp.write('    :undoc-members:\n')
+    return True
+
+
+def write_autodoc_object(fp, module_name):
+    # Import interface
+    obj = import_subclass(module_name, object)
+
+    if not obj:
+        print('Unable to find object in module %r' % module_name)
+        return False
+
+    # Write header
+    header = ":code:`%s`" % obj.__name__
+
+    fp.write('%s\n' % ('=' * len(header),))
+    fp.write('%s\n' % header)
+    fp.write('%s\n' % ('=' * len(header),))
+
+    # Write modules
+    fp.write('.. automodule:: %s\n' % module_name)
+    fp.write('  :inherited-members:\n')
+    fp.write('  :members:\n')
+    fp.write('  :undoc-members:\n')
+    fp.write('  :show-inheritance:\n')
+    return True
+
+
+def import_subclass(module_name, base):
+    # TODO display a warning if multiple classes have been found?
+
+    module = __import__(module_name, fromlist='*')
+    result = None
+
+    for name in dir(module):
+        value = getattr(module, name)
+
+        if not value or not inspect.isclass(value):
+            continue
+
+        if value.__module__ != module_name:
+            continue
+
+        if issubclass(value, base):
+            result = value
+            break
+
+    return result
+
+
+refresh_autodoc_index()
 
 # -- General configuration ------------------------------------------------
 
@@ -154,17 +324,25 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'trakt.py'
-copyright = u'2015, Dean Gardiner'
+copyright = u'2015 - 2016, Dean Gardiner'
 author = u'Dean Gardiner'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
+
+# Read current package version
+_version = {}
+
+with open(os.path.join(ROOT_DIR, "trakt", "version.py")) as fp:
+    exec(fp.read(), _version)
+
 # The short X.Y version.
-version = '2.4.1'
+version = _version['__version__']
+
 # The full version, including alpha/beta/rc tags.
-release = '2.4.1'
+release = _version['__version__']
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
@@ -260,7 +438,23 @@ html_static_path = ['_static']
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
+html_sidebars = {
+    'index': [
+        'sidebar_header.html',
+        'localtoc.html',
+        'relations.html',
+        'sourcelink.html',
+        'searchbox.html'
+    ],
+    '**': [
+        'sidebar_header.html',
+        'sidebar_index.html',
+        'localtoc.html',
+        'relations.html',
+        'sourcelink.html',
+        'searchbox.html'
+    ]
+}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -313,7 +507,7 @@ htmlhelp_basename = 'traktpydoc'
 import sphinx.environment
 from docutils.utils import get_source_line
 
-def _warn_node(self, msg, node):
+def _warn_node(self, msg, node, **kwargs):
     if not msg.startswith('nonlocal image URI found:'):
         self._warnfunc(msg, '%s:%s' % get_source_line(node))
 
