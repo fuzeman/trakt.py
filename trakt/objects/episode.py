@@ -9,21 +9,21 @@ class Episode(Video):
 
         self.show = None
         """
-        :type: trakt.objects.Show
+        :type: :class:`trakt.objects.show.Show`
 
         Show
         """
 
         self.season = None
         """
-        :type: trakt.objects.Season
+        :type: :class:`trakt.objects.season.Season`
 
         Season
         """
 
         self.title = None
         """
-        :type: str
+        :type: :class:`~python:str`
 
         Episode title
         """
@@ -33,7 +33,7 @@ class Episode(Video):
         episode definitions.
 
         :return: Episode identifier/definition
-        :rtype: dict
+        :rtype: :class:`~python:dict`
         """
 
         _, number = self.pk
@@ -51,7 +51,7 @@ class Episode(Video):
         """Dump episode to a dictionary
 
         :return: Episode dictionary
-        :rtype: dict
+        :rtype: :class:`~python:dict`
         """
 
         result = self.to_identifier()

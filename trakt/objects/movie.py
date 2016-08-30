@@ -9,21 +9,21 @@ class Movie(Video):
 
         self.title = None
         """
-        :type: str
+        :type: :class:`~python:str`
 
         Movie title
         """
 
         self.year = None
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Movie year
         """
 
         self.watchers = None  # trending
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Number of active watchers (returned by the :code:`Trakt['movies'].trending()`
         and :code:`Trakt['shows'].trending()` methods)
@@ -34,7 +34,7 @@ class Movie(Video):
         movie definitions.
 
         :return: Movie identifier/definition
-        :rtype: dict
+        :rtype: :class:`~python:dict`
         """
 
         return {
@@ -52,7 +52,7 @@ class Movie(Video):
         """Dump movie to a dictionary
 
         :return: Movie dictionary
-        :rtype: dict
+        :rtype: :class:`~python:dict`
         """
 
         result = self.to_identifier()

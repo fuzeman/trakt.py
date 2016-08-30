@@ -11,21 +11,21 @@ class Show(Media):
 
         self.title = None
         """
-        :type: str
+        :type: :class:`~python:str`
 
         Show title
         """
 
         self.year = None
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Show year
         """
 
         self.seasons = {}
         """
-        :type: dict
+        :type: :class:`~python:dict`
 
         Seasons, defined as :code:`{season_num: Season}`
 
@@ -34,7 +34,7 @@ class Show(Media):
 
         self.watchers = None
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Number of active watchers (returned by the :code:`Trakt['movies'].trending()`
         and :code:`Trakt['shows'].trending()` methods)
@@ -57,7 +57,7 @@ class Show(Media):
         show definitions.
 
         :return: Show identifier/definition
-        :rtype: dict
+        :rtype: :class:`~python:dict`
         """
 
         return {
@@ -75,7 +75,7 @@ class Show(Media):
         """Dump show to a dictionary
 
         :return: Show dictionary
-        :rtype: dict
+        :rtype: :class:`~python:dict`
         """
 
         result = self.to_identifier()

@@ -7,14 +7,14 @@ class Rating(object):
 
         self.value = value
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Rating value (0 - 10)
         """
 
         self.timestamp = timestamp
         """
-        :type: datetime
+        :type: :class:`~python:datetime.datetime`
 
         Rating timestamp
         """

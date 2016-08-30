@@ -8,14 +8,14 @@ class Season(Media):
 
         self.show = None
         """
-        :type: trakt.objects.Show
+        :type: :class:`trakt.objects.show.Show`
 
         Show
         """
 
         self.episodes = {}
         """
-        :type: dict
+        :type: :class:`~python:dict`
 
         Episodes, defined as :code:`{episode_num: Episode}`
 
@@ -27,7 +27,7 @@ class Season(Media):
         season definitions.
 
         :return: Season identifier/definition
-        :rtype: dict
+        :rtype: :class:`~python:dict`
         """
 
         return {
@@ -47,7 +47,7 @@ class Season(Media):
         """Dump season to a dictionary
 
         :return: Season dictionary
-        :rtype: dict
+        :rtype: :class:`~python:dict`
         """
 
         result = self.to_identifier()

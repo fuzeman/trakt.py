@@ -9,52 +9,52 @@ class Video(Media):
 
         self.last_watched_at = None
         """
-        :type: datetime or None
+        :type: :class:`~python:datetime.datetime`
 
-        Timestamp of when this item was last watched
+        Timestamp of when this item was last watched (or `None`)
         """
 
         self.collected_at = None
         """
-        :type: datetime or None
+        :type: :class:`~python:datetime.datetime`
 
-        Timestamp of when this item was added to your collection
+        Timestamp of when this item was added to your collection (or `None`)
         """
 
         self.paused_at = None
         """
-        :type: datetime or None
+        :type: :class:`~python:datetime.datetime`
 
-        Timestamp of when this item was paused
+        Timestamp of when this item was paused (or `None`)
         """
 
         self.plays = None
         """
-        :type: int or None
+        :type: :class:`~python:int`
 
-        Number of plays
+        Number of plays (or `None`)
         """
 
         self.progress = None
         """
-        :type: float
+        :type: :class:`~python:float`
 
-        Playback progress for item
+        Playback progress for item (or `None`)
         """
 
         # Flags
         self.is_watched = None
         """
-        :type: bool or None
+        :type: :class:`~python:bool`
 
-        Flag indicating this item has been watched
+        Flag indicating this item has been watched (or `None`)
         """
 
         self.is_collected = None
         """
-        :type: bool or None
+        :type: :class:`~python:bool`
 
-        Flag indicating this item has been collected
+        Flag indicating this item has been collected (or `None`)
         """
 
     def _update(self, info=None, is_watched=None, is_collected=None, **kwargs):

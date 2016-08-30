@@ -8,77 +8,84 @@ class Comment(object):
 
         self.keys = keys
         """
-        :type: list of (str, str)
+        :type: :class:`~python:list` of :class:`~python:tuple`
 
-        Keys (for trakt, imdb, tvdb, etc..)
+        Keys (for trakt, imdb, tvdb, etc..), defined as:
+
+        ..code-block::
+
+            [
+                (<service>, <id>)
+            ]
+
         """
 
         self.parent_id = None
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Parent comment id
         """
 
         self.comment = None
         """
-        :type: str
+        :type: :class:`~python:str`
 
         Comment body
         """
 
         self.spoiler = None
         """
-        :type: boolean
+        :type: :class:`~python:bool`
 
         Flag indicating this comment has a spoiler
         """
 
         self.review = None
         """
-        :type: boolean
+        :type: :class:`~python:bool`
 
         Flag indicating this comment is a review
         """
 
         self.replies = None
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Number of replies
         """
 
         self.likes = None
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Number of likes
         """
 
         self.created_at = None
         """
-        :type: datetime
+        :type: :class:`~python:datetime.datetime`
 
         Timestamp of when this comment was created
         """
 
         self.liked_at = None
         """
-        :type: datetime
+        :type: :class:`~python:datetime.datetime`
 
         Timestamp of when this comment was liked
         """
 
         self.user = None
         """
-        :type: dict
+        :type: :class:`~python:dict`
 
         Author details
         """
 
         self.user_rating = None
         """
-        :type: float
+        :type: :class:`~python:float`
 
         Author rating for the item
         """
@@ -87,7 +94,7 @@ class Comment(object):
     def id(self):
         """Returns the comment identifier
 
-        :rtype: int
+        :rtype: :class:`~python:int`
         """
 
         if self.pk is None:
@@ -102,7 +109,7 @@ class Comment(object):
         """Primary Key (unique identifier for the comment)
 
         :return: :code:`("trakt", <id>)` or :code:`None` if no primary key is available
-        :rtype: (str, str) or None
+        :rtype: :class:`~python:tuple`
         """
 
         if not self.keys:

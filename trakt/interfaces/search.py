@@ -14,7 +14,7 @@ class SearchInterface(Interface):
         might return multiple items if the :code:`service` is not globally unique.
 
         :param id: Identifier value to lookup
-        :type id: str or int
+        :type id: :class:`~python:str` or :class:`~python:int`
 
         :param service: Identifier service
 
@@ -25,7 +25,7 @@ class SearchInterface(Interface):
              - :code:`tvdb`
              - :code:`tvrage`
 
-        :type service: str
+        :type service: :class:`~python:str`
 
         :param media: Desired media type (or :code:`None` to return all matching items)
 
@@ -36,13 +36,13 @@ class SearchInterface(Interface):
              - :code:`person`
              - :code:`list`
 
-        :type media: str or list of str or None
+        :type media: :class:`~python:str` or :class:`~python:list` of :class:`~python:str`
 
         :param kwargs: Extra request options
-        :type kwargs: dict
+        :type kwargs: :class:`~python:dict`
 
         :return: Results
-        :rtype: Media or list of Media
+        :rtype: :class:`trakt.objects.media.Media` or :class:`~python:list` of :class:`trakt.objects.media.Media`
         """
         if type(id) is tuple:
             if len(id) != 2:
@@ -86,7 +86,7 @@ class SearchInterface(Interface):
         **Note:** Results are ordered by the most relevant score.
 
         :param query: Search title or description
-        :type query: str
+        :type query: :class:`~python:str`
 
         :param media: Desired media type (or :code:`None` to return all matching items)
 
@@ -97,16 +97,16 @@ class SearchInterface(Interface):
              - :code:`person`
              - :code:`list`
 
-        :type media: str or list of str or None
+        :type media: :class:`~python:str` or :class:`~python:list` of :class:`~python:str`
 
         :param year: Desired media year (or :code:`None` to return all matching items)
-        :type year: str or int or None
+        :type year: :class:`~python:str` or :class:`~python:int`
 
         :param kwargs: Extra request options
-        :type kwargs: dict
+        :type kwargs: :class:`~python:dict`
 
         :return: Results
-        :rtype: list of Media
+        :rtype: :class:`~python:list` of :class:`trakt.objects.media.Media`
         """
         query = {
             'query': query

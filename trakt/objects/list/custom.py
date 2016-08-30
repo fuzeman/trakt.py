@@ -8,14 +8,14 @@ class CustomList(List):
 
         self.username = username
         """
-        :type: str
+        :type: :class:`~python:str`
 
         Author username
         """
 
         self.privacy = None
         """
-        :type: str
+        :type: :class:`~python:str`
 
         Privacy mode
 
@@ -54,10 +54,10 @@ class CustomList(List):
         """Retrieve list items
 
         :param kwargs: Extra request options
-        :type kwargs: dict
+        :type kwargs: :class:`~python:dict`
 
-        :return: List items
-        :rtype: list of Media
+        :return: Current list items
+        :rtype: :class:`~python:list` of :class:`trakt.objects.media.Media`
         """
 
         return self._client['users/*/lists/*'].items(self.username, self.id, **kwargs)
@@ -70,13 +70,13 @@ class CustomList(List):
         """Add specified items to the list
 
         :param items: Items that should be added to the list
-        :type items: list
+        :type items: :class:`~python:list`
 
         :param kwargs: Extra request options
-        :type kwargs: dict
+        :type kwargs: :class:`~python:dict`
 
         :return: Response
-        :rtype: dict
+        :rtype: :class:`~python:dict`
         """
 
         return self._client['users/*/lists/*'].add(self.username, self.id, items, **kwargs)
@@ -85,10 +85,10 @@ class CustomList(List):
         """Delete the list
 
         :param kwargs: Extra request options
-        :type kwargs: dict
+        :type kwargs: :class:`~python:dict`
 
         :return: Boolean to indicate if the request was successful
-        :rtype: bool
+        :rtype: :class:`~python:bool`
         """
 
         return self._client['users/*/lists/*'].delete(self.username, self.id, **kwargs)
@@ -97,10 +97,10 @@ class CustomList(List):
         """Updates the list with the current object attributes
 
         :param kwargs: Extra request options
-        :type kwargs: dict
+        :type kwargs: :class:`~python:dict`
 
         :return: Boolean to indicate if the request was successful
-        :rtype: bool
+        :rtype: :class:`~python:bool`
         """
 
         item = self._client['users/*/lists/*'].update(self.username, self.id, return_type='data', **kwargs)
@@ -115,13 +115,13 @@ class CustomList(List):
         """Remove specified items from the list
 
         :param items: Items that should be removed from the list
-        :type items: list
+        :type items: :class:`~python:list`
 
         :param kwargs: Extra request options
-        :type kwargs: dict
+        :type kwargs: :class:`~python:dict`
 
         :return: Response
-        :rtype: dict
+        :rtype: :class:`~python:dict`
         """
 
         return self._client['users/*/lists/*'].remove(self.username, self.id, items, **kwargs)
@@ -134,10 +134,10 @@ class CustomList(List):
         """Like the list
 
         :param kwargs: Extra request options
-        :type kwargs: dict
+        :type kwargs: :class:`~python:dict`
 
         :return: Boolean to indicate if the request was successful
-        :rtype: bool
+        :rtype: :class:`~python:bool`
         """
 
         return self._client['users/*/lists/*'].like(self.username, self.id, **kwargs)
@@ -146,10 +146,10 @@ class CustomList(List):
         """Un-like the list
 
         :param kwargs: Extra request options
-        :type kwargs: dict
+        :type kwargs: :class:`~python:dict`
 
         :return: Boolean to indicate if the request was successful
-        :rtype: bool
+        :rtype: :class:`~python:bool`
         """
 
         return self._client['users/*/lists/*'].unlike(self.username, self.id, **kwargs)

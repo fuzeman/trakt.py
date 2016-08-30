@@ -9,23 +9,30 @@ class Media(object):
 
         self.keys = keys
         """
-        :type: list of (str, str)
+        :type: :class:`~python:list` of :class:`~python:tuple`
 
-        Keys (for imdb, tvdb, etc..)
+        Keys (for imdb, tvdb, etc..), defined as:
+
+        ..code-block::
+
+            [
+                (<service>, <id>)
+            ]
+
         """
 
         self.index = index
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Playlist item index
         """
 
         self.images = None
         """
-        :type: dict or None
+        :type: :class:`~python:dict`
 
-        Images, defined as:
+        Images (or `None`), defined as:
 
         .. code-block:: python
 
@@ -63,39 +70,39 @@ class Media(object):
 
         self.overview = None
         """
-        :type: str or None
+        :type: :class:`~python:str`
 
-        Overview
+        Overview (or `None`)
         """
 
         self.rating = None
         """
-        :type: int or None
+        :type: :class:`~python:int`
 
-        Community rating (0 - 10)
+        Community rating (0 - 10) (or `None`)
         """
 
         self.score = None
         """
-        :type: float or None
+        :type: :class:`~python:float`
 
-        Search score
+        Search score (or `None`)
         """
 
         # Flags
         self.in_watchlist = None
         """
-        :type: bool or None
+        :type: :class:`~python:bool`
 
-        Flag indicating this item is in your watchlist
+        Flag indicating this item is in your watchlist (or `None`)
         """
 
         # Timestamps
         self.listed_at = None
         """
-        :type: datetime or None
+        :type: :class:`~python:datetime.datetime`
 
-        Timestamp of when this item was added to the list
+        Timestamp of when this item was added to the list (or `None`)
         """
 
     @property
@@ -110,7 +117,7 @@ class Media(object):
          - **custom_list:** trakt
 
         :return: :code:`(<service>, <value>)` or :code:`None` if no primary key is available
-        :rtype: (str, str) or None
+        :rtype: :class:`~python:tuple`
         """
         if not self.keys:
             return None

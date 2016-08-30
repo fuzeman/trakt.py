@@ -10,9 +10,9 @@ class ScrobbleInterface(Interface):
         """Perform specified scrobble action
 
         :param action: Action to perform (either :code:`start`, :code:`pause` or :code:`stop`)
-        :type action: str
+        :type action: :class:`~python:str`
 
-        :param movie: Movie definition
+        :param movie: Movie definition (or `None`)
 
             **Example:**
 
@@ -27,9 +27,9 @@ class ScrobbleInterface(Interface):
                     }
                 }
 
-        :type movie: dict or None
+        :type movie: :class:`~python:dict`
 
-        :param show: Show definition
+        :param show: Show definition (or `None`)
 
             **Example:**
 
@@ -45,9 +45,9 @@ class ScrobbleInterface(Interface):
                 }
 
 
-        :type show: dict or None
+        :type show: :class:`~python:dict`
 
-        :param episode: Episode definition
+        :param episode: Episode definition (or `None`)
 
             **Example:**
 
@@ -58,14 +58,15 @@ class ScrobbleInterface(Interface):
                     "number": 11
                 }
 
-        :type episode: dict or None
+        :type episode: :class:`~python:dict`
 
         :param progress: Current movie/episode progress percentage
-        :type progress: float
+        :type progress: :class:`~python:float`
 
         :param kwargs: Extra request options
+        :type kwargs: :class:`~python:dict`
 
-        :return: Response
+        :return: Response (or `None`)
 
             **Example:**
 
@@ -94,7 +95,7 @@ class ScrobbleInterface(Interface):
                     }
                 }
 
-        :rtype: dict or None
+        :rtype: :class:`~python:dict`
         """
         if movie and (show or episode):
             raise ValueError('Only one media type should be provided')
@@ -136,7 +137,7 @@ class ScrobbleInterface(Interface):
         **Note:** A watching status will auto expire after the remaining runtime has elapsed.
         There is no need to re-send every 15 minutes.
 
-        :param movie: Movie definition
+        :param movie: Movie definition (or `None`)
 
             **Example:**
 
@@ -151,9 +152,9 @@ class ScrobbleInterface(Interface):
                     }
                 }
 
-        :type movie: dict or None
+        :type movie: :class:`~python:dict`
 
-        :param show: Show definition
+        :param show: Show definition (or `None`)
 
             **Example:**
 
@@ -169,9 +170,9 @@ class ScrobbleInterface(Interface):
                 }
 
 
-        :type show: dict or None
+        :type show: :class:`~python:dict`
 
-        :param episode: Episode definition
+        :param episode: Episode definition (or `None`)
 
             **Example:**
 
@@ -182,14 +183,15 @@ class ScrobbleInterface(Interface):
                     "number": 11
                 }
 
-        :type episode: dict or None
+        :type episode: :class:`~python:dict`
 
         :param progress: Current movie/episode progress percentage
-        :type progress: float
+        :type progress: :class:`~python:float`
 
         :param kwargs: Extra request options
+        :type kwargs: :class:`~python:dict`
 
-        :return: Response
+        :return: Response (or `None`)
 
             **Example:**
 
@@ -218,7 +220,7 @@ class ScrobbleInterface(Interface):
                     }
                 }
 
-        :rtype: dict or None
+        :rtype: :class:`~python:dict`
         """
         return self.action(
             'start',
@@ -235,7 +237,7 @@ class ScrobbleInterface(Interface):
         :code:`Trakt['sync/playback'].get()` can be used to resume the video from this exact
         position. Un-pause a video by calling the :code:`Trakt['scrobble'].start()` method again.
 
-        :param movie: Movie definition
+        :param movie: Movie definition (or `None`)
 
             **Example:**
 
@@ -250,9 +252,9 @@ class ScrobbleInterface(Interface):
                     }
                 }
 
-        :type movie: dict or None
+        :type movie: :class:`~python:dict`
 
-        :param show: Show definition
+        :param show: Show definition (or `None`)
 
             **Example:**
 
@@ -268,9 +270,9 @@ class ScrobbleInterface(Interface):
                 }
 
 
-        :type show: dict or None
+        :type show: :class:`~python:dict`
 
-        :param episode: Episode definition
+        :param episode: Episode definition (or `None`)
 
             **Example:**
 
@@ -281,14 +283,15 @@ class ScrobbleInterface(Interface):
                     "number": 11
                 }
 
-        :type episode: dict or None
+        :type episode: :class:`~python:dict`
 
         :param progress: Current movie/episode progress percentage
-        :type progress: float
+        :type progress: :class:`~python:float`
 
         :param kwargs: Extra request options
+        :type kwargs: :class:`~python:dict`
 
-        :return: Response
+        :return: Response (or `None`)
 
             **Example:**
 
@@ -317,7 +320,7 @@ class ScrobbleInterface(Interface):
                     }
                 }
 
-        :rtype: dict or None
+        :rtype: :class:`~python:dict`
         """
         return self.action(
             'pause',
@@ -341,7 +344,7 @@ class ScrobbleInterface(Interface):
         **Note:** If you prefer to use a threshold higher than 80%, you should use :code:`Trakt['scrobble'].pause()`
         yourself so it doesn't create duplicate scrobbles.
 
-        :param movie: Movie definition
+        :param movie: Movie definition (or `None`)
 
             **Example:**
 
@@ -356,9 +359,9 @@ class ScrobbleInterface(Interface):
                     }
                 }
 
-        :type movie: dict or None
+        :type movie: :class:`~python:dict`
 
-        :param show: Show definition
+        :param show: Show definition (or `None`)
 
             **Example:**
 
@@ -374,9 +377,9 @@ class ScrobbleInterface(Interface):
                 }
 
 
-        :type show: dict or None
+        :type show: :class:`~python:dict`
 
-        :param episode: Episode definition
+        :param episode: Episode definition (or `None`)
 
             **Example:**
 
@@ -387,14 +390,15 @@ class ScrobbleInterface(Interface):
                     "number": 11
                 }
 
-        :type episode: dict or None
+        :type episode: :class:`~python:dict`
 
         :param progress: Current movie/episode progress percentage
-        :type progress: float
+        :type progress: :class:`~python:float`
 
         :param kwargs: Extra request options
+        :type kwargs: :class:`~python:dict`
 
-        :return: Response
+        :return: Response (or `None`)
 
             **Example:**
 
@@ -423,7 +427,7 @@ class ScrobbleInterface(Interface):
                     }
                 }
 
-        :rtype: dict or None
+        :rtype: :class:`~python:dict`
         """
         return self.action(
             'stop',

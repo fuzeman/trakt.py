@@ -8,70 +8,77 @@ class List(object):
 
         self.keys = keys
         """
-        :type: list of (str, str)
+        :type: :class:`~python:list` of :class:`~python:tuple`
 
-        Keys (for trakt, imdb, tvdb, etc..)
+        Keys (for trakt, imdb, tvdb, etc..), defined as:
+
+        ..code-block::
+
+            [
+                (<service>, <id>)
+            ]
+
         """
 
         self.name = None
         """
-        :type: str
+        :type: :class:`~python:str`
 
         Name
         """
 
         self.description = None
         """
-        :type: str
+        :type: :class:`~python:str`
 
         Description
         """
 
         self.likes = None
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Number of likes
         """
 
         self.allow_comments = None
         """
-        :type: boolean
+        :type: :class:`~python:bool`
 
         Flag indicating this list allows comments
         """
 
         self.display_numbers = None
         """
-        :type: boolean
+        :type: :class:`~python:bool`
 
         Flag indicating this list displays numbers
         """
 
         self.liked_at = None
         """
-        :type: datetime
+        :type: :class:`~python:datetime.datetime`
 
         Timestamp of when this list was liked
         """
 
         self.updated_at = None
         """
-        :type: datetime
+        :type: :class:`~python:datetime.datetime`
 
         Timestamp of when this list was last updated
         """
 
         self.comment_count = None
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Number of comments
         """
 
         self.item_count = None
         """
-        :type: int
+        :type: :class:`~python:int`
 
         Number of items
         """
@@ -80,7 +87,7 @@ class List(object):
     def id(self):
         """Returns the list identifier
 
-        :rtype: int
+        :rtype: :class:`~python:int`
         """
 
         if self.pk is None:
@@ -95,7 +102,7 @@ class List(object):
         """Primary Key (unique identifier for the list)
 
         :return: :code:`("trakt", <id>)` or :code:`None` if no primary key is available
-        :rtype: (str, str) or None
+        :rtype: :class:`~python:tuple`
         """
 
         if not self.keys:
