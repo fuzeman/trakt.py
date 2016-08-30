@@ -126,8 +126,7 @@ setup(
 
     # Requirements
     setup_requires=[
-        'pytest-runner',
-        'sphinx>=1.3.1'
+        'pytest-runner'
     ],
 
     **read_requirements()
