@@ -21,7 +21,7 @@ import os
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', '..'))
+ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, '..'))
 
 INTERFACES_DIR = os.path.join(ROOT_DIR, 'trakt', 'interfaces')
 OBJECTS_DIR = os.path.join(ROOT_DIR, 'trakt', 'objects')
