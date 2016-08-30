@@ -1,3 +1,8 @@
+2.7.1 (2016-08-30)
+------------------
+**Fixed**
+ - Invalid classifier was defined in [setup.py]
+
 2.7.0 (2016-08-30)
 ------------------
 **Added**
