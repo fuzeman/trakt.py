@@ -1,7 +1,9 @@
-========================================
-The :mod:`trakt.interfaces.users` Module
-========================================
+======================
+:code:`Trakt['users']`
+======================
+
 .. automodule:: trakt.interfaces.users
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: UsersInterface
+    :members: likes
+    :undoc-members:

@@ -1,7 +1,9 @@
-========================================
-The :mod:`trakt.interfaces.oauth` Module
-========================================
+======================
+:code:`Trakt['oauth']`
+======================
+
 .. automodule:: trakt.interfaces.oauth
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: OAuthInterface
+    :members: authorize_url, pin_url, token, token_exchange, token_refresh
+    :undoc-members:

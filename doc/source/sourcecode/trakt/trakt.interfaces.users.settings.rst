@@ -1,7 +1,9 @@
-=================================================
-The :mod:`trakt.interfaces.users.settings` Module
-=================================================
+===============================
+:code:`Trakt['users/settings']`
+===============================
+
 .. automodule:: trakt.interfaces.users.settings
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: UsersSettingsInterface
+    :members: get
+    :undoc-members:

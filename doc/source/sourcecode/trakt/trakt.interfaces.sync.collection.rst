@@ -1,7 +1,9 @@
-==================================================
-The :mod:`trakt.interfaces.sync.collection` Module
-==================================================
+================================
+:code:`Trakt['sync/collection']`
+================================
+
 .. automodule:: trakt.interfaces.sync.collection
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: SyncCollectionInterface
+    :members: add, flags, get, movies, remove, shows
+    :undoc-members:

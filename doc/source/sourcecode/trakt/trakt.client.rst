@@ -1,6 +1,6 @@
-==============================
-The :mod:`trakt.client` Module
-==============================
+===================
+:mod:`trakt.client`
+===================
 .. automodule:: trakt.client
   :members:
   :undoc-members:

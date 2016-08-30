@@ -1,6 +1,6 @@
-==========================================
-The :mod:`trakt.core.configuration` Module
-==========================================
+===============================
+:mod:`trakt.core.configuration`
+===============================
 .. automodule:: trakt.core.configuration
   :members:
   :undoc-members:

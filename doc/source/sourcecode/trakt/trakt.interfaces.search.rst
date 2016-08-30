@@ -1,7 +1,9 @@
-=========================================
-The :mod:`trakt.interfaces.search` Module
-=========================================
+=======================
+:code:`Trakt['search']`
+=======================
+
 .. automodule:: trakt.interfaces.search
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: SearchInterface
+    :members: lookup, query
+    :undoc-members:

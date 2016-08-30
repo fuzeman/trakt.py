@@ -1,7 +1,9 @@
-===============================================
-The :mod:`trakt.interfaces.sync.ratings` Module
-===============================================
+=============================
+:code:`Trakt['sync/ratings']`
+=============================
+
 .. automodule:: trakt.interfaces.sync.ratings
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: SyncRatingsInterface
+    :members: add, episodes, flags, get, movies, remove, seasons, shows
+    :undoc-members:

@@ -1,18 +1,31 @@
-.. include:: ../../README.rst
+Quickstart
+==========
 
 
-Contents:
+Learn More
+================
+
+API
+-----------------
 
 .. toctree::
    :maxdepth: 2
 
-   apis
-   sourcecode/autoindex
-   ChangeLog
+   sourcecode/interfaces
+   sourcecode/objects
+   sourcecode/modules
 
-Indices and tables
-==================
+Information
+-------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   changes
+   license
+
+Indices
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
-

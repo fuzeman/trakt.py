@@ -1,7 +1,9 @@
-===============================================
-The :mod:`trakt.interfaces.sync.history` Module
-===============================================
+=============================
+:code:`Trakt['sync/history']`
+=============================
+
 .. automodule:: trakt.interfaces.sync.history
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: SyncHistoryInterface
+    :members: add, remove
+    :undoc-members:

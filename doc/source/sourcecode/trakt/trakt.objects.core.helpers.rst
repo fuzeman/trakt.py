@@ -1,6 +1,6 @@
-============================================
-The :mod:`trakt.objects.core.helpers` Module
-============================================
+=================================
+:mod:`trakt.objects.core.helpers`
+=================================
 .. automodule:: trakt.objects.core.helpers
   :members:
   :undoc-members:

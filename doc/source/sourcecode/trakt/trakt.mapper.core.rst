@@ -1,6 +1,6 @@
-===================================
-The :mod:`trakt.mapper.core` Module
-===================================
+========================
+:mod:`trakt.mapper.core`
+========================
 .. automodule:: trakt.mapper.core
   :members:
   :undoc-members:

@@ -1,7 +1,7 @@
 ============================
-:mod:`trakt.core.exceptions`
+:mod:`trakt.core.pagination`
 ============================
-.. automodule:: trakt.core.exceptions
+.. automodule:: trakt.core.pagination
   :members:
   :undoc-members:
   :show-inheritance:

@@ -1,6 +1,6 @@
-===============================
-The :mod:`trakt.helpers` Module
-===============================
+====================
+:mod:`trakt.helpers`
+====================
 .. automodule:: trakt.helpers
   :members:
   :undoc-members:

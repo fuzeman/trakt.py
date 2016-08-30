@@ -1,7 +1,9 @@
-=======================================
-The :mod:`trakt.interfaces.auth` Module
-=======================================
+=====================
+:code:`Trakt['auth']`
+=====================
+
 .. automodule:: trakt.interfaces.auth
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: AuthInterface
+    :members: login, logout
+    :undoc-members:

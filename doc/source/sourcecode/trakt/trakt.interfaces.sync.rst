@@ -1,7 +1,9 @@
-=======================================
-The :mod:`trakt.interfaces.sync` Module
-=======================================
+=====================
+:code:`Trakt['sync']`
+=====================
+
 .. automodule:: trakt.interfaces.sync
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: SyncInterface
+    :members: last_activities, playback
+    :undoc-members:

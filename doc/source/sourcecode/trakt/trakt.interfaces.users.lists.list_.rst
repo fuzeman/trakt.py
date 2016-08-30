@@ -1,7 +1,9 @@
-====================================================
-The :mod:`trakt.interfaces.users.lists.list_` Module
-====================================================
+================================
+:code:`Trakt['users/*/lists/*']`
+================================
+
 .. automodule:: trakt.interfaces.users.lists.list_
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: UsersListInterface
+    :members: add, delete, get, items, like, remove, unlike, update
+    :undoc-members:

@@ -1,7 +1,8 @@
-=======================================
-The :mod:`trakt.objects.comment` Module
-=======================================
+===============
+:code:`Comment`
+===============
 .. automodule:: trakt.objects.comment
+  :inherited-members:
   :members:
   :undoc-members:
   :show-inheritance:

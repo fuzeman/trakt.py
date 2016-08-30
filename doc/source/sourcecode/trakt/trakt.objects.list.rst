@@ -1,6 +1,6 @@
-====================================
-The :mod:`trakt.objects.list` Module
-====================================
+=========================
+:mod:`trakt.objects.list`
+=========================
 .. automodule:: trakt.objects.list
   :members:
   :undoc-members:

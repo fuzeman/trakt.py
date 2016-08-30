@@ -1,6 +1,6 @@
-===================================
-The :mod:`trakt.mapper.sync` Module
-===================================
+========================
+:mod:`trakt.mapper.sync`
+========================
 .. automodule:: trakt.mapper.sync
   :members:
   :undoc-members:

@@ -1,7 +1,9 @@
-================================================
-The :mod:`trakt.interfaces.sync.playback` Module
-================================================
+==============================
+:code:`Trakt['sync/playback']`
+==============================
+
 .. automodule:: trakt.interfaces.sync.playback
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: SyncPlaybackInterface
+    :members: episodes, flags, get, movies, shows
+    :undoc-members:

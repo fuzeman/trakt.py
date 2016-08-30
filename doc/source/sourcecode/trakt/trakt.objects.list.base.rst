@@ -1,7 +1,8 @@
 ============
-:mod:`trakt`
+:code:`List`
 ============
-.. automodule:: trakt
+.. automodule:: trakt.objects.list.base
+  :inherited-members:
   :members:
   :undoc-members:
   :show-inheritance:

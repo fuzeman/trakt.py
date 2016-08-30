@@ -1,7 +1,9 @@
-===============================================
-The :mod:`trakt.interfaces.sync.watched` Module
-===============================================
+=============================
+:code:`Trakt['sync/watched']`
+=============================
+
 .. automodule:: trakt.interfaces.sync.watched
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: SyncWatchedInterface
+    :members: flags, get, movies, shows
+    :undoc-members:

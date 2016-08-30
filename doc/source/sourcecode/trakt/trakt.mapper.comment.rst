@@ -1,6 +1,6 @@
-======================================
-The :mod:`trakt.mapper.comment` Module
-======================================
+===========================
+:mod:`trakt.mapper.comment`
+===========================
 .. automodule:: trakt.mapper.comment
   :members:
   :undoc-members:

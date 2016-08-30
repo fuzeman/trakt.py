@@ -1,6 +1,6 @@
-=======================================
-The :mod:`trakt.interfaces.base` Module
-=======================================
+============================
+:mod:`trakt.interfaces.base`
+============================
 .. automodule:: trakt.interfaces.base
   :members:
   :undoc-members:

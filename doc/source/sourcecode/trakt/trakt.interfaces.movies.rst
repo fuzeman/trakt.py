@@ -1,7 +1,9 @@
-=========================================
-The :mod:`trakt.interfaces.movies` Module
-=========================================
+=======================
+:code:`Trakt['movies']`
+=======================
+
 .. automodule:: trakt.interfaces.movies
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: MoviesInterface
+    :members: get, trending
+    :undoc-members:

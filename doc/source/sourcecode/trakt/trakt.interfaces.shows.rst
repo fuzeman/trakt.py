@@ -1,7 +1,9 @@
-========================================
-The :mod:`trakt.interfaces.shows` Module
-========================================
+======================
+:code:`Trakt['shows']`
+======================
+
 .. automodule:: trakt.interfaces.shows
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: ShowsInterface
+    :members: episode, get, season, seasons, trending
+    :undoc-members:

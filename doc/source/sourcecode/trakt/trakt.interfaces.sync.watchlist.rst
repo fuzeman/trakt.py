@@ -1,7 +1,9 @@
-=================================================
-The :mod:`trakt.interfaces.sync.watchlist` Module
-=================================================
+===============================
+:code:`Trakt['sync/watchlist']`
+===============================
+
 .. automodule:: trakt.interfaces.sync.watchlist
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: SyncWatchlistInterface
+    :members: add, episodes, flags, get, movies, remove, seasons, shows
+    :undoc-members:

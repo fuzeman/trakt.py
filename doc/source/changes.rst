@@ -2,4 +2,3 @@ Changelog
 =========
 
 .. include:: ../../CHANGES.rst
-

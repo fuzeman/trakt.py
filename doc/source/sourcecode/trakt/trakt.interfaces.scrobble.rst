@@ -1,7 +1,9 @@
-===========================================
-The :mod:`trakt.interfaces.scrobble` Module
-===========================================
+=========================
+:code:`Trakt['scrobble']`
+=========================
+
 .. automodule:: trakt.interfaces.scrobble
-  :members:
-  :undoc-members:
-  :show-inheritance:
+
+  .. autoclass:: ScrobbleInterface
+    :members: action, pause, start, stop
+    :undoc-members:
