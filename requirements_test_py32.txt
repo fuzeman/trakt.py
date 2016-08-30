@@ -2,7 +2,7 @@
 flake8
 
 # Tests
-pytest>=2.7.0, < 3.1.0
+pytest>=2.7.0, < 3.0.0
 
 # Test coverage
 coverage>=4.0.3, < 4.3.0
