@@ -297,6 +297,7 @@ refresh_autodoc_index()
 
 # -- General configuration ------------------------------------------------
 
+
 # If your documentation needs a minimal Sphinx version, state it here.
 #needs_sphinx = '1.0'
 
@@ -305,6 +306,7 @@ refresh_autodoc_index()
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.intersphinx',
     'trakt.sphinxext',
 ]
 
@@ -387,6 +389,11 @@ pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
+
+# Intersphinx mappings
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/2', None)
+}
 
 
 # -- Options for HTML output ----------------------------------------------
