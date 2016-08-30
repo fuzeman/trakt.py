@@ -1,0 +1,1 @@
+coveralls==0.5

@@ -6,7 +6,7 @@ class ScrobbleInterface(Interface):
 
     @application
     @authenticated
-    def action(self, action, movie=None, show=None, episode=None, progress=0, **kwargs):
+    def action(self, action, movie=None, show=None, episode=None, progress=0.0, **kwargs):
         if movie and (show or episode):
             raise ValueError('Only one media type should be provided')
 
@@ -40,7 +40,7 @@ class ScrobbleInterface(Interface):
 
     @application
     @authenticated
-    def start(self, movie=None, show=None, episode=None, progress=0, **kwargs):
+    def start(self, movie=None, show=None, episode=None, progress=0.0, **kwargs):
         return self.action(
             'start',
             movie, show, episode,
@@ -51,7 +51,7 @@ class ScrobbleInterface(Interface):
 
     @application
     @authenticated
-    def pause(self, movie=None, show=None, episode=None, progress=0, **kwargs):
+    def pause(self, movie=None, show=None, episode=None, progress=0.0, **kwargs):
         return self.action(
             'pause',
             movie, show, episode,
@@ -62,7 +62,7 @@ class ScrobbleInterface(Interface):
 
     @application
     @authenticated
-    def stop(self, movie=None, show=None, episode=None, progress=0, **kwargs):
+    def stop(self, movie=None, show=None, episode=None, progress=0.0, **kwargs):
         return self.action(
             'stop',
             movie, show, episode,
