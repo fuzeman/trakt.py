@@ -1,3 +1,13 @@
+2.7.0 (2016-08-30)
+------------------
+**Added**
+ - Support for multiple :code:`media` options on the :code:`Trakt['search'].query()` method
+ - Implemented the :code:`media` parameter on the :code:`Trakt['search'].lookup()` method
+
+**Changed**
+ - "Request failed" warnings now display the request method and path to help with debugging
+ - Improved handling of requirements in [setup.py]
+
 2.6.1 (2016-05-19)
 ------------------
 **Changed**
