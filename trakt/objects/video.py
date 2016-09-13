@@ -7,6 +7,13 @@ class Video(Media):
     def __init__(self, client, keys=None, index=None):
         super(Video, self).__init__(client, keys, index)
 
+        self.id = None
+        """
+        :type: :class:`~python:long`
+
+        Item id (e.g. history id)
+        """
+
         self.last_watched_at = None
         """
         :type: :class:`~python:datetime.datetime`
@@ -26,6 +33,13 @@ class Video(Media):
         :type: :class:`~python:datetime.datetime`
 
         Timestamp of when this item was paused (or `None`)
+        """
+
+        self.watched_at = None
+        """
+        :type: :class:`~python:datetime.datetime`
+
+        Timestamp of when this item was watched (or `None`)
         """
 
         self.plays = None
@@ -65,6 +79,9 @@ class Video(Media):
             'progress'
         ])
 
+        if 'id' in info:
+            self.id = long(info.get('id'))
+
         # Set timestamps
         if 'last_watched_at' in info:
             self.last_watched_at = from_iso8601(info.get('last_watched_at'))
@@ -74,6 +91,9 @@ class Video(Media):
 
         if 'paused_at' in info:
             self.paused_at = from_iso8601(info.get('paused_at'))
+
+        if 'watched_at' in info:
+            self.watched_at = from_iso8601(info.get('watched_at'))
 
         # Set flags
         if is_watched is not None:
