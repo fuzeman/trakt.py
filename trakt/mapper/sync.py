@@ -180,9 +180,15 @@ class SyncMapper(Mapper):
             # Item has no keys
             return None
 
-        if pk not in store:
-            # Create new item
-            store[pk] = cls.construct(client, media, i_data, keys, **kwargs)
+        if store is None or pk not in store:
+            # Construct item
+            obj = cls.construct(client, media, i_data, keys, **kwargs)
+
+            if store is None:
+                return obj
+
+            # Update store
+            store[pk] = obj
         else:
             # Update existing item
             store[pk]._update(i_data, **kwargs)
