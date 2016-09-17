@@ -80,7 +80,7 @@ class Video(Media):
         ])
 
         if 'id' in info:
-            self.id = long(info.get('id'))
+            self.id = int(info.get('id'))
 
         # Set timestamps
         if 'last_watched_at' in info:
