@@ -1,3 +1,16 @@
+2.8.0 (2016-09-17)
+------------------
+**Added**
+ - Lists containing people are now supported (instead of raising an exception)
+ - :code:`SyncMapper` can now be used without the :code:`store` parameter
+ - Objects:
+     - :code:`Person`
+ - Properties:
+     - :code:`Video.id` (history id)
+     - :code:`Video.watched_at` (history timestamp)
+ - Methods:
+     - :code:`Media.get_key(<service>)`
+
 2.7.1 (2016-08-30)
 ------------------
 **Fixed**
