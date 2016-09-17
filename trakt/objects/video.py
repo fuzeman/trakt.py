@@ -7,16 +7,69 @@ class Video(Media):
     def __init__(self, client, keys=None, index=None):
         super(Video, self).__init__(client, keys, index)
 
+        self.id = None
+        """
+        :type: :class:`~python:long`
+
+        Item id (e.g. history id)
+        """
+
         self.last_watched_at = None
+        """
+        :type: :class:`~python:datetime.datetime`
+
+        Timestamp of when this item was last watched (or `None`)
+        """
+
         self.collected_at = None
+        """
+        :type: :class:`~python:datetime.datetime`
+
+        Timestamp of when this item was added to your collection (or `None`)
+        """
+
         self.paused_at = None
+        """
+        :type: :class:`~python:datetime.datetime`
+
+        Timestamp of when this item was paused (or `None`)
+        """
+
+        self.watched_at = None
+        """
+        :type: :class:`~python:datetime.datetime`
+
+        Timestamp of when this item was watched (or `None`)
+        """
 
         self.plays = None
+        """
+        :type: :class:`~python:int`
+
+        Number of plays (or `None`)
+        """
+
         self.progress = None
+        """
+        :type: :class:`~python:float`
+
+        Playback progress for item (or `None`)
+        """
 
         # Flags
         self.is_watched = None
+        """
+        :type: :class:`~python:bool`
+
+        Flag indicating this item has been watched (or `None`)
+        """
+
         self.is_collected = None
+        """
+        :type: :class:`~python:bool`
+
+        Flag indicating this item has been collected (or `None`)
+        """
 
     def _update(self, info=None, is_watched=None, is_collected=None, **kwargs):
         super(Video, self)._update(info, **kwargs)
@@ -25,6 +78,9 @@ class Video(Media):
             'plays',
             'progress'
         ])
+
+        if 'id' in info:
+            self.id = int(info.get('id'))
 
         # Set timestamps
         if 'last_watched_at' in info:
@@ -35,6 +91,9 @@ class Video(Media):
 
         if 'paused_at' in info:
             self.paused_at = from_iso8601(info.get('paused_at'))
+
+        if 'watched_at' in info:
+            self.watched_at = from_iso8601(info.get('watched_at'))
 
         # Set flags
         if is_watched is not None:
