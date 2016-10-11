@@ -7,16 +7,33 @@ log = logging.getLogger(__name__)
 
 class SyncMapper(Mapper):
     @classmethod
-    def process(cls, client, store, items, media, **kwargs):
-        if not media:
-            return ValueError()
+    def process(cls, client, store, items, flat=False, **kwargs):
+        return cls.map_items(
+            client, store, items, cls.item,
+            **kwargs
+        )
 
-        func = getattr(cls, media)
+    @classmethod
+    def item(cls, client, store, item, flat=False, **kwargs):
+        i_type = item.get('type')
 
-        if not func:
-            raise ValueError('Unknown media type: %r', media)
+        # Find item type function
+        if i_type == 'movie':
+            func = cls.movie
+        elif i_type == 'show':
+            func = cls.show
+        elif i_type == 'season':
+            func = cls.season
+        elif i_type == 'episode':
+            func = cls.episode
+        else:
+            raise ValueError('Unknown item type: %r' % i_type)
 
-        return func(client, store, items, **kwargs)
+        # Map item
+        return func(
+            client, store, item,
+            **kwargs
+        )
 
     #
     # Movie
@@ -154,7 +171,10 @@ class SyncMapper(Mapper):
             store = {}
 
         for item in items:
-            result = func(client, store, item, **kwargs)
+            result = func(
+                client, store, item,
+                **kwargs
+            )
 
             if result is None:
                 log.warn('Unable to map item: %s', item)
@@ -168,6 +188,7 @@ class SyncMapper(Mapper):
         else:
             i_data = item
 
+        # Retrieve item key
         pk, keys = cls.get_ids(media, i_data, parent=parent)
 
         if key is not None:
