@@ -7,6 +7,13 @@ class Video(Media):
     def __init__(self, client, keys=None, index=None):
         super(Video, self).__init__(client, keys, index)
 
+        self.action = None
+        """
+        :type: :class:`~python:str`
+
+        Item action (e.g. history action: "checkin", "scrobble" or "watch")
+        """
+
         self.id = None
         """
         :type: :class:`~python:long`
@@ -78,6 +85,9 @@ class Video(Media):
             'plays',
             'progress'
         ])
+
+        if 'action' in info:
+            self.action = info.get('action')
 
         if 'id' in info:
             self.id = int(info.get('id'))
