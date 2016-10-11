@@ -7,7 +7,7 @@ class Get(Interface):
     flags = {}
 
     @authenticated
-    def get(self, media=None, store=None, params=None, query=None, **kwargs):
+    def get(self, media=None, store=None, params=None, query=None, flat=False, **kwargs):
         if not params:
             params = []
 
@@ -30,6 +30,7 @@ class Get(Interface):
         # Map items
         return SyncMapper.process(
             self.client, store, items,
+            flat=flat,
             **self.flags
         )
 

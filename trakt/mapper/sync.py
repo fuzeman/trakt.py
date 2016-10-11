@@ -8,6 +8,13 @@ log = logging.getLogger(__name__)
 class SyncMapper(Mapper):
     @classmethod
     def process(cls, client, store, items, flat=False, **kwargs):
+        if flat:
+            # Return flat item iterator
+            return cls.iterate_items(
+                client, store, items, cls.item,
+                **kwargs
+            )
+
         return cls.map_items(
             client, store, items, cls.item,
             **kwargs
@@ -95,7 +102,13 @@ class SyncMapper(Mapper):
 
     @classmethod
     def show_episode(cls, client, season, episode_num, item=None, **kwargs):
-        episode = cls.map_item(client, season.episodes, item, 'episode', key=episode_num, parent=season, **kwargs)
+        episode = cls.map_item(
+            client, season.episodes, item, 'episode',
+            key=episode_num,
+            parent=season,
+            **kwargs
+        )
+
         episode.show = season.show
         episode.season = season
 
@@ -140,7 +153,7 @@ class SyncMapper(Mapper):
         return cls.map_items(client, store, items, cls.episode, **kwargs)
 
     @classmethod
-    def episode(cls, client, store, item, **kwargs):
+    def episode(cls, client, store, item, append=False, **kwargs):
         i_episode = item.get('episode', {})
 
         season_num = i_episode.get('season')
@@ -154,10 +167,17 @@ class SyncMapper(Mapper):
             return None
 
         # Build `season`
-        season = cls.show_season(client, show, season_num, **kwargs)
+        season = cls.show_season(
+            client, show, season_num,
+            **kwargs
+        )
 
         # Build `episode`
-        episode = cls.show_episode(client, season, episode_num, item, **kwargs)
+        episode = cls.show_episode(
+            client, season, episode_num, item,
+            append=append,
+            **kwargs
+        )
 
         return episode
 
@@ -182,7 +202,41 @@ class SyncMapper(Mapper):
         return store
 
     @classmethod
-    def map_item(cls, client, store, item, media, key=None, parent=None, **kwargs):
+    def iterate_items(cls, client, store, items, func, **kwargs):
+        if store is None:
+            store = {}
+
+        if 'movies' not in store:
+            store['movies'] = {}
+
+        if 'shows' not in store:
+            store['shows'] = {}
+
+        for item in items:
+            i_type = item.get('type')
+
+            if i_type == 'movie':
+                i_store = store['movies']
+            elif i_type == 'episode':
+                i_store = store['shows']
+            else:
+                raise ValueError('Unknown item type: %r' % i_type)
+
+            # Map item
+            result = func(
+                client, i_store, item,
+                append=True,
+                **kwargs
+            )
+
+            if result is None:
+                log.warn('Unable to map item: %s', item)
+
+            # Yield item in iterator
+            yield result
+
+    @classmethod
+    def map_item(cls, client, store, item, media, key=None, parent=None, append=False, **kwargs):
         if item and media in item:
             i_data = item[media]
         else:
@@ -201,7 +255,7 @@ class SyncMapper(Mapper):
             # Item has no keys
             return None
 
-        if store is None or pk not in store:
+        if store is None or pk not in store or append:
             # Construct item
             obj = cls.construct(client, media, i_data, keys, **kwargs)
 
@@ -209,7 +263,15 @@ class SyncMapper(Mapper):
                 return obj
 
             # Update store
-            store[pk] = obj
+            if append:
+                if pk in store:
+                    store[pk].append(obj)
+                else:
+                    store[pk] = [obj]
+            else:
+                store[pk] = obj
+
+            return obj
         else:
             # Update existing item
             store[pk]._update(i_data, **kwargs)
