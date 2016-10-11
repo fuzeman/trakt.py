@@ -30,6 +30,7 @@ class Get(Interface):
         # Map items
         return SyncMapper.process(
             self.client, store, items,
+            media=media,
             flat=flat,
             **self.flags
         )

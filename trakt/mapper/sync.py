@@ -7,31 +7,33 @@ log = logging.getLogger(__name__)
 
 class SyncMapper(Mapper):
     @classmethod
-    def process(cls, client, store, items, flat=False, **kwargs):
+    def process(cls, client, store, items, media=None, flat=False, **kwargs):
         if flat:
             # Return flat item iterator
             return cls.iterate_items(
                 client, store, items, cls.item,
+                media=media,
                 **kwargs
             )
 
         return cls.map_items(
             client, store, items, cls.item,
+            media=media,
             **kwargs
         )
 
     @classmethod
-    def item(cls, client, store, item, flat=False, **kwargs):
-        i_type = item.get('type')
+    def item(cls, client, store, item, media=None, **kwargs):
+        i_type = item.get('type') or media
 
         # Find item type function
-        if i_type == 'movie':
+        if i_type.startswith('movie'):
             func = cls.movie
-        elif i_type == 'show':
+        elif i_type.startswith('show'):
             func = cls.show
-        elif i_type == 'season':
+        elif i_type.startswith('season'):
             func = cls.season
-        elif i_type == 'episode':
+        elif i_type.startswith('episode'):
             func = cls.episode
         else:
             raise ValueError('Unknown item type: %r' % i_type)
