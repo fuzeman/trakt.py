@@ -1,8 +1,9 @@
+from datetime import datetime
+
 from helpers import authenticate
 
 from trakt import Trakt
 import os
-import six
 
 
 if __name__ == '__main__':
@@ -17,22 +18,38 @@ if __name__ == '__main__':
         authenticate()
     )
 
+    now = datetime.utcnow()
+
     # Retrieve 10 history records (most recent)
-    print('Latest records:')
+    for item in Trakt['sync/history'].get(per_page=10):
+        print(' - %-120s (watched_at: %r)' % (
+            repr(item),
+            item.watched_at.strftime('%Y-%m-%d %H:%M:%S')
+        ))
 
-    for x, item in enumerate(Trakt['sync/history'].get(per_page=10)):
-        print(' - [%02d] %-120s (watched_at: %r)' % (x, repr(item), item.watched_at.strftime('%Y-%m-%d %H:%M:%S')))
+    print('=' * 160)
 
-    print('')
-    print('=' * 150)
-    print('')
+    # Retrieve history records for "Family Guy"
+    for item in Trakt['sync/history'].shows('1425', pagination=True, per_page=25):
+        print(' - %-120s (watched_at: %r)' % (
+            repr(item),
+            item.watched_at.strftime('%Y-%m-%d %H:%M:%S')
+        ))
+
+    print('=' * 160)
+
+    # Retrieve history records for this year
+    for item in Trakt['sync/history'].get(pagination=True, per_page=25, start_at=datetime(now.year, 1, 1)):
+        print(' - %-120s (watched_at: %r)' % (
+            repr(item),
+            item.watched_at.strftime('%Y-%m-%d %H:%M:%S')
+        ))
+
+    print('=' * 160)
 
     # Retrieve all history records
-    print('Entire history:')
-
-    for x, item in enumerate(Trakt['sync/history'].get(pagination=True, per_page=25)):
-        print(' - [%02d] %-120s (watched_at: %r)' % (x, repr(item), item.watched_at.strftime('%Y-%m-%d %H:%M:%S')))
-
-        # Prompt every 25 items
-        if x != 0 and not (x % 24) and six.moves.input('Load next page? [yes]: ') not in ['', 'y', 'yes']:
-            break
+    for item in Trakt['sync/history'].get(pagination=True, per_page=25):
+        print(' - %-120s (watched_at: %r)' % (
+            repr(item),
+            item.watched_at.strftime('%Y-%m-%d %H:%M:%S')
+        ))
