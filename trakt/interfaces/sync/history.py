@@ -3,6 +3,7 @@ from trakt.interfaces.sync.core.mixins import Get, Add, Remove
 
 class SyncHistoryInterface(Get, Add, Remove):
     path = 'sync/history'
+    flags = {'is_watched': True}
 
     def get(self, media=None, store=None, params=None, page=1, per_page=10, **kwargs):
         # Build query
