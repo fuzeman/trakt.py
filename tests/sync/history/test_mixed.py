@@ -1,6 +1,7 @@
 from tests.core.helpers import pagination_response
 
 from hamcrest import *
+from six.moves import xrange
 from trakt import Trakt
 import responses
 
@@ -32,5 +33,5 @@ def test_basic():
     # Verify item identifiers
     assert_that(
         [item.id for item in items],
-        equal_to(range(1, 4))
+        equal_to(list(xrange(1, 4)))
     )

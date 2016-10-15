@@ -79,7 +79,7 @@ def pagination_response(path=None, authenticated=False):
                 'Content-Type':             'application/json',
                 'X-Pagination-Page':        str(page),
                 'X-Pagination-Limit':       str(limit),
-                'X-Pagination-Page-Count':  str(len(collection) / limit),
+                'X-Pagination-Page-Count':  str(int(len(collection) / limit)),
                 'X-Pagination-Item-Count':  str(len(collection))
             },
             json.dumps(items)
