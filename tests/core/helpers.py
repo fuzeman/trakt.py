@@ -1,3 +1,5 @@
+import json
+
 from six.moves.urllib_parse import urlparse, parse_qsl
 import os
 import pytest
@@ -37,6 +39,63 @@ def authenticated_response(path=None, data=None):
         return 401, {}, ''
 
     return callback
+
+
+def pagination_response(path=None, authenticated=False):
+    # Read file
+    data = read(path)
+
+    if not data:
+        raise Exception('Invalid path specified: %r' % path)
+
+    # Parse file
+    collection = json.load(data)
+
+    # Construct request callback
+    def callback(request):
+        if authenticated and not is_authenticated(request.headers):
+            return 401, {}, ''
+
+        # Parse url
+        url = urlparse(request.url)
+        query = dict(parse_qsl(url.query))
+
+        # Retrieve parameters
+        page = int(query.get('page', 1))
+        limit = int(query.get('limit', 10))
+
+        # Retrieve page items
+        start = (page - 1) * limit
+        end = page * limit
+
+        items = collection[start:end]
+
+        if not items:
+            return 404, {}, ''
+
+        # Return page response
+        return (
+            200, {
+                'Content-Type':             'application/json',
+                'X-Pagination-Page':        str(page),
+                'X-Pagination-Limit':       str(limit),
+                'X-Pagination-Page-Count':  str(len(collection) / limit),
+                'X-Pagination-Item-Count':  str(len(collection))
+            },
+            json.dumps(items)
+        )
+
+    return callback
+
+
+def is_authenticated(headers):
+    if headers.get('trakt-user-login') == 'mock' and headers.get('trakt-user-token') == 'mock':
+        return True
+
+    if headers.get('Authorization') == 'Bearer mock':
+        return True
+
+    return False
 
 
 def assert_url(url, expected_path, expected_query=None):
