@@ -34,10 +34,7 @@ class SyncHistoryInterface(Get, Add, Remove):
 
         # Request watched history
         return super(SyncHistoryInterface, self).get(
-            media=media,
-            store=store,
-            params=params,
-
+            media, store, params,
             query=query,
             flat=True,
             **kwargs
