@@ -14,6 +14,7 @@ class SyncRatingsInterface(Get, Add, Remove):
 
         return super(SyncRatingsInterface, self).get(
             media, store, params,
+            flat=media is None,
             **kwargs
         )
 

@@ -214,13 +214,23 @@ class SyncMapper(Mapper):
         if 'shows' not in store:
             store['shows'] = {}
 
+        if 'seasons' not in store:
+            store['seasons'] = {}
+
+        if 'episodes' not in store:
+            store['episodes'] = {}
+
         for item in items:
             i_type = item.get('type')
 
             if i_type == 'movie':
                 i_store = store['movies']
-            elif i_type == 'episode':
+            elif i_type == 'show':
                 i_store = store['shows']
+            elif i_type == 'season':
+                i_store = store['seasons']
+            elif i_type == 'episode':
+                i_store = store['episodes']
             else:
                 raise ValueError('Unknown item type: %r' % i_type)
 
