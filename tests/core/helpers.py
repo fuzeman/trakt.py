@@ -42,14 +42,14 @@ def authenticated_response(path=None, data=None):
 
 
 def pagination_response(path=None, authenticated=False):
-    # Read file
-    data = read(path)
+    if not os.path.isabs(path):
+        path = os.path.join(TESTS_PATH, path)
 
-    if not data:
-        raise Exception('Invalid path specified: %r' % path)
+    path = os.path.abspath(path)
 
     # Parse file
-    collection = json.load(data)
+    with open(path, 'r') as fp:
+        collection = json.load(fp)
 
     # Construct request callback
     def callback(request):
