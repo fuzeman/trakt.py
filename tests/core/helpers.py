@@ -1,6 +1,6 @@
-import json
-
 from six.moves.urllib_parse import urlparse, parse_qsl
+import json
+import math
 import os
 import pytest
 import six
@@ -74,12 +74,16 @@ def pagination_response(path=None, authenticated=False):
             return 404, {}, ''
 
         # Return page response
+        page_count = int(math.ceil(
+            float(len(collection)) / limit
+        ))
+
         return (
             200, {
                 'Content-Type':             'application/json',
                 'X-Pagination-Page':        str(page),
                 'X-Pagination-Limit':       str(limit),
-                'X-Pagination-Page-Count':  str(int(len(collection) / limit)),
+                'X-Pagination-Page-Count':  str(page_count),
                 'X-Pagination-Item-Count':  str(len(collection))
             },
             json.dumps(items)
