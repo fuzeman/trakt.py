@@ -5,5 +5,5 @@
 .. automodule:: trakt.interfaces.sync.history
 
   .. autoclass:: SyncHistoryInterface
-    :members: add, remove
+    :members: add, flags, get, movies, remove, shows
     :undoc-members:

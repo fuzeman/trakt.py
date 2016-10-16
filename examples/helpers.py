@@ -2,6 +2,7 @@ from trakt import Trakt
 
 import json
 import os
+import six
 
 
 def authenticate():
@@ -10,9 +11,9 @@ def authenticate():
     if authorization:
         return json.loads(authorization)
 
-    print Trakt['oauth'].authorize_url('urn:ietf:wg:oauth:2.0:oob')
+    print('Navigate to: %s' % Trakt['oauth'].authorize_url('urn:ietf:wg:oauth:2.0:oob'))
 
-    code = raw_input('Authorization code:')
+    code = six.moves.input('Authorization code:')
     if not code:
         exit(1)
 
@@ -20,5 +21,5 @@ def authenticate():
     if not authorization:
         exit(1)
 
-    print "Authorization: %r" % authorization
+    print('Authorization: %r' % authorization)
     return authorization
