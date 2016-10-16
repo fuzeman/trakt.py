@@ -1,3 +1,26 @@
+2.9.0 (2016-10-16)
+------------------
+**Added**
+ - Properties:
+     - :code:`Person.listed_at`
+     - :code:`Video.action`
+ - Methods:
+     - :code:`Trakt['sync/history'].get`
+     - :code:`Trakt['sync/history'].shows`
+     - :code:`Trakt['sync/history'].movies`
+
+**Changed**
+ - Updated :code:`SyncMapper` to support flat iterators
+ - Methods:
+     - :code:`Trakt['sync/ratings'].get`
+        - Flat iterator will now be returned if no :code:`media` parameter is provided
+     - :code:`Trakt['sync/watchlist'].get`
+        - Pagination is now supported, can be enabled with :code:`pagination=True`
+        - :code:`media` parameter can now be specified as :code:`None` to return all items (with no type filter)
+
+**Fixed**
+ - Pagination wouldn't work correctly if a starting page was specified
+
 2.8.0 (2016-09-17)
 ------------------
 **Added**
