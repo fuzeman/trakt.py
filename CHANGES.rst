@@ -1,3 +1,10 @@
+2.10.0 (2016-12-15)
+-------------------
+**Added**
+ - Methods:
+     - :code:`Trakt['shows'].next_episode` (#50)
+     - :code:`Trakt['shows'].last_episode` (#50)
+
 2.9.0 (2016-10-16)
 ------------------
 **Added**
