@@ -1,3 +1,8 @@
+2.10.1 (2016-12-15)
+-------------------
+**Changed**
+ - Removed some stray files from the source distribution
+
 2.10.0 (2016-12-15)
 -------------------
 **Added**
