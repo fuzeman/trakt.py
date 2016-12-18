@@ -1,4 +1,4 @@
-from trakt.core.helpers import to_iso8601, deprecated
+from trakt.core.helpers import from_iso8601, to_iso8601, deprecated
 from trakt.objects.core.helpers import update_attributes
 from trakt.objects.media import Media
 
@@ -38,6 +38,106 @@ class Show(Media):
 
         Number of active watchers (returned by the :code:`Trakt['movies'].trending()`
         and :code:`Trakt['shows'].trending()` methods)
+        """
+
+        self.overview = None
+        """
+        :type: :class:`~python:str`
+
+        Episode overview
+        """
+
+        self.first_aired = None
+        """
+        :type: :class:`~python:datetime.datetime`
+
+        Air date
+        """
+
+        self.airs = None
+        """
+        :type: :class:`~python:dict`
+
+        Dictionary with day, time and timezone in which the show airs
+        """
+
+        self.runtime = None
+        """
+        :type: :class:`~python:int`
+
+        Duration of the show in minutes
+        """
+
+        self.certification = None
+        """
+        :type: :class:`~python:str`
+
+        Show certification (e.g TV-MA)
+        """
+
+        self.network = None
+        """
+        :type: :class:`~python:str`
+
+        Network in which the show is aired
+        """
+
+        self.country = None
+        """
+        :type: :class:`~python:str`
+
+        Country in which the show is aired
+        """
+
+        self.updated_at = None
+        """
+        :type: :class:`~python:datetime.datetime`
+
+        Updated date
+        """
+
+        self.status = None
+        """
+        :type: :class:`~python:str`
+
+        Value of :code:`returning series` (airing right now),
+        :code:`in production` (airing soon), :code:`planned` (in development),
+        :code:`canceled`, or :code:`ended`
+        """
+
+        self.homepage = None
+        """
+        :type: :class:`~python:str`
+
+        Show homepage url
+        """
+
+        self.language = None
+        """
+        :type: :class:`~python:str`
+
+        Show language
+        """
+
+        self.available_translations = None
+        """
+        :type: :class:`~python:list`
+
+        Available translations
+        """
+
+        self.genres = None
+        """
+        :type: :class:`~python:list`
+
+        Show genres
+        """
+
+        self.aired_episodes = None
+        """
+        :type: :class:`~python:int`
+
+        Aired episodes
         """
 
     def episodes(self):
@@ -91,6 +191,48 @@ class Show(Media):
 
         result['in_watchlist'] = self.in_watchlist if self.in_watchlist is not None else 0
 
+        if self.first_aired:
+            result['first_aired'] = to_iso8601(self.first_aired)
+
+        if self.updated_at:
+            result['updated_at'] = to_iso8601(self.updated_at)
+
+        if self.overview:
+            result['overview'] = self.overview
+
+        if self.available_translations:
+            result['available_translations'] = self.available_translations
+
+        if self.airs:
+            result['airs'] = self.airs
+
+        if self.runtime:
+            result['runtime'] = self.runtime
+
+        if self.certification:
+            result['certification'] = self.certification
+
+        if self.network:
+            result['network'] = self.network
+
+        if self.country:
+            result['country'] = self.country
+
+        if self.homepage:
+            result['homepage'] = self.homepage
+
+        if self.status:
+            result['status'] = self.status
+
+        if self.language:
+            result['language'] = self.language
+
+        if self.genres:
+            result['genres'] = self.genres
+
+        if self.aired_episodes:
+            result['aired_episodes'] = self.aired_episodes
+
         return result
 
     def _update(self, info=None, **kwargs):
@@ -99,11 +241,34 @@ class Show(Media):
         update_attributes(self, info, [
             'title',
 
-            'watchers'  # trending
+            'watchers',  # trending
+
+            'overview', # extended info
+            'airs',
+            'certification',
+            'network',
+            'country',
+            'homepage',
+            'status',
+            'language',
+            'available_translations',
+            'genres'
         ])
 
         if info.get('year'):
             self.year = int(info['year'])
+
+        if info.get('runtime'):
+            self.runtime = int(info['runtime'])
+
+        if info.get('aired_episodes'):
+            self.aired_episodes = int(info['aired_episodes'])
+
+        if 'first_aired' in info:
+            self.first_aired = from_iso8601(info.get('first_aired'))
+
+        if 'updated_at' in info:
+            self.updated_at = from_iso8601(info.get('updated_at'))
 
     @classmethod
     def _construct(cls, client, keys, info=None, index=None, **kwargs):
