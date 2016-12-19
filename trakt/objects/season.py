@@ -1,4 +1,4 @@
-from trakt.core.helpers import to_iso8601, deprecated
+from trakt.core.helpers import to_iso8601_datetime, deprecated
 from trakt.objects.media import Media
 
 
@@ -60,7 +60,7 @@ class Season(Media):
 
         if self.rating:
             result['rating'] = self.rating.value
-            result['rated_at'] = to_iso8601(self.rating.timestamp)
+            result['rated_at'] = to_iso8601_datetime(self.rating.timestamp)
 
         result['in_watchlist'] = self.in_watchlist if self.in_watchlist is not None else 0
 

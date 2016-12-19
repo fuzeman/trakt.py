@@ -1,4 +1,4 @@
-from trakt.core.helpers import from_iso8601, to_iso8601, deprecated
+from trakt.core.helpers import from_iso8601_datetime, to_iso8601_datetime, deprecated
 from trakt.objects.core.helpers import update_attributes
 from trakt.objects.media import Media
 
@@ -182,14 +182,14 @@ class Show(Media):
 
         if self.rating:
             result['rating'] = self.rating.value
-            result['rated_at'] = to_iso8601(self.rating.timestamp)
+            result['rated_at'] = to_iso8601_datetime(self.rating.timestamp)
 
         # Extended Info
         if self.first_aired:
-            result['first_aired'] = to_iso8601(self.first_aired)
+            result['first_aired'] = to_iso8601_datetime(self.first_aired)
 
         if self.updated_at:
-            result['updated_at'] = to_iso8601(self.updated_at)
+            result['updated_at'] = to_iso8601_datetime(self.updated_at)
 
         if self.overview:
             result['overview'] = self.overview
@@ -261,10 +261,10 @@ class Show(Media):
             self.aired_episodes = int(info['aired_episodes'])
 
         if 'first_aired' in info:
-            self.first_aired = from_iso8601(info.get('first_aired'))
+            self.first_aired = from_iso8601_datetime(info.get('first_aired'))
 
         if 'updated_at' in info:
-            self.updated_at = from_iso8601(info.get('updated_at'))
+            self.updated_at = from_iso8601_datetime(info.get('updated_at'))
 
     @classmethod
     def _construct(cls, client, keys, info=None, index=None, **kwargs):
