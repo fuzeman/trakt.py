@@ -40,13 +40,6 @@ class Show(Media):
         and :code:`Trakt['shows'].trending()` methods)
         """
 
-        self.overview = None
-        """
-        :type: :class:`~python:str`
-
-        Show overview
-        """
-
         self.first_aired = None
         """
         :type: :class:`~python:datetime.datetime`
@@ -246,7 +239,6 @@ class Show(Media):
             'watchers',
 
             # Extended Info
-            'overview',
             'airs',
             'certification',
             'network',

@@ -137,7 +137,10 @@ class Media(object):
             return
 
         update_attributes(self, info, [
+            # Extended Info
             'overview',
+
+            # Search
             'score'
         ])
 

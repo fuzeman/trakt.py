@@ -28,13 +28,6 @@ class Episode(Video):
         Episode title
         """
 
-        self.overview = None
-        """
-        :type: :class:`~python:str`
-
-        Episode overview
-        """
-
         self.first_aired = None
         """
         :type: :class:`~python:datetime.datetime`
@@ -129,7 +122,6 @@ class Episode(Video):
             'title',
 
             # Extended Info
-            'overview',
             'available_translations'
         ])
 
