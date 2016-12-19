@@ -44,7 +44,7 @@ class Show(Media):
         """
         :type: :class:`~python:str`
 
-        Episode overview
+        Show overview
         """
 
         self.first_aired = None
@@ -185,12 +185,13 @@ class Show(Media):
             for season in self.seasons.values()
         ]
 
+        result['in_watchlist'] = self.in_watchlist if self.in_watchlist is not None else 0
+
         if self.rating:
             result['rating'] = self.rating.value
             result['rated_at'] = to_iso8601(self.rating.timestamp)
 
-        result['in_watchlist'] = self.in_watchlist if self.in_watchlist is not None else 0
-
+        # Extended Info
         if self.first_aired:
             result['first_aired'] = to_iso8601(self.first_aired)
 
@@ -241,9 +242,11 @@ class Show(Media):
         update_attributes(self, info, [
             'title',
 
-            'watchers',  # trending
+            # Trending
+            'watchers',
 
-            'overview', # extended info
+            # Extended Info
+            'overview',
             'airs',
             'certification',
             'network',
@@ -258,6 +261,7 @@ class Show(Media):
         if info.get('year'):
             self.year = int(info['year'])
 
+        # Extended Info
         if info.get('runtime'):
             self.runtime = int(info['runtime'])
 

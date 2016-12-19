@@ -107,6 +107,7 @@ class Episode(Video):
             result['rating'] = self.rating.value
             result['rated_at'] = to_iso8601(self.rating.timestamp)
 
+        # Extended Info
         if self.first_aired:
             result['first_aired'] = to_iso8601(self.first_aired)
 
@@ -124,8 +125,15 @@ class Episode(Video):
     def _update(self, info=None, **kwargs):
         super(Episode, self)._update(info, **kwargs)
 
-        update_attributes(self, info, ['title', 'overview', 'available_translations'])
+        update_attributes(self, info, [
+            'title',
 
+            # Extended Info
+            'overview',
+            'available_translations'
+        ])
+
+        # Extended Info
         if 'first_aired' in info:
             self.first_aired = from_iso8601(info.get('first_aired'))
 

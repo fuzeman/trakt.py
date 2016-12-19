@@ -6,9 +6,8 @@ class ShowsInterface(Interface):
     path = 'shows'
 
     def get(self, id, extended=None, **kwargs):
-        response = self.http.get(
-            str(id), query={
-                'extended': extended
+        response = self.http.get(str(id), query={
+            'extended': extended
         })
 
         return SummaryMapper.show(
@@ -17,10 +16,8 @@ class ShowsInterface(Interface):
         )
 
     def trending(self, extended=None, **kwargs):
-        response = self.http.get(
-            'trending',
-            query={
-                'extended': extended
+        response = self.http.get('trending', query={
+            'extended': extended
         })
 
         return SummaryMapper.shows(
@@ -29,11 +26,8 @@ class ShowsInterface(Interface):
         )
 
     def next_episode(self, id, extended=None, **kwargs):
-        response = self.http.get(
-            str(id), [
-                'next_episode'
-            ], query={
-                'extended': extended
+        response = self.http.get(str(id), 'next_episode', query={
+            'extended': extended
         })
 
         return SummaryMapper.episode(
@@ -42,11 +36,8 @@ class ShowsInterface(Interface):
         )
 
     def last_episode(self, id, extended=None, **kwargs):
-        response = self.http.get(
-            str(id), [
-                'last_episode'
-            ], query={
-                'extended': extended
+        response = self.http.get(str(id), 'last_episode', query={
+            'extended': extended
         })
 
         return SummaryMapper.episode(
