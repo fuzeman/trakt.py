@@ -13,14 +13,14 @@ class Show(Media):
         """
         :type: :class:`~python:str`
 
-        Show title
+        Title
         """
 
         self.year = None
         """
         :type: :class:`~python:int`
 
-        Show year
+        Year
         """
 
         self.seasons = {}
@@ -44,7 +44,7 @@ class Show(Media):
         """
         :type: :class:`~python:datetime.datetime`
 
-        Air date
+        First air date
         """
 
         self.airs = None
@@ -58,14 +58,14 @@ class Show(Media):
         """
         :type: :class:`~python:int`
 
-        Duration of the show in minutes
+        Duration (in minutes)
         """
 
         self.certification = None
         """
         :type: :class:`~python:str`
 
-        Show certification (e.g TV-MA)
+        Content certification (e.g :code:`TV-MA`)
         """
 
         self.network = None
@@ -86,7 +86,7 @@ class Show(Media):
         """
         :type: :class:`~python:datetime.datetime`
 
-        Updated date
+        Updated date/time
         """
 
         self.status = None
@@ -102,35 +102,35 @@ class Show(Media):
         """
         :type: :class:`~python:str`
 
-        Show homepage url
+        Homepage URL
         """
 
         self.language = None
         """
         :type: :class:`~python:str`
 
-        Show language
+        Language (for title, overview, etc..)
         """
 
         self.available_translations = None
         """
         :type: :class:`~python:list`
 
-        Available translations
+        Available translations (for title, overview, etc..)
         """
 
         self.genres = None
         """
         :type: :class:`~python:list`
 
-        Show genres
+        Genres
         """
 
         self.aired_episodes = None
         """
         :type: :class:`~python:int`
 
-        Aired episodes
+        Aired episode count
         """
 
     def episodes(self):

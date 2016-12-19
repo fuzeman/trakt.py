@@ -25,28 +25,28 @@ class Episode(Video):
         """
         :type: :class:`~python:str`
 
-        Episode title
+        Title
         """
 
         self.first_aired = None
         """
         :type: :class:`~python:datetime.datetime`
 
-        Air date
+        First air date
         """
 
         self.updated_at = None
         """
         :type: :class:`~python:datetime.datetime`
 
-        Updated date
+        Updated date/time
         """
 
         self.available_translations = None
         """
         :type: :class:`~python:list`
 
-        Available translations
+        Available translations (for title, overview, etc..)
         """
 
     def to_identifier(self):
