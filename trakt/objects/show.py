@@ -230,6 +230,9 @@ class Show(Media):
         return result
 
     def _update(self, info=None, **kwargs):
+        if not info:
+            return
+
         super(Show, self)._update(info, **kwargs)
 
         update_attributes(self, info, [

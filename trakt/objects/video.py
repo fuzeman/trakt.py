@@ -79,6 +79,9 @@ class Video(Media):
         """
 
     def _update(self, info=None, is_watched=None, is_collected=None, **kwargs):
+        if not info:
+            return
+
         super(Video, self)._update(info, **kwargs)
 
         update_attributes(self, info, [

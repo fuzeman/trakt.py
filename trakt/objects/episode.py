@@ -116,6 +116,9 @@ class Episode(Video):
         return result
 
     def _update(self, info=None, **kwargs):
+        if not info:
+            return
+
         super(Episode, self)._update(info, **kwargs)
 
         update_attributes(self, info, [
