@@ -1,4 +1,4 @@
-from trakt.core.helpers import to_iso8601, deprecated
+from trakt.core.helpers import from_iso8601, to_iso8601, deprecated
 from trakt.objects.core.helpers import update_attributes
 from trakt.objects.video import Video
 
@@ -26,6 +26,34 @@ class Episode(Video):
         :type: :class:`~python:str`
 
         Episode title
+        """
+
+        self.overview = None
+        """
+        :type: :class:`~python:str`
+
+        Episode overview
+        """
+
+        self.first_aired = None
+        """
+        :type: :class:`~python:datetime.datetime`
+
+        Air date
+        """
+
+        self.updated_at = None
+        """
+        :type: :class:`~python:datetime.datetime`
+
+        Updated date
+        """
+
+        self.available_translations = None
+        """
+        :type: :class:`~python:list`
+
+        Available translations
         """
 
     def to_identifier(self):
@@ -79,12 +107,30 @@ class Episode(Video):
             result['rating'] = self.rating.value
             result['rated_at'] = to_iso8601(self.rating.timestamp)
 
+        if self.first_aired:
+            result['first_aired'] = to_iso8601(self.first_aired)
+
+        if self.updated_at:
+            result['updated_at'] = to_iso8601(self.updated_at)
+
+        if self.overview:
+            result['overview'] = self.overview
+
+        if self.available_translations:
+            result['available_translations'] = self.available_translations
+
         return result
 
     def _update(self, info=None, **kwargs):
         super(Episode, self)._update(info, **kwargs)
 
-        update_attributes(self, info, ['title'])
+        update_attributes(self, info, ['title', 'overview', 'available_translations'])
+
+        if 'first_aired' in info:
+            self.first_aired = from_iso8601(info.get('first_aired'))
+
+        if 'updated_at' in info:
+            self.updated_at = from_iso8601(info.get('updated_at'))
 
     @classmethod
     def _construct(cls, client, keys, info=None, index=None, **kwargs):
