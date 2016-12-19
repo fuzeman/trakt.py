@@ -243,6 +243,7 @@ class Show(Media):
 
             # Extended Info
             'airs',
+            'runtime',
             'certification',
             'network',
             'country',
@@ -250,7 +251,8 @@ class Show(Media):
             'homepage',
             'language',
             'available_translations',
-            'genres'
+            'genres',
+            'aired_episodes'
         ])
 
         # Ensure `year` attribute is an integer (fixes incorrect type returned by search)
@@ -258,12 +260,6 @@ class Show(Media):
             self.year = int(info['year'])
 
         # Extended Info
-        if info.get('runtime'):
-            self.runtime = info['runtime']
-
-        if info.get('aired_episodes'):
-            self.aired_episodes = info['aired_episodes']
-
         if 'first_aired' in info:
             self.first_aired = from_iso8601_datetime(info.get('first_aired'))
 
