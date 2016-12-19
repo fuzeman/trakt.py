@@ -253,8 +253,9 @@ class Show(Media):
             'genres'
         ])
 
+        # Ensure `year` attribute is an integer (fixes incorrect type returned by search)
         if info.get('year'):
-            self.year = info['year']
+            self.year = int(info['year'])
 
         # Extended Info
         if info.get('runtime'):
