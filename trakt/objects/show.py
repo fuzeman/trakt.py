@@ -194,9 +194,6 @@ class Show(Media):
         if self.overview:
             result['overview'] = self.overview
 
-        if self.available_translations:
-            result['available_translations'] = self.available_translations
-
         if self.airs:
             result['airs'] = self.airs
 
@@ -212,14 +209,17 @@ class Show(Media):
         if self.country:
             result['country'] = self.country
 
-        if self.homepage:
-            result['homepage'] = self.homepage
-
         if self.status:
             result['status'] = self.status
 
+        if self.homepage:
+            result['homepage'] = self.homepage
+
         if self.language:
             result['language'] = self.language
+
+        if self.available_translations:
+            result['available_translations'] = self.available_translations
 
         if self.genres:
             result['genres'] = self.genres
@@ -243,22 +243,22 @@ class Show(Media):
             'certification',
             'network',
             'country',
-            'homepage',
             'status',
+            'homepage',
             'language',
             'available_translations',
             'genres'
         ])
 
         if info.get('year'):
-            self.year = int(info['year'])
+            self.year = info['year']
 
         # Extended Info
         if info.get('runtime'):
-            self.runtime = int(info['runtime'])
+            self.runtime = info['runtime']
 
         if info.get('aired_episodes'):
-            self.aired_episodes = int(info['aired_episodes'])
+            self.aired_episodes = info['aired_episodes']
 
         if 'first_aired' in info:
             self.first_aired = from_iso8601_datetime(info.get('first_aired'))
