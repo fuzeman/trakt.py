@@ -82,6 +82,11 @@ def try_convert(value, value_type, default=None):
 # Date/Time Conversion
 #
 
+@deprecated('`from_iso8601(value)` has been renamed to `from_iso8601_datetime(value)`')
+def from_iso8601(value):
+    return from_iso8601_datetime(value)
+
+
 def from_iso8601_date(value):
     if value is None:
         return None
@@ -111,6 +116,11 @@ def from_iso8601_datetime(value):
 
     # Return datetime object
     return dt.datetime
+
+
+@deprecated('`to_iso8601(value)` has been renamed to `to_iso8601_datetime(value)`')
+def to_iso8601(value):
+    return to_iso8601_datetime(value)
 
 
 def to_iso8601_date(value):
