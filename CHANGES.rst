@@ -1,3 +1,45 @@
+2.11.0 (2016-12-20)
+-------------------
+**Added**
+ - Properties
+     - :code:`Movie`
+         - :code:`tagline`
+         - :code:`released`
+         - :code:`runtime`
+         - :code:`certification`
+         - :code:`updated_at`
+         - :code:`homepage`
+         - :code:`trailer`
+         - :code:`language`
+         - :code:`available_translations`
+         - :code:`genres`
+     - :code:`Show`
+         - :code:`first_aired`
+         - :code:`airs`
+         - :code:`runtime`
+         - :code:`certification`
+         - :code:`network`
+         - :code:`country`
+         - :code:`updated_at`
+         - :code:`status`
+         - :code:`homepage`
+         - :code:`language`
+         - :code:`available_translations`
+         - :code:`genres`
+         - :code:`aired_episodes`
+     - :code:`Season`
+         - :code:`first_aired`
+         - :code:`episode_count`
+         - :code:`aired_episodes`
+     - :code:`Episode`
+         - :code:`first_aired`
+         - :code:`updated_at`
+         - :code:`available_translations`
+
+**Changed**
+ - Methods on the :code:`Trakt['movies']` and :code:`Trakt['shows']` interfaces now support the :code:`extended` parameter (#51)
+ - Minor improvements to property descriptions on the :code:`Show` and :code:`Episode` objects
+
 2.10.1 (2016-12-15)
 -------------------
 **Changed**
