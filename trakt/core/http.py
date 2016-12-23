@@ -243,6 +243,10 @@ class HttpClient(object):
             parse=False
         )
 
+        if response is None:
+            log.warn('OAuth - Unable to refresh expired token (no response returned)')
+            return False
+
         if response.status_code < 200 or response.status_code >= 300:
             # Clear current configuration
             config.current.oauth.clear()
