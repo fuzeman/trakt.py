@@ -15,11 +15,12 @@ def test_likes():
 
     Trakt.base_url = 'http://mock'
 
-    likes = Trakt['users'].likes()
-    assert likes is not None
+    with Trakt.configuration.auth('mock', 'mock'):
+        likes = Trakt['users'].likes()
+        assert likes is not None
 
-    likes = list(likes)
-    assert len(likes) is 3
+        likes = list(likes)
+        assert len(likes) is 3
 
     assert likes[0].keys == [
         ('trakt', 1519)
