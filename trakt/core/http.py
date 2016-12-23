@@ -204,18 +204,45 @@ class HttpClient(object):
             log.warn('OAuth - Unable to refresh expired token ("refresh_token" is parameter is missing)')
             return False
 
-        # Refresh token
-        response = self.client['oauth'].token_refresh(config['oauth.refresh_token'], 'urn:ietf:wg:oauth:2.0:oob')
+        log.info('OAuth - Current token has expired, refreshing token...')
 
-        if not response:
-            log.warn('OAuth - Unable to refresh expired token (error occurred while trying to refresh the token)')
+        # Refresh token
+        response = self.client['oauth'].token_refresh(
+            config['oauth.refresh_token'], 'urn:ietf:wg:oauth:2.0:oob',
+            parse=False
+        )
+
+        if response.status_code < 200 or response.status_code >= 300:
+            # Clear current configuration
+            config.current.oauth.clear()
+
+            # Handle refresh rejection
+            if response.status_code == 401:
+                log.warn('OAuth - Unable to refresh expired token (rejected)')
+
+                # Fire rejected event
+                self.client.emit('oauth.refresh.rejected', config['oauth.username'])
+                return False
+
+            # Unknown error returned
+            log.warn('OAuth - Unable to refresh expired token (code: %r)', response.status_code)
             return False
 
+        # Retrieve authorization parameters from response
+        authorization = response.json()
+
         # Update current configuration
-        config.current.oauth.from_response(response)
+        config.current.oauth.from_response(
+            authorization,
+            refresh=config['oauth.refresh'],
+            username=config['oauth.username']
+        )
 
         # Fire refresh event
-        self.client.emit('oauth.token_refreshed', response)
+        self.client.emit('oauth.refresh', config['oauth.username'], authorization)
+
+        # Fire legacy refresh event
+        self.client.emit('oauth.token_refreshed', authorization)
         return True
 
 
