@@ -36,11 +36,11 @@ class UsersInterface(Interface):
             ])
         )
 
-        if response.status_code < 200 or response.status_code >= 300:
-            return
-
         # Parse response
         items = self.get_data(response, **kwargs)
+
+        if not items:
+            return
 
         # Map items to comment/list objects
         for item in items:

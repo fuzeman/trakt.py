@@ -38,11 +38,11 @@ class UsersListsInterface(Interface):
             data=data
         )
 
-        if response.status_code < 200 or response.status_code >= 300:
-            return None
-
         # Parse response
         item = self.get_data(response)
+
+        if not item:
+            return None
 
         # Map item to list object
         return ListMapper.custom_list(
@@ -56,11 +56,11 @@ class UsersListsInterface(Interface):
             '/users/%s/lists' % clean_username(username),
         )
 
-        if response.status_code < 200 or response.status_code >= 300:
-            return
-
         # Parse response
         items = self.get_data(response, **kwargs)
+
+        if not items:
+            return
 
         # Map items to list objects
         for item in items:

@@ -12,11 +12,11 @@ class UsersListInterface(Interface):
             '/users/%s/lists/%s' % (clean_username(username), id),
         )
 
-        if response.status_code < 200 or response.status_code >= 300:
-            return None
-
         # Parse response
         item = self.get_data(response)
+
+        if not item:
+            return None
 
         # Map item to list object
         return ListMapper.custom_list(
@@ -30,13 +30,10 @@ class UsersListInterface(Interface):
             '/users/%s/lists/%s/items' % (clean_username(username), id),
         )
 
-        if response.status_code < 200 or response.status_code >= 300:
-            return None
-
         # Parse response
         items = self.get_data(response, **kwargs)
 
-        if type(items) is not list:
+        if not items or type(items) is not list:
             return None
 
         return [
@@ -59,9 +56,6 @@ class UsersListInterface(Interface):
                 'validate_token'
             ])
         )
-
-        if response.status_code < 200 or response.status_code >= 300:
-            return None
 
         # Parse response
         return self.get_data(response, **kwargs)
@@ -108,11 +102,11 @@ class UsersListInterface(Interface):
             ])
         )
 
-        if response.status_code < 200 or response.status_code >= 300:
-            return None
-
         # Parse response
         item = self.get_data(response)
+
+        if not item:
+            return None
 
         if return_type == 'data':
             return item
@@ -137,9 +131,6 @@ class UsersListInterface(Interface):
                 'validate_token'
             ])
         )
-
-        if response.status_code < 200 or response.status_code >= 300:
-            return None
 
         # Parse response
         return self.get_data(response, **kwargs)
