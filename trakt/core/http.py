@@ -54,7 +54,9 @@ class HttpClient(object):
 
         return self
 
-    def request(self, method, path=None, params=None, data=None, query=None, authenticated=False, **kwargs):
+    def request(self, method, path=None, params=None, data=None, query=None, authenticated=False,
+                validate_token=True, **kwargs):
+
         # Retrieve configuration
         ctx = self.configuration.pop()
 
@@ -74,7 +76,7 @@ class HttpClient(object):
         )
 
         # Validate authentication details (OAuth)
-        if authenticated and not self.validate():
+        if authenticated and validate_token and not self.validate():
             return None
 
         # Prepare request

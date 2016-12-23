@@ -1,5 +1,5 @@
-from trakt.core.helpers import clean_username
-from trakt.interfaces.base import Interface
+from trakt.core.helpers import clean_username, popitems
+from trakt.interfaces.base import Interface, authenticated
 from trakt.mapper import ListMapper, ListItemMapper
 
 
@@ -48,11 +48,16 @@ class UsersListInterface(Interface):
     # Owner actions
     #
 
+    @authenticated
     def add(self, username, id, items, **kwargs):
         # Send request
         response = self.http.post(
             '/users/%s/lists/%s/items' % (clean_username(username), id),
-            data=items
+            data=items,
+            **popitems(kwargs, [
+                'authenticated',
+                'validate_token'
+            ])
         )
 
         if response.status_code < 200 or response.status_code >= 300:
@@ -61,14 +66,20 @@ class UsersListInterface(Interface):
         # Parse response
         return self.get_data(response, **kwargs)
 
-    def delete(self, username, id):
+    @authenticated
+    def delete(self, username, id, **kwargs):
         # Send request
         response = self.http.delete(
-            '/users/%s/lists/%s' % (clean_username(username), id)
+            '/users/%s/lists/%s' % (clean_username(username), id),
+            **popitems(kwargs, [
+                'authenticated',
+                'validate_token'
+            ])
         )
 
         return 200 <= response.status_code < 300
 
+    @authenticated
     def update(self, username, id, name=None, description=None, privacy=None, display_numbers=None,
                allow_comments=None, return_type='object', **kwargs):
         data = {
@@ -90,7 +101,11 @@ class UsersListInterface(Interface):
         # Send request
         response = self.http.put(
             '/users/%s/lists/%s' % (clean_username(username), id),
-            data=data
+            data=data,
+            **popitems(kwargs, [
+                'authenticated',
+                'validate_token'
+            ])
         )
 
         if response.status_code < 200 or response.status_code >= 300:
@@ -111,11 +126,16 @@ class UsersListInterface(Interface):
 
         raise ValueError("Unsupported value for \"return_type\": %r", return_type)
 
+    @authenticated
     def remove(self, username, id, items, **kwargs):
         # Send request
         response = self.http.post(
             '/users/%s/lists/%s/items/remove' % (clean_username(username), id),
-            data=items
+            data=items,
+            **popitems(kwargs, [
+                'authenticated',
+                'validate_token'
+            ])
         )
 
         if response.status_code < 200 or response.status_code >= 300:
@@ -128,18 +148,28 @@ class UsersListInterface(Interface):
     # Actions
     #
 
+    @authenticated
     def like(self, username, id, **kwargs):
         # Send request
         response = self.http.post(
-            '/users/%s/lists/%s/like' % (clean_username(username), id)
+            '/users/%s/lists/%s/like' % (clean_username(username), id),
+            **popitems(kwargs, [
+                'authenticated',
+                'validate_token'
+            ])
         )
 
         return 200 <= response.status_code < 300
 
+    @authenticated
     def unlike(self, username, id, **kwargs):
         # Send request
         response = self.http.delete(
-            '/users/%s/lists/%s/like' % (clean_username(username), id)
+            '/users/%s/lists/%s/like' % (clean_username(username), id),
+            **popitems(kwargs, [
+                'authenticated',
+                'validate_token'
+            ])
         )
 
         return 200 <= response.status_code < 300

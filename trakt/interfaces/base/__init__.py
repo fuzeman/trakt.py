@@ -15,7 +15,8 @@ log = logging.getLogger(__name__)
 def authenticated(func):
     @wraps(func)
     def wrap(*args, **kwargs):
-        kwargs['authenticated'] = True
+        if 'authenticated' not in kwargs:
+            kwargs['authenticated'] = True
 
         return func(*args, **kwargs)
 

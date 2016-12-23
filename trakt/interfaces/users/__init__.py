@@ -1,4 +1,5 @@
-from trakt.interfaces.base import Interface
+from trakt.core.helpers import popitems
+from trakt.interfaces.base import Interface, authenticated
 from trakt.mapper import CommentMapper, ListMapper
 
 # Import child interfaces
@@ -20,14 +21,20 @@ __all__ = [
 class UsersInterface(Interface):
     path = 'users'
 
+    @authenticated
     def likes(self, type=None, **kwargs):
         if type and type not in ['comments', 'lists']:
             raise ValueError('Unknown type specified: %r' % type)
 
         # Send request
-        response = self.http.get('likes', params=[
-            type
-        ])
+        response = self.http.get(
+            'likes',
+            params=[type],
+            **popitems(kwargs, [
+                'authenticated',
+                'validate_token'
+            ])
+        )
 
         if response.status_code < 200 or response.status_code >= 300:
             return

@@ -1,3 +1,4 @@
+from trakt.core.helpers import popitems
 from trakt.interfaces.base import Interface, authenticated, application
 
 
@@ -122,8 +123,10 @@ class ScrobbleInterface(Interface):
         response = self.http.post(
             action,
             data=data,
-
-            authenticated=kwargs.get('authenticated', None)
+            **popitems(kwargs, [
+                'authenticated',
+                'validate_token'
+            ])
         )
 
         return self.get_data(response)
