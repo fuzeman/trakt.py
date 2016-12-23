@@ -26,6 +26,9 @@ class UsersInterface(Interface):
         if type and type not in ['comments', 'lists']:
             raise ValueError('Unknown type specified: %r' % type)
 
+        if kwargs.get('parse') is False:
+            raise ValueError('Parse can\'t be disabled on this method')
+
         # Send request
         response = self.http.get(
             'likes',

@@ -2,6 +2,8 @@ from trakt.core.helpers import clean_username
 from trakt.interfaces.base import Interface
 from trakt.mapper import ListMapper
 
+import requests
+
 # Import child interfaces
 from trakt.interfaces.users.lists.list_ import UsersListInterface
 
@@ -39,7 +41,10 @@ class UsersListsInterface(Interface):
         )
 
         # Parse response
-        item = self.get_data(response)
+        item = self.get_data(response, **kwargs)
+
+        if isinstance(item, requests.Response):
+            return item
 
         if not item:
             return None
@@ -51,6 +56,9 @@ class UsersListsInterface(Interface):
         )
 
     def get(self, username, **kwargs):
+        if kwargs.get('parse') is False:
+            raise ValueError('Parse can\'t be disabled on this method')
+
         # Send request
         response = self.http.get(
             '/users/%s/lists' % clean_username(username),

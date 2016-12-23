@@ -2,18 +2,23 @@ from trakt.core.helpers import clean_username, popitems
 from trakt.interfaces.base import Interface, authenticated
 from trakt.mapper import ListMapper, ListItemMapper
 
+import requests
+
 
 class UsersListInterface(Interface):
     path = 'users/*/lists/*'
 
-    def get(self, username, id):
+    def get(self, username, id, **kwargs):
         # Send request
         response = self.http.get(
             '/users/%s/lists/%s' % (clean_username(username), id),
         )
 
         # Parse response
-        item = self.get_data(response)
+        item = self.get_data(response, **kwargs)
+
+        if isinstance(item, requests.Response):
+            return item
 
         if not item:
             return None
@@ -32,6 +37,9 @@ class UsersListInterface(Interface):
 
         # Parse response
         items = self.get_data(response, **kwargs)
+
+        if isinstance(items, requests.Response):
+            return items
 
         if not items or type(items) is not list:
             return None
@@ -103,7 +111,10 @@ class UsersListInterface(Interface):
         )
 
         # Parse response
-        item = self.get_data(response)
+        item = self.get_data(response, **kwargs)
+
+        if isinstance(item, requests.Response):
+            return item
 
         if not item:
             return None

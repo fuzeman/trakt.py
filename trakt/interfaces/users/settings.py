@@ -14,4 +14,4 @@ class UsersSettingsInterface(Interface):
             ])
         )
 
-        return self.get_data(response)
+        return self.get_data(response, **kwargs)

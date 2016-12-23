@@ -3,6 +3,8 @@ from trakt.core.pagination import PaginationIterator
 from trakt.interfaces.base import authenticated, Interface
 from trakt.mapper.sync import SyncMapper
 
+import requests
+
 
 class Get(Interface):
     flags = {}
@@ -26,6 +28,9 @@ class Get(Interface):
 
         # Parse response
         items = self.get_data(response, **kwargs)
+
+        if isinstance(items, requests.Response):
+            return items
 
         if type(items) is not list and not isinstance(items, PaginationIterator):
             return None
