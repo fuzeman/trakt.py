@@ -2,10 +2,11 @@ from trakt.core.configuration import DEFAULT_HTTP_RETRY, DEFAULT_HTTP_MAX_RETRIE
     DEFAULT_HTTP_RETRY_SLEEP
 from trakt.core.context_stack import ContextStack
 from trakt.core.helpers import synchronized
+from trakt.core.keylock import KeyLock
 from trakt.core.request import TraktRequest
 
 from requests.adapters import HTTPAdapter, DEFAULT_POOLBLOCK
-from threading import Lock
+from threading import RLock
 import calendar
 import datetime
 import logging
@@ -31,8 +32,11 @@ class HttpClient(object):
         self.session = None
 
         self._proxies = {}
-        self._validate_oauth_lock = Lock()
 
+        self._oauth_refreshing = KeyLock()
+        self._oauth_validate_lock = RLock()
+
+        # Build requests session
         self.rebuild()
 
     @property
@@ -181,15 +185,17 @@ class HttpClient(object):
 
         return path
 
-    @synchronized(lambda self: self._validate_oauth_lock)
+    @synchronized(lambda self: self._oauth_validate_lock)
     def _validate_oauth(self):
         config = self.client.configuration
 
+        # Ensure token expiry is available
         if config['oauth.created_at'] is None or config['oauth.expires_in'] is None:
-            log.debug('OAuth - Missing "created_at" or "expires_in" parameter, '
-                      'unable to determine if token is still valid')
+            log.debug('OAuth - Missing "created_at" or "expires_in" parameters, '
+                      'unable to determine if the current token is still valid')
             return True
 
+        # Calculate expiry
         current = calendar.timegm(datetime.datetime.utcnow().utctimetuple())
         expires_at = config['oauth.created_at'] + config['oauth.expires_in'] - (48 * 60 * 60)
 
@@ -201,10 +207,35 @@ class HttpClient(object):
             return False
 
         if not config['oauth.refresh_token']:
-            log.warn('OAuth - Unable to refresh expired token ("refresh_token" is parameter is missing)')
+            log.warn('OAuth - Unable to refresh expired token ("refresh_token" parameter hasn\'t been defined)')
             return False
 
-        log.info('OAuth - Current token has expired, refreshing token...')
+        # Retrieve username
+        username = config['oauth.username']
+
+        if not username:
+            log.info('OAuth - Current username is not available ("username" parameter hasn\'t been defined)')
+
+        # Acquire refreshing lock
+        if not self._oauth_refreshing[username].acquire(False):
+            log.warn('OAuth - Token is already being refreshed for %r', username)
+            return False
+
+        log.info('OAuth - Token has expired, refreshing token...')
+
+        # Refresh token
+        try:
+            if not self._refresh_oauth():
+                return False
+
+            log.info('OAuth - Token has been refreshed')
+            return True
+        finally:
+            # Release refreshing lock
+            self._oauth_refreshing[username].release()
+
+    def _refresh_oauth(self):
+        config = self.client.configuration
 
         # Refresh token
         response = self.client['oauth'].token_refresh(
