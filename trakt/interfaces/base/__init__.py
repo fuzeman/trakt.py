@@ -1,5 +1,5 @@
 from trakt.core.errors import ERRORS
-from trakt.core.exceptions import ServerError, ClientError
+from trakt.core.exceptions import RequestFailedError, ServerError, ClientError
 from trakt.core.helpers import try_convert
 from trakt.core.pagination import PaginationIterator
 from trakt.helpers import setdefault
@@ -60,6 +60,9 @@ class Interface(object):
 
     def get_data(self, response, exceptions=False, pagination=False, parse=True):
         if response is None:
+            if exceptions:
+                raise RequestFailedError('No response available')
+
             return None
 
         # Return response, if parse=False
@@ -88,8 +91,8 @@ class Interface(object):
                 }
             })
 
+            # Raise an exception (if enabled)
             if exceptions:
-                # Raise an exception (including the response for further processing)
                 if response.status_code >= 500:
                     raise ServerError(response)
                 else:
