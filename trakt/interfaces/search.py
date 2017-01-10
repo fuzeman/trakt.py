@@ -45,7 +45,7 @@ class SearchInterface(Interface):
 
             **Possible values:**
              - :code:`None`: Minimal (e.g. title, year, ids) **(default)**
-             - full: Complete
+             - :code:`full`: Complete
 
         :type extended: :class:`~python:str`
 
@@ -130,7 +130,7 @@ class SearchInterface(Interface):
 
             **Possible values:**
              - :code:`None`: Minimal (e.g. title, year, ids) **(default)**
-             - full: Complete
+             - :code:`full`: Complete
 
         :type extended: :class:`~python:str`
 
