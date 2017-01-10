@@ -10,7 +10,7 @@ import six
 class SearchInterface(Interface):
     path = 'search'
 
-    def lookup(self, id, service=None, media=None, **kwargs):
+    def lookup(self, id, service=None, media=None, extended=None, **kwargs):
         """Lookup items by their Trakt, IMDB, TMDB, TVDB, or TVRage ID.
 
         **Note:** If you lookup an identifier without a :code:`media` type specified it
@@ -41,6 +41,14 @@ class SearchInterface(Interface):
 
         :type media: :class:`~python:str` or :class:`~python:list` of :class:`~python:str`
 
+        :param extended: Level of information to include in response
+
+            **Possible values:**
+             - :code:`None`: Minimal (e.g. title, year, ids) **(default)**
+             - full: Complete
+
+        :type extended: :class:`~python:str`
+
         :param kwargs: Extra request options
         :type kwargs: :class:`~python:dict`
 
@@ -66,6 +74,9 @@ class SearchInterface(Interface):
         elif isinstance(media, list):
             query['type'] = ','.join(media)
 
+        if extended:
+            query['extended'] = extended
+
         # Send request
         response = self.http.get(
             params=[service, id],
@@ -90,7 +101,7 @@ class SearchInterface(Interface):
 
         return None
 
-    def query(self, query, media=None, year=None, fields=None, **kwargs):
+    def query(self, query, media=None, year=None, fields=None, extended=None, **kwargs):
         """Search by titles, descriptions, translated titles, aliases, and people.
 
         **Note:** Results are ordered by the most relevant score.
@@ -114,6 +125,14 @@ class SearchInterface(Interface):
 
         :param fields: Fields to search for :code:`query` (or :code:`None` to search all fields)
         :type fields: :class:`~python:str` or :class:`~python:list`
+
+        :param extended: Level of information to include in response
+
+            **Possible values:**
+             - :code:`None`: Minimal (e.g. title, year, ids) **(default)**
+             - full: Complete
+
+        :type extended: :class:`~python:str`
 
         :param kwargs: Extra request options
         :type kwargs: :class:`~python:dict`
@@ -141,6 +160,9 @@ class SearchInterface(Interface):
 
         if fields:
             query['fields'] = fields
+
+        if extended:
+            query['extended'] = extended
 
         # Serialize media items
         if isinstance(media, list):
