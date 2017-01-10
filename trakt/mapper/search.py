@@ -21,6 +21,20 @@ class SearchMapper(Mapper):
         return func(client, item, **kwargs)
 
     @classmethod
+    def process_many(cls, client, items, **kwargs):
+        result = []
+
+        for item in items:
+            item = cls.process(client, item, **kwargs)
+
+            if not item:
+                continue
+
+            result.append(item)
+
+        return result
+
+    @classmethod
     def movie(cls, client, item, **kwargs):
         if 'movie' in item:
             i_movie = item['movie']
