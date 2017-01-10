@@ -1,3 +1,33 @@
+2.12.0 (2017-01-11)
+-------------------
+**Added**
+ - Improved token refreshing *(and added the "oauth.refresh" and "oauth.refresh.rejected" events)*
+ - `RequestFailedError` exception will now be raised if no response was returned (if `exceptions=True`)
+ - :code:`Trakt.http.keep_alive` property *(defaults to :code:`True`)*
+ - :code:`Trakt.http.ssl_version` property *(defaults to :code:`None` / :code:`PROTOCOL_TLS` / :code:`PROTOCOL_SSLv23`)*
+
+**Changed**
+ - Switched default API endpoint to https://api.trakt.tv
+ - SSL protocol version is now automatically negotiated with the server *(instead of defaulting to TLS v1.0)*
+ - Warning will now be displayed if a deadlock is detected inside token refresh events
+ - Fixed some inconsistencies in the handling of error responses
+ - Updated bundled emitter module (fuzeman/PyEmitter@3c558c7c2bc3ae07cb1e8e18b2c1c16be042c748)
+ - Interfaces:
+     - :code:`Trakt['search']`
+         - Updated to use the new search endpoints
+ - Methods:
+     - :code:`Trakt['search'].lookup`
+        - Now supports the :code:`extended` parameter
+     - :code:`Trakt['search'].query`
+        - Now supports the :code:`fields` and :code:`extended` parameters
+
+**Fixed**
+ - :code:`@authenticated` decorator wasn't applied to some methods, resulting in tokens not being refreshed
+ - Exception raised when :code:`Trakt['scrobble']` methods are provided "app_version" or "app_date" parameters
+ - Error responses weren't being returned correctly with :code:`parse=False`
+ - Issue handling :code:`None` responses in the automatic token refresher
+ - Inconsistent handling of error responses in some methods
+
 2.11.0 (2016-12-20)
 -------------------
 **Added**
