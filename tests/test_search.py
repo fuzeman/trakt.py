@@ -5,25 +5,38 @@ from trakt import Trakt
 import responses
 
 
-def search_callback(request):
+def lookup_callback(request):
+    url = urlparse(request.url)
+
+    try:
+        return 200, {}, read('fixtures%s.json' % url.path)
+    except:
+        return 200, {}, '[]'
+
+
+def query_callback(request):
     url = urlparse(request.url)
     query = dict(parse_qsl(url.query))
 
-    if 'id' in query and 'id_type' in query:
-        path = 'fixtures/search/lookup/%s/%s.json' % (
-            query.get('id_type'),
-            query.get('id')
+    if not query.get('query'):
+        return 400, {}, '[]'
+
+    # Build path
+    if query.get('year'):
+        path = 'fixtures%s/%s/%s.json' % (
+            url.path,
+            query['year'],
+            query['query']
         )
     else:
-        path = 'fixtures/search/query/%s/%s/%s.json' % (
-            query.get('type', 'all'),
-            query.get('year', 'all'),
-            query.get('query')
+        path = 'fixtures%s/%s.json' % (
+            url.path,
+            query['query']
         )
 
+    # Return response
     try:
-        content = read(path)
-        return 200, {}, content
+        return 200, {}, read(path)
     except:
         return 200, {}, '[]'
 
@@ -31,14 +44,15 @@ def search_callback(request):
 @responses.activate
 def test_lookup_movie():
     responses.add_callback(
-        responses.GET, 'http://mock/search',
-        callback=search_callback,
+        responses.GET, 'http://mock/search/imdb/tt0848228',
+        callback=lookup_callback,
         content_type='application/json'
     )
 
     Trakt.base_url = 'http://mock'
 
     movie = Trakt['search'].lookup('tt0848228', 'imdb')
+    assert movie is not None
 
     assert movie.keys == [
         ('imdb', 'tt0848228'),
@@ -50,7 +64,6 @@ def test_lookup_movie():
     assert movie.title == "The Avengers"
     assert movie.year == 2012
 
-    assert sorted(movie.images.keys()) == ['fanart', 'poster']
     assert movie.overview is not None
     assert movie.score is None
 
@@ -58,14 +71,15 @@ def test_lookup_movie():
 @responses.activate
 def test_lookup_show():
     responses.add_callback(
-        responses.GET, 'http://mock/search',
-        callback=search_callback,
+        responses.GET, 'http://mock/search/imdb/tt0903747',
+        callback=lookup_callback,
         content_type='application/json'
     )
 
     Trakt.base_url = 'http://mock'
 
     show = Trakt['search'].lookup('tt0903747', 'imdb')
+    assert show is not None
 
     assert show.keys == [
         ('tvdb', '81189'),
@@ -79,7 +93,6 @@ def test_lookup_show():
     assert show.title == "Breaking Bad"
     assert show.year == 2008
 
-    assert sorted(show.images.keys()) == ['fanart', 'poster']
     assert show.overview is not None
     assert show.score is None
 
@@ -87,14 +100,15 @@ def test_lookup_show():
 @responses.activate
 def test_lookup_episode():
     responses.add_callback(
-        responses.GET, 'http://mock/search',
-        callback=search_callback,
+        responses.GET, 'http://mock/search/imdb/tt0959621',
+        callback=lookup_callback,
         content_type='application/json'
     )
 
     Trakt.base_url = 'http://mock'
 
     episode = Trakt['search'].lookup('tt0959621', 'imdb')
+    assert episode is not None
 
     assert episode.keys == [
         (1, 1),
@@ -107,11 +121,14 @@ def test_lookup_episode():
 
     assert episode.title == "Pilot"
 
-    assert sorted(episode.images.keys()) == ['screenshot']
     assert episode.overview is not None
     assert episode.score is None
 
     assert episode.show.keys == [
+        ('tvdb', '81189'),
+        ('tmdb', '1396'),
+        ('imdb', 'tt0903747'),
+        ('tvrage', '18164'),
         ('slug', 'breaking-bad'),
         ('trakt', '1388')
     ]
@@ -119,14 +136,12 @@ def test_lookup_episode():
     assert episode.show.title == "Breaking Bad"
     assert episode.show.year == 2008
 
-    assert sorted(episode.show.images.keys()) == ['fanart', 'poster']
-
 
 @responses.activate
 def test_query_movie():
     responses.add_callback(
-        responses.GET, 'http://mock/search',
-        callback=search_callback,
+        responses.GET, 'http://mock/search/movie',
+        callback=query_callback,
         content_type='application/json'
     )
 
@@ -135,24 +150,24 @@ def test_query_movie():
     movies = Trakt['search'].query('The Avengers', 'movie')
 
     assert [(m.score, (m.title, m.year)) for m in movies] == [
-        (77.052734, ('Avenged', None)),
-        (77.0176,   ('Avenger', 2006)),
-        (60.26589,  ('The Avengers', 2012)),
-        (60.26589,  ('The Avengers', 1998)),
-        (60.26589,  ('The Avenger', 1960)),
-        (60.26589,  ('The Avenger', 1931)),
-        (60.26589,  ('The Avenging', 1982)),
-        (60.26589,  ('The Avenger', 1947)),
-        (55.793285, ('Invisible Avenger', 1954)),
-        (55.652233, ('Crippled Avengers', 1978))
+        (3419.5627,     ('The Avengers', 2012)),
+        (58.450645,     ('Avengers: Age of Ultron', 2015)),
+        (54.93378,      ('The Avengers', 1998)),
+        (37.166332,     ('Captain America: The First Avenger', 2011)),
+        (5.0396857,     ('Captain America: The Winter Soldier', 2014)),
+        (1.4125466,     ('Captain America: Civil War', 2016)),
+        (1.0787,        ('Ultimate Avengers', 2006)),
+        (0.9917594,     ('X-Men Origins: Wolverine', 2009)),
+        (0.84162766,    ('The Punisher', 2004)),
+        (0.72275203,    ('Avengers Confidential: Black Widow & Punisher', 2014))
     ]
 
 
 @responses.activate
 def test_query_show():
     responses.add_callback(
-        responses.GET, 'http://mock/search',
-        callback=search_callback,
+        responses.GET, 'http://mock/search/show',
+        callback=query_callback,
         content_type='application/json'
     )
 
@@ -161,24 +176,24 @@ def test_query_show():
     shows = Trakt['search'].query('Breaking Bad', 'show')
 
     assert [(s.score, (s.title, s.year)) for s in shows] == [
-        (54.809517,     ('Breaking Bad', 2008)),
-        (28.975079,     ('Breaking Boston', 2014)),
-        (28.89469,      ('Breaking In', 2011)),
-        (26.28082,      ('Talking Bad', 2013)),
-        (20.346865,     ('Donal MacIntyre: Breaking Crime', 2015)),
-        (18.345793,     ('Good Times, Bad Times', 1990)),
-        (1.1290063,     ('What About Brian', 2006)),
-        (0.39297247,    ('It Could Be Worse', 2013)),
-        (0.39297247,    ('Murder Police', None)),
-        (0.3438509,     ('Pinocchio', 2014))
+        (6795.639,      ('Breaking Bad', 2008)),
+        (1.4921961,     ('Breaking In', 2011)),
+        (0.15205674,    ('Talking Bad', 2013)),
+        (0.023019673,   ('Good Times, Bad Times', 1990)),
+        (0.00541616,    ('Mystery Science Theater 3000', 1988)),
+        (0.0043216385,  ('What About Brian', 2006)),
+        (0.0027682593,  ('Pinocchio', 2014)),
+        (0.0014085078,  ('Benidorm', 2007)),
+        (0.000756543,   ('Giant Killing', 2010)),
+        (0.0006980828,  ('The Birthday Boys', 2013))
     ]
 
 
 @responses.activate
 def test_query_episode():
     responses.add_callback(
-        responses.GET, 'http://mock/search',
-        callback=search_callback,
+        responses.GET, 'http://mock/search/episode',
+        callback=query_callback,
         content_type='application/json'
     )
 
@@ -187,14 +202,14 @@ def test_query_episode():
     episodes = Trakt['search'].query('Breaking Bad', 'episode')
 
     assert [(e.score, (e.pk, e.title), (e.show.title, e.show.year)) for e in episodes] == [
-        (77.16374, ((2, 13),    'Bad Breaks'),     ('Burn Notice', 2007)),
-        (77.16374, ((1, 1),     'Breaking Bad'),   ("The Writers' Room", 2013)),
-        (77.16374, ((2, 18),    'Breaking Bad'),   ('Honest Trailers', 2012)),
-        (77.16374, ((4, 7),     'Bad Break'),      ('Bad Girls Club', 2006)),
-        (77.16374, ((1, 8),     'Bad Break'),      ('Miami Ink', 2005)),
-        (77.16374, ((2, 6),     'Breaking Bad'),   ('Pawn Stars UK', 2013)),
-        (77.16374, ((6, 16),    'Bad Breaks'),     ('Trapper John, M.D.', 1979)),
-        (77.16374, ((3, 8),     'Breaking Bad'),   ('Bad Days', 1969)),
-        (77.16374, ((1, 261),   'Breaking Bad'),   ('The Totally Rad Show', 2007)),
-        (77.16374, ((1, 2),     ' Breaking Bad'),  ('Fight Factory', 2012))
+        (120.28289, ((   5,  4),     'Pope Breaks Bad'),            ('Falling Skies', 2011)),
+        (23.962301, ((2013, 10),    'Breaking Bad Special'),        ('MythBusters', 2003)),
+        (21.605352, ((   2,  4),     "Charlie's Dad Breaks Bad"),   ('Anger Management', 2012)),
+        (3.5197084, ((   1,  1),     'Breaking Bad'),               ("The Writers' Room", 2013)),
+        (1.7284282, ((  12,  1),     'Breaking Bad Girls'),         ('Bad Girls Club', 2006)),
+        (1.4575909, ((   8, 16),    'Bad Crazy'),                   ('How I Met Your Mother', 2005)),
+        (1.2199193, ((   5, 16),    'Felina'),                      ('Breaking Bad', 2008)),
+        (1.0844237, ((   5, 14),    'Ozymandias'),                  ('Breaking Bad', 2008)),
+        (1.0452855, ((   1,  1),     'Pilot'),                      ('Breaking Bad', 2008)),
+        (0.97547776, ((  5, 13),    "To'hajiilee"),                 ('Breaking Bad', 2008))
     ]

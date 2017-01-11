@@ -1,7 +1,3 @@
-Quickstart
-==========
-
-
 Learn More
 ================
 
