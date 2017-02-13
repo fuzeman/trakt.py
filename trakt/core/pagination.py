@@ -1,4 +1,4 @@
-from trakt.core.errors import log_request_error
+from trakt.core.errors import ERRORS
 from trakt.core.helpers import try_convert
 
 from six.moves.urllib.parse import urlsplit, urlunsplit, parse_qsl
@@ -51,12 +51,11 @@ class PaginationIterator(object):
     def get(self, page):
         response = self.fetch(page)
 
-        if response is None:
-            log.warn('Request failed (no response returned)')
-            return None
-
         if response.status_code < 200 or response.status_code >= 300:
-            log_request_error(log, response)
+            # Lookup status code in trakt error definitions
+            name, desc = ERRORS.get(response.status_code, ("Unknown", "Unknown"))
+
+            log.warning('Request failed: %s - "%s" (code: %s)', name, desc, response.status_code)
             return None
 
         # Parse response, return data

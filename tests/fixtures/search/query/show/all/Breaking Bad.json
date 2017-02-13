@@ -1,0 +1,292 @@
+[
+  {
+    "type": "show",
+    "score": 54.809517,
+    "show": {
+      "title": "Breaking Bad",
+      "overview": "Walter White, a struggling high school chemistry teacher, is diagnosed with advanced lung cancer. He turns to a life of crime, producing and selling methamphetamine accompanied by a former student, Jesse Pinkman, with the aim of securing his family's financial future before he dies.",
+      "year": 2008,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/001/388/posters/original/fa39b59954.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/001/388/posters/medium/fa39b59954.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/001/388/posters/thumb/fa39b59954.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/shows/000/001/388/fanarts/original/fdbc0cb02d.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/001/388/fanarts/medium/fdbc0cb02d.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/001/388/fanarts/thumb/fdbc0cb02d.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 1388,
+        "slug": "breaking-bad",
+        "tvdb": 81189,
+        "imdb": "tt0903747",
+        "tmdb": 1396,
+        "tvrage": 18164
+      }
+    }
+  },
+  {
+    "type": "show",
+    "score": 28.975079,
+    "show": {
+      "title": "Breaking Boston",
+      "overview": "\"Breaking Boston\" follows a group of four blue-collar women in their twenties trying to break the cycle of their peers in a town where education, employment and opportunities are hard to come by. Each one of them has already hit rock bottom via destructive relationships or bad choices, but they're all leaning on each other and looking for a way out.",
+      "year": 2014,
+      "images": {
+        "poster": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/shows/000/076/361/fanarts/original/7864d90dee.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/076/361/fanarts/medium/7864d90dee.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/076/361/fanarts/thumb/7864d90dee.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 76361,
+        "slug": "breaking-boston",
+        "tvdb": 278764,
+        "imdb": null,
+        "tmdb": null,
+        "tvrage": null
+      }
+    }
+  },
+  {
+    "type": "show",
+    "score": 28.89469,
+    "show": {
+      "title": "Breaking In",
+      "overview": "Contra Security, corporate America's answer to \"The A-Team,\" gives clients a sense of security by first ripping it away. The firm is led by OZ, a larger-than-life head honcho who is a man of mystery and master of manipulation. The members of the odd squad include alluring bad girl Melanie, who is in charge of lock-picking, safe-cracking and heart-breaking; and Cash, a fanboy who specializes in strategy, logistics and office pranks only a mad genius could think up.Oz's newest recruit, plucked right out of college, is lovable and charming computer hacker Cameron Price. Unfortunately for Cameron, cracking into state-of-the-art security systems is a lot easier than dealing with his co-workers. Between Melanie's sex appeal and Cash's hazing, Cameron has more than a few obstacles to overcome if he wants to cement his status as part of the team and become Oz's go-to guy.",
+      "year": 2011,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/034/392/posters/original/840fce6873.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/034/392/posters/medium/840fce6873.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/034/392/posters/thumb/840fce6873.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/shows/000/034/392/fanarts/original/8cb1545929.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/034/392/fanarts/medium/8cb1545929.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/034/392/fanarts/thumb/8cb1545929.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 34392,
+        "slug": "breaking-in",
+        "tvdb": 206751,
+        "imdb": "tt1630574",
+        "tmdb": 34541,
+        "tvrage": 26082
+      }
+    }
+  },
+  {
+    "type": "show",
+    "score": 26.28082,
+    "show": {
+      "title": "Talking Bad",
+      "overview": "Talking Bad is a weekly, half-hour live after-show and companion piece for AMC's Emmy Award-winning series, Breaking Bad. Hosted by Chris Hardwick, Talking Bad will analyze and examine every detail of Breaking Bad’s final eight episodes.Talking Bad features Hardwick spending time with fans, actors, producers and television enthusiasts, recapping the most recent Breaking Bad episode, and taking questions and comments from viewers. Fans may continue to engage with the after-show following the on-air conclusion, online, at amc.com for more videos, weekly polls and photo galleries of the guests featured on the series.",
+      "year": 2013,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/072/145/posters/original/fbed4389dc.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/072/145/posters/medium/fbed4389dc.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/072/145/posters/thumb/fbed4389dc.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/shows/000/072/145/fanarts/original/fbed4389dc.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/072/145/fanarts/medium/fbed4389dc.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/072/145/fanarts/thumb/fbed4389dc.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 72145,
+        "slug": "talking-bad",
+        "tvdb": 272219,
+        "imdb": "tt3115468",
+        "tmdb": null,
+        "tvrage": null
+      }
+    }
+  },
+  {
+    "type": "show",
+    "score": 20.346865,
+    "show": {
+      "title": "Donal MacIntyre: Breaking Crime",
+      "overview": "The investigative journalist explores the world of youth crime, examining its causes and the ripple effect on the wider community, as well as looking at what drives young people to choose a bad path. He meets those at the heart of the issue, including offenders, reformed criminals, the families and communities, and individuals making a difference.",
+      "year": 2015,
+      "images": {
+        "poster": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        },
+        "fanart": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 94493,
+        "slug": "donal-macintyre-breaking-crime",
+        "tvdb": 290284,
+        "imdb": null,
+        "tmdb": null,
+        "tvrage": null
+      }
+    }
+  },
+  {
+    "type": "show",
+    "score": 18.345793,
+    "show": {
+      "title": "Good Times, Bad Times",
+      "overview": "Goede tijden, slechte tijden, English: Good times, bad times, also known as GTST, is the longest-running Dutch soap opera, which began on 1 October 1990 on RTL4. The programme was the first daily soap in the Netherlands. GTST is broadcast Monday to Friday at 20:00. Around 1.5 million viewers watch each episode. It is the highest rated soap opera in the Netherlands.The soap mainly revolves around the lives of the families Alberts, Sanders, De Jong, Van Houten and Bouwhuis. It all takes place in the fictional town of Meerdijk. Like any other soap, marriage, divorce, kidnapping and business are a few of the ingredients of GTST, although in recent years, GTST has become known for writing and producing more controversial storylines. GTST is also known for having a summer break each year, ending a season sometime in June with a cliffhanger, only to resume three months later in September.",
+      "year": 1990,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/011/837/posters/original/3ebe5fb13d.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/011/837/posters/medium/3ebe5fb13d.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/011/837/posters/thumb/3ebe5fb13d.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/shows/000/011/837/fanarts/original/76137c233b.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/011/837/fanarts/medium/76137c233b.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/011/837/fanarts/thumb/76137c233b.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 11837,
+        "slug": "good-times-bad-times",
+        "tvdb": 104271,
+        "imdb": "tt0096597",
+        "tmdb": 11890,
+        "tvrage": 19056
+      }
+    }
+  },
+  {
+    "type": "show",
+    "score": 1.1290063,
+    "show": {
+      "title": "What About Brian",
+      "overview": "From the producers of Lost and Alias and the screenwriter of City of Angels and For Love of the Game comes a contemporary, heartwarming ensemble show about a group of supportive friends in various stages of romantic relationships and friendships living in Los Angeles. There are the just-married Nic and Angelo, the seemingly happily married Dave and Deena and the newly-engaged Marjorie and Adam. But -- what about Brian? Of this close-knit group of friends, everyone else has paired off, while Brian has emerged as the last bachelor standing. At 34, regardless of his run of bad luck in matters of the heart, Brian still holds out hope that one day he'll open the door and be blinded by love. However questions about his fate have been popping up more frequently in his head. The most pressing question is - and it's one that only he can answer -- could all of his problems stem from the fact that he is harboring a crush on the picture-perfect Marjorie, his best friend's girl? Adam, Brian's best friend since childhood, was going to break up with Marjorie but found himself proposing to her instead. He's a lawyer and Marjorie is a pediatric surgeon. Their busy lifestyles leave them little time to plan their upcoming wedding and, oddly enough, that seems to have given them more time to re-evaluate whether they're indeed doing the right thing. Brian's fortysomething sister, Nic, and her boy-toy husband, Angelo, are trying hard to start a family, but something's not right. Nic's high-stress work as a record executive and Angelo's fledgling acting career have created some anxiety in the new marriage. Now they're torn between conceiving a child the old-fashioned way or using modern medicine to speed up the process. Dave, who runs a video game business with Brian called Zap Monkey, is married to stay-at-home mom Deena. They've been together for 13 years, have three little girls and a lackluster sex life. This prompts the frustrated and unconventional Deena to suggest to the more content Dave that they consider having an open marriage. Like all married people and their single friends, they can't wait for Brian to join their \"club,\" though they're not exactly sure why.",
+      "year": 2006,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/003/513/posters/original/1f49dd427b.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/003/513/posters/medium/1f49dd427b.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/003/513/posters/thumb/1f49dd427b.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/shows/000/003/513/fanarts/original/3fc926bff5.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/003/513/fanarts/medium/3fc926bff5.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/003/513/fanarts/thumb/3fc926bff5.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 3513,
+        "slug": "what-about-brian",
+        "tvdb": 79290,
+        "imdb": "tt0460693",
+        "tmdb": 3535,
+        "tvrage": 6930
+      }
+    }
+  },
+  {
+    "type": "show",
+    "score": 0.39297247,
+    "show": {
+      "title": "It Could Be Worse",
+      "overview": "Jacob Gordon can't catch a break. A struggling actor with a personal life to match. His epic streak of bad luck just might change when he's cast in a Broadway musical; \"The Ice Queen\", opposite stage and screen royalty Veronica Bailey.",
+      "year": 2013,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/075/749/posters/original/36f747ff0c.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/075/749/posters/medium/36f747ff0c.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/075/749/posters/thumb/36f747ff0c.jpg"
+        },
+        "fanart": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 75749,
+        "slug": "it-could-be-worse",
+        "tvdb": 276831,
+        "imdb": "tt2811844",
+        "tmdb": null,
+        "tvrage": null
+      }
+    }
+  },
+  {
+    "type": "show",
+    "score": 0.39297247,
+    "show": {
+      "title": "Murder Police",
+      "overview": "Mario Sanchez aspires to be a good cop, but his efforts to solve crimes are constantly put in jeopardy by his own clumsiness and the incompetence of his fellow detectives, including his partner, Tommy Margaretti, a tough, rule-breaking bad cop who can't interrogate a suspect without beating him up.",
+      "year": null,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/058/459/posters/original/651c36e53c.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/058/459/posters/medium/651c36e53c.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/058/459/posters/thumb/651c36e53c.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/shows/000/058/459/fanarts/original/e1a412a1fd.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/058/459/fanarts/medium/e1a412a1fd.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/058/459/fanarts/thumb/e1a412a1fd.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 58459,
+        "slug": "murder-police",
+        "tvdb": 268894,
+        "imdb": "tt2557040",
+        "tmdb": 58846,
+        "tvrage": null
+      }
+    }
+  },
+  {
+    "type": "show",
+    "score": 0.3438509,
+    "show": {
+      "title": "Pinocchio",
+      "overview": "Amidst a sea of young news reporters competing for the next scoop, Choi In Ha finds herself in a tricky position, as she cannot tell a lie without a dead giveaway: breaking into a violent hiccup. Meanwhile, first-year reporter Choi Dal Po proves his remarkable memory and communication skills by downplaying his good looks with a dumpy veneer of bad hair and clothing. But in a world where hard facts rule, how far can you get by lying? ",
+      "year": 2014,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/081/473/posters/original/65fb776af0.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/081/473/posters/medium/65fb776af0.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/081/473/posters/thumb/65fb776af0.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/shows/000/081/473/fanarts/original/eeefbb1438.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/081/473/fanarts/medium/eeefbb1438.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/081/473/fanarts/thumb/eeefbb1438.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 81473,
+        "slug": "pinocchio",
+        "tvdb": 287659,
+        "imdb": "tt4201628",
+        "tmdb": 61611,
+        "tvrage": null
+      }
+    }
+  }
+]

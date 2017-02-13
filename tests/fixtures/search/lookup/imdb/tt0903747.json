@@ -1,0 +1,31 @@
+[
+  {
+    "type": "show",
+    "score": null,
+    "show": {
+      "title": "Breaking Bad",
+      "overview": "Walter White, a struggling high school chemistry teacher, is diagnosed with advanced lung cancer. He turns to a life of crime, producing and selling methamphetamine accompanied by a former student, Jesse Pinkman, with the aim of securing his family's financial future before he dies.",
+      "year": 2008,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/001/388/posters/original/fa39b59954.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/001/388/posters/medium/fa39b59954.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/001/388/posters/thumb/fa39b59954.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/shows/000/001/388/fanarts/original/fdbc0cb02d.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/001/388/fanarts/medium/fdbc0cb02d.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/001/388/fanarts/thumb/fdbc0cb02d.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 1388,
+        "slug": "breaking-bad",
+        "tvdb": 81189,
+        "imdb": "tt0903747",
+        "tmdb": 1396,
+        "tvrage": 18164
+      }
+    }
+  }
+]
