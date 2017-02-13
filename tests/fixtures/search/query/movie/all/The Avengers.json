@@ -1,0 +1,272 @@
+[
+  {
+    "type": "movie",
+    "score": 77.052734,
+    "movie": {
+      "title": "Avenged",
+      "overview": "The spirit of an Apache warrior takes possession of a young woman's body, murdered by a gang of rednecks. Now among the living, she seeks revenge, as the clock ticks away on her decomposing body.",
+      "year": null,
+      "images": {
+        "poster": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        },
+        "fanart": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 210282,
+        "slug": "avenged",
+        "imdb": "",
+        "tmdb": 329364
+      }
+    }
+  },
+  {
+    "type": "movie",
+    "score": 77.0176,
+    "movie": {
+      "title": "Avenger",
+      "overview": "After his own daughter was killed in Panama in 1994, former CIA agent Calvin Dexter became a private 'specialist' in cases which wouldn't reach justice trough the regular legal channels. Two years later he accepts to find Richard 'Ricky' Edmunds for his pa, influential rich businessman Stephen Edmonds. Ricky for a private Canadian war victims charity in Bosnia and went missing. Dexter discovers Ricky was beaten to pulp and drowned for no other crime then helping street boys from the other side by Zoran Zilic and his Serbian paramilitary 'order'. He offers Steven to 'finish the job' as such war criminals don't go to trial. But deputy CIA director Paul Devereaux cares only for a nuclear arms project he wants to use Zilic for. So CIA troubleshooter Frank McBride is ordered to protect him and handle Dexter.",
+      "year": 2006,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/movies/000/032/686/posters/original/c232580552.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/032/686/posters/medium/c232580552.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/032/686/posters/thumb/c232580552.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/movies/000/032/686/fanarts/original/8777392fd7.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/032/686/fanarts/medium/8777392fd7.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/032/686/fanarts/thumb/8777392fd7.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 32686,
+        "slug": "avenger-2006",
+        "imdb": "tt0473445",
+        "tmdb": 47369
+      }
+    }
+  },
+  {
+    "type": "movie",
+    "score": 60.26589,
+    "movie": {
+      "title": "The Avengers",
+      "overview": "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+      "year": 2012,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/movies/000/014/701/posters/original/293ce7103a.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/014/701/posters/medium/293ce7103a.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/014/701/posters/thumb/293ce7103a.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/movies/000/014/701/fanarts/original/7d93500475.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/014/701/fanarts/medium/7d93500475.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/014/701/fanarts/thumb/7d93500475.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 14701,
+        "slug": "the-avengers-2012",
+        "imdb": "tt0848228",
+        "tmdb": 24428
+      }
+    }
+  },
+  {
+    "type": "movie",
+    "score": 60.26589,
+    "movie": {
+      "title": "The Avengers",
+      "overview": "British Ministry agent John Steed, under direction from \"Mother\", investigates a diabolical plot by arch-villain Sir August de Wynter to rule the world with his weather control machine. Steed investigates the beautiful Doctor Mrs. Emma Peel, the only suspect, but simultaneously falls for her and joins forces with her to combat Sir August.",
+      "year": 1998,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/movies/000/004/618/posters/original/433ec17f75.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/004/618/posters/medium/433ec17f75.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/004/618/posters/thumb/433ec17f75.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/movies/000/004/618/fanarts/original/0c1304e26e.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/004/618/fanarts/medium/0c1304e26e.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/004/618/fanarts/thumb/0c1304e26e.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 4618,
+        "slug": "the-avengers-1998",
+        "imdb": "tt0118661",
+        "tmdb": 9320
+      }
+    }
+  },
+  {
+    "type": "movie",
+    "score": 60.26589,
+    "movie": {
+      "title": "The Avenger",
+      "overview": "A maniac is loose in London, decapitating his victims and sending the heads to Scotland Yard.",
+      "year": 1960,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/movies/000/078/447/posters/original/9e2b88473c.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/078/447/posters/medium/9e2b88473c.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/078/447/posters/thumb/9e2b88473c.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/movies/000/078/447/fanarts/original/5d5fbe3382.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/078/447/fanarts/medium/5d5fbe3382.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/078/447/fanarts/thumb/5d5fbe3382.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 78447,
+        "slug": "the-avenger-1960",
+        "imdb": "tt0054257",
+        "tmdb": 111425
+      }
+    }
+  },
+  {
+    "type": "movie",
+    "score": 60.26589,
+    "movie": {
+      "title": "The Avenger",
+      "overview": "Goss, Mason, and Kelly force Joaquin Murieta to watch as they hang his brother Juan for a crime he did not commit. To exact his revenge on the three, Joaquin becomes the notorious Black Shadow.",
+      "year": 1931,
+      "images": {
+        "poster": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        },
+        "fanart": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 213641,
+        "slug": "the-avenger-1931",
+        "imdb": "tt0021630",
+        "tmdb": 305597
+      }
+    }
+  },
+  {
+    "type": "movie",
+    "score": 60.26589,
+    "movie": {
+      "title": "The Avenging",
+      "overview": "Gritty western telling the story of a family at war. One brother is out for vengeance after being kidnapped and wrongly imprisoned in Mexico.",
+      "year": 1982,
+      "images": {
+        "poster": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        },
+        "fanart": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 187451,
+        "slug": "the-avenging-1982",
+        "imdb": "tt0083602",
+        "tmdb": 290539
+      }
+    }
+  },
+  {
+    "type": "movie",
+    "score": 60.26589,
+    "movie": {
+      "title": "The Avenger",
+      "overview": "Directed by Salah Abouseif.",
+      "year": 1947,
+      "images": {
+        "poster": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        },
+        "fanart": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 213805,
+        "slug": "the-avenger-1947",
+        "imdb": "tt0039639",
+        "tmdb": 332884
+      }
+    }
+  },
+  {
+    "type": "movie",
+    "score": 55.793285,
+    "movie": {
+      "title": "Invisible Avenger",
+      "overview": "A car strikes an unseen object; blood spreads from an invisible source which becomes visible as the bleeding man dies. He carries with him a suicide note dedicated to his only friend, who is also an invisible man. An eager young reporter tracks down Takemitsu Nanjo, a war veteran who makes his living visibly, painting his face like a clown's and carrying advertising signs. His favorite neighbor is a little blind girl whose mother is running afoul of local gangsters. The gangsters have been terrorizing the city as \"the invisible gang,\" wrapping themselves up in scarves and trenchcoats so as to be visible to their victims, even though they are supposed to be invisible underneath. Once they discover Nanjo, who is defending his only friends, they beat him and leave him for dead.",
+      "year": 1954,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/movies/000/169/792/posters/original/4bf6b5e2ce.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/169/792/posters/medium/4bf6b5e2ce.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/169/792/posters/thumb/4bf6b5e2ce.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/movies/000/169/792/fanarts/original/4f38045cc6.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/169/792/fanarts/medium/4f38045cc6.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/169/792/fanarts/thumb/4f38045cc6.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 169792,
+        "slug": "invisible-avenger-1954",
+        "imdb": "tt0047594",
+        "tmdb": 271833
+      }
+    }
+  },
+  {
+    "type": "movie",
+    "score": 55.652233,
+    "movie": {
+      "title": "Crippled Avengers",
+      "overview": "Crippled Avengers is a 1978 Shaw Brothers kung fu film directed by Chang Cheh and starring four members of the Venom Mob. It has been released in North America as Mortal Combat and Return of the 5 Deadly Venoms. The film follows a group of martial artists seeking revenge after being crippled by Tu Tin-To (Chen Kuan Tai), a martial arts master, and his son (Lu Feng).",
+      "year": 1978,
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/movies/000/026/226/posters/original/f649ce686b.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/026/226/posters/medium/f649ce686b.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/026/226/posters/thumb/f649ce686b.jpg"
+        },
+        "fanart": {
+          "full": "https://walter.trakt.us/images/movies/000/026/226/fanarts/original/4e36e89d29.jpg",
+          "medium": "https://walter.trakt.us/images/movies/000/026/226/fanarts/medium/4e36e89d29.jpg",
+          "thumb": "https://walter.trakt.us/images/movies/000/026/226/fanarts/thumb/4e36e89d29.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 26226,
+        "slug": "crippled-avengers-1978",
+        "imdb": "tt0077292",
+        "tmdb": 40081
+      }
+    }
+  }
+]

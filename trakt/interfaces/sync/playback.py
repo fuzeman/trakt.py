@@ -1,8 +1,8 @@
 from trakt.interfaces.base import authenticated
-from trakt.interfaces.sync.core.mixins import Get, Delete
+from trakt.interfaces.sync.core.mixins import Get
 
 
-class SyncPlaybackInterface(Get, Delete):
+class SyncPlaybackInterface(Get):
     path = 'sync/playback'
 
     @authenticated
@@ -14,12 +14,5 @@ class SyncPlaybackInterface(Get, Delete):
         return self.get(
             'episodes',
             store,
-            **kwargs
-        )
-
-    @authenticated
-    def delete_progress(self, playbackid, **kwargs):
-        return self.delete(
-            playbackid,
             **kwargs
         )

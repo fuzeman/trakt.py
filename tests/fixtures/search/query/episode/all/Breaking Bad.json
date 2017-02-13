@@ -1,0 +1,439 @@
+[
+  {
+    "type": "episode",
+    "score": 77.16374,
+    "episode": {
+      "season": 2,
+      "number": 13,
+      "title": "Bad Breaks",
+      "overview": "A federal agent with a knack for giving Michael trouble returns to Miami to force Michael to hand over blackmail materials; the two enemies must work together during a bank robbery.",
+      "images": {
+        "screenshot": {
+          "full": "https://walter.trakt.us/images/episodes/000/235/069/screenshots/original/506a86d138.jpg",
+          "medium": "https://walter.trakt.us/images/episodes/000/235/069/screenshots/medium/506a86d138.jpg",
+          "thumb": "https://walter.trakt.us/images/episodes/000/235/069/screenshots/thumb/506a86d138.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 235069,
+        "tvdb": 427515,
+        "imdb": "",
+        "tmdb": 224299,
+        "tvrage": 714878
+      }
+    },
+    "show": {
+      "title": "Burn Notice",
+      "year": "2007",
+      "ids": {
+        "trakt": 2900,
+        "slug": "burn-notice"
+      },
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/002/900/posters/original/8fc8ab4dd9.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/002/900/posters/medium/8fc8ab4dd9.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/002/900/posters/thumb/8fc8ab4dd9.jpg"
+        },
+        "fanart": {
+          "full": null,
+          "medium": "https://walter.trakt.us/images/shows/000/002/900/fanarts/medium/225f0fda4e.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/002/900/fanarts/thumb/225f0fda4e.jpg"
+        }
+      }
+    }
+  },
+  {
+    "type": "episode",
+    "score": 77.16374,
+    "episode": {
+      "season": 1,
+      "number": 1,
+      "title": "Breaking Bad",
+      "overview": "Visit the creative team behind Breaking Bad. Join Emmy-winner Bryan Cranston, Vince Gilligan and the entire writing team as they divulge how they created the stories for a show that was recently named one of the best written TV series of all time.",
+      "images": {
+        "screenshot": {
+          "full": "https://walter.trakt.us/images/episodes/001/198/313/screenshots/original/69f7de3c90.jpg",
+          "medium": "https://walter.trakt.us/images/episodes/001/198/313/screenshots/medium/69f7de3c90.jpg",
+          "thumb": "https://walter.trakt.us/images/episodes/001/198/313/screenshots/thumb/69f7de3c90.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 1198313,
+        "tvdb": 4607734,
+        "imdb": null,
+        "tmdb": null,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "The Writers' Room",
+      "year": "2013",
+      "ids": {
+        "trakt": 71683,
+        "slug": "the-writers-room"
+      },
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/071/683/posters/original/4ab5340f1f.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/071/683/posters/medium/4ab5340f1f.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/071/683/posters/thumb/4ab5340f1f.jpg"
+        },
+        "fanart": {
+          "full": null,
+          "medium": "https://walter.trakt.us/images/shows/000/071/683/fanarts/medium/4ab5340f1f.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/071/683/fanarts/thumb/4ab5340f1f.jpg"
+        }
+      }
+    }
+  },
+  {
+    "type": "episode",
+    "score": 77.16374,
+    "episode": {
+      "season": 2,
+      "number": 18,
+      "title": "Breaking Bad",
+      "images": {
+        "screenshot": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 1239806,
+        "tvdb": 4689180,
+        "imdb": null,
+        "tmdb": null,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Honest Trailers",
+      "year": "2012",
+      "ids": {
+        "trakt": 74094,
+        "slug": "honest-trailers"
+      },
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/074/094/posters/original/5904139e90.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/074/094/posters/medium/5904139e90.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/074/094/posters/thumb/5904139e90.jpg"
+        },
+        "fanart": {
+          "full": null,
+          "medium": "https://walter.trakt.us/images/shows/000/074/094/fanarts/medium/5904139e90.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/074/094/fanarts/thumb/5904139e90.jpg"
+        }
+      }
+    }
+  },
+  {
+    "type": "episode",
+    "score": 77.16374,
+    "episode": {
+      "season": 4,
+      "number": 7,
+      "title": "Bad Break",
+      "overview": "When Flo sets out to woo a woman, an appalled Amber's disapproval of Flo's same-sex desire ignites a fiery confrontation that might change the house dynamics for good. Meanwhile, the ladies pose for a photo shoot, and they reassemble with the baddest \"bad girl\".",
+      "images": {
+        "screenshot": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 354689,
+        "tvdb": 1527781,
+        "imdb": "",
+        "tmdb": 346515,
+        "tvrage": 1064891927
+      }
+    },
+    "show": {
+      "title": "Bad Girls Club",
+      "year": "2006",
+      "ids": {
+        "trakt": 4914,
+        "slug": "bad-girls-club"
+      },
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/004/914/posters/original/b844f5212a.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/004/914/posters/medium/b844f5212a.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/004/914/posters/thumb/b844f5212a.jpg"
+        },
+        "fanart": {
+          "full": null,
+          "medium": "https://walter.trakt.us/images/shows/000/004/914/fanarts/medium/dac26d14e6.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/004/914/fanarts/thumb/dac26d14e6.jpg"
+        }
+      }
+    }
+  },
+  {
+    "type": "episode",
+    "score": 77.16374,
+    "episode": {
+      "season": 1,
+      "number": 8,
+      "title": "Bad Break",
+      "overview": "Darren Brass takes a little spill and breaks his elbow, so Ami brings in a new girl from Los Angeles to substitute for a few weeks.",
+      "images": {
+        "screenshot": {
+          "full": "https://walter.trakt.us/images/episodes/000/450/332/screenshots/original/706c1197fe.jpg",
+          "medium": "https://walter.trakt.us/images/episodes/000/450/332/screenshots/medium/706c1197fe.jpg",
+          "thumb": "https://walter.trakt.us/images/episodes/000/450/332/screenshots/thumb/706c1197fe.jpg"
+        }
+      },
+      "ids": {
+        "trakt": 450332,
+        "tvdb": 339327,
+        "imdb": "",
+        "tmdb": 441987,
+        "tvrage": 313594
+      }
+    },
+    "show": {
+      "title": "Miami Ink",
+      "year": "2005",
+      "ids": {
+        "trakt": 10931,
+        "slug": "miami-ink"
+      },
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/010/931/posters/original/ab46cfc2d6.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/010/931/posters/medium/ab46cfc2d6.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/010/931/posters/thumb/ab46cfc2d6.jpg"
+        },
+        "fanart": {
+          "full": null,
+          "medium": "https://walter.trakt.us/images/shows/000/010/931/fanarts/medium/a130e5ff72.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/010/931/fanarts/thumb/a130e5ff72.jpg"
+        }
+      }
+    }
+  },
+  {
+    "type": "episode",
+    "score": 77.16374,
+    "episode": {
+      "season": 2,
+      "number": 6,
+      "title": "Breaking Bad",
+      "overview": "Mark reveals he’s a huge fan of Pooh when he gets the opportunity to buy a first edition of the AA Milne classic. Simon and Vicki go on a field trip to check out a genuine Romani caravan. Later the boys nearly flip their lids when they get the chance to buy a killer robot! And Liam risks breaking bad when he comes face to face with a life size reproduction of Walter White.",
+      "images": {
+        "screenshot": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 1210536,
+        "tvdb": 5006604,
+        "imdb": null,
+        "tmdb": null,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Pawn Stars UK",
+      "year": "2013",
+      "ids": {
+        "trakt": 72441,
+        "slug": "pawn-stars-uk"
+      },
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/072/441/posters/original/50254f2bfe.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/072/441/posters/medium/50254f2bfe.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/072/441/posters/thumb/50254f2bfe.jpg"
+        },
+        "fanart": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      }
+    }
+  },
+  {
+    "type": "episode",
+    "score": 77.16374,
+    "episode": {
+      "season": 6,
+      "number": 16,
+      "title": "Bad Breaks",
+      "images": {
+        "screenshot": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 65694,
+        "tvdb": 112712,
+        "imdb": "",
+        "tmdb": 54847,
+        "tvrage": 239637
+      }
+    },
+    "show": {
+      "title": "Trapper John, M.D.",
+      "year": "1979",
+      "ids": {
+        "trakt": 1034,
+        "slug": "trapper-john-m-d"
+      },
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/001/034/posters/original/02e6a462da.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/001/034/posters/medium/02e6a462da.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/001/034/posters/thumb/02e6a462da.jpg"
+        },
+        "fanart": {
+          "full": null,
+          "medium": "https://walter.trakt.us/images/shows/000/001/034/fanarts/medium/25acdc685a.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/001/034/fanarts/thumb/25acdc685a.jpg"
+        }
+      }
+    }
+  },
+  {
+    "type": "episode",
+    "score": 77.16374,
+    "episode": {
+      "season": 3,
+      "number": 8,
+      "title": "Breaking Bad",
+      "overview": "Walter White is no stranger to Bad Days - his life is pretty much Bad Days, Worse Days, and SPOILERS!",
+      "images": {
+        "screenshot": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 1305439,
+        "tvdb": 4944639,
+        "imdb": null,
+        "tmdb": null,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Bad Days",
+      "year": "1969",
+      "ids": {
+        "trakt": 79142,
+        "slug": "bad-days"
+      },
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/079/142/posters/original/ecf7fa7ec3.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/079/142/posters/medium/ecf7fa7ec3.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/079/142/posters/thumb/ecf7fa7ec3.jpg"
+        },
+        "fanart": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      }
+    }
+  },
+  {
+    "type": "episode",
+    "score": 77.16374,
+    "episode": {
+      "season": 1,
+      "number": 261,
+      "title": "Breaking Bad",
+      "images": {
+        "screenshot": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 1004088,
+        "tvdb": 4211274,
+        "imdb": null,
+        "tmdb": null,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "The Totally Rad Show",
+      "year": "2007",
+      "ids": {
+        "trakt": 60943,
+        "slug": "the-totally-rad-show"
+      },
+      "images": {
+        "poster": {
+          "full": "https://walter.trakt.us/images/shows/000/060/943/posters/original/25015f97d2.jpg",
+          "medium": "https://walter.trakt.us/images/shows/000/060/943/posters/medium/25015f97d2.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/060/943/posters/thumb/25015f97d2.jpg"
+        },
+        "fanart": {
+          "full": null,
+          "medium": "https://walter.trakt.us/images/shows/000/060/943/fanarts/medium/acdb9079c7.jpg",
+          "thumb": "https://walter.trakt.us/images/shows/000/060/943/fanarts/thumb/acdb9079c7.jpg"
+        }
+      }
+    }
+  },
+  {
+    "type": "episode",
+    "score": 77.16374,
+    "episode": {
+      "season": 1,
+      "number": 2,
+      "title": " Breaking Bad",
+      "overview": "A battle boils over at AKA and the fighters' brotherhood is bruised when Josh Koscheck has an explosive falling out with AKA owner Javier Mendez. Can a rookie brawler being prepped for his first pro fight by Cain Velasquez fill Koscheck's shoes?",
+      "images": {
+        "screenshot": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      },
+      "ids": {
+        "trakt": 1131920,
+        "tvdb": 4653984,
+        "imdb": null,
+        "tmdb": null,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Fight Factory",
+      "year": "2012",
+      "ids": {
+        "trakt": 67844,
+        "slug": "fight-factory"
+      },
+      "images": {
+        "poster": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        },
+        "fanart": {
+          "full": null,
+          "medium": null,
+          "thumb": null
+        }
+      }
+    }
+  }
+]

@@ -1,17 +1,10 @@
-from trakt.core.helpers import popitems
-from trakt.interfaces.base import Interface, authenticated
+from trakt.interfaces.base import Interface
 
 
 class UsersSettingsInterface(Interface):
     path = 'users/settings'
 
-    @authenticated
-    def get(self, **kwargs):
-        response = self.http.get(
-            **popitems(kwargs, [
-                'authenticated',
-                'validate_token'
-            ])
-        )
+    def get(self):
+        response = self.http.get()
 
-        return self.get_data(response, **kwargs)
+        return self.get_data(response)

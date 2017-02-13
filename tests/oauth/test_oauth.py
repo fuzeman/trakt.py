@@ -1,7 +1,6 @@
 from tests.core.helpers import assert_url, authenticated_response
 
-from threading import Event
-from trakt import Trakt, TraktClient
+from trakt import Trakt
 import calendar
 import datetime
 import json
@@ -232,69 +231,3 @@ def test_request():
             .client('mock', 'mock')\
             .oauth.from_response(authorization, refresh=True):
         assert Trakt['sync/collection'].movies() is not None
-
-
-@responses.activate
-def test_refresh_deadlock():
-    responses.add_callback(
-        responses.GET, 'http://mock/sync/collection/movies',
-        callback=authenticated_response('fixtures/sync/collection/movies.json'),
-        content_type='application/json'
-    )
-
-    def callback(request):
-        return 200, {}, json.dumps({
-            "access_token": "mock",
-            "token_type": "bearer",
-            "created_at": calendar.timegm(datetime.datetime.utcnow().utctimetuple()),
-            "expires_in": 7200,
-            "refresh_token": "mock",
-            "scope": "public"
-        })
-
-    responses.add_callback(
-        responses.POST, 'http://mock/oauth/token',
-        callback=callback,
-        content_type='application/json'
-    )
-
-    # Construct client
-    client = TraktClient()
-    client.base_url = 'http://mock'
-
-    # Configure client
-    client.configuration.defaults.client(
-        id='mock',
-        secret='mock'
-    )
-
-    # Bind to events
-    refreshed = Event()
-    looped = Event()
-
-    @client.on('oauth.refresh')
-    def on_token_refreshed(username, authorization):
-        if refreshed.is_set():
-            looped.set()
-            return
-
-        refreshed.set()
-
-        # Test refresh recursion
-        assert client['sync/collection'].movies() is None
-
-    # Attempt request with expired authorization
-    expired_authorization = {
-        "access_token": "mock",
-        "token_type": "bearer",
-        "created_at": calendar.timegm(datetime.datetime.utcnow().utctimetuple()),
-        "expires_in": 0,
-        "refresh_token": "mock",
-        "scope": "public"
-    }
-
-    with client.configuration.oauth.from_response(expired_authorization, refresh=True, username='mock'):
-        assert client['sync/collection'].movies() is not None
-
-    # Ensure requests inside "oauth.refresh" don't cause refresh loops
-    assert not looped.is_set()

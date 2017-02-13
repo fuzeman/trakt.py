@@ -1,9 +1,6 @@
-from trakt.core.helpers import popitems
 from trakt.core.pagination import PaginationIterator
 from trakt.interfaces.base import authenticated, Interface
 from trakt.mapper.sync import SyncMapper
-
-import requests
 
 
 class Get(Interface):
@@ -20,17 +17,12 @@ class Get(Interface):
         response = self.http.get(
             params=params,
             query=query,
-            **popitems(kwargs, [
-                'authenticated',
-                'validate_token'
-            ])
+
+            authenticated=kwargs.pop('authenticated', None)
         )
 
         # Parse response
         items = self.get_data(response, **kwargs)
-
-        if isinstance(items, requests.Response):
-            return items
 
         if type(items) is not list and not isinstance(items, PaginationIterator):
             return None
@@ -65,10 +57,8 @@ class Add(Interface):
     def add(self, items, **kwargs):
         response = self.http.post(
             data=items,
-            **popitems(kwargs, [
-                'authenticated',
-                'validate_token'
-            ])
+
+            authenticated=kwargs.pop('authenticated', None)
         )
 
         return self.get_data(response, **kwargs)
@@ -80,24 +70,8 @@ class Remove(Interface):
         response = self.http.post(
             'remove',
             data=items,
-            **popitems(kwargs, [
-                'authenticated',
-                'validate_token'
-            ])
+
+            authenticated=kwargs.pop('authenticated', None)
         )
 
         return self.get_data(response, **kwargs)
-
-
-class Delete(Interface):
-    @authenticated
-    def delete(self, item, **kwargs):
-        response = self.http.delete(
-            path=str(item),
-            **popitems(kwargs, [
-                'authenticated',
-                'validate_token'
-            ])
-        )
-
-        return 200 <= response.status_code < 300
