@@ -1,0 +1,48 @@
+[
+  {
+    "progress": 10,
+    "paused_at": "2015-01-25T22:01:32.000Z",
+    "id": 13,
+    "type": "movie",
+    "movie": {
+      "title": "Batman Begins",
+      "year": 2005,
+      "ids": {
+        "trakt": 1,
+        "slug": "batman-begins-2005",
+        "imdb": "tt0372784",
+        "tmdb": 272
+      }
+    }
+  },
+  {
+    "progress": 65.5,
+    "paused_at": "2015-01-25T22:01:32.000Z",
+    "id": 37,
+    "type": "episode",
+    "episode": {
+      "season": 0,
+      "number": 1,
+      "title": "Good Cop Bad Cop",
+      "ids": {
+        "trakt": 1,
+        "tvdb": 3859781,
+        "imdb": "",
+        "tmdb": 62131,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Breaking Bad",
+      "year": 2008,
+      "ids": {
+        "trakt": 1,
+        "slug": "breaking-bad",
+        "tvdb": 81189,
+        "imdb": "tt0903747",
+        "tmdb": 1396,
+        "tvrage": 18164
+      }
+    }
+  }
+]
