@@ -65,8 +65,8 @@ def test_basic():
     )
 
     with Trakt.configuration.auth('mock', 'mock'):
-        success_movie   = Trakt['sync/playback'].delete_progress(13)
-        success_episode = Trakt['sync/playback'].delete_progress(37)
+        success_movie   = Trakt['sync/playback'].delete(13)
+        success_episode = Trakt['sync/playback'].delete(37)
 
     assert success_movie is True
     assert success_episode is True

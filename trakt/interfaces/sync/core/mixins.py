@@ -91,9 +91,9 @@ class Remove(Interface):
 
 class Delete(Interface):
     @authenticated
-    def delete(self, item, **kwargs):
+    def delete(self, playbackid, **kwargs):
         response = self.http.delete(
-            path=str(item),
+            path=str(playbackid),
             **popitems(kwargs, [
                 'authenticated',
                 'validate_token'

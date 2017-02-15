@@ -16,10 +16,3 @@ class SyncPlaybackInterface(Get, Delete):
             store,
             **kwargs
         )
-
-    @authenticated
-    def delete_progress(self, playbackid, **kwargs):
-        return self.delete(
-            playbackid,
-            **kwargs
-        )
