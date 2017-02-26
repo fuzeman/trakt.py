@@ -1,4 +1,5 @@
 from trakt.interfaces import auth
+from trakt.interfaces import calendars
 from trakt.interfaces import movies
 from trakt.interfaces import oauth
 from trakt.interfaces import scrobble
@@ -17,6 +18,24 @@ INTERFACES = [
 
     scrobble.ScrobbleInterface,
     search.SearchInterface,
+
+    # /calendars/all/
+    calendars.CalendarsAllMoviesInterface,
+    calendars.CalendarsAllDvdInterface,
+
+    # /calendars/all/shows/
+    calendars.CalendarsAllShowsInterface,
+    calendars.CalendarsAllShowsNewInterface,
+    calendars.CalendarsAllShowsPremieresInterface,
+
+    # /calendars/my/
+    calendars.CalendarsMyMoviesInterface,
+    calendars.CalendarsMyDvdInterface,
+
+    # /calendars/my/shows/
+    calendars.CalendarsMyShowsInterface,
+    calendars.CalendarsMyShowsNewInterface,
+    calendars.CalendarsMyShowsPremieresInterface,
 
     # /sync/
     sync.SyncInterface,
