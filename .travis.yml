@@ -12,7 +12,9 @@ python:
   - 3.5
   - nightly
 install:
-  - ./travis_install.sh
+  - travis_retry pip install -r requirements.txt
+  - travis_retry pip install -r requirements_test.txt
+  - travis_retry pip install -r requirements_travis.txt
 script:
   - tox
 after_success:
