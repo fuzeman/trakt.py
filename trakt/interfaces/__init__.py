@@ -19,23 +19,9 @@ INTERFACES = [
     scrobble.ScrobbleInterface,
     search.SearchInterface,
 
-    # /calendars/all/
-    calendars.CalendarsAllMoviesInterface,
-    calendars.CalendarsAllDvdInterface,
-
-    # /calendars/all/shows/
-    calendars.CalendarsAllShowsInterface,
-    calendars.CalendarsAllShowsNewInterface,
-    calendars.CalendarsAllShowsPremieresInterface,
-
-    # /calendars/my/
-    calendars.CalendarsMyMoviesInterface,
-    calendars.CalendarsMyDvdInterface,
-
-    # /calendars/my/shows/
-    calendars.CalendarsMyShowsInterface,
-    calendars.CalendarsMyShowsNewInterface,
-    calendars.CalendarsMyShowsPremieresInterface,
+    # /calendars/
+    calendars.AllCalendarsInterface,
+    calendars.MyCalendarsInterface,
 
     # /sync/
     sync.SyncInterface,
