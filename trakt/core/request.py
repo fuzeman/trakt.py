@@ -142,4 +142,5 @@ class TraktRequest(object):
                 for item in value
             ])
 
-        return value
+        # Ensure values are strings
+        return str(value)
