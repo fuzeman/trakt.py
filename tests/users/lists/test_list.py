@@ -1,8 +1,8 @@
 from tests.core.helpers import authenticated_response
+from trakt import Trakt
 
 from datetime import datetime
 from dateutil.tz import tzutc
-from trakt import Trakt
 import responses
 
 

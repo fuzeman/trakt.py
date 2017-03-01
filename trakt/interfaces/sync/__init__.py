@@ -9,7 +9,7 @@ from trakt.interfaces.sync.ratings import SyncRatingsInterface
 from trakt.interfaces.sync.watched import SyncWatchedInterface
 from trakt.interfaces.sync.watchlist import SyncWatchlistInterface
 
-__all__ = [
+__all__ = (
     'SyncInterface',
     'SyncCollectionInterface',
     'SyncHistoryInterface',
@@ -17,7 +17,7 @@ __all__ = [
     'SyncRatingsInterface',
     'SyncWatchedInterface',
     'SyncWatchlistInterface'
-]
+)
 
 
 class SyncInterface(Interface):

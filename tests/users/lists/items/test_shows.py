@@ -1,10 +1,10 @@
-from tests.core.helpers import authenticated_response
+# flake8: noqa: F403, F405
 
-from datetime import datetime
-from dateutil.tz import tzutc
-from hamcrest import *
+from tests.core.helpers import authenticated_response
 from trakt import Trakt
 from trakt.objects import Show, Season, Episode
+
+from hamcrest import *
 import responses
 
 

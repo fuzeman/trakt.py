@@ -1,8 +1,9 @@
-import logging
-logging.basicConfig(level=logging.DEBUG)
-
 from trakt import Trakt
+
+import logging
 import os
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 class Application(object):
@@ -54,6 +55,7 @@ class Application(object):
         self.authorization = response
 
         print 'Token refreshed - authorization: %r' % self.authorization
+
 
 if __name__ == '__main__':
     # Configure

@@ -1,5 +1,6 @@
-from threading import Event
 from trakt import Trakt
+
+from threading import Event
 import json
 import pytest
 import responses

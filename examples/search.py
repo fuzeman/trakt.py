@@ -1,10 +1,10 @@
+from trakt import Trakt
+from trakt.objects import Episode
+
 import logging
 import os
 
 logging.basicConfig(level=logging.DEBUG)
-
-from trakt import Trakt
-from trakt.objects import Season, Episode
 
 
 def print_lookup(id, service):
@@ -27,7 +27,8 @@ def print_query(query, media=None, year=None):
     for item in items:
         if type(item) is Episode and item.show:
             sk, ek = item.pk
-            print "\t[%.2d%%] %s (%s) - S%02dE%02d %r" % (item.score, item.show.title, item.show.year, sk, ek, item.title)
+            print "\t[%.2d%%] %s (%s) - S%02dE%02d %r" % (item.score, item.show.title, item.show.year,
+                                                          sk, ek, item.title)
         else:
             print "\t[%.2d%%] %s (%s)" % (item.score, item.title, item.year)
 

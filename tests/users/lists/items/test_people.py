@@ -1,10 +1,12 @@
+# flake8: noqa: F403, F405
+
 from tests.core.helpers import authenticated_response
+from trakt import Trakt
+from trakt.objects import Person
 
 from datetime import datetime
 from dateutil.tz import tzutc
 from hamcrest import *
-from trakt import Trakt
-from trakt.objects import Person
 import responses
 
 

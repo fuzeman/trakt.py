@@ -50,8 +50,7 @@ class Episode(Video):
         """
 
     def to_identifier(self):
-        """Returns the episode identifier which is compatible with requests that require
-        episode definitions.
+        """Retrieve the episode identifier.
 
         :return: Episode identifier/definition
         :rtype: :class:`~python:dict`
@@ -65,11 +64,11 @@ class Episode(Video):
 
     @deprecated('Episode.to_info() has been moved to Episode.to_dict()')
     def to_info(self):
-        """**Deprecated:** use the :code:`to_dict()` method instead"""
+        """**Deprecated:** use the :code:`to_dict()` method instead."""
         return self.to_dict()
 
     def to_dict(self):
-        """Dump episode to a dictionary
+        """Dump episode to a dictionary.
 
         :return: Episode dictionary
         :rtype: :class:`~python:dict`

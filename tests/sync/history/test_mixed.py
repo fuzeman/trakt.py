@@ -1,8 +1,10 @@
+# flake8: noqa: F403, F405
+
 from tests.core.helpers import pagination_response
+from trakt import Trakt
 
 from hamcrest import *
 from six.moves import xrange
-from trakt import Trakt
 import responses
 
 

@@ -1,3 +1,5 @@
+# flake8: noqa: I100
+
 # -*- coding: utf-8 -*-
 #
 # trakt.py documentation build configuration file, created by
@@ -14,8 +16,8 @@
 from __future__ import print_function
 
 import inspect
-import sys
 import os
+import sys
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -511,8 +513,9 @@ html_sidebars = {
 htmlhelp_basename = 'traktpydoc'
 
 
-import sphinx.environment
 from docutils.utils import get_source_line
+import sphinx.environment
+
 
 def _warn_node(self, msg, node, **kwargs):
     if not msg.startswith('nonlocal image URI found:'):

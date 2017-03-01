@@ -1,8 +1,10 @@
-from tests.core.helpers import pagination_response
+# flake8: noqa: F403, F405
 
-from hamcrest import *
+from tests.core.helpers import pagination_response
 from trakt import Trakt
 from trakt.objects import Movie, Show, Season, Episode
+
+from hamcrest import *
 import responses
 
 

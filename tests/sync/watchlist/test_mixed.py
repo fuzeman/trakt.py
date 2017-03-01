@@ -1,10 +1,12 @@
+# flake8: noqa: F403, F405
+
 from tests.core.helpers import pagination_response
+from trakt import Trakt
+from trakt.objects import Movie, Show, Season, Episode
 
 from datetime import datetime
 from dateutil.tz import tzutc
 from hamcrest import *
-from trakt import Trakt
-from trakt.objects import Movie, Show, Season, Episode
 import responses
 
 
@@ -64,7 +66,7 @@ def test_basic():
                 'listed_at': datetime(2014, 9, 1, 9, 10, 11, tzinfo=tzutc()),
 
                 # Keys
-                'keys':[
+                'keys': [
                     ('tvdb', '81189'),
                     ('tmdb', '1396'),
                     ('imdb', 'tt0903747'),

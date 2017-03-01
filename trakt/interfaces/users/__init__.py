@@ -3,19 +3,19 @@ from trakt.interfaces.base import Interface, authenticated
 from trakt.mapper import CommentMapper, ListMapper
 
 # Import child interfaces
-from trakt.interfaces.users.lists import UsersListInterface, UsersListsInterface
-from trakt.interfaces.users.settings import UsersSettingsInterface
+from trakt.interfaces.users.lists import UsersListInterface, UsersListsInterface  # noqa: I100
+from trakt.interfaces.users.settings import UsersSettingsInterface  # noqa: I100
 
 import logging
 
 log = logging.getLogger(__name__)
 
-__all__ = [
+__all__ = (
     'UsersInterface',
     'UsersListsInterface',
     'UsersListInterface',
     'UsersSettingsInterface'
-]
+)
 
 
 class UsersInterface(Interface):

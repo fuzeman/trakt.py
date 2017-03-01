@@ -1,4 +1,5 @@
 from trakt import Trakt
+
 import json
 import pytest
 import responses

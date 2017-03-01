@@ -1,4 +1,5 @@
 from trakt.mapper.core.base import Mapper
+
 import logging
 
 log = logging.getLogger(__name__)

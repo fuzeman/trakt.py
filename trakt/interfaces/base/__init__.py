@@ -4,7 +4,7 @@ from trakt.core.helpers import try_convert
 from trakt.core.pagination import PaginationIterator
 from trakt.helpers import setdefault
 
-from functools import wraps
+import functools
 import logging
 import warnings
 
@@ -12,7 +12,7 @@ log = logging.getLogger(__name__)
 
 
 def authenticated(func):
-    @wraps(func)
+    @functools.wraps(func)
     def wrap(*args, **kwargs):
         if 'authenticated' not in kwargs:
             kwargs['authenticated'] = True
@@ -23,7 +23,7 @@ def authenticated(func):
 
 
 def application(func):
-    @wraps(func)
+    @functools.wraps(func)
     def wrap(*args, **kwargs):
         if args and isinstance(args[0], Interface):
             interface = args[0]
@@ -131,7 +131,7 @@ class InterfaceProxy(object):
         if not hasattr(value, '__call__'):
             return value
 
-        @wraps(value)
+        @functools.wraps(value)
         def wrap(*args, **kwargs):
             args = self.args + list(args)
 

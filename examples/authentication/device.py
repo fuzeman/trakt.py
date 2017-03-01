@@ -1,9 +1,10 @@
-import logging
-logging.basicConfig(level=logging.DEBUG)
+from trakt import Trakt
 
 from threading import Condition
-from trakt import Trakt
+import logging
 import os
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 class Application(object):
@@ -65,8 +66,11 @@ class Application(object):
             print Trakt['sync/collection'].movies()
 
     def on_aborted(self):
-        """Triggered when device authentication was aborted (either with `DeviceOAuthPoller.stop()`
-           or via the "poll" event)"""
+        """Device authentication aborted.
+
+        Triggered when device authentication was aborted (either with `DeviceOAuthPoller.stop()`
+        or via the "poll" event)
+        """
 
         print 'Authentication aborted'
 
@@ -76,7 +80,7 @@ class Application(object):
         self.is_authenticating.release()
 
     def on_authenticated(self, authorization):
-        """Triggered when device authentication has been completed
+        """Device authenticated.
 
         :param authorization: Authentication token details
         :type authorization: dict
@@ -95,7 +99,7 @@ class Application(object):
         self.is_authenticating.release()
 
     def on_expired(self):
-        """Triggered when the device authentication code has expired"""
+        """Device authentication expired."""
 
         print 'Authentication expired'
 
@@ -105,7 +109,7 @@ class Application(object):
         self.is_authenticating.release()
 
     def on_poll(self, callback):
-        """Triggered before each poll
+        """Device authentication poll.
 
         :param callback: Call with `True` to continue polling, or `False` to abort polling
         :type callback: func

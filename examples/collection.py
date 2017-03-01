@@ -1,7 +1,7 @@
-from helpers import authenticate
-
 from trakt import Trakt
 from trakt.objects import Movie, Show
+
+from helpers import authenticate
 import logging
 import os
 

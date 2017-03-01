@@ -2,8 +2,8 @@ from trakt.core import exceptions
 from trakt.interfaces.base import Interface
 
 import pytest
-import responses
 import requests
+import responses
 
 
 @responses.activate

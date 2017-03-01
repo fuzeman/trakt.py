@@ -139,7 +139,8 @@ class Emitter(object):
             # assume decorator, wrap
             return self.__wrap(self.emit_on, event, *args, **kwargs)
 
-        self.__log('emit_on(event: %s, func: %s, args: %s, kwargs: %s)', repr(event), repr(func), repr(args), repr(kwargs))
+        self.__log('emit_on(event: %s, func: %s, args: %s, kwargs: %s)',
+                   repr(event), repr(func), repr(args), repr(kwargs))
 
         # Bind func from wrapper
         self.on(event, func)

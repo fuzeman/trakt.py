@@ -1,7 +1,7 @@
-from helpers import authenticate
-
-from pprint import pprint
 from trakt import Trakt
+
+from helpers import authenticate
+from pprint import pprint
 import logging
 import os
 import time

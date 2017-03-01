@@ -1,5 +1,8 @@
-from hamcrest import *
+# flake8: noqa: F403, F405
+
 from trakt import Trakt
+
+from hamcrest import *
 import responses
 
 

@@ -6,11 +6,11 @@ from trakt.mapper.summary import SummaryMapper
 from trakt.mapper.sync import SyncMapper
 
 
-__all__ = [
+__all__ = (
     'CommentMapper',
     'ListMapper',
     'ListItemMapper',
     'SearchMapper',
     'SummaryMapper',
     'SyncMapper'
-]
+)

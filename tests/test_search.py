@@ -1,7 +1,9 @@
+# flake8: noqa: E201
+
 from tests.core.helpers import read
+from trakt import Trakt
 
 from six.moves.urllib_parse import urlparse, parse_qsl
-from trakt import Trakt
 import responses
 
 

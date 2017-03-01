@@ -1,8 +1,10 @@
-from tests.core.helpers import read
+# flake8: noqa: E241
 
-from six.moves.urllib.parse import parse_qsl, urlparse
+from tests.core.helpers import read
 from trakt import Trakt
 from trakt.core.helpers import try_convert
+
+from six.moves.urllib.parse import parse_qsl, urlparse
 import responses
 
 

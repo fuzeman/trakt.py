@@ -45,8 +45,7 @@ class Season(Media):
         """
 
     def to_identifier(self):
-        """Returns the season identifier which is compatible with requests that require
-        season definitions.
+        """Return the season identifier which is compatible with requests that require season definitions.
 
         :return: Season identifier/definition
         :rtype: :class:`~python:dict`
@@ -62,11 +61,11 @@ class Season(Media):
 
     @deprecated('Season.to_info() has been moved to Season.to_dict()')
     def to_info(self):
-        """**Deprecated:** use the :code:`to_dict()` method instead"""
+        """**Deprecated:** use the :code:`to_dict()` method instead."""
         return self.to_dict()
 
     def to_dict(self):
-        """Dump season to a dictionary
+        """Dump season to a dictionary.
 
         :return: Season dictionary
         :rtype: :class:`~python:dict`

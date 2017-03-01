@@ -1,6 +1,6 @@
 from tests.core.helpers import authenticated_response
-
 from trakt import Trakt
+
 import responses
 
 

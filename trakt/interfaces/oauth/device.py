@@ -38,7 +38,7 @@ class DeviceOAuthInterface(Interface):
         return data
 
     def poll(self, device_code, expires_in, interval, **kwargs):
-        """Construct device authentication poller
+        """Construct the device authentication poller.
 
         :param device_code: Device authentication code
         :type device_code: str

@@ -1,5 +1,5 @@
-from trakt.core.configuration import ConfigurationManager
 from tests.core.semaphore import Semaphore
+from trakt.core.configuration import ConfigurationManager
 
 from threading import Thread
 import threading

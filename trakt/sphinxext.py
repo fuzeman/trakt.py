@@ -1,17 +1,16 @@
 from __future__ import unicode_literals
 
-import collections
-import inspect
+from trakt import interfaces
+import trakt  # noqa: I902
 
 from docutils import nodes
 from docutils.parsers import rst
 from docutils.parsers.rst import directives
 from docutils.statemachine import ViewList
-import six
 from sphinx.util.nodes import nested_parse_with_titles
-
-import trakt
-from trakt import interfaces
+import collections
+import inspect
+import six
 
 
 def _get_methods(obj):

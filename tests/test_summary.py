@@ -1,7 +1,7 @@
 from tests.core.helpers import read
+from trakt import Trakt
 
 from six.moves.urllib_parse import parse_qsl, urlparse
-from trakt import Trakt
 import responses
 
 

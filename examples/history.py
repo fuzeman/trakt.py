@@ -1,8 +1,7 @@
-from datetime import datetime
-
-from helpers import authenticate
-
 from trakt import Trakt
+
+from datetime import datetime
+from helpers import authenticate
 import os
 
 

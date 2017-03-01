@@ -81,7 +81,7 @@ def read_requirements():
     }
 
 # Read current package version
-version = {}
+version = {}  # noqa: E305
 
 with open(os.path.join(BASE_DIR, "trakt", "version.py")) as fp:
     exec(fp.read(), version)

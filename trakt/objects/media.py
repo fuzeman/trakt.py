@@ -107,7 +107,7 @@ class Media(object):
 
     @property
     def pk(self):
-        """Primary Key (unique identifier for the item)
+        """Retrieve the primary key (unique identifier for the item).
 
         Provides the following identifiers (by media type):
          - **movie:** imdb

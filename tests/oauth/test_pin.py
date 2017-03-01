@@ -1,6 +1,6 @@
 from tests.core.helpers import assert_url
-
 from trakt import Trakt
+
 import pytest
 
 

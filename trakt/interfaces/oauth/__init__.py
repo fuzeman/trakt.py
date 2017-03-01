@@ -5,14 +5,14 @@ from trakt.interfaces.base import Interface
 import requests
 
 # Import child interfaces
-from trakt.interfaces.oauth.device import DeviceOAuthInterface
-from trakt.interfaces.oauth.pin import PinOAuthInterface
+from trakt.interfaces.oauth.device import DeviceOAuthInterface  # noqa: I100
+from trakt.interfaces.oauth.pin import PinOAuthInterface  # noqa: I100
 
-__all__ = [
+__all__ = (
     'OAuthInterface',
     'DeviceOAuthInterface',
     'PinOAuthInterface'
-]
+)
 
 
 class OAuthInterface(Interface):

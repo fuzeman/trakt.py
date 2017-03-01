@@ -1,7 +1,7 @@
 from tests.core.helpers import assert_url, authenticated_response
+from trakt import Trakt, TraktClient
 
 from threading import Event
-from trakt import Trakt, TraktClient
 import calendar
 import datetime
 import json
@@ -19,14 +19,17 @@ def test_authorize_url():
             'client_id': 'mock'
         })
 
-        assert_url(Trakt['oauth'].authorize_url('urn:ietf:wg:oauth:2.0:oob', state='state', username='username'), '/oauth/authorize', {
-            'username': 'username',
-            'state': 'state',
+        assert_url(
+            Trakt['oauth'].authorize_url('urn:ietf:wg:oauth:2.0:oob', state='state', username='username'),
+            '/oauth/authorize', {
+                'username': 'username',
+                'state': 'state',
 
-            'redirect_uri': 'urn:ietf:wg:oauth:2.0:oob',
-            'response_type': 'code',
-            'client_id': 'mock'
-        })
+                'redirect_uri': 'urn:ietf:wg:oauth:2.0:oob',
+                'response_type': 'code',
+                'client_id': 'mock'
+            }
+        )
 
     with pytest.raises(ValueError):
         Trakt['oauth'].authorize_url('urn:ietf:wg:oauth:2.0:oob')
@@ -65,9 +68,9 @@ def test_token():
         })
 
     responses.add_callback(
-            responses.POST, 'http://api.mock/oauth/token',
-            callback=callback,
-            content_type='application/json'
+        responses.POST, 'http://api.mock/oauth/token',
+        callback=callback,
+        content_type='application/json'
     )
 
     Trakt.base_url = 'http://api.mock'

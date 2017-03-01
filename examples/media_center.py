@@ -1,9 +1,10 @@
+from trakt import Trakt
+
 import logging
 import os
 
 logging.basicConfig(level=logging.DEBUG)
 
-from trakt import Trakt
 
 if __name__ == '__main__':
     # Configure

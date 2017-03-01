@@ -1,10 +1,12 @@
+# flake8: noqa: E221
+
 from tests.core.helpers import authenticated_response
+from trakt import Trakt
+from trakt.objects import Movie, Show, Episode
 
 from datetime import datetime
 from dateutil.tz import tzutc
 from hamcrest import *
-from trakt import Trakt
-from trakt.objects import Movie, Show, Episode
 import responses
 
 
@@ -52,14 +54,14 @@ def test_basic():
 
     # Batman Begins (2005)
     responses.add_callback(
-        responses.DELETE, 'http://mock/sync/playback/13', # 13 = collection[('imdb', 'tt0372784')].id
+        responses.DELETE, 'http://mock/sync/playback/13',  # 13 = collection[('imdb', 'tt0372784')].id
         callback=authenticated_response(data='{"mock": "mock"}'),
         content_type='application/json'
     )
     
     # Breaking Bad (2008) - S00E01 - Good Cop Bad Cop
     responses.add_callback(
-        responses.DELETE, 'http://mock/sync/playback/37', # 37 = collection[('tvdb', '81189')].seasons[0].episodes[1].id
+        responses.DELETE, 'http://mock/sync/playback/37',  # 37 = collection[('tvdb', '81189')].seasons[0].episodes[1].id
         callback=authenticated_response(data='{"mock": "mock"}'),
         content_type='application/json'
     )
