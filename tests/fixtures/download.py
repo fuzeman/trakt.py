@@ -1,5 +1,6 @@
 from datetime import datetime
-from urlparse import urlparse
+from six import string_types
+from urlparse import ParseResult, parse_qsl, urlparse
 import itertools
 import json
 import os
@@ -27,15 +28,8 @@ def download(url):
 
 
 def download_one(url):
-    # Parse URL
-    url_parsed = urlparse(url)
-
-    if not url_parsed.netloc or not url_parsed.path:
-        print('[%s] Missing netloc or path' % (url,))
-        return False
-
     # Build destination path
-    destination = os.path.abspath(os.path.join(CURRENT_DIR, url_parsed.netloc) + url_parsed.path + '.json')
+    destination = build_destination_path(url)
 
     if os.path.exists(destination):
         print('[%s] Fixture already exists at: %r' % (url, destination))
@@ -78,6 +72,46 @@ def download_one(url):
 
     print('[%s] Done' % (url,))
     return True
+
+
+def build_destination_path(url):
+    if isinstance(url, string_types):
+        url = urlparse(url)
+    elif not isinstance(url, ParseResult):
+        raise ValueError('Invalid value provided for "url" parameter (expected string or urlparse result)')
+
+    if not url.netloc or not url.path:
+        print('[%s] Missing netloc or path' % (url,))
+        return False
+
+    # Format query parameters
+    parameters = sorted([
+        (key, value) for key, value in parse_qsl(url.query)
+        if key and value
+    ])
+
+    if parameters:
+        query = os.path.join(*[
+            os.path.join('#' + key, value)
+            for key, value in parameters
+        ])
+    else:
+        query = None
+
+    # Build destination path
+    if query:
+        return os.path.abspath(
+            os.path.join(
+                os.path.join(CURRENT_DIR, url.netloc) + url.path,
+                query
+            ) +
+            '.json'
+        )
+
+    return os.path.abspath(
+        os.path.join(CURRENT_DIR, url.netloc) + url.path +
+        '.json'
+    )
 
 
 def parse_url(url):
