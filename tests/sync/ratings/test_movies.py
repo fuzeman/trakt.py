@@ -1,26 +1,18 @@
 # flake8: noqa: F403, F405
 
-from tests.core.helpers import authenticated_response
+from tests.core import mock
 from trakt import Trakt
 
 from datetime import datetime
 from dateutil.tz import tzutc
 from hamcrest import *
-import responses
+from httmock import HTTMock
 
 
-@responses.activate
 def test_basic():
-    responses.add_callback(
-        responses.GET, 'http://mock/sync/ratings/movies',
-        callback=authenticated_response('fixtures/sync/ratings/movies.json'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        collection = Trakt['sync/ratings'].movies()
+    with HTTMock(mock.fixtures, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            collection = Trakt['sync/ratings'].movies()
 
     # Ensure collection is valid
     assert_that(collection, not_none())
@@ -66,18 +58,10 @@ def test_basic():
     }))
 
 
-@responses.activate
 def test_rating_filter():
-    responses.add_callback(
-        responses.GET, 'http://mock/sync/ratings/movies/8',
-        callback=authenticated_response('fixtures/sync/ratings/movies/8.json'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        collection = Trakt['sync/ratings'].movies(rating=8)
+    with HTTMock(mock.fixtures, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            collection = Trakt['sync/ratings'].movies(rating=8)
 
     # Ensure collection is valid
     assert_that(collection, not_none())

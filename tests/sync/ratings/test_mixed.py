@@ -1,27 +1,17 @@
 # flake8: noqa: F403, F405
 
-from tests.core.helpers import pagination_response
+from tests.core import mock
 from trakt import Trakt
 from trakt.objects import Movie, Show, Season, Episode
 
 from hamcrest import *
-import responses
+from httmock import HTTMock
 
 
-@responses.activate
 def test_basic():
-    responses.add_callback(
-        responses.GET, 'http://mock/sync/ratings',
-        callback=pagination_response(
-            'fixtures/sync/ratings.json',
-            authenticated=True
-        )
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        ratings = Trakt['sync/ratings'].get()
+    with HTTMock(mock.fixtures, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            ratings = Trakt['sync/ratings'].get()
 
     # Ensure collection is valid
     assert_that(ratings, not_none())

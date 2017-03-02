@@ -1,0 +1,71 @@
+[
+  {
+    "listed_at":"2015-06-24T08:15:33.000Z",
+    "type":"show",
+    "show":{
+      "title":"Game of Thrones",
+      "year":2011,
+      "ids":{
+        "trakt":1390,
+        "slug":"game-of-thrones",
+        "tvdb":121361,
+        "imdb":"tt0944947",
+        "tmdb":1399,
+        "tvrage":24493
+      }
+    }
+  },
+  {
+    "listed_at":"2015-06-24T08:15:43.000Z",
+    "type":"season",
+    "season":{
+      "number":5,
+      "ids":{
+        "trakt":3967,
+        "tvdb":null,
+        "tmdb":62090,
+        "tvrage":null
+      }
+    },
+    "show":{
+      "title":"Game of Thrones",
+      "year":2011,
+      "ids":{
+        "trakt":1390,
+        "slug":"game-of-thrones",
+        "tvdb":121361,
+        "imdb":"tt0944947",
+        "tmdb":1399,
+        "tvrage":24493
+      }
+    }
+  },
+  {
+    "listed_at":"2015-06-24T08:15:50.000Z",
+    "type":"episode",
+    "episode":{
+      "season":5,
+      "number":4,
+      "title":"Sons of the Harpy",
+      "ids":{
+        "trakt":1782362,
+        "tvdb":5150183,
+        "imdb":"tt3866838",
+        "tmdb":1045553,
+        "tvrage":1065765456
+      }
+    },
+    "show":{
+      "title":"Game of Thrones",
+      "year":2011,
+      "ids":{
+        "trakt":1390,
+        "slug":"game-of-thrones",
+        "tvdb":121361,
+        "imdb":"tt0944947",
+        "tmdb":1399,
+        "tvrage":24493
+      }
+    }
+  }
+]

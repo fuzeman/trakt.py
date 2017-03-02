@@ -1,0 +1,85 @@
+[
+  {
+    "liked_at": "2016-03-12T04:42:30.000Z",
+    "type": "comment",
+    "comment": {
+      "id": 1519,
+      "comment": "I fell asleep during this movie and then realized I needed to wake up two more times to sync with reality",
+      "spoiler": false,
+      "review": false,
+      "parent_id": 0,
+      "created_at": "2011-03-19T00:03:30.000Z",
+      "replies": 0,
+      "likes": 2,
+      "user_rating": null,
+      "user": {
+        "username": "jenn",
+        "private": false,
+        "name": "Jenn",
+        "vip": true,
+        "vip_ep": false
+      }
+    }
+  },
+  {
+    "liked_at": "2015-09-18T03:21:01.000Z",
+    "type": "list",
+    "list": {
+      "name": "Star Wars Machete",
+      "description": "<3",
+      "privacy": "public",
+      "display_numbers": false,
+      "allow_comments": false,
+      "sort_by": "rank",
+      "sort_how": "asc",
+      "created_at": "2015-07-12T10:42:19.000Z",
+      "updated_at": "2015-09-20T08:24:37.000Z",
+      "item_count": 5,
+      "comment_count": 0,
+      "likes": 2,
+      "ids": {
+        "trakt": 1238362,
+        "slug": "star-wars-machete"
+      },
+      "user": {
+        "username": "Solstickan",
+        "private": false,
+        "name": "Niklas Gunnar Solstickan Malmberg",
+        "vip": false,
+        "vip_ep": false
+      }
+    }
+  },
+  {
+    "liked_at": "2015-09-17T23:02:06.000Z",
+    "type": "list",
+    "list": {
+      "name": "Star Wars Timeline",
+      "description": "",
+      "privacy": "public",
+      "display_numbers": true,
+      "allow_comments": true,
+      "sort_by": "rank",
+      "sort_how": "asc",
+      "created_at": "2014-05-08T12:17:54.000Z",
+      "updated_at": "2016-03-11T12:05:02.000Z",
+      "item_count": 168,
+      "comment_count": 3,
+      "likes": 169,
+      "ids": {
+        "trakt": 840781,
+        "slug": "star-wars-timeline"
+      },
+      "user": {
+        "username": "Schnips_El",
+        "private": false,
+        "name": null,
+        "vip": false,
+        "vip_ep": false
+      }
+    }
+  },
+  {
+    "type": "invalid"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "collected_at": "2014-01-20T07:04:04.000Z",
+    "movie": {
+      "title": "100 Bloody Acres",
+      "year": 2012,
+      "ids": {
+        "trakt": 86920,
+        "slug": "100-bloody-acres-2012",
+        "imdb": "tt2290065",
+        "tmdb": 126757
+      }
+    }
+  },
+  {
+    "collected_at": "2014-09-28T22:45:23.000Z",
+    "movie": {
+      "title": "TRON: Legacy",
+      "year": 2010,
+      "ids": {
+        "trakt": 12601,
+        "slug": "tron-legacy-2010",
+        "imdb": "tt1104001",
+        "tmdb": 20526
+      }
+    }
+  }
+]

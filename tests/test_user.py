@@ -1,26 +1,19 @@
-from tests.core.helpers import read
+from tests.core import mock
 from trakt import Trakt
 
+from httmock import HTTMock
 import pytest
-import responses
 
 
-@responses.activate
 def test_likes():
-    responses.add(
-        responses.GET, 'http://mock/users/likes',
-        body=read('fixtures/users/likes.json'), status=200,
-        content_type='application/json'
-    )
+    with HTTMock(mock.fixtures, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            likes = Trakt['users'].likes()
+            assert likes is not None
 
-    Trakt.base_url = 'http://mock'
+            likes = list(likes)
 
-    with Trakt.configuration.auth('mock', 'mock'):
-        likes = Trakt['users'].likes()
-        assert likes is not None
-
-        likes = list(likes)
-        assert len(likes) is 3
+    assert len(likes) is 3
 
     assert likes[0].keys == [
         ('trakt', 1519)
@@ -37,28 +30,20 @@ def test_likes():
     ]
 
 
-@responses.activate
 def test_likes_invalid_response():
-    responses.add(
-        responses.GET, 'http://mock/users/likes',
-        body='Not Found', status=404,
-        content_type='text/html'
-    )
+    with HTTMock(mock.fixtures, mock.unknown):
+        likes = Trakt['users'].likes()
+        assert likes is not None
 
-    Trakt.base_url = 'http://mock'
+        likes = list(likes)
 
-    likes = Trakt['users'].likes()
-    assert likes is not None
-
-    likes = list(likes)
     assert len(likes) is 0
 
 
 def test_likes_invalid_type():
-    Trakt.base_url = 'http://mock'
+    with HTTMock(mock.fixtures, mock.unknown):
+        with pytest.raises(ValueError):
+            likes = Trakt['users'].likes('invalid')
+            assert likes is not None
 
-    with pytest.raises(ValueError):
-        likes = Trakt['users'].likes('invalid')
-        assert likes is not None
-
-        likes = list(likes)
+            likes = list(likes)

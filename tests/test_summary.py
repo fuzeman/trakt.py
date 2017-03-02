@@ -1,21 +1,12 @@
-from tests.core.helpers import read
+from tests.core import mock
 from trakt import Trakt
 
-from six.moves.urllib_parse import parse_qsl, urlparse
-import responses
+from httmock import HTTMock
 
 
-@responses.activate
 def test_movie():
-    responses.add(
-        responses.GET, 'http://mock/movies/tron-legacy-2010',
-        body=read('fixtures/movies/tron-legacy-2010.json'), status=200,
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    movie = Trakt['movies'].get('tron-legacy-2010')
+    with HTTMock(mock.fixtures, mock.unknown):
+        movie = Trakt['movies'].get('tron-legacy-2010')
 
     assert movie.title == 'TRON: Legacy'
     assert movie.year == 2010
@@ -30,31 +21,16 @@ def test_movie():
     ]
 
 
-@responses.activate
 def test_movie_not_found():
-    responses.add(
-        responses.GET, 'http://mock/movies/tron-fake-2010',
-        body='Not Found', status=404,
-        content_type='text/html'
-    )
+    with HTTMock(mock.fixtures, mock.unknown):
+        movie = Trakt['movies'].get('not-found-4040')
 
-    Trakt.base_url = 'http://mock'
-
-    movie = Trakt['movies'].get('tron-fake-2010')
     assert movie is None
 
 
-@responses.activate
 def test_show():
-    responses.add(
-        responses.GET, 'http://mock/shows/1390',
-        body=read('fixtures/shows/1390.json'), status=200,
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    show = Trakt['shows'].get(1390)
+    with HTTMock(mock.fixtures, mock.unknown):
+        show = Trakt['shows'].get(1390)
 
     assert show.title == 'Game of Thrones'
     assert show.year == 2011
@@ -70,33 +46,18 @@ def test_show():
     ]
 
 
-@responses.activate
 def test_show_not_found():
-    responses.add(
-        responses.GET, 'http://mock/shows/0',
-        body='Not Found', status=404,
-        content_type='text/html'
-    )
+    with HTTMock(mock.fixtures, mock.unknown):
+        show = Trakt['shows'].get(0)
 
-    Trakt.base_url = 'http://mock'
-
-    show = Trakt['shows'].get(0)
     assert show is None
 
 
-@responses.activate
 def test_seasons():
-    responses.add(
-        responses.GET, 'http://mock/shows/tt0944947/seasons',
-        body=read('fixtures/shows/tt0944947/seasons.json'), status=200,
-        content_type='application/json'
-    )
+    with HTTMock(mock.fixtures, mock.unknown):
+        seasons = Trakt['shows'].seasons('tt0944947')
 
-    Trakt.base_url = 'http://mock'
-
-    seasons = Trakt['shows'].seasons('tt0944947')
-
-    assert len(seasons) == 6
+    assert len(seasons) == 7
 
     assert seasons[0].pk == 0
     assert seasons[0].keys == [
@@ -109,33 +70,17 @@ def test_seasons():
     assert seasons[5].pk == 5
     assert seasons[5].keys == [
         5,
+        ('tvdb', '607490'),
         ('tmdb', '62090'),
         ('trakt', '3967')
     ]
 
 
-@responses.activate
 def test_seasons_extended():
-    def callback(request):
-        uri = urlparse(request.url)
-        parameters = dict(parse_qsl(uri.query))
+    with HTTMock(mock.fixtures, mock.unknown):
+        seasons = Trakt['shows'].seasons('tt0944947', extended='episodes')
 
-        if parameters.get('extended') != 'episodes':
-            return 400, {}, None
-
-        return 200, {}, read('fixtures/shows/tt0944947/seasons_extended.json')
-
-    responses.add_callback(
-        responses.GET, 'http://mock/shows/tt0944947/seasons',
-        callback=callback,
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    seasons = Trakt['shows'].seasons('tt0944947', extended='episodes')
-
-    assert len(seasons) == 6
+    assert len(seasons) == 7
 
     # Specials
     assert seasons[0].pk == 0
@@ -146,7 +91,7 @@ def test_seasons_extended():
         ('trakt', '3962')
     ]
 
-    assert len(seasons[0].episodes) == 14
+    assert len(seasons[0].episodes) == 23
 
     assert seasons[0].episodes[5].pk == (0, 5)
     assert seasons[0].episodes[5].title == '2011 Comic Con Panel'
@@ -158,6 +103,7 @@ def test_seasons_extended():
     assert seasons[5].pk == 5
     assert seasons[5].keys == [
         5,
+        ('tvdb', '607490'),
         ('tmdb', '62090'),
         ('trakt', '3967')
     ]
@@ -171,17 +117,9 @@ def test_seasons_extended():
     assert seasons[5].episodes[9].title == 'The Dance of Dragons'
 
 
-@responses.activate
 def test_season():
-    responses.add(
-        responses.GET, 'http://mock/shows/game-of-thrones/seasons/1',
-        body=read('fixtures/shows/game-of-thrones/seasons/1.json'), status=200,
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    episodes = Trakt['shows'].season('game-of-thrones', 1)
+    with HTTMock(mock.fixtures, mock.unknown):
+        episodes = Trakt['shows'].season('game-of-thrones', 1)
 
     assert len(episodes) == 10
 
@@ -208,31 +146,16 @@ def test_season():
     ]
 
 
-@responses.activate
 def test_season_not_found():
-    responses.add(
-        responses.GET, 'http://mock/shows/fake-show/seasons/1',
-        body='Not Found', status=404,
-        content_type='text/html'
-    )
+    with HTTMock(mock.fixtures, mock.unknown):
+        season = Trakt['shows'].season('not-found-4040', 1)
 
-    Trakt.base_url = 'http://mock'
-
-    season = Trakt['shows'].season('fake-show', 1)
     assert season is None
 
 
-@responses.activate
 def test_episode_basic():
-    responses.add(
-        responses.GET, 'http://mock/shows/game-of-thrones/seasons/1/episodes/1',
-        body=read('fixtures/shows/game-of-thrones/seasons/1/episodes/1.json'), status=200,
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    episode = Trakt['shows'].episode('game-of-thrones', 1, 1)
+    with HTTMock(mock.fixtures, mock.unknown):
+        episode = Trakt['shows'].episode('game-of-thrones', 1, 1)
 
     assert episode.title == 'Winter Is Coming'
     assert episode.pk == (1, 1)
@@ -246,31 +169,16 @@ def test_episode_basic():
     ]
 
 
-@responses.activate
 def test_episode_not_found():
-    responses.add(
-        responses.GET, 'http://mock/shows/fake-show/seasons/1/episodes/1',
-        body='{"error": "not found"}', status=404,
-        content_type='application/json'
-    )
+    with HTTMock(mock.fixtures, mock.unknown):
+        episode = Trakt['shows'].episode('not-found-4040', 1, 1)
 
-    Trakt.base_url = 'http://mock'
-
-    episode = Trakt['shows'].episode('fake-show', 1, 1)
     assert episode is None
 
 
-@responses.activate
 def test_episode_proxy():
-    responses.add(
-        responses.GET, 'http://mock/shows/game-of-thrones/seasons/1/episodes/1',
-        body=read('fixtures/shows/game-of-thrones/seasons/1/episodes/1.json'), status=200,
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    episode = Trakt['shows/game-of-thrones'].episode(1, 1)
+    with HTTMock(mock.fixtures, mock.unknown):
+        episode = Trakt['shows/game-of-thrones'].episode(1, 1)
 
     assert episode.title == 'Winter Is Coming'
     assert episode.pk == (1, 1)

@@ -1,12 +1,12 @@
-from tests.core.helpers import assert_url, authenticated_response
+from tests.core import mock
+from tests.core.helpers import assert_url
 from trakt import Trakt, TraktClient
 
+from httmock import HTTMock
 from threading import Event
 import calendar
 import datetime
-import json
 import pytest
-import responses
 
 
 def test_authorize_url():
@@ -43,261 +43,124 @@ def test_pin_url():
         Trakt['oauth'].pin_url()
 
 
-@responses.activate
 def test_token():
-    expected_request = {
-        'client_secret': 'mock-client_secret',
-        'code': 'ABCD1234',
-        'redirect_uri': 'urn:ietf:wg:oauth:2.0:oob',
-        'client_id': 'mock-client_id',
-        'grant_type': 'authorization_code'
-    }
+    with HTTMock(mock.fixtures, mock.unknown):
+        # Validate `token_exchange` request/response
+        with Trakt.configuration.client('mock-client_id', 'mock-client_secret'):
+            assert Trakt['oauth'].token('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob') == {
+                "access_token": "mock-access_token",
+                "token_type": "bearer",
+                "expires_in": 7200,
+                "refresh_token": "mock-refresh_token",
+                "scope": "public"
+            }
 
-    def callback(request):
-        data = json.loads(request.body)
-
-        if data != expected_request:
-            return 403, {}, ''
-
-        return 200, {}, json.dumps({
-            "access_token": "mock-access_token",
-            "token_type": "bearer",
-            "expires_in": 7200,
-            "refresh_token": "mock-refresh_token",
-            "scope": "public"
-        })
-
-    responses.add_callback(
-        responses.POST, 'http://api.mock/oauth/token',
-        callback=callback,
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://api.mock'
-
-    # Validate `token_exchange` request/response
-    with Trakt.configuration.client('mock-client_id', 'mock-client_secret'):
-        assert Trakt['oauth'].token('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob') == {
-            "access_token": "mock-access_token",
-            "token_type": "bearer",
-            "expires_in": 7200,
-            "refresh_token": "mock-refresh_token",
-            "scope": "public"
-        }
-
-    # Ensure `token_exchange` raises a `ValueError` on incorrect configuration
-    with pytest.raises(ValueError):
-        assert Trakt['oauth'].token('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob')
+        # Ensure `token_exchange` raises a `ValueError` on incorrect configuration
+        with pytest.raises(ValueError):
+            assert Trakt['oauth'].token('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob')
 
 
-@responses.activate
 def test_token_exchange():
-    expected_request = {
-        'client_secret': 'mock-client_secret',
-        'code': 'ABCD1234',
-        'redirect_uri': 'urn:ietf:wg:oauth:2.0:oob',
-        'client_id': 'mock-client_id',
-        'grant_type': 'authorization_code'
-    }
+    with HTTMock(mock.fixtures, mock.unknown):
+        # Validate `token_exchange` request/response
+        with Trakt.configuration.client('mock-client_id', 'mock-client_secret'):
+            assert Trakt['oauth'].token_exchange('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob') == {
+                "access_token": "mock-access_token",
+                "token_type": "bearer",
+                "expires_in": 7200,
+                "refresh_token": "mock-refresh_token",
+                "scope": "public"
+            }
 
-    def callback(request):
-        data = json.loads(request.body)
-
-        if data != expected_request:
-            return 403, {}, ''
-
-        return 200, {}, json.dumps({
-            "access_token": "mock-access_token",
-            "token_type": "bearer",
-            "expires_in": 7200,
-            "refresh_token": "mock-refresh_token",
-            "scope": "public"
-        })
-
-    responses.add_callback(
-        responses.POST, 'http://api.mock/oauth/token',
-        callback=callback,
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://api.mock'
-
-    # Validate `token_exchange` request/response
-    with Trakt.configuration.client('mock-client_id', 'mock-client_secret'):
-        assert Trakt['oauth'].token_exchange('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob') == {
-            "access_token": "mock-access_token",
-            "token_type": "bearer",
-            "expires_in": 7200,
-            "refresh_token": "mock-refresh_token",
-            "scope": "public"
-        }
-
-    # Ensure `token_exchange` raises a `ValueError` on incorrect configuration
-    with pytest.raises(ValueError):
-        assert Trakt['oauth'].token_exchange('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob')
+        # Ensure `token_exchange` raises a `ValueError` on incorrect configuration
+        with pytest.raises(ValueError):
+            assert Trakt['oauth'].token_exchange('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob')
 
 
-@responses.activate
 def test_token_refresh():
-    expected_request = {
-        'client_secret': 'mock-client_secret',
-        'redirect_uri': 'urn:ietf:wg:oauth:2.0:oob',
-        'client_id': 'mock-client_id',
-        'refresh_token': 'mock-refresh_token',
-        'grant_type': 'refresh_token'
-    }
+    with HTTMock(mock.fixtures, mock.unknown):
+        # Validate `token_exchange` request/response
+        with Trakt.configuration.client('mock-client_id', 'mock-client_secret'):
+            assert Trakt['oauth'].token_refresh('mock-refresh_token', 'urn:ietf:wg:oauth:2.0:oob') == {
+                "access_token": "mock-access_token",
+                "token_type": "bearer",
+                "expires_in": 7200,
+                "refresh_token": "mock-refresh_token",
+                "scope": "public"
+            }
 
-    def callback(request):
-        data = json.loads(request.body)
-
-        if data != expected_request:
-            return 403, {}, ''
-
-        return 200, {}, json.dumps({
-            "access_token": "mock-access_token",
-            "token_type": "bearer",
-            "expires_in": 7200,
-            "refresh_token": "mock-refresh_token",
-            "scope": "public"
-        })
-
-    responses.add_callback(
-        responses.POST, 'http://api.mock/oauth/token',
-        callback=callback,
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://api.mock'
-
-    # Validate `token_exchange` request/response
-    with Trakt.configuration.client('mock-client_id', 'mock-client_secret'):
-        assert Trakt['oauth'].token_refresh('mock-refresh_token', 'urn:ietf:wg:oauth:2.0:oob') == {
-            "access_token": "mock-access_token",
-            "token_type": "bearer",
-            "expires_in": 7200,
-            "refresh_token": "mock-refresh_token",
-            "scope": "public"
-        }
-
-    # Ensure `token_exchange` raises a `ValueError` on incorrect configuration
-    with pytest.raises(ValueError):
-        assert Trakt['oauth'].token_refresh('mock-refresh_token', 'urn:ietf:wg:oauth:2.0:oob')
+        # Ensure `token_exchange` raises a `ValueError` on incorrect configuration
+        with pytest.raises(ValueError):
+            assert Trakt['oauth'].token_refresh('mock-refresh_token', 'urn:ietf:wg:oauth:2.0:oob')
 
 
-@responses.activate
 def test_request():
-    responses.add_callback(
-        responses.GET, 'http://mock/sync/collection/movies',
-        callback=authenticated_response('fixtures/sync/collection/movies.json'),
-        content_type='application/json'
-    )
-
-    def callback(request):
-        return 200, {}, json.dumps({
+    with HTTMock(mock.fixtures, mock.unknown):
+        # Mock authorization
+        authorization = {
             "access_token": "mock",
             "token_type": "bearer",
             "created_at": calendar.timegm(datetime.datetime.utcnow().utctimetuple()),
             "expires_in": 7 * 24 * 60 * 60,
             "refresh_token": "mock-refresh_token",
             "scope": "public"
-        })
+        }
 
-    responses.add_callback(
-        responses.POST, 'http://mock/oauth/token',
-        callback=callback,
-        content_type='application/json'
-    )
+        # Test valid token
+        with Trakt.configuration.oauth.from_response(authorization):
+            assert Trakt['sync/collection'].movies() is not None
 
-    Trakt.base_url = 'http://mock'
+        # Test expired token
+        authorization['expires_in'] = 0
 
-    # Mock authorization
-    authorization = {
-        "access_token": "mock",
-        "token_type": "bearer",
-        "created_at": calendar.timegm(datetime.datetime.utcnow().utctimetuple()),
-        "expires_in": 7 * 24 * 60 * 60,
-        "refresh_token": "mock-refresh_token",
-        "scope": "public"
-    }
+        with Trakt.configuration.oauth.from_response(authorization):
+            assert Trakt['sync/collection'].movies() is None
 
-    # Test valid token
-    with Trakt.configuration.oauth.from_response(authorization):
-        assert Trakt['sync/collection'].movies() is not None
-
-    # Test expired token
-    authorization['expires_in'] = 0
-
-    with Trakt.configuration.oauth.from_response(authorization):
-        assert Trakt['sync/collection'].movies() is None
-
-    # Test token refreshing
-    with Trakt.configuration\
-            .client('mock', 'mock')\
-            .oauth.from_response(authorization, refresh=True):
-        assert Trakt['sync/collection'].movies() is not None
+        # Test token refreshing
+        with Trakt.configuration\
+                .client('mock', 'mock')\
+                .oauth.from_response(authorization, refresh=True):
+            assert Trakt['sync/collection'].movies() is not None
 
 
-@responses.activate
 def test_refresh_deadlock():
-    responses.add_callback(
-        responses.GET, 'http://mock/sync/collection/movies',
-        callback=authenticated_response('fixtures/sync/collection/movies.json'),
-        content_type='application/json'
-    )
+    with HTTMock(mock.fixtures, mock.unknown):
+        # Construct client
+        client = TraktClient()
 
-    def callback(request):
-        return 200, {}, json.dumps({
+        # Configure client
+        client.configuration.defaults.client(
+            id='mock',
+            secret='mock'
+        )
+
+        # Bind to events
+        refreshed = Event()
+        looped = Event()
+
+        @client.on('oauth.refresh')
+        def on_token_refreshed(username, authorization):
+            if refreshed.is_set():
+                looped.set()
+                return
+
+            refreshed.set()
+
+            # Test refresh recursion
+            assert client['sync/collection'].movies() is None
+
+        # Attempt request with expired authorization
+        expired_authorization = {
             "access_token": "mock",
             "token_type": "bearer",
             "created_at": calendar.timegm(datetime.datetime.utcnow().utctimetuple()),
-            "expires_in": 7200,
+            "expires_in": 0,
             "refresh_token": "mock",
             "scope": "public"
-        })
+        }
 
-    responses.add_callback(
-        responses.POST, 'http://mock/oauth/token',
-        callback=callback,
-        content_type='application/json'
-    )
+        with client.configuration.oauth.from_response(expired_authorization, refresh=True, username='mock'):
+            assert client['sync/collection'].movies() is not None
 
-    # Construct client
-    client = TraktClient()
-    client.base_url = 'http://mock'
-
-    # Configure client
-    client.configuration.defaults.client(
-        id='mock',
-        secret='mock'
-    )
-
-    # Bind to events
-    refreshed = Event()
-    looped = Event()
-
-    @client.on('oauth.refresh')
-    def on_token_refreshed(username, authorization):
-        if refreshed.is_set():
-            looped.set()
-            return
-
-        refreshed.set()
-
-        # Test refresh recursion
-        assert client['sync/collection'].movies() is None
-
-    # Attempt request with expired authorization
-    expired_authorization = {
-        "access_token": "mock",
-        "token_type": "bearer",
-        "created_at": calendar.timegm(datetime.datetime.utcnow().utctimetuple()),
-        "expires_in": 0,
-        "refresh_token": "mock",
-        "scope": "public"
-    }
-
-    with client.configuration.oauth.from_response(expired_authorization, refresh=True, username='mock'):
-        assert client['sync/collection'].movies() is not None
-
-    # Ensure requests inside "oauth.refresh" don't cause refresh loops
-    assert not looped.is_set()
+        # Ensure requests inside "oauth.refresh" don't cause refresh loops
+        assert not looped.is_set()

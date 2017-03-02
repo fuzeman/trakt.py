@@ -1,45 +1,37 @@
-from tests.core.helpers import authenticated_response
+from tests.core import mock
 from trakt import Trakt
 
 from datetime import datetime
 from dateutil.tz import tzutc
-import responses
+from httmock import HTTMock
 
 
-@responses.activate
 def test_basic():
-    responses.add_callback(
-        responses.GET, 'http://mock/users/me/lists',
-        callback=authenticated_response('fixtures/users/me/lists.json'),
-        content_type='application/json'
-    )
+    with HTTMock(mock.fixtures, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            lists = Trakt['users/me/lists'].get()
 
-    Trakt.base_url = 'http://mock'
+            assert lists is not None
 
-    with Trakt.configuration.auth('mock', 'mock'):
-        lists = Trakt['users/me/lists'].get()
-
-        assert lists is not None
-
-        # Resolve lists
-        lists = list(lists)
+            # Resolve lists
+            lists = list(lists)
 
     # Validate list container
-    assert len(lists) == 1
+    assert len(lists) == 37
 
     # Validate movies list
-    movies_list = lists[0]
+    movies = lists[0]
 
-    assert movies_list.name == 'Movies'
-    assert movies_list.description is None
-    assert movies_list.likes == 0
+    assert movies.name == 'Movies'
+    assert movies.description is None
+    assert movies.likes == 0
 
-    assert movies_list.allow_comments is True
-    assert movies_list.display_numbers is False
+    assert movies.allow_comments is True
+    assert movies.display_numbers is False
 
-    assert movies_list.updated_at == datetime(2015, 6, 22, 2, 25, tzinfo=tzutc())
+    assert movies.updated_at == datetime(2015, 6, 22, 2, 25, tzinfo=tzutc())
 
-    assert movies_list.comment_count == 0
-    assert movies_list.item_count == 2
+    assert movies.comment_count == 0
+    assert movies.item_count == 2
 
-    assert movies_list.privacy == 'private'
+    assert movies.privacy == 'private'

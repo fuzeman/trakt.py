@@ -1,0 +1,282 @@
+[
+    {
+        "episode": {
+            "ids": {
+                "imdb": "tt4164812",
+                "tmdb": 1074560,
+                "trakt": 1532771,
+                "tvdb": 5212146,
+                "tvrage": 1065821312
+            },
+            "number": 4,
+            "season": 5,
+            "title": "Pope Breaks Bad"
+        },
+        "score": 122.190025,
+        "show": {
+            "ids": {
+                "imdb": "tt1462059",
+                "slug": "falling-skies",
+                "tmdb": 34967,
+                "trakt": 34818,
+                "tvdb": 205281,
+                "tvrage": 26205
+            },
+            "title": "Falling Skies",
+            "year": 2011
+        },
+        "type": "episode"
+    },
+    {
+        "episode": {
+            "ids": {
+                "imdb": null,
+                "tmdb": 0,
+                "trakt": 76330,
+                "tvdb": 4575924,
+                "tvrage": null
+            },
+            "number": 10,
+            "season": 2013,
+            "title": "Breaking Bad Special"
+        },
+        "score": 24.123692,
+        "show": {
+            "ids": {
+                "imdb": "tt0383126",
+                "slug": "mythbusters",
+                "tmdb": 1428,
+                "trakt": 1419,
+                "tvdb": 73388,
+                "tvrage": 4605
+            },
+            "title": "MythBusters",
+            "year": 2003
+        },
+        "type": "episode"
+    },
+    {
+        "episode": {
+            "ids": {
+                "imdb": "tt2573086",
+                "tmdb": 883071,
+                "trakt": 890052,
+                "tvdb": 4453126,
+                "tvrage": 0
+            },
+            "number": 4,
+            "season": 2,
+            "title": "Charlie's Dad Breaks Bad"
+        },
+        "score": 22.002064,
+        "show": {
+            "ids": {
+                "imdb": "tt1986770",
+                "slug": "anger-management",
+                "tmdb": 42878,
+                "trakt": 42652,
+                "tvdb": 253350,
+                "tvrage": null
+            },
+            "title": "Anger Management",
+            "year": 2012
+        },
+        "type": "episode"
+    },
+    {
+        "episode": {
+            "ids": {
+                "imdb": null,
+                "tmdb": null,
+                "trakt": 1198313,
+                "tvdb": 4607734,
+                "tvrage": null
+            },
+            "number": 1,
+            "season": 1,
+            "title": "Breaking Bad"
+        },
+        "score": 3.5203302,
+        "show": {
+            "ids": {
+                "imdb": "tt3059532",
+                "slug": "the-writers-room",
+                "tmdb": null,
+                "trakt": 71683,
+                "tvdb": 271327,
+                "tvrage": null
+            },
+            "title": "The Writers' Room",
+            "year": 2013
+        },
+        "type": "episode"
+    },
+    {
+        "episode": {
+            "ids": {
+                "imdb": null,
+                "tmdb": 1116839,
+                "trakt": 1578247,
+                "tvdb": 4858421,
+                "tvrage": 0
+            },
+            "number": 1,
+            "season": 12,
+            "title": "Breaking Bad Girls"
+        },
+        "score": 1.7287335,
+        "show": {
+            "ids": {
+                "imdb": "tt0914829",
+                "slug": "bad-girls-club",
+                "tmdb": 4940,
+                "trakt": 4914,
+                "tvdb": 134161,
+                "tvrage": 14714
+            },
+            "title": "Bad Girls Club",
+            "year": 2006
+        },
+        "type": "episode"
+    },
+    {
+        "episode": {
+            "ids": {
+                "imdb": "tt2676388",
+                "tmdb": 62941,
+                "trakt": 67719,
+                "tvdb": 4473865,
+                "tvrage": 0
+            },
+            "number": 16,
+            "season": 8,
+            "title": "Bad Crazy"
+        },
+        "score": 1.5032781,
+        "show": {
+            "ids": {
+                "imdb": "tt0460649",
+                "slug": "how-i-met-your-mother",
+                "tmdb": 1100,
+                "trakt": 1095,
+                "tvdb": 75760,
+                "tvrage": 3918
+            },
+            "title": "How I Met Your Mother",
+            "year": 2005
+        },
+        "type": "episode"
+    },
+    {
+        "episode": {
+            "ids": {
+                "imdb": "tt2301455",
+                "tmdb": 62161,
+                "trakt": 73543,
+                "tvdb": 4553042,
+                "tvrage": 0
+            },
+            "number": 16,
+            "season": 5,
+            "title": "Felina"
+        },
+        "score": 1.2728773,
+        "show": {
+            "ids": {
+                "imdb": "tt0903747",
+                "slug": "breaking-bad",
+                "tmdb": 1396,
+                "trakt": 1388,
+                "tvdb": 81189,
+                "tvrage": 18164
+            },
+            "title": "Breaking Bad",
+            "year": 2008
+        },
+        "type": "episode"
+    },
+    {
+        "episode": {
+            "ids": {
+                "imdb": "tt2301451",
+                "tmdb": 62162,
+                "trakt": 73541,
+                "tvdb": 4553040,
+                "tvrage": 0
+            },
+            "number": 14,
+            "season": 5,
+            "title": "Ozymandias"
+        },
+        "score": 1.1314209,
+        "show": {
+            "ids": {
+                "imdb": "tt0903747",
+                "slug": "breaking-bad",
+                "tmdb": 1396,
+                "trakt": 1388,
+                "tvdb": 81189,
+                "tvrage": 18164
+            },
+            "title": "Breaking Bad",
+            "year": 2008
+        },
+        "type": "episode"
+    },
+    {
+        "episode": {
+            "ids": {
+                "imdb": "tt0959621",
+                "tmdb": 62085,
+                "trakt": 73482,
+                "tvdb": 349232,
+                "tvrage": 637041
+            },
+            "number": 1,
+            "season": 1,
+            "title": "Pilot"
+        },
+        "score": 1.1256235,
+        "show": {
+            "ids": {
+                "imdb": "tt0903747",
+                "slug": "breaking-bad",
+                "tmdb": 1396,
+                "trakt": 1388,
+                "tvdb": 81189,
+                "tvrage": 18164
+            },
+            "title": "Breaking Bad",
+            "year": 2008
+        },
+        "type": "episode"
+    },
+    {
+        "episode": {
+            "ids": {
+                "imdb": "tt2301449",
+                "tmdb": 62157,
+                "trakt": 73540,
+                "tvdb": 4553039,
+                "tvrage": 0
+            },
+            "number": 13,
+            "season": 5,
+            "title": "To'hajiilee"
+        },
+        "score": 1.0210383,
+        "show": {
+            "ids": {
+                "imdb": "tt0903747",
+                "slug": "breaking-bad",
+                "tmdb": 1396,
+                "trakt": 1388,
+                "tvdb": 81189,
+                "tvrage": 18164
+            },
+            "title": "Breaking Bad",
+            "year": 2008
+        },
+        "type": "episode"
+    }
+]

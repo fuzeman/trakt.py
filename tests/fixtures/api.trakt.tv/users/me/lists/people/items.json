@@ -1,0 +1,30 @@
+[
+  {
+    "listed_at": "2014-06-17T06:52:03.000Z",
+    "type": "person",
+    "person": {
+      "name": "Bryan Cranston",
+      "ids": {
+        "trakt": 1,
+        "slug": "bryan-cranston",
+        "imdb": "nm0186505",
+        "tmdb": 17419,
+        "tvrage": 1797
+      }
+    }
+  },
+  {
+    "listed_at": "2014-06-17T06:52:03.000Z",
+    "type": "person",
+    "person": {
+      "name": "Aaron Paul",
+      "ids": {
+        "trakt": 415249,
+        "slug": "aaron-paul",
+        "imdb": "nm0666739",
+        "tmdb": 84497,
+        "tvrage": 1823
+      }
+    }
+  }
+]

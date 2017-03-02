@@ -1,0 +1,88 @@
+[
+  {
+    "rated_at": "2014-09-01T09:10:11.000Z",
+    "rating": 10,
+    "type": "movie",
+    "movie": {
+      "title": "TRON: Legacy",
+      "year": 2010,
+      "ids": {
+        "trakt": 1,
+        "slug": "tron-legacy-2010",
+        "imdb": "tt1104001",
+        "tmdb": 20526
+      }
+    }
+  },
+  {
+    "rated_at": "2014-09-01T09:10:11.000Z",
+    "rating": 10,
+    "type": "show",
+    "show": {
+      "title": "Breaking Bad",
+      "year": 2008,
+      "ids": {
+        "trakt": 1,
+        "slug": "breaking-bad",
+        "tvdb": 81189,
+        "imdb": "tt0903747",
+        "tmdb": 1396,
+        "tvrage": 18164
+      }
+    }
+  },
+  {
+    "rated_at": "2014-09-01T09:10:11.000Z",
+    "rating": 8,
+    "type": "season",
+    "season": {
+      "number": 0,
+      "ids": {
+        "tvdb": 439371,
+        "tmdb": 3577,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Breaking Bad",
+      "year": 2008,
+      "ids": {
+        "trakt": 1,
+        "slug": "breaking-bad",
+        "tvdb": 81189,
+        "imdb": "tt0903747",
+        "tmdb": 1396,
+        "tvrage": 18164
+      }
+    }
+  },
+  {
+    "rated_at": "2014-09-01T09:10:11.000Z",
+    "rating": 10,
+    "type": "episode",
+    "episode": {
+      "season": 4,
+      "number": 1,
+      "title": "Box Cutter",
+      "ids": {
+        "trakt": 49,
+        "tvdb": 2639411,
+        "imdb": "tt1683084",
+        "tmdb": 62118,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Breaking Bad",
+      "year": 2008,
+      "ids": {
+        "trakt": 1,
+        "slug": "breaking-bad",
+        "tvdb": 81189,
+        "imdb": "tt0903747",
+        "tmdb": 1396,
+        "tvrage": 18164
+      }
+    }
+  }
+]

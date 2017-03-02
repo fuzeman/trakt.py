@@ -1,0 +1,170 @@
+[
+  {
+    "rated_at": "2015-01-17T04:35:22.000Z",
+    "rating": 6,
+    "episode": {
+      "season": 3,
+      "number": 1,
+      "title": "The Man From Jupiter",
+      "ids": {
+        "trakt": 430778,
+        "tvdb": 4171788,
+        "imdb": "",
+        "tmdb": 1033747,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Archer",
+      "year": 2009,
+      "ids": {
+        "trakt": 10234,
+        "slug": "archer",
+        "tvdb": 110381,
+        "imdb": "tt1486217",
+        "tmdb": 10283,
+        "tvrage": 23354
+      }
+    }
+  },
+  {
+    "rated_at": "2015-01-07T08:31:54.000Z",
+    "rating": 10,
+    "episode": {
+      "season": 4,
+      "number": 1,
+      "title": "Fun Run (1)",
+      "ids": {
+        "trakt": 182068,
+        "tvdb": 335408,
+        "imdb": "",
+        "tmdb": 170244,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "The Office",
+      "year": 2005,
+      "ids": {
+        "trakt": 2302,
+        "slug": "the-office",
+        "tvdb": 73244,
+        "imdb": "tt0386676",
+        "tmdb": 2316,
+        "tvrage": null
+      }
+    }
+  },
+  {
+    "rated_at": "2015-01-07T08:31:54.000Z",
+    "rating": 10,
+    "episode": {
+      "season": 4,
+      "number": 2,
+      "title": "Fun Run (2)",
+      "ids": {
+        "trakt": 182069,
+        "tvdb": 4075826,
+        "imdb": "",
+        "tmdb": 170245,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "The Office",
+      "year": 2005,
+      "ids": {
+        "trakt": 2302,
+        "slug": "the-office",
+        "tvdb": 73244,
+        "imdb": "tt0386676",
+        "tmdb": 2316,
+        "tvrage": null
+      }
+    }
+  },
+  {
+    "rated_at": "2014-10-19T23:02:24.000Z",
+    "rating": 10,
+    "episode": {
+      "season": 1,
+      "number": 1,
+      "title": "Chuck Versus the Intersect",
+      "ids": {
+        "trakt": 74041,
+        "tvdb": 332179,
+        "imdb": "",
+        "tmdb": 63425,
+        "tvrage": 579282
+      }
+    },
+    "show": {
+      "title": "Chuck",
+      "year": 2007,
+      "ids": {
+        "trakt": 1395,
+        "slug": "chuck",
+        "tvdb": 80348,
+        "imdb": "tt0934814",
+        "tmdb": 1404,
+        "tvrage": 15614
+      }
+    }
+  },
+  {
+    "rated_at": "2014-10-19T23:02:24.000Z",
+    "rating": 7,
+    "episode": {
+      "season": 1,
+      "number": 1,
+      "title": "Pilot",
+      "ids": {
+        "trakt": 342369,
+        "tvdb": 308865,
+        "imdb": "tt0849809",
+        "tmdb": 334072,
+        "tvrage": 436648
+      }
+    },
+    "show": {
+      "title": "30 Rock",
+      "year": 2006,
+      "ids": {
+        "trakt": 4584,
+        "slug": "30-rock",
+        "tvdb": 79488,
+        "imdb": "tt0496424",
+        "tmdb": 4608,
+        "tvrage": 11215
+      }
+    }
+  },
+  {
+    "rated_at": "2014-10-19T23:02:24.000Z",
+    "rating": 10,
+    "episode": {
+      "season": 1,
+      "number": 3,
+      "title": "Blind Date",
+      "ids": {
+        "trakt": 342371,
+        "tvdb": 308867,
+        "imdb": "tt0865981",
+        "tmdb": 334074,
+        "tvrage": 444588
+      }
+    },
+    "show": {
+      "title": "30 Rock",
+      "year": 2006,
+      "ids": {
+        "trakt": 4584,
+        "slug": "30-rock",
+        "tvdb": 79488,
+        "imdb": "tt0496424",
+        "tmdb": 4608,
+        "tvrage": 11215
+      }
+    }
+  }
+]

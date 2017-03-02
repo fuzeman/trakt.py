@@ -1,0 +1,52 @@
+[
+  {
+    "rated_at": "2015-03-11T23:29:35.000Z",
+    "rating": 10,
+    "season": {
+      "number": 1,
+      "ids": {
+        "trakt": 3993,
+        "tvdb": 27985,
+        "tmdb": 3650,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Chuck",
+      "year": 2007,
+      "ids": {
+        "trakt": 1395,
+        "slug": "chuck",
+        "tvdb": 80348,
+        "imdb": "tt0934814",
+        "tmdb": 1404,
+        "tvrage": 15614
+      }
+    }
+  },
+  {
+    "rated_at": "2015-03-11T23:23:26.000Z",
+    "rating": 10,
+    "season": {
+      "number": 6,
+      "ids": {
+        "trakt": 91160,
+        "tvdb": 604054,
+        "tmdb": 63509,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Archer",
+      "year": 2009,
+      "ids": {
+        "trakt": 10234,
+        "slug": "archer",
+        "tvdb": 110381,
+        "imdb": "tt1486217",
+        "tmdb": 10283,
+        "tvrage": 23354
+      }
+    }
+  }
+]

@@ -1,25 +1,17 @@
 # flake8: noqa: F403, F405
 
-from tests.core.helpers import authenticated_response
+from tests.core import mock
 from trakt import Trakt
 from trakt.objects import Show, Season, Episode
 
 from hamcrest import *
-import responses
+from httmock import HTTMock
 
 
-@responses.activate
 def test_watched():
-    responses.add_callback(
-        responses.GET, 'http://mock/users/me/lists/shows/items',
-        callback=authenticated_response('fixtures/users/me/lists/shows/items.json'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        items = Trakt['users/me/lists/shows'].items()
+    with HTTMock(mock.fixtures, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            items = Trakt['users/me/lists/shows'].items()
 
     # Ensure collection is valid
     assert_that(items, not_none())
