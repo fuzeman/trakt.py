@@ -1,0 +1,22 @@
+[
+    {
+        "about": "",
+        "age": 45,
+        "gender": "male",
+        "ids": {
+            "slug": "rlangis"
+        },
+        "images": {
+            "avatar": {
+                "full": "https://secure.gravatar.com/avatar/8a3925fc2a2a5aa4da3f083557d45093?d=https%3A%2F%2Fwalter.trakt.tv%2Fhotlink-ok%2Fplaceholders%2Fmedium%2Ffry.png&r=pg&s=256"
+            }
+        },
+        "joined_at": "2017-01-02T23:30:29.000Z",
+        "location": "",
+        "name": "Richard Langis",
+        "private": false,
+        "username": "rlangis",
+        "vip": false,
+        "vip_ep": false
+    }
+]

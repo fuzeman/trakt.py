@@ -1,0 +1,110 @@
+[
+  {
+    "first_aired": "2014-07-14T01:00:00.000Z",
+    "episode": {
+      "season": 7,
+      "number": 4,
+      "title": "Death is Not the End",
+      "ids": {
+        "trakt": 443,
+        "tvdb": 4851180,
+        "imdb": "tt3500614",
+        "tmdb": 988123,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "True Blood",
+      "year": 2008,
+      "ids": {
+        "trakt": 5,
+        "slug": "true-blood",
+        "tvdb": 82283,
+        "imdb": "tt0844441",
+        "tmdb": 10545,
+        "tvrage": 12662
+      }
+    }
+  },
+  {
+    "first_aired": "2014-07-14T02:00:00.000Z",
+    "episode": {
+      "season": 1,
+      "number": 3,
+      "title": "Two Boats and a Helicopter",
+      "ids": {
+        "trakt": 499,
+        "tvdb": 4854797,
+        "imdb": "tt3631218",
+        "tmdb": 988346,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "The Leftovers",
+      "year": 2014,
+      "ids": {
+        "trakt": 7,
+        "slug": "the-leftovers",
+        "tvdb": 269689,
+        "imdb": "tt2699128",
+        "tmdb": 54344,
+        "tvrage": null
+      }
+    }
+  },
+  {
+    "first_aired": "2014-07-21T01:00:00.000Z",
+    "episode": {
+      "season": 7,
+      "number": 5,
+      "title": "Return to Oz",
+      "ids": {
+        "trakt": 444,
+        "tvdb": 4851181,
+        "imdb": "tt3500616",
+        "tmdb": 988124,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "True Blood",
+      "year": 2008,
+      "ids": {
+        "trakt": 5,
+        "slug": "true-blood",
+        "tvdb": 82283,
+        "imdb": "tt0844441",
+        "tmdb": 10545,
+        "tvrage": 12662
+      }
+    }
+  },
+  {
+    "first_aired": "2014-07-21T02:00:00.000Z",
+    "episode": {
+      "season": 1,
+      "number": 4,
+      "title": "B.J. and the A.C.",
+      "ids": {
+        "trakt": 500,
+        "tvdb": 4854798,
+        "imdb": "tt3594942",
+        "tmdb": 988347,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "The Leftovers",
+      "year": 2014,
+      "ids": {
+        "trakt": 7,
+        "slug": "the-leftovers",
+        "tvdb": 269689,
+        "imdb": "tt2699128",
+        "tmdb": 54344,
+        "tvrage": null
+      }
+    }
+  }
+]

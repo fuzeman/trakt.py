@@ -1,0 +1,62 @@
+[
+    {
+        "about": "",
+        "age": null,
+        "gender": "",
+        "ids": {
+            "slug": "jsk4"
+        },
+        "images": {
+            "avatar": {
+                "full": "https://walter.trakt.tv/images/users/001/901/761/avatars/large/6f951b18ed.jpg"
+            }
+        },
+        "joined_at": "2016-04-30T14:30:35.000Z",
+        "location": "Seattle",
+        "name": "jsk4",
+        "private": false,
+        "username": "jsk4",
+        "vip": false,
+        "vip_ep": false
+    },
+    {
+        "about": "",
+        "age": null,
+        "gender": "male",
+        "ids": {
+            "slug": "theo2889"
+        },
+        "images": {
+            "avatar": {
+                "full": "https://secure.gravatar.com/avatar/e8e51c4be15a63eda912b7f350e75034?d=https%3A%2F%2Fwalter.trakt.tv%2Fhotlink-ok%2Fplaceholders%2Fmedium%2Ffry.png&r=pg&s=256"
+            }
+        },
+        "joined_at": "2016-07-31T21:29:41.000Z",
+        "location": "",
+        "name": "Theo Ottesen",
+        "private": false,
+        "username": "theo2889",
+        "vip": false,
+        "vip_ep": false
+    },
+    {
+        "about": "",
+        "age": null,
+        "gender": "",
+        "ids": {
+            "slug": "tornado2234"
+        },
+        "images": {
+            "avatar": {
+                "full": "https://secure.gravatar.com/avatar/5d33a243014183a0c4bb4dcd9e0ec2a7?d=https%3A%2F%2Fwalter.trakt.tv%2Fhotlink-ok%2Fplaceholders%2Fmedium%2Fzoidberg.png&r=pg&s=256"
+            }
+        },
+        "joined_at": "2015-08-09T02:04:20.000Z",
+        "location": "",
+        "name": "",
+        "private": false,
+        "username": "tornado2234",
+        "vip": false,
+        "vip_ep": false
+    }
+]

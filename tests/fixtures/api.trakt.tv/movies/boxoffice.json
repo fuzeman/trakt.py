@@ -1,0 +1,516 @@
+[
+    {
+        "movie": {
+            "available_translations": [
+                "en",
+                "es",
+                "fr",
+                "pt",
+                "ru"
+            ],
+            "certification": "R",
+            "genres": [
+                "horror"
+            ],
+            "homepage": "http://www.getoutfilm.com/",
+            "ids": {
+                "imdb": "tt5052448",
+                "slug": "get-out-2017",
+                "tmdb": 419430,
+                "trakt": 264623
+            },
+            "language": "en",
+            "overview": "A young African-American man visits his Caucasian girlfriend's cursed family estate. He finds out that many of its residents, who are black, have gone missing in the past.",
+            "rating": 7.3913,
+            "released": "2017-02-24",
+            "runtime": 104,
+            "tagline": "Just because you're invited, doesn't mean you're welcome.",
+            "title": "Get Out",
+            "trailer": "http://youtube.com/watch?v=sRfnevzM9kQ",
+            "updated_at": "2017-02-28T21:28:53.000Z",
+            "votes": 115,
+            "year": 2017
+        },
+        "revenue": 30500000
+    },
+    {
+        "movie": {
+            "available_translations": [
+                "ca",
+                "cs",
+                "da",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fi",
+                "fr",
+                "he",
+                "hu",
+                "id",
+                "it",
+                "ja",
+                "ko",
+                "pt",
+                "ro",
+                "ru",
+                "sk",
+                "uk",
+                "zh"
+            ],
+            "certification": "PG",
+            "genres": [
+                "comedy",
+                "animation",
+                "action",
+                "fantasy",
+                "family"
+            ],
+            "homepage": "http://www.legobatman.com",
+            "ids": {
+                "imdb": "tt4116284",
+                "slug": "the-lego-batman-movie-2017",
+                "tmdb": 324849,
+                "trakt": 205398
+            },
+            "language": "en",
+            "overview": "In the irreverent spirit of fun that made \u201cThe Lego Movie\u201d a worldwide phenomenon, the self-described leading man of that ensemble\u2014Lego Batman\u2014stars in his own big-screen adventure. But there are big changes brewing in Gotham, and if he wants to save the city from The Joker\u2019s hostile takeover, Batman may have to drop the lone vigilante thing, try to work with others and maybe, just maybe, learn to lighten up.",
+            "rating": 7.74137,
+            "released": "2017-02-10",
+            "runtime": 104,
+            "tagline": "Always be yourself. Unless you can be Batman.",
+            "title": "The Lego Batman Movie",
+            "trailer": "http://youtube.com/watch?v=rGQUKzSDhrg",
+            "updated_at": "2017-02-27T09:21:47.000Z",
+            "votes": 1651,
+            "year": 2017
+        },
+        "revenue": 19000000
+    },
+    {
+        "movie": {
+            "available_translations": [
+                "cs",
+                "da",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fi",
+                "fr",
+                "he",
+                "hu",
+                "id",
+                "it",
+                "ko",
+                "lt",
+                "nl",
+                "pl",
+                "pt",
+                "ro",
+                "ru",
+                "sk",
+                "sr",
+                "uk",
+                "zh"
+            ],
+            "certification": "R",
+            "genres": [
+                "action",
+                "thriller",
+                "crime"
+            ],
+            "homepage": "http://www.johnwick.movie/",
+            "ids": {
+                "imdb": "tt4425200",
+                "slug": "john-wick-chapter-2-2017",
+                "tmdb": 324552,
+                "trakt": 205127
+            },
+            "language": "en",
+            "overview": "John Wick is forced out of retirement by a former associate looking to seize control of a shadowy international assassins\u2019 guild. Bound by a blood oath to aid him, Wick travels to Rome and does battle against some of the world\u2019s most dangerous killers.",
+            "rating": 7.20367,
+            "released": "2017-02-10",
+            "runtime": 122,
+            "tagline": "Never stab the devil in the back",
+            "title": "John Wick: Chapter 2",
+            "trailer": "http://youtube.com/watch?v=slib5X6KFXo",
+            "updated_at": "2017-02-27T09:38:10.000Z",
+            "votes": 3923,
+            "year": 2017
+        },
+        "revenue": 9000000
+    },
+    {
+        "movie": {
+            "available_translations": [
+                "bg",
+                "cs",
+                "da",
+                "de",
+                "el",
+                "en",
+                "es",
+                "et",
+                "fr",
+                "he",
+                "hr",
+                "hu",
+                "ko",
+                "lt",
+                "pl",
+                "pt",
+                "ro",
+                "ru",
+                "sk",
+                "sl",
+                "sr",
+                "tr",
+                "uk",
+                "zh"
+            ],
+            "certification": null,
+            "genres": [
+                "adventure",
+                "thriller",
+                "action",
+                "fantasy"
+            ],
+            "homepage": "http://www.thegreatwallmovie.com/",
+            "ids": {
+                "imdb": "tt2034800",
+                "slug": "the-great-wall-2016",
+                "tmdb": 311324,
+                "trakt": 191328
+            },
+            "language": "en",
+            "overview": "The Chinese ponytail movie",
+            "rating": 7.17803,
+            "released": "2017-02-17",
+            "runtime": 104,
+            "tagline": "1700 years to build. 5500 miles long. What were they trying to keep out?",
+            "title": "The Great Wall",
+            "trailer": "http://youtube.com/watch?v=hq6XDgP4-90",
+            "updated_at": "2017-03-01T09:07:14.000Z",
+            "votes": 2786,
+            "year": 2016
+        },
+        "revenue": 8700000
+    },
+    {
+        "movie": {
+            "available_translations": [
+                "bg",
+                "cs",
+                "da",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fi",
+                "fr",
+                "he",
+                "hr",
+                "hu",
+                "it",
+                "ko",
+                "lt",
+                "pl",
+                "pt",
+                "ro",
+                "ru",
+                "sk",
+                "sl",
+                "sr",
+                "tr",
+                "uk",
+                "zh"
+            ],
+            "certification": "R",
+            "genres": [
+                "drama",
+                "romance"
+            ],
+            "homepage": "http://www.fiftyshadesmovie.com/",
+            "ids": {
+                "imdb": "tt4465564",
+                "slug": "fifty-shades-darker-2017",
+                "tmdb": 341174,
+                "trakt": 222332
+            },
+            "language": "en",
+            "overview": "When a wounded Christian Grey tries to entice a cautious Ana Steele back into his life, she demands a new arrangement before she will give him another chance. As the two begin to build trust and find stability, shadowy figures from Christian\u2019s past start to circle the couple, determined to destroy their hopes for a future together.",
+            "rating": 6.83809,
+            "released": "2017-02-10",
+            "runtime": 118,
+            "tagline": "Every fairy tale has a dark side.",
+            "title": "Fifty Shades Darker",
+            "trailer": "http://youtube.com/watch?v=V0zGJIy50ys",
+            "updated_at": "2017-02-27T08:45:32.000Z",
+            "votes": 2384,
+            "year": 2017
+        },
+        "revenue": 7700000
+    },
+    {
+        "movie": {
+            "available_translations": [
+                "cs",
+                "da",
+                "de",
+                "en",
+                "fr",
+                "he",
+                "hu",
+                "nl",
+                "pt",
+                "ru",
+                "uk"
+            ],
+            "certification": null,
+            "genres": [
+                "comedy"
+            ],
+            "homepage": "http://fistfightmovie.com/",
+            "ids": {
+                "imdb": "tt3401882",
+                "slug": "fist-fight-2017",
+                "tmdb": 345922,
+                "trakt": 256673
+            },
+            "language": "en",
+            "overview": "When one school teacher gets the other fired, he is challenged to an after-school fight.",
+            "rating": 7.62811,
+            "released": "2017-02-17",
+            "runtime": 91,
+            "tagline": "After school. Parking lot. It's on.",
+            "title": "Fist Fight",
+            "trailer": "http://youtube.com/watch?v=XP1md_u8ClE",
+            "updated_at": "2017-03-01T09:14:52.000Z",
+            "votes": 1167,
+            "year": 2017
+        },
+        "revenue": 6400000
+    },
+    {
+        "movie": {
+            "available_translations": [
+                "bg",
+                "cs",
+                "da",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fr",
+                "he",
+                "hu",
+                "it",
+                "ko",
+                "pl",
+                "pt",
+                "ru",
+                "sr",
+                "uk",
+                "zh"
+            ],
+            "certification": "PG",
+            "genres": [
+                "drama",
+                "history"
+            ],
+            "homepage": "http://www.hiddenfigures.com",
+            "ids": {
+                "imdb": "tt4846340",
+                "slug": "hidden-figures-2016",
+                "tmdb": 381284,
+                "trakt": 241112
+            },
+            "language": "en",
+            "overview": "The incredible untold story of Katherine G. Johnson, Dorothy Vaughan and Mary Jackson - brilliant African-American women working at NASA, who served as the brains behind one of the greatest operations in history: the launch of astronaut John Glenn into orbit, a stunning achievement that restored the nation's confidence, turned around the Space Race, and galvanized the world. The visionary trio crossed all gender and race lines to inspire generations to dream big.",
+            "rating": 8.45602,
+            "released": "2016-12-25",
+            "runtime": 126,
+            "tagline": "Meet the women you don't know, behind the mission you do.",
+            "title": "Hidden Figures",
+            "trailer": "http://youtube.com/watch?v=5wfrDhgUMGI",
+            "updated_at": "2017-02-27T09:08:59.000Z",
+            "votes": 6480,
+            "year": 2016
+        },
+        "revenue": 5900000
+    },
+    {
+        "movie": {
+            "available_translations": [
+                "bg",
+                "cs",
+                "da",
+                "de",
+                "ee",
+                "el",
+                "en",
+                "es",
+                "et",
+                "fi",
+                "fr",
+                "he",
+                "hr",
+                "hu",
+                "it",
+                "ja",
+                "ko",
+                "nl",
+                "pl",
+                "pt",
+                "ro",
+                "ru",
+                "sk",
+                "sl",
+                "sr",
+                "sv",
+                "tr",
+                "uk",
+                "vi",
+                "zh"
+            ],
+            "certification": "PG-13",
+            "genres": [
+                "comedy",
+                "drama",
+                "music",
+                "romance"
+            ],
+            "homepage": "http://www.lalaland.movie/",
+            "ids": {
+                "imdb": "tt3783958",
+                "slug": "la-la-land-2016",
+                "tmdb": 313369,
+                "trakt": 192932
+            },
+            "language": "en",
+            "overview": "Mia, an aspiring actress, serves lattes to movie stars in between auditions and Sebastian, a jazz musician, scrapes by playing cocktail party gigs in dingy bars, but as success mounts they are faced with decisions that begin to fray the fragile fabric of their love affair, and the dreams they worked so hard to maintain in each other threaten to rip them apart.",
+            "rating": 7.8898,
+            "released": "2016-12-16",
+            "runtime": 128,
+            "tagline": "Here's to the fools who dream.",
+            "title": "La La Land",
+            "trailer": "http://youtube.com/watch?v=0pdqf4P9MB8",
+            "updated_at": "2017-02-28T09:16:31.000Z",
+            "votes": 5826,
+            "year": 2016
+        },
+        "revenue": 4600000
+    },
+    {
+        "movie": {
+            "available_translations": [
+                "bg",
+                "cs",
+                "da",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fi",
+                "fr",
+                "he",
+                "hr",
+                "hu",
+                "id",
+                "it",
+                "ko",
+                "lt",
+                "pl",
+                "pt",
+                "ro",
+                "ru",
+                "sk",
+                "sl",
+                "sr",
+                "sv",
+                "tr",
+                "uk",
+                "zh"
+            ],
+            "certification": "PG-13",
+            "genres": [
+                "drama",
+                "thriller",
+                "horror"
+            ],
+            "homepage": "http://www.splitmovie.com/",
+            "ids": {
+                "imdb": "tt4972582",
+                "slug": "split-2017",
+                "tmdb": 381288,
+                "trakt": 254263
+            },
+            "language": "en",
+            "overview": "Though Kevin has evidenced 23 personalities to his trusted psychiatrist, Dr. Fletcher, there remains one still submerged who is set to materialize and dominate all the others. Compelled to abduct three teenage girls led by the willful, observant Casey, Kevin reaches a war for survival among all of those contained within him\u2014as well as everyone around him\u2014as the walls between his compartments shatter apart.",
+            "rating": 6.65097,
+            "released": "2017-01-20",
+            "runtime": 117,
+            "tagline": "Kevin has 23 distinct personalities. The 24th is about to be unleashed.",
+            "title": "Split",
+            "trailer": "http://youtube.com/watch?v=NAHw4jFKfxQ",
+            "updated_at": "2017-02-27T08:57:58.000Z",
+            "votes": 3037,
+            "year": 2017
+        },
+        "revenue": 4099999
+    },
+    {
+        "movie": {
+            "available_translations": [
+                "cs",
+                "da",
+                "de",
+                "el",
+                "en",
+                "es",
+                "et",
+                "fi",
+                "fr",
+                "he",
+                "hr",
+                "hu",
+                "it",
+                "ko",
+                "lt",
+                "nl",
+                "pl",
+                "pt",
+                "ro",
+                "ru",
+                "sr",
+                "tr",
+                "uk",
+                "zh"
+            ],
+            "certification": "PG-13",
+            "genres": [
+                "drama"
+            ],
+            "homepage": "http://lionmovie.com/",
+            "ids": {
+                "imdb": "tt3741834",
+                "slug": "lion-2016",
+                "tmdb": 334543,
+                "trakt": 220479
+            },
+            "language": "en",
+            "overview": "A five-year-old Indian boy gets lost on the streets of Calcutta, thousands of kilometers from home. He survives many challenges before being adopted by a couple in Australia; 25 years later, he sets out to find his lost family.",
+            "rating": 8.30372,
+            "released": "2017-01-06",
+            "runtime": 118,
+            "tagline": "The search begins",
+            "title": "Lion",
+            "trailer": "http://youtube.com/watch?v=0GlvpqMUAW8",
+            "updated_at": "2017-02-26T08:41:26.000Z",
+            "votes": 4142,
+            "year": 2016
+        },
+        "revenue": 3800000
+    }
+]

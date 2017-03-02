@@ -1,0 +1,41 @@
+[
+  {
+    "released": "2014-08-01",
+    "movie": {
+      "title": "Guardians of the Galaxy",
+      "year": 2014,
+      "ids": {
+        "trakt": 28,
+        "slug": "guardians-of-the-galaxy-2014",
+        "imdb": "tt2015381",
+        "tmdb": 118340
+      }
+    }
+  },
+  {
+    "released": "2014-08-01",
+    "movie": {
+      "title": "Get On Up",
+      "year": 2014,
+      "ids": {
+        "trakt": 29,
+        "slug": "get-on-up-2014",
+        "imdb": "tt2473602",
+        "tmdb": 239566
+      }
+    }
+  },
+  {
+    "released": "2014-08-08",
+    "movie": {
+      "title": "Teenage Mutant Ninja Turtles",
+      "year": 2014,
+      "ids": {
+        "trakt": 30,
+        "slug": "teenage-mutant-ninja-turtles-2014",
+        "imdb": "tt1291150",
+        "tmdb": 98566
+      }
+    }
+  }
+]

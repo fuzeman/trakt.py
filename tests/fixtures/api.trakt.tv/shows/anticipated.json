@@ -1,0 +1,428 @@
+[
+    {
+        "list_count": 11877,
+        "show": {
+            "aired_episodes": 0,
+            "airs": {
+                "day": "Friday",
+                "time": "03:00",
+                "timezone": "America/New_York"
+            },
+            "available_translations": [
+                "de",
+                "en",
+                "es",
+                "fr",
+                "ko",
+                "pt",
+                "ru",
+                "uk"
+            ],
+            "certification": null,
+            "country": "us",
+            "first_aired": "2017-03-17T07:00:00.000Z",
+            "genres": [
+                "fantasy",
+                "drama",
+                "science-fiction",
+                "action",
+                "adventure",
+                "crime"
+            ],
+            "homepage": "https://www.netflix.com/title/80002612",
+            "ids": {
+                "imdb": "tt3322310",
+                "slug": "marvel-s-iron-fist",
+                "tmdb": 62127,
+                "trakt": 112082,
+                "tvdb": 317953,
+                "tvrage": null
+            },
+            "language": "en",
+            "network": "Netflix",
+            "overview": "Returning to New York City after being missing for years, Daniel Rand fights against the criminal element corrupting New York City with his incredible kung-fu mastery and ability to summon the awesome power of the fiery Iron Fist.",
+            "rating": 8.18182,
+            "runtime": 50,
+            "status": "returning series",
+            "title": "Marvel's Iron Fist",
+            "trailer": "http://youtube.com/watch?v=f9OKL5no-S0",
+            "updated_at": "2017-02-26T11:25:59.000Z",
+            "votes": 22,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 9765,
+        "show": {
+            "aired_episodes": 0,
+            "airs": {
+                "day": "Sunday",
+                "time": "21:00",
+                "timezone": "America/New_York"
+            },
+            "available_translations": [
+                "en",
+                "fr",
+                "pt",
+                "ru",
+                "uk"
+            ],
+            "certification": null,
+            "country": "us",
+            "first_aired": "2017-05-01T01:00:00.000Z",
+            "genres": [
+                "drama",
+                "action",
+                "adventure",
+                "mystery"
+            ],
+            "homepage": "https://www.starz.com/series/americangods",
+            "ids": {
+                "imdb": "tt1898069",
+                "slug": "american-gods",
+                "tmdb": 46639,
+                "trakt": 46366,
+                "tvdb": 253573,
+                "tvrage": 28779
+            },
+            "language": "en",
+            "network": "Starz!",
+            "overview": "Based on Neil Gaiman's fantasy novel about an ex-con who becomes the traveling partner of a conman who turns out to be one of the older gods trying to recruit troops to battle the upstart deities.",
+            "rating": 7.72222,
+            "runtime": 60,
+            "status": "in production",
+            "title": "American Gods",
+            "trailer": "http://youtube.com/watch?v=oyoXURn9oK0",
+            "updated_at": "2017-03-01T10:46:40.000Z",
+            "votes": 18,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 8082,
+        "show": {
+            "aired_episodes": 0,
+            "airs": {
+                "day": null,
+                "time": null,
+                "timezone": "America/New_York"
+            },
+            "available_translations": [
+                "en",
+                "hu"
+            ],
+            "certification": null,
+            "country": "us",
+            "first_aired": "2017-03-01T08:00:00.000Z",
+            "genres": [
+                "fantasy",
+                "science-fiction"
+            ],
+            "homepage": null,
+            "ids": {
+                "imdb": "tt5171438",
+                "slug": "star-trek-discovery",
+                "tmdb": 67198,
+                "trakt": 110419,
+                "tvdb": 315442,
+                "tvrage": null
+            },
+            "language": "en",
+            "network": null,
+            "overview": null,
+            "rating": 8.73077,
+            "runtime": 42,
+            "status": "planned",
+            "title": "Star Trek: Discovery",
+            "trailer": null,
+            "updated_at": "2017-03-01T19:15:22.000Z",
+            "votes": 26,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 5000,
+        "show": {
+            "aired_episodes": 0,
+            "airs": {
+                "day": "Sunday",
+                "time": "21:00",
+                "timezone": "America/New_York"
+            },
+            "available_translations": [
+                "en",
+                "ko"
+            ],
+            "certification": null,
+            "country": "us",
+            "first_aired": "2017-03-05T08:00:00.000Z",
+            "genres": [
+                "crime",
+                "drama"
+            ],
+            "homepage": "http://www.nbc.com/chicago-justice",
+            "ids": {
+                "imdb": "tt5640060",
+                "slug": "chicago-justice",
+                "tmdb": 67993,
+                "trakt": 107803,
+                "tvdb": 311896,
+                "tvrage": null
+            },
+            "language": "en",
+            "network": "NBC",
+            "overview": "Just like their brethren in the Chicago P.D., the State's Attorney's dedicated team of prosecutors and investigators navigates heated city politics and controversy head-on, while fearlessly pursuing justice. As they take on the city's high-stakes and often media-frenzied cases, they must balance public opinion, power struggles within the system, and their unwavering passion for the law. And it all starts with a gut-wrenching case when one of Chicago's finest is shot in the line of duty.",
+            "rating": 7.36364,
+            "runtime": 45,
+            "status": "returning series",
+            "title": "Chicago Justice",
+            "trailer": null,
+            "updated_at": "2017-03-01T10:42:50.000Z",
+            "votes": 11,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 4333,
+        "show": {
+            "aired_episodes": 0,
+            "airs": {
+                "day": "Tuesday",
+                "time": null,
+                "timezone": "Europe/London"
+            },
+            "available_translations": [],
+            "certification": null,
+            "country": null,
+            "first_aired": "2017-09-01T04:00:00.000Z",
+            "genres": [
+                "action",
+                "adventure",
+                "drama"
+            ],
+            "homepage": null,
+            "ids": {
+                "imdb": "tt4154858",
+                "slug": "marvel-s-the-inhumans",
+                "tmdb": null,
+                "trakt": 113560,
+                "tvdb": 320558,
+                "tvrage": null
+            },
+            "language": null,
+            "network": "ABC (US)",
+            "overview": "An isolated community of superhumans fight to protect themselves.",
+            "rating": 5.5,
+            "runtime": 45,
+            "status": "returning series",
+            "title": "Marvel's The Inhumans",
+            "trailer": null,
+            "updated_at": "2017-02-19T22:00:23.000Z",
+            "votes": 4,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 3306,
+        "show": {
+            "aired_episodes": 0,
+            "airs": {
+                "day": "Sunday",
+                "time": "21:00",
+                "timezone": "America/New_York"
+            },
+            "available_translations": [
+                "en"
+            ],
+            "certification": null,
+            "country": "us",
+            "first_aired": "2017-03-06T02:00:00.000Z",
+            "genres": [
+                "fantasy",
+                "science-fiction",
+                "drama"
+            ],
+            "homepage": "http://abc.go.com/shows/time-after-time",
+            "ids": {
+                "imdb": "tt5031234",
+                "slug": "time-after-time-2017",
+                "tmdb": 68002,
+                "trakt": 107801,
+                "tvdb": 311898,
+                "tvrage": null
+            },
+            "language": "en",
+            "network": "ABC (US)",
+            "overview": "A young H.G. Wells travels through centuries, decades and days in the time machine he created. In the pursuit of the charismatic Dr. John Stevenson, better known as \u201cJack the Ripper,\u201d Wells arrives in modern day New York City, searching for Stevenson after the doctor escapes authorities in Wells\u2019 London home. But instead of the Utopia he imagined, Wells finds a world more aligned with Stevenson\u2019s temperament ...",
+            "rating": 3.83333,
+            "runtime": 45,
+            "status": "returning series",
+            "title": "Time After Time",
+            "trailer": "http://youtube.com/watch?v=VN4C4Ar5BLo",
+            "updated_at": "2017-03-01T16:01:00.000Z",
+            "votes": 6,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 2249,
+        "show": {
+            "aired_episodes": 0,
+            "airs": {
+                "day": "Wednesday",
+                "time": "12:00",
+                "timezone": "America/New_York"
+            },
+            "available_translations": [
+                "en"
+            ],
+            "certification": null,
+            "country": "us",
+            "first_aired": "2017-04-26T07:00:00.000Z",
+            "genres": [
+                "drama",
+                "fantasy",
+                "science-fiction"
+            ],
+            "homepage": "http://www.hulu.com/the-handmaids-tale",
+            "ids": {
+                "imdb": "tt5834204",
+                "slug": "the-handmaid-s-tale",
+                "tmdb": 69478,
+                "trakt": 113938,
+                "tvdb": 321239,
+                "tvrage": null
+            },
+            "language": "en",
+            "network": "Hulu",
+            "overview": "Adapted from the classic novel by Margaret Atwood, The Handmaid's Tale is the story of life in the dystopia of Gilead, a totalitarian society in what was formerly the United States. Facing environmental disasters and a plunging birthrate, Gilead is ruled by a twisted fundamentalism in its militarized \u2018return to traditional values'. As one of the few remaining fertile women, Offred (Elisabeth Moss) is a Handmaid in the Commander\u2019s household, one of the caste of women forced into sexual servitude as a last desperate attempt to repopulate the world. In this terrifying society, Offred must navigate between Commanders, their cruel Wives, domestic Marthas, and her fellow Handmaids \u2013 where anyone could be a spy for Gilead \u2013 all with one goal: to survive and find the daughter that was taken from her.",
+            "rating": 1.0,
+            "runtime": 50,
+            "status": "returning series",
+            "title": "The Handmaid's Tale",
+            "trailer": null,
+            "updated_at": "2017-02-21T09:50:48.000Z",
+            "votes": 1,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 2238,
+        "show": {
+            "aired_episodes": 0,
+            "airs": {
+                "day": "Sunday",
+                "time": "21:00",
+                "timezone": "Europe/London"
+            },
+            "available_translations": [],
+            "certification": "TV-14",
+            "country": null,
+            "first_aired": "2017-05-21T07:00:00.000Z",
+            "genres": [
+                "crime",
+                "drama",
+                "mystery"
+            ],
+            "homepage": null,
+            "ids": {
+                "imdb": "tt4093826",
+                "slug": "twin-peaks-2017",
+                "tmdb": null,
+                "trakt": 97963,
+                "tvdb": 294196,
+                "tvrage": null
+            },
+            "language": null,
+            "network": "Showtime",
+            "overview": null,
+            "rating": 6.1875,
+            "runtime": 60,
+            "status": "returning series",
+            "title": "Twin Peaks",
+            "trailer": null,
+            "updated_at": "2017-02-01T09:46:05.000Z",
+            "votes": 16,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 2066,
+        "show": {
+            "aired_episodes": 0,
+            "airs": {
+                "day": null,
+                "time": null,
+                "timezone": "America/New_York"
+            },
+            "available_translations": [],
+            "certification": null,
+            "country": "us",
+            "first_aired": "2017-10-31T22:00:00.000Z",
+            "genres": [
+                "crime",
+                "drama"
+            ],
+            "homepage": null,
+            "ids": {
+                "imdb": "tt5675620",
+                "slug": "marvel-s-the-punisher",
+                "tmdb": 67178,
+                "trakt": 112663,
+                "tvdb": 318852,
+                "tvrage": 52104
+            },
+            "language": "en",
+            "network": "Netflix",
+            "overview": "Frank Castle is haunted and hunted after the murder of his family and becomes a vigilante known in the criminal underworld as \"the Punisher\", who aims to fight crime by any means necessary",
+            "rating": 2.8,
+            "runtime": 45,
+            "status": "in production",
+            "title": "Marvel's The Punisher",
+            "trailer": null,
+            "updated_at": "2017-01-13T09:00:00.000Z",
+            "votes": 5,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 2021,
+        "show": {
+            "aired_episodes": 0,
+            "airs": {
+                "day": "Sunday",
+                "time": "20:30",
+                "timezone": "America/New_York"
+            },
+            "available_translations": [
+                "en"
+            ],
+            "certification": null,
+            "country": "us",
+            "first_aired": "2017-03-05T08:00:00.000Z",
+            "genres": [
+                "comedy"
+            ],
+            "homepage": "http://www.fox.com/making-history",
+            "ids": {
+                "imdb": "tt5515410",
+                "slug": "making-history-2017",
+                "tmdb": 67991,
+                "trakt": 107773,
+                "tvdb": 311833,
+                "tvrage": null
+            },
+            "language": "en",
+            "network": "FOX (US)",
+            "overview": "Three friends from two different centuries try to balance the thrill of time travel with the mundane concerns of their present-day lives. It\u2019s both a rollicking historical adventure, and a contemporary comedy about love, friendship and trying to fit in to an increasingly complex and impersonal world.",
+            "rating": 5.6,
+            "runtime": 25,
+            "status": "returning series",
+            "title": "Making History",
+            "trailer": "http://youtube.com/watch?v=Z-TVyOqCkr0",
+            "updated_at": "2017-03-01T10:46:59.000Z",
+            "votes": 5,
+            "year": 2017
+        }
+    }
+]

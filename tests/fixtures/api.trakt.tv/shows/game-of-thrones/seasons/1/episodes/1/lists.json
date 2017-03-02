@@ -1,0 +1,282 @@
+[
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-12-15T15:58:12.000Z",
+        "description": "All TV episodes watched on 2013.",
+        "display_numbers": false,
+        "ids": {
+            "slug": "tv-watched-2013",
+            "trakt": 3022086
+        },
+        "item_count": 34,
+        "likes": 2,
+        "name": "TV Watched 2013",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-01-24T19:30:09.000Z",
+        "user": {
+            "ids": {
+                "slug": "gabrielwalmeida"
+            },
+            "name": "Gabriel Almeida",
+            "private": false,
+            "username": "GabrielWAlmeida",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-03-02T16:02:54.000Z",
+        "description": "tg",
+        "display_numbers": false,
+        "ids": {
+            "slug": "series",
+            "trakt": 1963341
+        },
+        "item_count": 13440,
+        "likes": 1,
+        "name": "series",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-02-21T18:59:35.000Z",
+        "user": {
+            "ids": {
+                "slug": "luficer"
+            },
+            "name": null,
+            "private": false,
+            "username": "luficer",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-11-23T22:19:15.000Z",
+        "description": "Everything i watched before 2016 and before i used Trakt.\r\n\r\nThe 100 S1\r\n\r\nArrow S1x01 - S4x15\r\n\r\nBetter Call Saul S1x01 - S1x07\r\n\r\nBreaking Bad S1 - S5 (Completed)\r\n\r\nBreakout Kings S1x01\r\n\r\nChicago Fire S1x01 - S1x02\r\n\r\nConstantine S1x01 - S1x06\r\n\r\nThe Flash (2014) S1x01 - S2x15\r\n\r\nGame of Thrones S1 - S5\r\n\r\nGotham S1x01 - S2x13\r\n\r\nHow I Met Your Mother S1x01 - S4x02\r\n\r\nThe Last Ship S1 - S2\r\n\r\nLegends of Tomorrow S1x01 - S1x07\r\n\r\nThe Man in the High Castle S1x01 - S1x05\r\n\r\nMarvel's Agent Carter S1x01 - S1x05\r\n\r\nMarvel's Daredevil S1\r\n\r\nMarvel's Jessica Jones S1x01\r\n\r\nMr. Robot S1x01 - S1x05\r\n\r\nNarcos S1\r\n\r\nPrison Break S1 - S4 (Completed)\r\n\r\nStar Wars: The Clone Wars S1 - S3\r\n\r\nSupergirl S1x01 - S1x11\r\n\r\nTeenage Mutant Ninja Turtles (2012) S1x01 - S3x13\r\n\r\nVixen S1\r\n\r\nEpisodes seen twice this year:\r\nArrow S1x01 - S4x09\r\nThe Flash S1x01 - S2x09",
+        "display_numbers": false,
+        "ids": {
+            "slug": "watched-pre-march-12th-2016",
+            "trakt": 2938041
+        },
+        "item_count": 670,
+        "likes": 0,
+        "name": "Watched Pre-March 12th 2016 ",
+        "privacy": "public",
+        "sort_by": "released",
+        "sort_how": "desc",
+        "updated_at": "2017-02-18T13:52:26.000Z",
+        "user": {
+            "ids": {
+                "slug": "henkie080101"
+            },
+            "name": "Henkie",
+            "private": false,
+            "username": "henkie080101",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-10-03T21:32:18.000Z",
+        "description": "",
+        "display_numbers": true,
+        "ids": {
+            "slug": "best-tv-episodes-ever",
+            "trakt": 2746363
+        },
+        "item_count": 39,
+        "likes": 0,
+        "name": "Best TV Episodes Ever",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2016-11-16T21:43:59.000Z",
+        "user": {
+            "ids": {
+                "slug": "soupnation11"
+            },
+            "name": "Matt Campbell",
+            "private": false,
+            "username": "Soupnation11",
+            "vip": true,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-07-24T06:15:42.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "my-all-time-favorite-pilot-episodes",
+            "trakt": 2500421
+        },
+        "item_count": 8,
+        "likes": 0,
+        "name": "My All-Time Favorite Pilot Episodes",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2016-08-13T03:53:48.000Z",
+        "user": {
+            "ids": {
+                "slug": "rwn_98"
+            },
+            "name": "R a w a n",
+            "private": false,
+            "username": "rwn_98",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2016-04-09T12:07:00.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "tvshows",
+            "trakt": 2131639
+        },
+        "item_count": 6,
+        "likes": 0,
+        "name": "TVShows",
+        "privacy": "public",
+        "sort_by": "title",
+        "sort_how": "asc",
+        "updated_at": "2016-05-26T03:35:59.000Z",
+        "user": {
+            "ids": {
+                "slug": "artstaf"
+            },
+            "name": null,
+            "private": false,
+            "username": "artstaf",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-01-01T18:29:09.000Z",
+        "description": "Serie TV viste nel 2016.",
+        "display_numbers": true,
+        "ids": {
+            "slug": "serie-tv-2016",
+            "trakt": 1683946
+        },
+        "item_count": 1651,
+        "likes": 0,
+        "name": "Serie TV 2016",
+        "privacy": "public",
+        "sort_by": "added",
+        "sort_how": "desc",
+        "updated_at": "2017-02-20T12:39:45.000Z",
+        "user": {
+            "ids": {
+                "slug": "chiccohd"
+            },
+            "name": "Francesco Di Maria",
+            "private": false,
+            "username": "ChiccoHD",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2015-06-23T12:39:35.000Z",
+        "description": "favorite tv episodes of all time // in no particular order",
+        "display_numbers": false,
+        "ids": {
+            "slug": "tv-favorite-episodes",
+            "trakt": 1193416
+        },
+        "item_count": 13,
+        "likes": 0,
+        "name": "tv: favorite episodes ",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2016-12-01T07:55:41.000Z",
+        "user": {
+            "ids": {
+                "slug": "nekoma"
+            },
+            "name": "Kasia",
+            "private": false,
+            "username": "nekoma",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2015-04-24T14:29:49.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "hd-tv-shows",
+            "trakt": 1092088
+        },
+        "item_count": 4,
+        "likes": 0,
+        "name": "HD TV Shows",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2016-06-01T16:17:33.000Z",
+        "user": {
+            "ids": {
+                "slug": "tarrasque"
+            },
+            "name": "",
+            "private": false,
+            "username": "Tarrasque",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2015-02-19T15:00:06.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "queue",
+            "trakt": 975220
+        },
+        "item_count": 331,
+        "likes": 0,
+        "name": "queue",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2015-09-06T03:57:53.000Z",
+        "user": {
+            "ids": {
+                "slug": "tjadavis"
+            },
+            "name": "",
+            "private": false,
+            "username": "tjadavis",
+            "vip": false,
+            "vip_ep": false
+        }
+    }
+]

@@ -1,0 +1,118 @@
+[
+    {
+        "show": {
+            "aired_episodes": 0,
+            "airs": {
+                "day": "Tuesday",
+                "time": "22:00",
+                "timezone": "America/New_York"
+            },
+            "available_translations": [],
+            "certification": null,
+            "country": "us",
+            "first_aired": "2017-02-22T03:00:00.000Z",
+            "genres": [
+                "reality"
+            ],
+            "homepage": "http://www.mylifetime.com/shows/the-pop-game",
+            "ids": {
+                "imdb": "tt6432462",
+                "slug": "the-pop-game-2017",
+                "tmdb": 70370,
+                "trakt": 116961,
+                "tvdb": 322789,
+                "tvrage": null
+            },
+            "language": "en",
+            "network": "Lifetime",
+            "overview": "On the heels of the hit unscripted series, \"The Rap Game,\" Lifetime keys into the world of pop music this winter with, \"The Pop Game.\" The series won\u2019t miss a note, following music industry icon Timbaland as he works with five aspiring young vocal artists, all vying to be the next big thing on the charts. Timbaland\u2019s team of writers, producers and top celebrity guest artists including JoJo, Macy Gray, Nelly Furtado and Jordin Sparks, will assist the kids and their manager parents in challenges designed to teach and test the skills they will need to grace some of the world\u2019s biggest stages.",
+            "rating": 0.0,
+            "runtime": 60,
+            "status": "returning series",
+            "title": "The Pop Game",
+            "trailer": null,
+            "updated_at": "2017-03-02T00:03:30.000Z",
+            "votes": 0,
+            "year": 2017
+        },
+        "updated_at": "2017-03-02T00:03:30.000Z"
+    },
+    {
+        "show": {
+            "aired_episodes": 2,
+            "airs": {
+                "day": "Tuesday",
+                "time": "22:00",
+                "timezone": "America/New_York"
+            },
+            "available_translations": [
+                "en"
+            ],
+            "certification": null,
+            "country": "us",
+            "first_aired": "2017-02-22T03:00:00.000Z",
+            "genres": [
+                "reality"
+            ],
+            "homepage": "http://www.mylifetime.com/shows/the-pop-game",
+            "ids": {
+                "imdb": "tt6432462",
+                "slug": "the-pop-game",
+                "tmdb": 70370,
+                "trakt": 115981,
+                "tvdb": 322789,
+                "tvrage": null
+            },
+            "language": "en",
+            "network": "Lifetime",
+            "overview": "On the heels of the hit unscripted series, \"The Rap Game,\" Lifetime keys into the world of pop music this winter with, \"The Pop Game.\" The series won\u2019t miss a note, following music industry icon Timbaland as he works with five aspiring young vocal artists, all vying to be the next big thing on the charts. Timbaland\u2019s team of writers, producers and top celebrity guest artists including JoJo, Macy Gray, Nelly Furtado and Jordin Sparks, will assist the kids and their manager parents in challenges designed to teach and test the skills they will need to grace some of the world\u2019s biggest stages.",
+            "rating": 10.0,
+            "runtime": 60,
+            "status": "returning series",
+            "title": "The Pop Game",
+            "trailer": null,
+            "updated_at": "2017-03-02T00:03:42.000Z",
+            "votes": 1,
+            "year": 2017
+        },
+        "updated_at": "2017-03-02T00:03:42.000Z"
+    },
+    {
+        "show": {
+            "aired_episodes": 2,
+            "airs": {
+                "day": null,
+                "time": null,
+                "timezone": "Europe/London"
+            },
+            "available_translations": [],
+            "certification": null,
+            "country": null,
+            "first_aired": null,
+            "genres": [
+                "documentary"
+            ],
+            "homepage": null,
+            "ids": {
+                "imdb": null,
+                "slug": "abandoned-engineering",
+                "tmdb": null,
+                "trakt": 116962,
+                "tvdb": 324846,
+                "tvrage": null
+            },
+            "language": null,
+            "network": "Discovery Science",
+            "overview": "As the saying goes \u2013 they probably seemed like good ideas at the time.\n\nThe world is peppered with examples of incredible engineering projects and buildings designed to make life easier for those that used them, amaze those that came to see them, and make money for those that ordered, designed and built them. They were the stuff of dreams.\n\nOften enormous engineering problems had to be resolved, obstacles overcome and new innovations employed just to get them built in the first place. Alas, a great number of these remarkable structures have now been abandoned, cast aside like enormous expensive out-of-date toys, never to be used in the ways for which they were intended.\n\nEach and every one of these extraordinary places is home to a wealth of powerful and compelling stories. We\u2019ll see and hear about some of the most spectacular examples of abandoned engineering the world has ever known. We\u2019ll show how and why they were built, consider the financial and social costs of their failure and examine the environmental and ecological impacts.\n\nAnd just when it seems that the engineering follies and disasters are going to leave behind monstrosities that will blight us forever, some very clever people come up with a plan to make something beautiful or useful from the ruins. Look no further than the Nazi \u2018Holiday Camp\u2019 in Prora Germany, New York\u2019s High Line, the SS Oriskany in Florida and the Foreshore Freeway, Cape Town South Africa \u2013 all abandoned and seemingly useless constructions that have been given new vibrant leases of life. ",
+            "rating": 0.0,
+            "runtime": 45,
+            "status": "returning series",
+            "title": "Abandoned Engineering",
+            "trailer": null,
+            "updated_at": "2017-03-02T00:28:48.000Z",
+            "votes": 0,
+            "year": null
+        },
+        "updated_at": "2017-03-02T00:28:48.000Z"
+    }
+]

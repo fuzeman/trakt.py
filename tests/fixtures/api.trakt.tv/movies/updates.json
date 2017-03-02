@@ -1,0 +1,33 @@
+[
+    {
+        "movie": {
+            "available_translations": [
+                "en"
+            ],
+            "certification": null,
+            "genres": [
+                "drama",
+                "comedy"
+            ],
+            "homepage": null,
+            "ids": {
+                "imdb": "tt0098059",
+                "slug": "dad-is-gone-mom-also-1989",
+                "tmdb": 397291,
+                "trakt": 289711
+            },
+            "language": "en",
+            "overview": "A coming-of-age film: When Laurette's parents disappear following a row, Laurette assumes responsibility for the family. The initial fiesta of children alone gives way to abandonment and the pressures of responsibility.",
+            "rating": 0.0,
+            "released": "1989-02-08",
+            "runtime": 104,
+            "tagline": "",
+            "title": "Dad Is Gone, Mom Also",
+            "trailer": null,
+            "updated_at": "2017-03-02T00:11:03.000Z",
+            "votes": 0,
+            "year": 1989
+        },
+        "updated_at": "2017-03-02T00:11:03.000Z"
+    }
+]

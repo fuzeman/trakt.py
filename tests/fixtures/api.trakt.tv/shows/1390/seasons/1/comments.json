@@ -1,0 +1,178 @@
+[
+    {
+        "comment": "Got to around episode 5 or 6 and had to give up on this long slow drudge of bullshit and boredom. ",
+        "created_at": "2017-01-12T22:14:31.000Z",
+        "id": 110084,
+        "likes": 0,
+        "parent_id": 0,
+        "replies": 0,
+        "review": false,
+        "spoiler": false,
+        "updated_at": "2017-01-12T22:14:31.000Z",
+        "user": {
+            "ids": {
+                "slug": "l0rdr4g3"
+            },
+            "name": null,
+            "private": false,
+            "username": "L0RDR4G3 ",
+            "vip": false,
+            "vip_ep": false
+        },
+        "user_rating": null
+    },
+    {
+        "comment": "How do I watch this?",
+        "created_at": "2016-06-18T22:12:44.000Z",
+        "id": 86483,
+        "likes": 0,
+        "parent_id": 0,
+        "replies": 1,
+        "review": false,
+        "spoiler": false,
+        "updated_at": "2016-06-18T22:12:44.000Z",
+        "user": {
+            "ids": {
+                "slug": "skinnykins"
+            },
+            "name": null,
+            "private": false,
+            "username": "skinnykins",
+            "vip": false,
+            "vip_ep": false
+        },
+        "user_rating": null
+    },
+    {
+        "comment": "loved the first season, bring on the dragons!!",
+        "created_at": "2015-12-20T19:16:55.000Z",
+        "id": 65637,
+        "likes": 0,
+        "parent_id": 0,
+        "replies": 0,
+        "review": false,
+        "spoiler": true,
+        "updated_at": "2015-12-20T19:16:55.000Z",
+        "user": {
+            "ids": {
+                "slug": "wayneward"
+            },
+            "name": "Wayne Ward",
+            "private": false,
+            "username": "wayneward",
+            "vip": true,
+            "vip_ep": false
+        },
+        "user_rating": null
+    },
+    {
+        "comment": "Hooked from the first episode.",
+        "created_at": "2015-10-07T15:16:11.000Z",
+        "id": 58396,
+        "likes": 0,
+        "parent_id": 0,
+        "replies": 0,
+        "review": false,
+        "spoiler": false,
+        "updated_at": "2015-10-07T15:16:11.000Z",
+        "user": {
+            "ids": {
+                "slug": "cathode"
+            },
+            "name": "Simon Therkildsen",
+            "private": false,
+            "username": "cathode",
+            "vip": false,
+            "vip_ep": false
+        },
+        "user_rating": null
+    },
+    {
+        "comment": "Great opening season but still overly brutal from time to time (as are the books). Because of its fast pace the TV series is not as nerve-grating as the books are: here one's empathy with the protagonists that suffer and die is short lived because the plot is moving forward very fast while when reading the books one suffers endlessly when George R. R. Martin decides to kill off (yet) another of the good guys he built up painstakingly or when he lets the evil ones live and flourish even though moral dictates that they have to suffer or die.",
+        "created_at": "2015-07-31T12:30:12.000Z",
+        "id": 51184,
+        "likes": 2,
+        "parent_id": 0,
+        "replies": 0,
+        "review": false,
+        "spoiler": false,
+        "updated_at": "2015-07-31T12:30:12.000Z",
+        "user": {
+            "ids": {
+                "slug": "drnkmnky"
+            },
+            "name": "",
+            "private": false,
+            "username": "DRNKMNKY",
+            "vip": false,
+            "vip_ep": false
+        },
+        "user_rating": 8
+    },
+    {
+        "comment": "Great opening season but still overly brutal from time to time (as are the books). Because of its fast pace the TV series is not as nerve-grating as the books are: here one's empathy with the protagonists that suffer and die is short lived because the plot is moving forward very fast while when reading the books one suffers endlessly when George R. R. Martin decides to kill off (yet) another of the good guys he built up painstakingly or when he lets the evil ones live and flourish even though moral dictates that they have to suffer or die.",
+        "created_at": "2015-07-31T12:29:12.000Z",
+        "id": 51183,
+        "likes": 0,
+        "parent_id": 0,
+        "replies": 0,
+        "review": false,
+        "spoiler": false,
+        "updated_at": "2015-07-31T12:29:12.000Z",
+        "user": {
+            "ids": {
+                "slug": "drnkmnky"
+            },
+            "name": "",
+            "private": false,
+            "username": "DRNKMNKY",
+            "vip": false,
+            "vip_ep": false
+        },
+        "user_rating": 8
+    },
+    {
+        "comment": "Since when is Daenerys called Dany?",
+        "created_at": "2015-07-15T09:08:36.000Z",
+        "id": 49368,
+        "likes": 3,
+        "parent_id": 0,
+        "replies": 0,
+        "review": false,
+        "spoiler": false,
+        "updated_at": "2015-07-15T09:08:36.000Z",
+        "user": {
+            "ids": {
+                "slug": "aliebaba99"
+            },
+            "name": null,
+            "private": false,
+            "username": "Aliebaba99",
+            "vip": false,
+            "vip_ep": false
+        },
+        "user_rating": null
+    },
+    {
+        "comment": "This is a very good show, I like it",
+        "created_at": "2015-05-13T00:58:13.000Z",
+        "id": 43480,
+        "likes": 0,
+        "parent_id": 0,
+        "replies": 0,
+        "review": false,
+        "spoiler": false,
+        "updated_at": "2015-05-13T00:58:13.000Z",
+        "user": {
+            "ids": {
+                "slug": "johnwilliam-forcier"
+            },
+            "name": "John-William Forcier",
+            "private": false,
+            "username": "johnwilliam.forcier",
+            "vip": false,
+            "vip_ep": false
+        },
+        "user_rating": 10
+    }
+]

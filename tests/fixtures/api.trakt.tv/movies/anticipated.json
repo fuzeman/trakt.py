@@ -1,0 +1,472 @@
+[
+    {
+        "list_count": 22372,
+        "movie": {
+            "available_translations": [
+                "cs",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fr",
+                "he",
+                "hu",
+                "it",
+                "ko",
+                "nl",
+                "pt",
+                "ru",
+                "uk",
+                "zh"
+            ],
+            "certification": null,
+            "genres": [
+                "action",
+                "adventure",
+                "science-fiction"
+            ],
+            "homepage": null,
+            "ids": {
+                "imdb": "tt3896198",
+                "slug": "guardians-of-the-galaxy-vol-2-2017",
+                "tmdb": 283995,
+                "trakt": 181256
+            },
+            "language": "en",
+            "overview": "The Guardians must fight to keep their newfound family together as they unravel the mysteries of Peter Quill's true parentage.",
+            "rating": 6.95833,
+            "released": "2017-05-05",
+            "runtime": 90,
+            "tagline": "Obviously.",
+            "title": "Guardians of the Galaxy Vol. 2",
+            "trailer": "http://youtube.com/watch?v=1IahbvUO7z0",
+            "updated_at": "2017-03-01T15:08:07.000Z",
+            "votes": 120,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 20614,
+        "movie": {
+            "available_translations": [
+                "cs",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fr",
+                "he",
+                "ko",
+                "nl",
+                "pl",
+                "pt",
+                "ro",
+                "ru",
+                "tr",
+                "uk",
+                "zh"
+            ],
+            "certification": null,
+            "genres": [
+                "action",
+                "adventure",
+                "science-fiction",
+                "fantasy"
+            ],
+            "homepage": "http://www.justiceleaguethemovie.com",
+            "ids": {
+                "imdb": "tt0974015",
+                "slug": "justice-league-2017",
+                "tmdb": 141052,
+                "trakt": 94232
+            },
+            "language": "en",
+            "overview": "Fueled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne enlists the help of his newfound ally, Diana Prince, to face an even greater enemy. Together, Batman and Wonder Woman work quickly to find and recruit a team of metahumans to stand against this newly awakened threat. But despite the formation of this unprecedented league of heroes-Batman, Wonder Woman, Aquaman, Cyborg and The Flash-it may already be too late to save the planet from an assault of catastrophic proportions.",
+            "rating": 7.03889,
+            "released": "2017-11-17",
+            "runtime": 90,
+            "tagline": "",
+            "title": "Justice League",
+            "trailer": "http://youtube.com/watch?v=gglkYMGRYlE",
+            "updated_at": "2017-02-28T08:43:07.000Z",
+            "votes": 180,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 19345,
+        "movie": {
+            "available_translations": [
+                "cs",
+                "da",
+                "de",
+                "en",
+                "es",
+                "fr",
+                "he",
+                "ko",
+                "pt",
+                "ru",
+                "tr",
+                "zh"
+            ],
+            "certification": "PG-13",
+            "genres": [
+                "science-fiction",
+                "action",
+                "adventure",
+                "fantasy"
+            ],
+            "homepage": "http://marvel.com/movies",
+            "ids": {
+                "imdb": "tt3501632",
+                "slug": "thor-ragnarok-2017",
+                "tmdb": 284053,
+                "trakt": 181312
+            },
+            "language": "en",
+            "overview": "Thor must confront other gods when Asgard is threatened with Ragnarok, the Norse Apocalypse.",
+            "rating": 6.66197,
+            "released": "2017-11-03",
+            "runtime": 90,
+            "tagline": "We Should Fight",
+            "title": "Thor: Ragnarok",
+            "trailer": null,
+            "updated_at": "2017-01-25T08:31:42.000Z",
+            "votes": 71,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 18260,
+        "movie": {
+            "available_translations": [
+                "cs",
+                "da",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fi",
+                "fr",
+                "hu",
+                "it",
+                "ja",
+                "ko",
+                "pt",
+                "ro",
+                "ru",
+                "sk",
+                "tr",
+                "uk"
+            ],
+            "certification": null,
+            "genres": [
+                "action",
+                "adventure",
+                "fantasy",
+                "science-fiction"
+            ],
+            "homepage": "http://www.starwars.com",
+            "ids": {
+                "imdb": "tt2527336",
+                "slug": "star-wars-the-last-jedi-2017",
+                "tmdb": 181808,
+                "trakt": 114333
+            },
+            "language": "en",
+            "overview": "Having taken her first steps into a larger world in Star Wars: The Force Awakens (2015), Rey continues her epic journey with Finn, Poe and Luke Skywalker in the next chapter of the saga.",
+            "rating": 6.96913580246914,
+            "released": "2017-12-15",
+            "runtime": 90,
+            "tagline": "",
+            "title": "Star Wars: The Last Jedi",
+            "trailer": null,
+            "updated_at": "2017-02-28T08:47:49.000Z",
+            "votes": 162,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 17324,
+        "movie": {
+            "available_translations": [
+                "cs",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fr",
+                "hu",
+                "it",
+                "ko",
+                "pt",
+                "ro",
+                "ru",
+                "tr",
+                "uk"
+            ],
+            "certification": "PG-13",
+            "genres": [
+                "action",
+                "adventure",
+                "fantasy",
+                "war"
+            ],
+            "homepage": "http://www.warnerbros.com/wonder-woman",
+            "ids": {
+                "imdb": "tt0451279",
+                "slug": "wonder-woman-2017",
+                "tmdb": 297762,
+                "trakt": 192487
+            },
+            "language": "en",
+            "overview": "An Amazon princess comes to the world of Man to become the greatest of the female superheroes.",
+            "rating": 6.77714,
+            "released": "2017-06-02",
+            "runtime": 90,
+            "tagline": "Power. Grace. Wisdom. Wonder.",
+            "title": "Wonder Woman",
+            "trailer": "http://youtube.com/watch?v=_1j1OAQHmak",
+            "updated_at": "2017-02-23T08:51:49.000Z",
+            "votes": 175,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 16737,
+        "movie": {
+            "available_translations": [
+                "bg",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fr",
+                "he",
+                "hu",
+                "it",
+                "nl",
+                "pt",
+                "ro",
+                "ru",
+                "sk",
+                "sv",
+                "tr",
+                "uk",
+                "zh"
+            ],
+            "certification": null,
+            "genres": [
+                "action",
+                "adventure",
+                "comedy",
+                "fantasy"
+            ],
+            "homepage": null,
+            "ids": {
+                "imdb": "tt1790809",
+                "slug": "pirates-of-the-caribbean-dead-men-tell-no-tales-2017",
+                "tmdb": 166426,
+                "trakt": 106667
+            },
+            "language": "en",
+            "overview": "Captain Jack Sparrow is pursued by an old rival, Captain Salazar, who along with his crew of ghost pirates has escaped from the Devil's Triangle, and is determined to kill every pirate at sea. Jack seeks the Trident of Poseidon, a powerful artifact that grants its possessor total control over the seas, in order to defeat Salazar.",
+            "rating": 7.4094,
+            "released": "2017-05-26",
+            "runtime": 153,
+            "tagline": "",
+            "title": "Pirates of the Caribbean: Dead Men Tell No Tales",
+            "trailer": null,
+            "updated_at": "2017-02-26T08:39:47.000Z",
+            "votes": 149,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 16166,
+        "movie": {
+            "available_translations": [
+                "bg",
+                "cs",
+                "da",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fr",
+                "he",
+                "hu",
+                "pt",
+                "ru",
+                "tr",
+                "uk",
+                "zh"
+            ],
+            "certification": null,
+            "genres": [
+                "science-fiction",
+                "action",
+                "adventure"
+            ],
+            "homepage": null,
+            "ids": {
+                "imdb": "tt4154756",
+                "slug": "avengers-infinity-war-2018",
+                "tmdb": 299536,
+                "trakt": 191797
+            },
+            "language": "en",
+            "overview": "The Avengers, torn apart after the events of Captain America: Civil War, join forces with the Guardians of the Galaxy to battle Thanos, who is trying to amass the Infinity Stones for a gauntlet that will give him dominion over space, time, and all reality.",
+            "rating": 6.6,
+            "released": "2018-05-04",
+            "runtime": 90,
+            "tagline": "",
+            "title": "Avengers: Infinity War",
+            "trailer": "http://youtube.com/watch?v=Uv2NRpG76Pg",
+            "updated_at": "2017-02-15T08:55:33.000Z",
+            "votes": 50,
+            "year": 2018
+        }
+    },
+    {
+        "list_count": 13293,
+        "movie": {
+            "available_translations": [
+                "bg",
+                "cs",
+                "de",
+                "en",
+                "es",
+                "fr",
+                "hu",
+                "it",
+                "ko",
+                "pt",
+                "ru",
+                "zh"
+            ],
+            "certification": null,
+            "genres": [
+                "action",
+                "adventure",
+                "fantasy",
+                "science-fiction"
+            ],
+            "homepage": null,
+            "ids": {
+                "imdb": "tt1630029",
+                "slug": "avatar-2-2018",
+                "tmdb": 76600,
+                "trakt": 56580
+            },
+            "language": "en",
+            "overview": "A sequel to the 2009 blockbuster, the Avatar sequel will take place after the events of the first movie.",
+            "rating": 6.71153846153846,
+            "released": "2018-12-21",
+            "runtime": 90,
+            "tagline": "",
+            "title": "Avatar 2",
+            "trailer": null,
+            "updated_at": "2016-12-28T11:48:56.000Z",
+            "votes": 52,
+            "year": 2018
+        }
+    },
+    {
+        "list_count": 13169,
+        "movie": {
+            "available_translations": [
+                "bg",
+                "da",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fi",
+                "fr",
+                "he",
+                "hr",
+                "hu",
+                "id",
+                "it",
+                "ko",
+                "lt",
+                "pl",
+                "pt",
+                "ro",
+                "ru",
+                "sk",
+                "sv",
+                "uk",
+                "zh"
+            ],
+            "certification": "R",
+            "genres": [
+                "action",
+                "science-fiction",
+                "drama"
+            ],
+            "homepage": "http://www.foxmovies.com/movies/logan",
+            "ids": {
+                "imdb": "tt3315342",
+                "slug": "logan-2017",
+                "tmdb": 263115,
+                "trakt": 161972
+            },
+            "language": "en",
+            "overview": "In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan's attempts to hide from the world and his legacy are up-ended when a young mutant arrives, being pursued by dark forces.",
+            "rating": 7.16488,
+            "released": "2017-03-03",
+            "runtime": 135,
+            "tagline": "His time has come",
+            "title": "Logan",
+            "trailer": "http://youtube.com/watch?v=7aiUAaMbR64",
+            "updated_at": "2017-03-01T08:52:46.000Z",
+            "votes": 1122,
+            "year": 2017
+        }
+    },
+    {
+        "list_count": 13146,
+        "movie": {
+            "available_translations": [
+                "cs",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fr",
+                "he",
+                "pt",
+                "ru",
+                "tr",
+                "zh"
+            ],
+            "certification": null,
+            "genres": [
+                "action",
+                "adventure",
+                "science-fiction"
+            ],
+            "homepage": null,
+            "ids": {
+                "imdb": "tt4154796",
+                "slug": "untitled-avengers-4-2019",
+                "tmdb": 299534,
+                "trakt": 191798
+            },
+            "language": "en",
+            "overview": "Plot unknown.",
+            "rating": 5.24242,
+            "released": "2019-05-03",
+            "runtime": 90,
+            "tagline": "",
+            "title": "Untitled Avengers 4",
+            "trailer": null,
+            "updated_at": "2017-01-25T08:31:55.000Z",
+            "votes": 33,
+            "year": 2019
+        }
+    }
+]

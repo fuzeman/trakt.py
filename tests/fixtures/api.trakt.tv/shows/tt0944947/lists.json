@@ -1,0 +1,282 @@
+[
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2015-08-15T19:07:40.000Z",
+        "description": "Daily Refreshed Imdb Top 250 TVs (Sun Sep 11 10:00:18 CEST 2016)",
+        "display_numbers": true,
+        "ids": {
+            "slug": "imdb-top-250-tvs",
+            "trakt": 1322513
+        },
+        "item_count": 240,
+        "likes": 202,
+        "name": "Imdb Top 250 TVs",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-02-26T07:23:33.000Z",
+        "user": {
+            "ids": {
+                "slug": "mmounirou"
+            },
+            "name": " Pullo Titus",
+            "private": false,
+            "username": "mmounirou",
+            "vip": true,
+            "vip_ep": true
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-09-24T14:22:34.000Z",
+        "description": "Lists will be updated with new series  and episodes or movies or suggested by anyone as they are released or if you have an idea for a list email me at: bingeflixs@gmail.com",
+        "display_numbers": false,
+        "ids": {
+            "slug": "binge-tee-vee",
+            "trakt": 2708842
+        },
+        "item_count": 1005,
+        "likes": 52,
+        "name": "Binge Tee Vee",
+        "privacy": "public",
+        "sort_by": "title",
+        "sort_how": "asc",
+        "updated_at": "2017-03-01T20:33:40.000Z",
+        "user": {
+            "ids": {
+                "slug": "binge-flixs"
+            },
+            "name": "Binge Flixs",
+            "private": false,
+            "username": "Binge Flixs",
+            "vip": true,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2016-07-13T03:50:20.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "movies",
+            "trakt": 2465950
+        },
+        "item_count": 3323,
+        "likes": 15,
+        "name": "Movies",
+        "privacy": "public",
+        "sort_by": "title",
+        "sort_how": "asc",
+        "updated_at": "2017-02-27T19:30:16.000Z",
+        "user": {
+            "ids": {
+                "slug": "kodimasteraccount"
+            },
+            "name": "",
+            "private": false,
+            "username": "KodiMasterAccount",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-10-03T14:53:15.000Z",
+        "description": "Exodus List",
+        "display_numbers": false,
+        "ids": {
+            "slug": "my-exodus-list",
+            "trakt": 2744952
+        },
+        "item_count": 98,
+        "likes": 2,
+        "name": "My Exodus List",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-02-21T07:21:36.000Z",
+        "user": {
+            "ids": {
+                "slug": "ramadanhamed"
+            },
+            "name": null,
+            "private": false,
+            "username": "ramadanhamed",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2016-06-28T02:23:43.000Z",
+        "description": "For other complete lists of tv shows by network, check my lists overview:\r\nhttps://trakt.tv/users/aclo_networks/lists",
+        "display_numbers": false,
+        "ids": {
+            "slug": "tv-shows-hbo",
+            "trakt": 2414655
+        },
+        "item_count": 205,
+        "likes": 25,
+        "name": "TV Shows \u279b HBO \u2764\u2764\u2764",
+        "privacy": "public",
+        "sort_by": "votes",
+        "sort_how": "desc",
+        "updated_at": "2017-02-26T03:50:11.000Z",
+        "user": {
+            "ids": {
+                "slug": "aclo_networks"
+            },
+            "name": "",
+            "private": false,
+            "username": "ACLO_Networks",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2016-04-07T02:42:16.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "fgh-32",
+            "trakt": 2123368
+        },
+        "item_count": 4,
+        "likes": 2,
+        "name": "fgh#@$32",
+        "privacy": "public",
+        "sort_by": "title",
+        "sort_how": "asc",
+        "updated_at": "2016-04-07T21:14:19.000Z",
+        "user": {
+            "ids": {
+                "slug": "always-_allllpxr"
+            },
+            "name": null,
+            "private": false,
+            "username": "Always$=#_ALLLLPXR",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 1,
+        "created_at": "2016-04-11T23:10:50.000Z",
+        "description": "",
+        "display_numbers": true,
+        "ids": {
+            "slug": "imdb-top-rated-tv-shows",
+            "trakt": 2143363
+        },
+        "item_count": 243,
+        "likes": 96,
+        "name": "IMDB: Top Rated TV Shows",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-02-28T09:43:31.000Z",
+        "user": {
+            "ids": {
+                "slug": "justin"
+            },
+            "name": "Justin Nemeth",
+            "private": false,
+            "username": "justin",
+            "vip": true,
+            "vip_ep": true
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-12-21T00:44:51.000Z",
+        "description": "",
+        "display_numbers": true,
+        "ids": {
+            "slug": "my-tv-shows",
+            "trakt": 3046866
+        },
+        "item_count": 81,
+        "likes": 3,
+        "name": "My Tv shows",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-01-19T03:19:11.000Z",
+        "user": {
+            "ids": {
+                "slug": "0541415141m7md"
+            },
+            "name": "Mohammed Qahtanie",
+            "private": false,
+            "username": "0541415141m7md",
+            "vip": true,
+            "vip_ep": true
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2016-01-25T19:04:51.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "popular-tv",
+            "trakt": 1785272
+        },
+        "item_count": 522,
+        "likes": 7,
+        "name": "Popular TV",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2016-12-28T01:34:39.000Z",
+        "user": {
+            "ids": {
+                "slug": "deegan000"
+            },
+            "name": null,
+            "private": false,
+            "username": "deegan000",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-10-07T17:27:41.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "tv-shows",
+            "trakt": 2759844
+        },
+        "item_count": 2220,
+        "likes": 5,
+        "name": "TV Shows",
+        "privacy": "public",
+        "sort_by": "title",
+        "sort_how": "asc",
+        "updated_at": "2017-01-05T03:35:24.000Z",
+        "user": {
+            "ids": {
+                "slug": "pizzaguy300"
+            },
+            "name": null,
+            "private": false,
+            "username": "pizzaguy300",
+            "vip": false,
+            "vip_ep": false
+        }
+    }
+]
