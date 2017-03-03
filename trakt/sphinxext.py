@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from trakt import interfaces
 import trakt  # noqa: I902
@@ -14,9 +14,10 @@ import six
 
 
 def _get_methods(obj):
-    for (name, value) in inspect.getmembers(obj, predicate=inspect.ismethod):
+    for (name, _) in inspect.getmembers(obj, predicate=inspect.ismethod):
         if name.startswith('_'):
             continue
+
         yield '     * ' + name
 
 

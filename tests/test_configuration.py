@@ -1,3 +1,5 @@
+from __future__ import absolute_import, division, print_function
+
 from tests.core.semaphore import Semaphore
 from trakt.core.configuration import ConfigurationManager
 

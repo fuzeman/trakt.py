@@ -1,6 +1,8 @@
+from __future__ import absolute_import, division, print_function
+
+from examples.helpers import authenticate
 from trakt import Trakt
 
-from helpers import authenticate
 from pprint import pprint
 import logging
 import os

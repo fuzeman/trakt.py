@@ -1,3 +1,5 @@
+from __future__ import absolute_import, division, print_function
+
 from trakt.core.helpers import clean_username, popitems
 from trakt.interfaces.base import Interface, authenticated
 from trakt.mapper import ListMapper, ListItemMapper

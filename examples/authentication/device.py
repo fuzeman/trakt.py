@@ -1,3 +1,5 @@
+from __future__ import absolute_import, division, print_function
+
 from trakt import Trakt
 
 from threading import Condition
@@ -18,16 +20,16 @@ class Application(object):
 
     def authenticate(self):
         if not self.is_authenticating.acquire(blocking=False):
-            print 'Authentication has already been started'
+            print('Authentication has already been started')
             return False
 
         # Request new device code
         code = Trakt['oauth/device'].code()
 
-        print 'Enter the code "%s" at %s to authenticate your account' % (
+        print('Enter the code "%s" at %s to authenticate your account' % (
             code.get('user_code'),
             code.get('verification_url')
-        )
+        ))
 
         # Construct device authentication poller
         poller = Trakt['oauth/device'].poll(**code)\
@@ -46,7 +48,7 @@ class Application(object):
         self.authenticate()
 
         if not self.authorization:
-            print 'ERROR: Authentication required'
+            print('ERROR: Authentication required')
             exit(1)
 
         # Simulate expired token
@@ -55,15 +57,15 @@ class Application(object):
         # Test authenticated calls
         with Trakt.configuration.oauth.from_response(self.authorization):
             # Expired token, requests will return `None`
-            print Trakt['sync/collection'].movies()
+            print(Trakt['sync/collection'].movies())
 
         with Trakt.configuration.oauth.from_response(self.authorization, refresh=True):
             # Expired token will be refreshed automatically (as `refresh=True`)
-            print Trakt['sync/collection'].movies()
+            print(Trakt['sync/collection'].movies())
 
         with Trakt.configuration.oauth.from_response(self.authorization):
             # Current token is still valid
-            print Trakt['sync/collection'].movies()
+            print(Trakt['sync/collection'].movies())
 
     def on_aborted(self):
         """Device authentication aborted.
@@ -72,7 +74,7 @@ class Application(object):
         or via the "poll" event)
         """
 
-        print 'Authentication aborted'
+        print('Authentication aborted')
 
         # Authentication aborted
         self.is_authenticating.acquire()
@@ -92,7 +94,7 @@ class Application(object):
         # Store authorization for future calls
         self.authorization = authorization
 
-        print 'Authentication successful - authorization: %r' % self.authorization
+        print('Authentication successful - authorization: %r' % self.authorization)
 
         # Authentication complete
         self.is_authenticating.notify_all()
@@ -101,7 +103,7 @@ class Application(object):
     def on_expired(self):
         """Device authentication expired."""
 
-        print 'Authentication expired'
+        print('Authentication expired')
 
         # Authentication expired
         self.is_authenticating.acquire()
@@ -122,7 +124,7 @@ class Application(object):
         # OAuth token refreshed, store authorization for future calls
         self.authorization = authorization
 
-        print 'Token refreshed - authorization: %r' % self.authorization
+        print('Token refreshed - authorization: %r' % self.authorization)
 
 
 if __name__ == '__main__':

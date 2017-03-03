@@ -1,3 +1,5 @@
+from __future__ import absolute_import, division, print_function
+
 from trakt.core.helpers import try_convert
 
 from six.moves.urllib_parse import parse_qsl

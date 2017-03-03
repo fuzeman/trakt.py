@@ -1,4 +1,6 @@
-from helpers import authenticate
+from __future__ import absolute_import, division, print_function
+
+from examples.helpers import authenticate
 
 import logging
 import os
@@ -21,13 +23,13 @@ if __name__ == '__main__':
     )
 
     for x, liked_list in enumerate(Trakt['users'].likes('lists', pagination=True)):
-        print '[%s] %r' % (x + 1, liked_list)
+        print('[%s] %r' % (x + 1, liked_list))
 
         items = liked_list.items()
 
         if not items:
-            print ' - ERROR'
+            print(' - ERROR')
             continue
 
         items = list(items)
-        print ' - %d item(s)' % len(items)
+        print(' - %d item(s)' % len(items))

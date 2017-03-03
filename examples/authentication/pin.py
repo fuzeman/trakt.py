@@ -1,5 +1,8 @@
+from __future__ import absolute_import, division, print_function
+
 from trakt import Trakt
 
+from six.moves import input
 import logging
 import os
 
@@ -17,7 +20,7 @@ class Application(object):
         self.authenticate()
 
         if not self.authorization:
-            print 'Authentication required'
+            print('Authentication required')
             exit(1)
 
         # Simulate expired token
@@ -26,20 +29,20 @@ class Application(object):
         # Test authenticated calls
         with Trakt.configuration.oauth.from_response(self.authorization):
             # Expired token, requests will return `None`
-            print Trakt['sync/collection'].movies()
+            print(Trakt['sync/collection'].movies())
 
         with Trakt.configuration.oauth.from_response(self.authorization, refresh=True):
             # Expired token will be refreshed automatically (as `refresh=True`)
-            print Trakt['sync/collection'].movies()
+            print(Trakt['sync/collection'].movies())
 
         with Trakt.configuration.oauth.from_response(self.authorization):
             # Current token is still valid
-            print Trakt['sync/collection'].movies()
+            print(Trakt['sync/collection'].movies())
 
     def authenticate(self):
         # Request authentication
-        print 'Navigate to %s' % Trakt['oauth/pin'].url()
-        pin = raw_input('Pin: ')
+        print('Navigate to %s' % Trakt['oauth/pin'].url())
+        pin = input('Pin: ')
 
         # Exchange `code` for `access_token`
         self.authorization = Trakt['oauth'].token_exchange(pin, 'urn:ietf:wg:oauth:2.0:oob')
@@ -47,14 +50,14 @@ class Application(object):
         if not self.authorization:
             return False
 
-        print 'Token exchanged - authorization: %r' % self.authorization
+        print('Token exchanged - authorization: %r' % self.authorization)
         return True
 
     def on_token_refreshed(self, response):
         # OAuth token refreshed, save token for future calls
         self.authorization = response
 
-        print 'Token refreshed - authorization: %r' % self.authorization
+        print('Token refreshed - authorization: %r' % self.authorization)
 
 
 if __name__ == '__main__':

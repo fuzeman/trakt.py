@@ -1,7 +1,9 @@
+from __future__ import absolute_import, division, print_function
+
+from examples.helpers import authenticate
 from trakt import Trakt
 
 from datetime import datetime
-from helpers import authenticate
 import os
 
 

@@ -1,7 +1,9 @@
+from __future__ import absolute_import, division, print_function
+
+from examples.helpers import authenticate
 from trakt import Trakt
 from trakt.objects import Movie, Show
 
-from helpers import authenticate
 import logging
 import os
 
@@ -27,12 +29,12 @@ if __name__ == '__main__':
     # Fetch playback for movies
     playback = Trakt['sync/playback'].movies(exceptions=True)
 
-    for key, item in playback.items():
-        print item
+    for item in playback.values():
+        print(item)
 
         if type(item) is Movie:
-            print '\tprogress: %r' % item.progress
-            print '\tpaused_at: %r' % item.paused_at
+            print('\tprogress: %r' % item.progress)
+            print('\tpaused_at: %r' % item.paused_at)
 
     # Fetch movie library (watched, collection, ratings)
     movies = {}
@@ -42,32 +44,32 @@ if __name__ == '__main__':
 
     Trakt['sync/ratings'].movies(movies, exceptions=True)
 
-    for key, movie in movies.items():
-        print movie
+    for movie in movies.values():
+        print(movie)
 
-        print '\t', 'keys', '\t' * 3, movie.keys
-        print '\t', 'rating', '\t' * 3, movie.rating
+        print('\tkeys%s%r' % ('\t' * 3, movie.keys))
+        print('\trating%s%r' % ('\t' * 3, movie.rating))
 
-        print '\t', 'is_watched', '\t' * 2, movie.is_watched
-        print '\t', 'last_watched_at', '\t', movie.last_watched_at
-        print '\t', 'is_collected', '\t', movie.is_collected
-        print '\t', 'collected_at', '\t', movie.collected_at
-        print '\t', 'plays', '\t' * 3, movie.plays
+        print('\tis_watched%s%r' % ('\t' * 2, movie.is_watched))
+        print('\tlast_watched_at%s%r' % ('\t', movie.last_watched_at))
+        print('\tis_collected%s%r' % ('\t', movie.is_collected))
+        print('\tcollected_at%s%r' % ('\t', movie.collected_at))
+        print('\tplays%s%r' % ('\t' * 3, movie.plays))
 
-        print
+        print('')
 
     # Fetch playback for shows
     playback = Trakt['sync/playback'].episodes(exceptions=True)
 
-    for key, item in playback.items():
-        print item
+    for item in playback.values():
+        print(item)
 
         if type(item) is Show:
-            for (sk, ek), episode in item.episodes():
-                print '\t', episode
+            for _, episode in item.episodes():
+                print('\t%r' % (episode,))
 
-                print '\t\tprogress: %r' % episode.progress
-                print '\t\tpaused_at: %r' % episode.paused_at
+                print('\t\tprogress: %r' % episode.progress)
+                print('\t\tpaused_at: %r' % episode.paused_at)
 
     # Fetch show/episode library (watched, collection, ratings)
     shows = {}
@@ -78,9 +80,9 @@ if __name__ == '__main__':
     Trakt['sync/ratings'].shows(shows, exceptions=True)
     Trakt['sync/ratings'].episodes(shows, exceptions=True)
 
-    for key, show in shows.items():
-        print show
+    for show in shows.values():
+        print(show)
 
-        print '\t', 'keys', '\t' * 3, show.keys
-        print '\t', 'rating', '\t' * 3, show.rating
-        print
+        print('\tkeys%s%r' % ('\t' * 3, show.keys))
+        print('\trating%s%r' % ('\t' * 3, show.rating))
+        print('')

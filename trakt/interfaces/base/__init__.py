@@ -1,3 +1,5 @@
+from __future__ import absolute_import, division, print_function
+
 from trakt.core.errors import log_request_error
 from trakt.core.exceptions import RequestFailedError, ServerError, ClientError
 from trakt.core.helpers import try_convert
@@ -128,7 +130,7 @@ class InterfaceProxy(object):
     def __getattr__(self, name):
         value = getattr(self.interface, name)
 
-        if not hasattr(value, '__call__'):
+        if not callable(value):
             return value
 
         @functools.wraps(value)
