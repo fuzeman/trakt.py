@@ -1,3 +1,5 @@
+# flake8: noqa: E241
+
 from datetime import datetime
 from six import string_types
 from six.moves.urllib_parse import ParseResult, parse_qsl, urlparse

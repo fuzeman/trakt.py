@@ -1,3 +1,5 @@
+# flake8: noqa: E241
+
 from tests.core import mock
 from trakt import Trakt
 
