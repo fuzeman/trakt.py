@@ -122,11 +122,11 @@ def oauth_token(url, request):
 
     # Return mock token
     return httmock.response(200, json.dumps({
-        "access_token": "mock-access_token",
-        "token_type": "bearer",
-        "expires_in": 7200,
-        "refresh_token": "mock-refresh_token",
-        "scope": "public"
+        'access_token': 'mock-access_token',
+        'token_type': 'bearer',
+        'expires_in': 7200,
+        'refresh_token': 'mock-refresh_token',
+        'scope': 'public'
     }), {
         'Content-Type': 'application/json'
     })
@@ -323,9 +323,9 @@ def scrobble(url, request, action):
             'action': action,
             'progress': data.get('progress'),
             'sharing': {
-                "facebook": False,
-                "twitter": True,
-                "tumblr": False
+                'facebook': False,
+                'twitter': True,
+                'tumblr': False
             },
             'movie': {
                 'title': 'Mad Max: Fury Road',

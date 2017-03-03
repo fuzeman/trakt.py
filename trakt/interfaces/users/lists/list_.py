@@ -129,7 +129,7 @@ class UsersListInterface(Interface):
                 username=username
             )
 
-        raise ValueError("Unsupported value for \"return_type\": %r", return_type)
+        raise ValueError('Unsupported value for "return_type": %r', return_type)
 
     @authenticated
     def remove(self, username, id, items, **kwargs):

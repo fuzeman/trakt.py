@@ -5,8 +5,8 @@ import sys
 
 BASE_DIR = os.path.dirname(__file__)
 
-RE_DEPENDENCY_LINK = re.compile(r"^(?P<url>(?P<protocol>[\w\+]+):\/\/.*?)(?:#egg=(?P<egg>.*?))?$", re.IGNORECASE)
-RE_EGG_VERSION = re.compile(r"^(?P<name>.*?)(?:-(?P<version>\d+\.\d+(?:\.\d+)?))?$", re.IGNORECASE)
+RE_DEPENDENCY_LINK = re.compile(r'^(?P<url>(?P<protocol>[\w\+]+):\/\/.*?)(?:#egg=(?P<egg>.*?))?$', re.IGNORECASE)
+RE_EGG_VERSION = re.compile(r'^(?P<name>.*?)(?:-(?P<version>\d+\.\d+(?:\.\d+)?))?$', re.IGNORECASE)
 
 
 def read_requirements_file(path):
@@ -83,7 +83,7 @@ def read_requirements():
 # Read current package version
 version = {}  # noqa: E305
 
-with open(os.path.join(BASE_DIR, "trakt", "version.py")) as fp:
+with open(os.path.join(BASE_DIR, 'trakt', 'version.py')) as fp:
     exec(fp.read(), version)
 
 # Read contents of the "README.rst" file

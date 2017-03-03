@@ -46,11 +46,11 @@ def test_token():
     with HTTMock(mock.oauth_token, mock.unknown):
         # Validate `token_exchange` request/response
         assert Trakt['oauth'].token('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob') == {
-            "access_token": "mock-access_token",
-            "token_type": "bearer",
-            "expires_in": 7200,
-            "refresh_token": "mock-refresh_token",
-            "scope": "public"
+            'access_token': 'mock-access_token',
+            'token_type': 'bearer',
+            'expires_in': 7200,
+            'refresh_token': 'mock-refresh_token',
+            'scope': 'public'
         }
 
         # Ensure `token_exchange` raises a `ValueError` on incorrect configuration
@@ -62,11 +62,11 @@ def test_token_exchange():
     with HTTMock(mock.oauth_token, mock.unknown):
         # Validate `token_exchange` request/response
         assert Trakt['oauth'].token_exchange('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob') == {
-            "access_token": "mock-access_token",
-            "token_type": "bearer",
-            "expires_in": 7200,
-            "refresh_token": "mock-refresh_token",
-            "scope": "public"
+            'access_token': 'mock-access_token',
+            'token_type': 'bearer',
+            'expires_in': 7200,
+            'refresh_token': 'mock-refresh_token',
+            'scope': 'public'
         }
 
         # Ensure `token_exchange` raises a `ValueError` on incorrect configuration
@@ -78,11 +78,11 @@ def test_token_refresh():
     with HTTMock(mock.oauth_token, mock.unknown):
         # Validate `token_exchange` request/response
         assert Trakt['oauth'].token_refresh('mock-refresh_token', 'urn:ietf:wg:oauth:2.0:oob') == {
-            "access_token": "mock-access_token",
-            "token_type": "bearer",
-            "expires_in": 7200,
-            "refresh_token": "mock-refresh_token",
-            "scope": "public"
+            'access_token': 'mock-access_token',
+            'token_type': 'bearer',
+            'expires_in': 7200,
+            'refresh_token': 'mock-refresh_token',
+            'scope': 'public'
         }
 
         # Ensure `token_exchange` raises a `ValueError` on incorrect configuration
@@ -94,12 +94,12 @@ def test_request():
     with HTTMock(mock.oauth_token, mock.fixtures, mock.unknown):
         # Mock authorization
         authorization = {
-            "access_token": "mock",
-            "token_type": "bearer",
-            "created_at": calendar.timegm(datetime.datetime.utcnow().utctimetuple()),
-            "expires_in": 7 * 24 * 60 * 60,
-            "refresh_token": "mock-refresh_token",
-            "scope": "public"
+            'access_token': 'mock',
+            'token_type': 'bearer',
+            'created_at': calendar.timegm(datetime.datetime.utcnow().utctimetuple()),
+            'expires_in': 7 * 24 * 60 * 60,
+            'refresh_token': 'mock-refresh_token',
+            'scope': 'public'
         }
 
         # Test valid token
@@ -145,12 +145,12 @@ def test_refresh_deadlock():
 
         # Attempt request with expired authorization
         expired_authorization = {
-            "access_token": "mock-access_token",
-            "token_type": "bearer",
-            "created_at": calendar.timegm(datetime.datetime.utcnow().utctimetuple()),
-            "expires_in": 0,
-            "refresh_token": "mock-refresh_token",
-            "scope": "public"
+            'access_token': 'mock-access_token',
+            'token_type': 'bearer',
+            'created_at': calendar.timegm(datetime.datetime.utcnow().utctimetuple()),
+            'expires_in': 0,
+            'refresh_token': 'mock-refresh_token',
+            'scope': 'public'
         }
 
         with client.configuration.oauth.from_response(expired_authorization, refresh=True, username='mock'):

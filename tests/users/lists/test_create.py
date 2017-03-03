@@ -9,7 +9,7 @@ from httmock import HTTMock
 def test_create():
     with HTTMock(mock.list_create, mock.fixtures):
         with Trakt.configuration.auth('mock', 'mock'):
-            movies = Trakt['users/me/lists'].create(name="Movies")
+            movies = Trakt['users/me/lists'].create(name='Movies')
 
     # Validate movies list
     assert movies is not None

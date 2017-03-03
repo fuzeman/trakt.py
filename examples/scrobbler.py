@@ -33,28 +33,28 @@ if __name__ == '__main__':
     # }
 
     show = {
-        "title": "Breaking Bad",
-        "year": 2008,
-        "ids": {
-            "trakt": 1,
-            "slug": "breaking-bad",
-            "tvdb": 81189,
-            "imdb": "tt0903747",
-            "tmdb": 1396,
-            "tvrage": 18164
+        'title': 'Breaking Bad',
+        'year': 2008,
+        'ids': {
+            'trakt': 1,
+            'slug': 'breaking-bad',
+            'tvdb': 81189,
+            'imdb': 'tt0903747',
+            'tmdb': 1396,
+            'tvrage': 18164
         }
     }
 
     episode = {
-        "season": 1,
-        "number": 1,
-        "title": "Pilot",
-        "ids": {
-            "trakt": 16,
-            "tvdb": 349232,
-            "imdb": "tt0959621",
-            "tmdb": 62085,
-            "tvrage": 637041
+        'season': 1,
+        'number': 1,
+        'title': 'Pilot',
+        'ids': {
+            'trakt': 16,
+            'tvdb': 349232,
+            'imdb': 'tt0959621',
+            'tmdb': 62085,
+            'tvrage': 637041
         }
     }
 

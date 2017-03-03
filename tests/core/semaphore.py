@@ -4,7 +4,7 @@ from threading import Condition, Lock
 class Semaphore(object):
     def __init__(self, value=1):
         if value < 0:
-            raise ValueError("semaphore initial value must be >= 0")
+            raise ValueError('semaphore initial value must be >= 0')
 
         self.__cond = Condition(Lock())
         self.__value = value

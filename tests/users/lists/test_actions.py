@@ -16,7 +16,7 @@ def test_update_data():
     with HTTMock(mock.list_update, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
             result = Trakt['users/sean/lists/star-wars-in-machete-order'].update(
-                name="Shows (2)",
+                name='Shows (2)',
                 return_type='data'
             )
 
@@ -27,7 +27,7 @@ def test_update_object():
     with HTTMock(mock.list_update, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
             result = Trakt['users/sean/lists/star-wars-in-machete-order'].update(
-                name="Shows (2)"
+                name='Shows (2)'
             )
 
     assert result is not None
