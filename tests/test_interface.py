@@ -1,48 +1,41 @@
 from trakt.core import exceptions
 from trakt.interfaces.base import Interface
 
+from httmock import HTTMock
+import httmock
 import pytest
 import requests
-import responses
 
 
-@responses.activate
-def test_content_type():
-    responses.add(
-        responses.GET, 'http://mock/test',
-        body='{"test": True}', status=502,
-        content_type=None
-    )
+@httmock.urlmatch(netloc='mock', path='/test')
+def client_error(url, request):
+    return httmock.response(404, '{"test": True}')
 
-    r = requests.get('http://mock/test')
 
-    data = Interface(None).get_data(r)
+@httmock.urlmatch(netloc='mock', path='/test')
+def server_error(url, request):
+    return httmock.response(502, '{"test": True}')
+
+
+def test_missing_content_type():
+    with HTTMock(server_error):
+        response = requests.get('http://mock/test')
+
+    data = Interface(None).get_data(response)
     assert data is None
 
 
-@responses.activate
 def test_server_error():
-    responses.add(
-        responses.GET, 'http://mock/test',
-        body='{"test": True}', status=502,
-        content_type=None
-    )
-
-    r = requests.get('http://mock/test')
+    with HTTMock(server_error):
+        response = requests.get('http://mock/test')
 
     with pytest.raises(exceptions.ServerError):
-        Interface(None).get_data(r, exceptions=True)
+        Interface(None).get_data(response, exceptions=True)
 
 
-@responses.activate
 def test_client_error():
-    responses.add(
-        responses.GET, 'http://mock/test',
-        body='{"test": True}', status=404,
-        content_type=None
-    )
-
-    r = requests.get('http://mock/test')
+    with HTTMock(client_error):
+        response = requests.get('http://mock/test')
 
     with pytest.raises(exceptions.ClientError):
-        Interface(None).get_data(r, exceptions=True)
+        Interface(None).get_data(response, exceptions=True)

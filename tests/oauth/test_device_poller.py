@@ -3,7 +3,34 @@ from trakt import Trakt
 
 from httmock import HTTMock
 from threading import Event
+import httmock
+import json
 import pytest
+
+
+class State:
+    count = 0
+
+
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path='/oauth/device/token')
+def oauth_device_token(url, request):
+    assert request.body
+
+    # Validate request body
+    data = json.loads(request.body)
+
+    assert data.get('client_id') == 'mock-client_id'
+    assert data.get('client_secret') == 'mock-client_secret'
+    assert data.get('code') == 'mock-device_code'
+
+    # Return unauthenticated response
+    if State.count < 5:
+        return httmock.response(403, '', {
+            'Content-Type': 'application/json'
+        })
+
+    # Return mock token
+    return mock.oauth_device_token(url, request)
 
 
 def test_expired():
@@ -47,9 +74,6 @@ def test_aborted():
 
 
 def test_poll_authenticated():
-    class state:
-        count = 0
-
     authenticated = Event()
 
     def on_authenticated(token):
@@ -59,66 +83,53 @@ def test_poll_authenticated():
         authenticated.set()
 
     def on_poll(cb):
-        state.count += 1
+        State.count += 1
 
         cb()
 
-    with HTTMock(mock.fixtures, mock.unknown):
+    State.count = 0
+
+    with HTTMock(oauth_device_token, mock.unknown):
         # Construct poller
         poller = Trakt['oauth/device'].poll('mock-device_code', 600, 1)
         poller.on('authenticated', on_authenticated)
         poller.on('poll', on_poll)
 
-        # Set client configuration
-        Trakt.configuration.defaults.client('mock-client_id', 'mock-client_secret')
+        # Start poller
+        poller.start()
 
-        try:
-            # Start poller
-            poller.start()
+        # Ensure "authenticated" event was fired
+        authenticated.wait(10)
 
-            # Ensure "authenticated" event was fired
-            authenticated.wait(10)
-
-            assert authenticated.is_set() is True
-        finally:
-            # Reset client configuration
-            Trakt.configuration.defaults.client()
+        assert authenticated.is_set() is True
 
 
 def test_poll_expired():
-    class state:
-        count = 0
-
     expired = Event()
 
     def on_expired():
         expired.set()
 
     def on_poll(cb):
-        state.count += 1
+        State.count += 1
 
         cb()
 
-    with HTTMock(mock.fixtures, mock.unknown):
+    State.count = 0
+
+    with HTTMock(oauth_device_token, mock.unknown):
         # Construct poller
         poller = Trakt['oauth/device'].poll('mock-device_code', 2, 1)
         poller.on('expired', on_expired)
         poller.on('poll', on_poll)
 
-        # Set client configuration
-        Trakt.configuration.defaults.client('mock-client_id', 'mock-client_secret')
+        # Start poller
+        poller.start()
 
-        try:
-            # Start poller
-            poller.start()
+        # Ensure "authenticated" event was fired
+        expired.wait(10)
 
-            # Ensure "authenticated" event was fired
-            expired.wait(10)
-
-            assert expired.is_set() is True
-        finally:
-            # Reset client configuration
-            Trakt.configuration.defaults.client()
+        assert expired.is_set() is True
 
 
 def test_double_start():

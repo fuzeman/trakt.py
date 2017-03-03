@@ -1,7 +1,8 @@
 from trakt.core.helpers import try_convert
 
-from httmock import all_requests, response, urlmatch
 from urlparse import parse_qsl
+import functools
+import httmock
 import itertools
 import json
 import math
@@ -9,6 +10,33 @@ import os
 
 CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
 FIXTURES_DIR = os.path.abspath(os.path.join(CURRENT_DIR, '..', 'fixtures'))
+
+
+def authenticated(func):
+    @functools.wraps(func)
+    def wrapper(url, request, *args, **kwargs):
+        if not is_authenticated(request):
+            return httmock.httmock.response(403)
+
+        return func(url, request, *args, **kwargs)
+
+    return wrapper
+
+
+def is_authenticated(request):
+    # Ensure API Key has been provided
+    if request.headers.get('trakt-api-key') not in ['mock-client_id', 'mock']:
+        return False
+
+    # OAuth
+    if request.headers.get('Authorization') in ['Bearer mock-access_token', 'Bearer mock']:
+        return True
+
+    # xAuth
+    return (
+        request.headers.get('trakt-user-login') == 'mock' and
+        request.headers.get('trakt-user-token') == 'mock'
+    )
 
 
 def get_content(netloc, path, query=None):
@@ -50,9 +78,9 @@ def get_fixture(netloc, path, query=None, request=None):
     content = get_content(netloc, path, query)
 
     if content is None:
-        return response(404, request=request)
+        return httmock.response(404, request=request)
 
-    return response(
+    return httmock.response(
         200, content, {
             'Content-Type': 'application/json'
         },
@@ -60,7 +88,7 @@ def get_fixture(netloc, path, query=None, request=None):
     )
 
 
-@urlmatch(netloc='api.trakt.tv')
+@httmock.urlmatch(netloc='api.trakt.tv')
 def fixtures(url, request):
     return get_fixture(
         url.netloc, url.path,
@@ -69,18 +97,88 @@ def fixtures(url, request):
     )
 
 
-@all_requests
+@httmock.all_requests
 def unknown(url, request):
-    return response(501, request=request)
+    return httmock.response(501, request=request)
 
 
-@urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path='/oauth/token')
+def oauth_token(url, request):
+    assert request.body
+
+    # Validate request body
+    data = json.loads(request.body)
+
+    assert data.get('client_id') == 'mock-client_id'
+    assert data.get('client_secret') == 'mock-client_secret'
+
+    assert data.get('grant_type') in ['authorization_code', 'refresh_token']
+    assert data.get('redirect_uri') == 'urn:ietf:wg:oauth:2.0:oob'
+
+    if data['grant_type'] == 'authorization_code':
+        assert data.get('code') == 'ABCD1234'
+    else:
+        assert data.get('refresh_token') == 'mock-refresh_token'
+
+    # Return mock token
+    return httmock.response(200, json.dumps({
+        "access_token": "mock-access_token",
+        "token_type": "bearer",
+        "expires_in": 7200,
+        "refresh_token": "mock-refresh_token",
+        "scope": "public"
+    }), {
+        'Content-Type': 'application/json'
+    })
+
+
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path='/oauth/device/code')
+def oauth_device_code(url, request):
+    assert request.body
+
+    # Validate request body
+    data = json.loads(request.body)
+
+    assert data.get('client_id') == 'mock-client_id'
+
+    # Return mock device code
+    return httmock.response(200, json.dumps({
+        'device_code': 'mock-device_code',
+        'user_code': 'mock-user_code',
+        'verification_url': 'https://trakt.tv/activate',
+        'expires_in': 600,
+        'interval': 5
+    }), {
+        'Content-Type': 'application/json'
+    })
+
+
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path='/oauth/device/token')
+def oauth_device_token(url, request):
+    assert request.body
+
+    # Validate request body
+    data = json.loads(request.body)
+
+    assert data.get('client_id') == 'mock-client_id'
+    assert data.get('client_secret') == 'mock-client_secret'
+    assert data.get('code') == 'mock-device_code'
+
+    # Return mock token
+    return httmock.response(200, json.dumps({
+        'access_token': 'mock-access_token',
+        'token_type': 'bearer',
+        'expires_in': 7200,
+        'refresh_token': 'mock-refresh_token',
+        'scope': 'public'
+    }), {
+        'Content-Type': 'application/json'
+    })
+
+
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
+@authenticated
 def lists(url, request, content_type='application/json'):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Retrieve parameters
     parameters = dict(parse_qsl(url.query))
 
     page = try_convert(parameters.get('page'), int) or 1
@@ -90,13 +188,13 @@ def lists(url, request, content_type='application/json'):
     items = get_json(url.netloc, url.path, url.query)
 
     if items is None:
-        return response(404, request=request)
+        return httmock.response(404, request=request)
 
     # Calculate page count and item offset
     offset = (page - 1) * limit
     page_count = int(math.ceil(float(len(items)) / limit))
 
-    return response(
+    return httmock.response(
         200, json.dumps(items[offset:offset + limit]), {
             'Content-Type': content_type,
 
@@ -109,25 +207,21 @@ def lists(url, request, content_type='application/json'):
     )
 
 
-@urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
 def lists_invalid_content_type(url, request):
     return lists(url, request, content_type='text/plain')
 
 
-@urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
+@authenticated
 def lists_invalid_json(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Retrieve parameters
     parameters = dict(parse_qsl(url.query))
 
     page = try_convert(parameters.get('page'), int) or 1
 
     # Return invalid response for page #2
     if page == 2:
-        return response(
+        return httmock.response(
             200, '<invalid-json-response>', {
                 'Content-Type': 'application/json'
             },
@@ -138,32 +232,24 @@ def lists_invalid_json(url, request):
     return lists(url, request)
 
 
-@urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
+@authenticated
 def lists_request_failure(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Retrieve parameters
     parameters = dict(parse_qsl(url.query))
 
     page = try_convert(parameters.get('page'), int) or 1
 
     # Return invalid response for page #2
     if page == 2:
-        return response(400, request=request)
+        return httmock.response(400, request=request)
 
     # Return page
     return lists(url, request)
 
 
-@urlmatch(netloc='api.trakt.tv', method='POST', path=r'/users/[\w-]+/lists')
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path=r'/users/[\w-]+/lists')
+@authenticated
 def list_create(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Retrieve list attributes
     data = json.loads(request.body)
 
     assert data
@@ -180,82 +266,50 @@ def list_create(url, request):
     )
 
 
-@urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists/[\w-]+')
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists/[\w-]+')
+@authenticated
 def list_get(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Return fixture
     return fixtures(url, request)
 
 
-@urlmatch(netloc='api.trakt.tv', method='DELETE', path=r'/users/[\w-]+/lists/[\w-]+')
+@httmock.urlmatch(netloc='api.trakt.tv', method='DELETE', path=r'/users/[\w-]+/lists/[\w-]+')
+@authenticated
 def list_delete(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Return response
-    return response(204, request=request)
+    return httmock.response(204, request=request)
 
 
-@urlmatch(netloc='api.trakt.tv', method='PUT', path=r'/users/[\w-]+/lists/[\w-]+')
+@httmock.urlmatch(netloc='api.trakt.tv', method='PUT', path=r'/users/[\w-]+/lists/[\w-]+')
+@authenticated
 def list_update(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Return fixture
     return fixtures(url, request)
 
 
-@urlmatch(netloc='api.trakt.tv', method='POST', path=r'/users/[\w-]+/lists/[\w-]+/like')
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path=r'/users/[\w-]+/lists/[\w-]+/like')
+@authenticated
 def list_like(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Return response
-    return response(204, request=request)
+    return httmock.response(204, request=request)
 
 
-@urlmatch(netloc='api.trakt.tv', method='DELETE', path=r'/users/[\w-]+/lists/[\w-]+/like')
+@httmock.urlmatch(netloc='api.trakt.tv', method='DELETE', path=r'/users/[\w-]+/lists/[\w-]+/like')
+@authenticated
 def list_unlike(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Return response
-    return response(204, request=request)
+    return httmock.response(204, request=request)
 
 
-@urlmatch(netloc='api.trakt.tv', method='POST', path=r'/users/[\w-]+/lists/[\w-]+/items')
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path=r'/users/[\w-]+/lists/[\w-]+/items')
+@authenticated
 def list_item_add(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Return fixture
     return fixtures(url, request)
 
 
-@urlmatch(netloc='api.trakt.tv', method='POST', path=r'/users/[\w-]+/lists/[\w-]+/items/remove')
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path=r'/users/[\w-]+/lists/[\w-]+/items/remove')
+@authenticated
 def list_item_remove(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Return fixture
     return fixtures(url, request)
 
 
+@authenticated
 def scrobble(url, request, action):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Ensure body exists
     data = json.loads(request.body)
     assert data
 
@@ -263,7 +317,7 @@ def scrobble(url, request, action):
     assert data.get('movie', {}).get('ids', {}).get('tmdb') == 76341
 
     # Return response
-    return response(
+    return httmock.response(
         200, {
             'id': 9832,
             'action': action,
@@ -290,7 +344,7 @@ def scrobble(url, request, action):
     )
 
 
-@urlmatch(netloc='api.trakt.tv', method='POST', path='/scrobble/start')
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path='/scrobble/start')
 def scrobble_start(url, request):
     return scrobble(
         url, request,
@@ -298,7 +352,7 @@ def scrobble_start(url, request):
     )
 
 
-@urlmatch(netloc='api.trakt.tv', method='POST', path='/scrobble/pause')
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path='/scrobble/pause')
 def scrobble_pause(url, request):
     return scrobble(
         url, request,
@@ -306,7 +360,7 @@ def scrobble_pause(url, request):
     )
 
 
-@urlmatch(netloc='api.trakt.tv', method='POST', path='/scrobble/stop')
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path='/scrobble/stop')
 def scrobble_stop(url, request):
     return scrobble(
         url, request,
@@ -314,21 +368,13 @@ def scrobble_stop(url, request):
     )
 
 
-@urlmatch(netloc='api.trakt.tv', method='GET', path='/sync/\w+')
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path='/sync/\w+')
+@authenticated
 def sync_get(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Return fixture
     return fixtures(url, request)
 
 
-@urlmatch(netloc='api.trakt.tv', method='DELETE', path='/sync/playback/\d+')
+@httmock.urlmatch(netloc='api.trakt.tv', method='DELETE', path='/sync/playback/\d+')
+@authenticated
 def sync_playback_delete(url, request):
-    # Ensure credentials were provided
-    assert request.headers.get('trakt-user-login') == 'mock'
-    assert request.headers.get('trakt-user-token') == 'mock'
-
-    # Return fixture
-    return response(204, request=request)
+    return httmock.response(204, request=request)
