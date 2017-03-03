@@ -104,6 +104,17 @@ def unknown(url, request):
     return httmock.response(501, request=request)
 
 
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path='/calendars/all/\w+/\d{4}-\d{2}-\d{2}(/\d{1,2})?')
+def calendars_all_period(url, request):
+    return fixtures(url, request)
+
+
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path='/calendars/my/\w+')
+@authenticated
+def calendars_my(url, request):
+    return fixtures(url, request)
+
+
 @httmock.urlmatch(netloc='api.trakt.tv', method='POST', path='/oauth/token')
 def oauth_token(url, request):
     assert request.body
