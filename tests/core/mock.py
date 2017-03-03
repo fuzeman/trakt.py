@@ -1,6 +1,6 @@
 from trakt.core.helpers import try_convert
 
-from urlparse import parse_qsl
+from six.moves.urllib_parse import parse_qsl
 import functools
 import httmock
 import itertools

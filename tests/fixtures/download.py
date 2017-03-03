@@ -1,6 +1,6 @@
 from datetime import datetime
 from six import string_types
-from urlparse import ParseResult, parse_qsl, urlparse
+from six.moves.urllib_parse import ParseResult, parse_qsl, urlparse
 import itertools
 import json
 import os

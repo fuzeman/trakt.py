@@ -6,7 +6,6 @@ from trakt import Trakt
 from hamcrest import *
 from httmock import HTTMock
 from six.moves import xrange
-import responses
 
 
 def test_basic():
