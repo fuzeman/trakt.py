@@ -1,4 +1,5 @@
 from trakt.interfaces import auth
+from trakt.interfaces import calendars
 from trakt.interfaces import movies
 from trakt.interfaces import oauth
 from trakt.interfaces import scrobble
@@ -17,6 +18,10 @@ INTERFACES = [
 
     scrobble.ScrobbleInterface,
     search.SearchInterface,
+
+    # /calendars/
+    calendars.AllCalendarsInterface,
+    calendars.MyCalendarsInterface,
 
     # /sync/
     sync.SyncInterface,
