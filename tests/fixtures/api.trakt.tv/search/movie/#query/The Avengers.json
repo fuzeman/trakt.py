@@ -1,0 +1,142 @@
+[
+    {
+        "movie": {
+            "ids": {
+                "imdb": "tt0848228",
+                "slug": "the-avengers-2012",
+                "tmdb": 24428,
+                "trakt": 14701
+            },
+            "title": "The Avengers",
+            "year": 2012
+        },
+        "score": 3553.1072,
+        "type": "movie"
+    },
+    {
+        "movie": {
+            "ids": {
+                "imdb": "tt2395427",
+                "slug": "avengers-age-of-ultron-2015",
+                "tmdb": 99861,
+                "trakt": 71938
+            },
+            "title": "Avengers: Age of Ultron",
+            "year": 2015
+        },
+        "score": 61.41709,
+        "type": "movie"
+    },
+    {
+        "movie": {
+            "ids": {
+                "imdb": "tt0118661",
+                "slug": "the-avengers-1998",
+                "tmdb": 9320,
+                "trakt": 4618
+            },
+            "title": "The Avengers",
+            "year": 1998
+        },
+        "score": 58.241222,
+        "type": "movie"
+    },
+    {
+        "movie": {
+            "ids": {
+                "imdb": "tt0458339",
+                "slug": "captain-america-the-first-avenger-2011",
+                "tmdb": 1771,
+                "trakt": 1170
+            },
+            "title": "Captain America: The First Avenger",
+            "year": 2011
+        },
+        "score": 38.641922,
+        "type": "movie"
+    },
+    {
+        "movie": {
+            "ids": {
+                "imdb": "tt1843866",
+                "slug": "captain-america-the-winter-soldier-2014",
+                "tmdb": 100402,
+                "trakt": 72297
+            },
+            "title": "Captain America: The Winter Soldier",
+            "year": 2014
+        },
+        "score": 5.2409315,
+        "type": "movie"
+    },
+    {
+        "movie": {
+            "ids": {
+                "imdb": "tt3498820",
+                "slug": "captain-america-civil-war-2016",
+                "tmdb": 271110,
+                "trakt": 169105
+            },
+            "title": "Captain America: Civil War",
+            "year": 2016
+        },
+        "score": 1.5118352,
+        "type": "movie"
+    },
+    {
+        "movie": {
+            "ids": {
+                "imdb": "tt0491703",
+                "slug": "ultimate-avengers-2006",
+                "tmdb": 14609,
+                "trakt": 8814
+            },
+            "title": "Ultimate Avengers",
+            "year": 2006
+        },
+        "score": 1.1865233,
+        "type": "movie"
+    },
+    {
+        "movie": {
+            "ids": {
+                "imdb": "tt0458525",
+                "slug": "x-men-origins-wolverine-2009",
+                "tmdb": 2080,
+                "trakt": 1430
+            },
+            "title": "X-Men Origins: Wolverine",
+            "year": 2009
+        },
+        "score": 1.0413905,
+        "type": "movie"
+    },
+    {
+        "movie": {
+            "ids": {
+                "imdb": "tt0330793",
+                "slug": "the-punisher-2004",
+                "tmdb": 7220,
+                "trakt": 3843
+            },
+            "title": "The Punisher",
+            "year": 2004
+        },
+        "score": 0.88450277,
+        "type": "movie"
+    },
+    {
+        "movie": {
+            "ids": {
+                "imdb": "tt4296026",
+                "slug": "avengers-grimm-2015",
+                "tmdb": 323660,
+                "trakt": 204283
+            },
+            "title": "Avengers Grimm",
+            "year": 2015
+        },
+        "score": 0.77113676,
+        "type": "movie"
+    }
+]

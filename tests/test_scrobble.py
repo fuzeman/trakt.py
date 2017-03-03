@@ -1,52 +1,52 @@
-from tests.core.helpers import authenticated_response
+from tests.core import mock
 from trakt import Trakt
 
-import responses
+from httmock import HTTMock
 
 
-@responses.activate
 def test_start():
-    responses.add_callback(
-        responses.POST, 'http://mock/scrobble/start',
-        callback=authenticated_response(data='{"mock": "mock"}'),
-        content_type='application/json'
-    )
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        result = Trakt['scrobble'].start(
-            movie={'ids': {'tmdb': 76341}}
-        )
+    with HTTMock(mock.scrobble_start, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            result = Trakt['scrobble'].start(
+                movie={'ids': {'tmdb': 76341}},
+                progress=0.35
+            )
 
     assert result is not None
 
+    assert result.get('action') == 'start'
 
-@responses.activate
+    assert result.get('id') == 9832
+    assert result.get('progress') == 0.35
+
+
 def test_pause():
-    responses.add_callback(
-        responses.POST, 'http://mock/scrobble/pause',
-        callback=authenticated_response(data='{"mock": "mock"}'),
-        content_type='application/json'
-    )
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        result = Trakt['scrobble'].pause(
-            movie={'ids': {'tmdb': 76341}}
-        )
+    with HTTMock(mock.scrobble_pause, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            result = Trakt['scrobble'].pause(
+                movie={'ids': {'tmdb': 76341}},
+                progress=35.86
+            )
 
     assert result is not None
 
+    assert result.get('action') == 'pause'
 
-@responses.activate
+    assert result.get('id') == 9832
+    assert result.get('progress') == 35.86
+
+
 def test_stop():
-    responses.add_callback(
-        responses.POST, 'http://mock/scrobble/stop',
-        callback=authenticated_response(data='{"mock": "mock"}'),
-        content_type='application/json'
-    )
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        result = Trakt['scrobble'].stop(
-            movie={'ids': {'tmdb': 76341}}
-        )
+    with HTTMock(mock.scrobble_stop, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            result = Trakt['scrobble'].stop(
+                movie={'ids': {'tmdb': 76341}},
+                progress=97.45
+            )
 
     assert result is not None
+
+    assert result.get('action') == 'stop'
+
+    assert result.get('id') == 9832
+    assert result.get('progress') == 97.45

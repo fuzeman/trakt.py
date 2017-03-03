@@ -1,0 +1,162 @@
+[
+    {
+        "score": 6935.3633,
+        "show": {
+            "ids": {
+                "imdb": "tt0903747",
+                "slug": "breaking-bad",
+                "tmdb": 1396,
+                "trakt": 1388,
+                "tvdb": 81189,
+                "tvrage": 18164
+            },
+            "title": "Breaking Bad",
+            "year": 2008
+        },
+        "type": "show"
+    },
+    {
+        "score": 1.4982065,
+        "show": {
+            "ids": {
+                "imdb": "tt1630574",
+                "slug": "breaking-in",
+                "tmdb": 34541,
+                "trakt": 34392,
+                "tvdb": 206751,
+                "tvrage": 26082
+            },
+            "title": "Breaking In",
+            "year": 2011
+        },
+        "type": "show"
+    },
+    {
+        "score": 0.15576369,
+        "show": {
+            "ids": {
+                "imdb": "tt3115468",
+                "slug": "talking-bad",
+                "tmdb": null,
+                "trakt": 72145,
+                "tvdb": 272219,
+                "tvrage": null
+            },
+            "title": "Talking Bad",
+            "year": 2013
+        },
+        "type": "show"
+    },
+    {
+        "score": 0.023026062,
+        "show": {
+            "ids": {
+                "imdb": "tt0096597",
+                "slug": "good-times-bad-times",
+                "tmdb": 11890,
+                "trakt": 11837,
+                "tvdb": 104271,
+                "tvrage": 19056
+            },
+            "title": "Good Times, Bad Times",
+            "year": 1990
+        },
+        "type": "show"
+    },
+    {
+        "score": 0.005517228,
+        "show": {
+            "ids": {
+                "imdb": "tt0094517",
+                "slug": "mystery-science-theater-3000",
+                "tmdb": 1952,
+                "trakt": 1939,
+                "tvdb": 74806,
+                "tvrage": null
+            },
+            "title": "Mystery Science Theater 3000",
+            "year": 1988
+        },
+        "type": "show"
+    },
+    {
+        "score": 0.004323423,
+        "show": {
+            "ids": {
+                "imdb": "tt0460693",
+                "slug": "what-about-brian",
+                "tmdb": 3535,
+                "trakt": 3513,
+                "tvdb": 79290,
+                "tvrage": 6930
+            },
+            "title": "What About Brian",
+            "year": 2006
+        },
+        "type": "show"
+    },
+    {
+        "score": 0.0029597091,
+        "show": {
+            "ids": {
+                "imdb": "tt4201628",
+                "slug": "pinocchio",
+                "tmdb": 61611,
+                "trakt": 81473,
+                "tvdb": 287659,
+                "tvrage": null
+            },
+            "title": "Pinocchio",
+            "year": 2014
+        },
+        "type": "show"
+    },
+    {
+        "score": 0.0014896033,
+        "show": {
+            "ids": {
+                "imdb": "tt0959601",
+                "slug": "benidorm",
+                "tmdb": 11567,
+                "trakt": 11515,
+                "tvdb": 79912,
+                "tvrage": null
+            },
+            "title": "Benidorm",
+            "year": 2007
+        },
+        "type": "show"
+    },
+    {
+        "score": 0.00077344314,
+        "show": {
+            "ids": {
+                "imdb": null,
+                "slug": "giant-killing",
+                "tmdb": 46668,
+                "trakt": 46394,
+                "tvdb": 139631,
+                "tvrage": null
+            },
+            "title": "Giant Killing",
+            "year": 2010
+        },
+        "type": "show"
+    },
+    {
+        "score": 0.00069781754,
+        "show": {
+            "ids": {
+                "imdb": "tt2764636",
+                "slug": "the-birthday-boys",
+                "tmdb": 57753,
+                "trakt": 57380,
+                "tvdb": 271313,
+                "tvrage": 37003
+            },
+            "title": "The Birthday Boys",
+            "year": 2013
+        },
+        "type": "show"
+    }
+]

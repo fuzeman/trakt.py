@@ -1,26 +1,18 @@
 # flake8: noqa: F403, F405
 
-from tests.core.helpers import authenticated_response
+from tests.core import mock
 from trakt import Trakt
 
 from datetime import datetime
 from dateutil.tz import tzutc
 from hamcrest import *
-import responses
+from httmock import HTTMock
 
 
-@responses.activate
 def test_basic():
-    responses.add_callback(
-        responses.GET, 'http://mock/sync/collection/shows',
-        callback=authenticated_response('fixtures/sync/collection/shows.json'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        collection = Trakt['sync/collection'].shows()
+    with HTTMock(mock.fixtures, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            collection = Trakt['sync/collection'].shows()
 
     # Ensure collection is valid
     assert_that(collection, not_none())

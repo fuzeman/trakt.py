@@ -1,42 +1,22 @@
 # flake8: noqa: F403, F405
 
-from tests.core.helpers import authenticated_response
+from tests.core import mock
 from trakt import Trakt
 
 from datetime import datetime
 from dateutil.tz import tzutc
 from hamcrest import *
-import responses
+from httmock import HTTMock
 
 
-@responses.activate
 def test_ratings():
-    responses.add_callback(
-        responses.GET, 'http://mock/sync/ratings/shows',
-        callback=authenticated_response('fixtures/sync/ratings/shows.json'),
-        content_type='application/json'
-    )
+    with HTTMock(mock.fixtures, mock.unknown):
+        collection = {}
 
-    responses.add_callback(
-        responses.GET, 'http://mock/sync/ratings/seasons',
-        callback=authenticated_response('fixtures/sync/ratings/seasons.json'),
-        content_type='application/json'
-    )
-
-    responses.add_callback(
-        responses.GET, 'http://mock/sync/ratings/episodes',
-        callback=authenticated_response('fixtures/sync/ratings/episodes.json'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    collection = {}
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        Trakt['sync/ratings'].shows(collection)
-        Trakt['sync/ratings'].seasons(collection)
-        Trakt['sync/ratings'].episodes(collection)
+        with Trakt.configuration.auth('mock', 'mock'):
+            Trakt['sync/ratings'].shows(collection)
+            Trakt['sync/ratings'].seasons(collection)
+            Trakt['sync/ratings'].episodes(collection)
 
     # Ensure collection is valid
     assert_that(collection, not_none())

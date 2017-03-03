@@ -1,0 +1,467 @@
+{
+    "cast": [
+        {
+            "character": "Vince",
+            "show": {
+                "aired_episodes": 10,
+                "airs": {
+                    "day": "Friday",
+                    "time": "00:00",
+                    "timezone": "America/New_York"
+                },
+                "available_translations": [
+                    "de",
+                    "en",
+                    "es",
+                    "fr",
+                    "ko",
+                    "ru",
+                    "uk"
+                ],
+                "certification": "TV-14",
+                "country": "us",
+                "first_aired": "2017-01-13T05:00:00.000Z",
+                "genres": [
+                    "drama",
+                    "crime"
+                ],
+                "homepage": "https://www.amazon.com/Sneaky-Pete/dp/B013488XFS",
+                "ids": {
+                    "imdb": "tt5011816",
+                    "slug": "sneaky-pete",
+                    "tmdb": 64199,
+                    "trakt": 101657,
+                    "tvdb": 300166,
+                    "tvrage": null
+                },
+                "language": "en",
+                "network": "Amazon",
+                "overview": "After leaving prison Marius takes cover from his past by assuming the identity of his cellmate Pete. He moves in with Pete's long-estranged unsuspecting family and is roped into the family's bail bond business. He's a criminal taking down other criminals and in the process he'll discover the family life he's never had.",
+                "rating": 7.9881,
+                "runtime": 50,
+                "status": "returning series",
+                "title": "Sneaky Pete",
+                "trailer": "http://youtube.com/watch?v=PId5o6YPDpY",
+                "updated_at": "2017-02-27T10:41:41.000Z",
+                "votes": 252,
+                "year": 2017
+            }
+        },
+        {
+            "character": "Narrator",
+            "show": {
+                "aired_episodes": 17,
+                "airs": {
+                    "day": "Saturday",
+                    "time": "22:00",
+                    "timezone": "America/New_York"
+                },
+                "available_translations": [
+                    "en",
+                    "es"
+                ],
+                "certification": "TV-G",
+                "country": "us",
+                "first_aired": "2013-11-02T07:00:00.000Z",
+                "genres": [
+                    "documentary"
+                ],
+                "homepage": "http://www.history.com/shows/big-history",
+                "ids": {
+                    "imdb": "tt3250010",
+                    "slug": "big-history",
+                    "tmdb": 61098,
+                    "trakt": 60618,
+                    "tvdb": 274939,
+                    "tvrage": null
+                },
+                "language": "en",
+                "network": "H2",
+                "overview": "Each episode of Big History will begin with an iconic topic from the pages of traditional history such as the Great Pyramids, The Titanic or the American Revolution but then will spin into surprising journeys through other fields, weaving together insights and evidence from various disciplines such as astronomy, physics, chemistry, biology, anthropology, history and economics. Spanning 13.7 billion years, Big History will ultimately pull together the puzzle pieces from all 16 half-hour episodes into an epic two-hour finale, creating one grand narrative and revealing the unifying link among all events.",
+                "rating": 8.70968,
+                "runtime": 30,
+                "status": "ended",
+                "title": "Big History",
+                "trailer": null,
+                "updated_at": "2016-08-17T10:49:38.000Z",
+                "votes": 31,
+                "year": 2013
+            }
+        },
+        {
+            "character": "Walter White",
+            "show": {
+                "aired_episodes": 62,
+                "airs": {
+                    "day": "Sunday",
+                    "time": "21:00",
+                    "timezone": "America/New_York"
+                },
+                "available_translations": [
+                    "ar",
+                    "bg",
+                    "bs",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "et",
+                    "fa",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hr",
+                    "hu",
+                    "it",
+                    "ja",
+                    "ko",
+                    "lt",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sk",
+                    "sr",
+                    "sv",
+                    "th",
+                    "tr",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "TV-MA",
+                "country": "us",
+                "first_aired": "2008-01-20T08:00:00.000Z",
+                "genres": [
+                    "drama",
+                    "crime",
+                    "suspense",
+                    "thriller"
+                ],
+                "homepage": "http://www.amctv.com/shows/breaking-bad",
+                "ids": {
+                    "imdb": "tt0903747",
+                    "slug": "breaking-bad",
+                    "tmdb": 1396,
+                    "trakt": 1388,
+                    "tvdb": 81189,
+                    "tvrage": 18164
+                },
+                "language": "en",
+                "network": "AMC",
+                "overview": "Walter White, a struggling high school chemistry teacher, is diagnosed with advanced lung cancer. He turns to a life of crime, producing and selling methamphetamine accompanied by a former student, Jesse Pinkman, with the aim of securing his family's financial future before he dies.",
+                "rating": 9.42406,
+                "runtime": 45,
+                "status": "ended",
+                "title": "Breaking Bad",
+                "trailer": "http://youtube.com/watch?v=XZ8daibM3AE",
+                "updated_at": "2017-03-01T10:35:26.000Z",
+                "votes": 44175,
+                "year": 2008
+            }
+        },
+        {
+            "character": "Hal",
+            "show": {
+                "aired_episodes": 151,
+                "airs": {
+                    "day": "Sunday",
+                    "time": "19:30",
+                    "timezone": "America/New_York"
+                },
+                "available_translations": [
+                    "bg",
+                    "bs",
+                    "cs",
+                    "da",
+                    "de",
+                    "en",
+                    "es",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "uk"
+                ],
+                "certification": "TV-PG",
+                "country": "us",
+                "first_aired": "2000-01-09T08:00:00.000Z",
+                "genres": [
+                    "comedy"
+                ],
+                "homepage": "http://www.comedycentral.nl/shows/677",
+                "ids": {
+                    "imdb": "tt0212671",
+                    "slug": "malcolm-in-the-middle",
+                    "tmdb": 2004,
+                    "trakt": 1991,
+                    "tvdb": 73838,
+                    "tvrage": null
+                },
+                "language": "en",
+                "network": "FOX (US)",
+                "overview": "Created and executive-produced by Emmy Award-winning writer Linwood Boomer, this inventive half-hour series is seen through the eyes of Malcolm (Frankie Muniz), a regular high school kid trying to navigate his way through life despite the various obstacles thrown in his way  a complete misunderstanding of girls, the constant burden of masterminding plans to get himself and his brothers into or out of trouble, and a miserable job at the Lucky Aide not to mention a severe case of teen angst. Although Malcolm has a genius IQ, he can't seem to make sense of the opposite sex, much less his embarrassing family. Lois (Jane Kaczmarek) is the outspoken, opinionated mom, who still manages to rule the roost even though her boys are growing wise to her crafty ways. Hal (Bryan Cranston), a dad who is just a bumbling, big kid at heart, often finds himself creating more chaos than his five boys combined. Reese (Justin Berfield) has mastered the art of a perfect blank stare, and makes up for his lack of intelligence with deviance. Francis (Christopher Masterson), Malcolm's oldest and favorite brother, is willing to move from Alabama to Alaska to New Mexico \u2013 as long as its keeps him from moving back home. Dewey (Erik Per Sullivan), no longer the youngest, has learned his tricks from the best and often pulls the wool right over his brothers' eyes. And then there's Jamie, the newest member \u2026 and family scapegoat.",
+                "rating": 8.17143,
+                "runtime": 25,
+                "status": "ended",
+                "title": "Malcolm in the Middle",
+                "trailer": null,
+                "updated_at": "2017-02-28T11:24:25.000Z",
+                "votes": 2730,
+                "year": 2000
+            }
+        },
+        {
+            "character": "",
+            "show": {
+                "aired_episodes": 12,
+                "airs": {
+                    "day": null,
+                    "time": null,
+                    "timezone": "America/New_York"
+                },
+                "available_translations": [
+                    "el",
+                    "en",
+                    "es",
+                    "fr",
+                    "hu",
+                    "pt",
+                    "ro"
+                ],
+                "certification": "TV-PG",
+                "country": "us",
+                "first_aired": "1998-04-05T08:00:00.000Z",
+                "genres": [
+                    "documentary",
+                    "drama",
+                    "action",
+                    "adventure"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0120570",
+                    "slug": "from-the-earth-to-the-moon",
+                    "tmdb": 3556,
+                    "trakt": 3534,
+                    "tvdb": 77831,
+                    "tvrage": null
+                },
+                "language": "en",
+                "network": "HBO",
+                "overview": "This twelve part HBO mini-series tells the story of the United States' space program, from its beginnings in 1961 to the final moon mission in 1972.  Tom Hanks served as Executive Producer and introduced each segment.",
+                "rating": 8.5748,
+                "runtime": 60,
+                "status": "ended",
+                "title": "From the Earth to the Moon",
+                "trailer": "http://youtube.com/watch?v=WPub_wF7iLw",
+                "updated_at": "2016-09-01T10:34:52.000Z",
+                "votes": 127,
+                "year": 1998
+            }
+        },
+        {
+            "character": "",
+            "show": {
+                "aired_episodes": 0,
+                "airs": {
+                    "day": "Daily",
+                    "time": null,
+                    "timezone": "America/New_York"
+                },
+                "available_translations": [
+                    "en"
+                ],
+                "certification": "TV-Y7",
+                "country": "us",
+                "first_aired": "1998-08-16T07:00:00.000Z",
+                "genres": [
+                    "animation"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0158854",
+                    "slug": "pocket-dragon-adventures",
+                    "tmdb": 13734,
+                    "trakt": 13675,
+                    "tvdb": 183031,
+                    "tvrage": null
+                },
+                "language": "en",
+                "network": "Syndication",
+                "overview": null,
+                "rating": 6.0,
+                "runtime": 11,
+                "status": "ended",
+                "title": "Pocket Dragon Adventures",
+                "trailer": null,
+                "updated_at": "2016-12-10T10:54:20.000Z",
+                "votes": 1,
+                "year": 1998
+            }
+        },
+        {
+            "character": "",
+            "show": {
+                "aired_episodes": 5,
+                "airs": {
+                    "day": null,
+                    "time": null,
+                    "timezone": "America/New_York"
+                },
+                "available_translations": [
+                    "en"
+                ],
+                "certification": null,
+                "country": "us",
+                "first_aired": "1996-01-01T00:00:00.000Z",
+                "genres": [
+                    "comedy"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0115251",
+                    "slug": "the-louie-show",
+                    "tmdb": 30090,
+                    "trakt": 29958,
+                    "tvdb": 75482,
+                    "tvrage": null
+                },
+                "language": "en",
+                "network": "CBS",
+                "overview": "Welcome to The Louie Show guide at TV Tome. This creative, short-lived sitcom starred Louie Anderson as Louie Lundregen. The topics were what most of basic sitcoms focus on, and it only lasted 6 episodes (one remains unaired). After about a year everyone forgot about this show, and everyone moved on. \nThis is Louie's first live-action sitcom, but he also did Life With Louie, which was animated.",
+                "rating": 0.0,
+                "runtime": 30,
+                "status": "ended",
+                "title": "The Louie Show",
+                "trailer": null,
+                "updated_at": "2015-06-27T08:35:27.000Z",
+                "votes": 0,
+                "year": 1996
+            }
+        },
+        {
+            "character": "",
+            "show": {
+                "aired_episodes": 7,
+                "airs": {
+                    "day": null,
+                    "time": null,
+                    "timezone": "America/New_York"
+                },
+                "available_translations": [
+                    "en"
+                ],
+                "certification": null,
+                "country": "us",
+                "first_aired": "1988-11-01T00:00:00.000Z",
+                "genres": [],
+                "homepage": null,
+                "ids": {
+                    "imdb": null,
+                    "slug": "raising-miranda",
+                    "tmdb": 11622,
+                    "trakt": 11569,
+                    "tvdb": 73775,
+                    "tvrage": 10259
+                },
+                "language": "en",
+                "network": "CBS",
+                "overview": null,
+                "rating": 0.0,
+                "runtime": 30,
+                "status": "returning series",
+                "title": "Raising Miranda",
+                "trailer": null,
+                "updated_at": "2017-02-08T15:31:04.000Z",
+                "votes": 0,
+                "year": null
+            }
+        }
+    ],
+    "crew": {
+        "production": [
+            {
+                "job": "Producer",
+                "show": {
+                    "aired_episodes": 62,
+                    "airs": {
+                        "day": "Sunday",
+                        "time": "21:00",
+                        "timezone": "America/New_York"
+                    },
+                    "available_translations": [
+                        "ar",
+                        "bg",
+                        "bs",
+                        "cs",
+                        "da",
+                        "de",
+                        "el",
+                        "en",
+                        "es",
+                        "et",
+                        "fa",
+                        "fi",
+                        "fr",
+                        "he",
+                        "hr",
+                        "hu",
+                        "it",
+                        "ja",
+                        "ko",
+                        "lt",
+                        "nl",
+                        "pl",
+                        "pt",
+                        "ro",
+                        "ru",
+                        "sk",
+                        "sr",
+                        "sv",
+                        "th",
+                        "tr",
+                        "uk",
+                        "zh"
+                    ],
+                    "certification": "TV-MA",
+                    "country": "us",
+                    "first_aired": "2008-01-20T08:00:00.000Z",
+                    "genres": [
+                        "drama",
+                        "crime",
+                        "suspense",
+                        "thriller"
+                    ],
+                    "homepage": "http://www.amctv.com/shows/breaking-bad",
+                    "ids": {
+                        "imdb": "tt0903747",
+                        "slug": "breaking-bad",
+                        "tmdb": 1396,
+                        "trakt": 1388,
+                        "tvdb": 81189,
+                        "tvrage": 18164
+                    },
+                    "language": "en",
+                    "network": "AMC",
+                    "overview": "Walter White, a struggling high school chemistry teacher, is diagnosed with advanced lung cancer. He turns to a life of crime, producing and selling methamphetamine accompanied by a former student, Jesse Pinkman, with the aim of securing his family's financial future before he dies.",
+                    "rating": 9.42406,
+                    "runtime": 45,
+                    "status": "ended",
+                    "title": "Breaking Bad",
+                    "trailer": "http://youtube.com/watch?v=XZ8daibM3AE",
+                    "updated_at": "2017-03-01T10:35:26.000Z",
+                    "votes": 44175,
+                    "year": 2008
+                }
+            }
+        ]
+    }
+}

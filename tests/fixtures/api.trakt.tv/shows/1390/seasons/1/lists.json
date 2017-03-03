@@ -1,0 +1,282 @@
+[
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2015-07-26T06:05:32.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "we-speak-no-americano",
+            "trakt": 1272678
+        },
+        "item_count": 74,
+        "likes": 2,
+        "name": "We speak no americano",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2016-06-21T23:13:20.000Z",
+        "user": {
+            "ids": {
+                "slug": "lemonneater"
+            },
+            "name": "Hanna Ryh\u00e4nen",
+            "private": false,
+            "username": "lemonneater",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2016-04-12T04:56:10.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "dvd-collection",
+            "trakt": 2144380
+        },
+        "item_count": 90,
+        "likes": 1,
+        "name": "dvd collection",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2016-04-21T06:57:32.000Z",
+        "user": {
+            "ids": {
+                "slug": "swamproo"
+            },
+            "name": "",
+            "private": false,
+            "username": "swamproo",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2013-06-25T21:18:55.000Z",
+        "description": "",
+        "display_numbers": true,
+        "ids": {
+            "slug": "game-of-thrones",
+            "trakt": 817949
+        },
+        "item_count": 3,
+        "likes": 1,
+        "name": "Game of Thrones",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2015-11-21T10:18:17.000Z",
+        "user": {
+            "ids": {
+                "slug": "lukoido-deleted-1459599585"
+            },
+            "name": "Lukas Alves Reis",
+            "private": false,
+            "username": "lukoido-deleted-1459599585",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2017-01-19T22:21:47.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "tv-seasons-finished",
+            "trakt": 3218299
+        },
+        "item_count": 303,
+        "likes": 3,
+        "name": "TV Seasons Finished",
+        "privacy": "public",
+        "sort_by": "title",
+        "sort_how": "asc",
+        "updated_at": "2017-02-24T22:00:12.000Z",
+        "user": {
+            "ids": {
+                "slug": "milo123"
+            },
+            "name": "",
+            "private": false,
+            "username": "Milo123",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-09-05T10:33:57.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "my-tv-shows",
+            "trakt": 2643801
+        },
+        "item_count": 112,
+        "likes": 1,
+        "name": "My TV Shows",
+        "privacy": "public",
+        "sort_by": "title",
+        "sort_how": "asc",
+        "updated_at": "2016-11-11T10:43:01.000Z",
+        "user": {
+            "ids": {
+                "slug": "kezrd"
+            },
+            "name": "",
+            "private": false,
+            "username": "KezRd",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-06-05T03:18:14.000Z",
+        "description": "",
+        "display_numbers": true,
+        "ids": {
+            "slug": "tv-shows-watched",
+            "trakt": 2341085
+        },
+        "item_count": 395,
+        "likes": 1,
+        "name": "TV SHOWS WATCHED",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2016-08-06T12:31:24.000Z",
+        "user": {
+            "ids": {
+                "slug": "indeed2015"
+            },
+            "name": "",
+            "private": false,
+            "username": "indeed2015",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2017-02-09T05:35:15.000Z",
+        "description": "",
+        "display_numbers": true,
+        "ids": {
+            "slug": "2011-seasons-ranked",
+            "trakt": 3318654
+        },
+        "item_count": 16,
+        "likes": 0,
+        "name": "2011 Seasons Ranked",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-02-09T06:01:21.000Z",
+        "user": {
+            "ids": {
+                "slug": "sunil_kumar"
+            },
+            "name": "Sunil Kumar",
+            "private": false,
+            "username": "sunil_kumar",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-11-20T16:08:03.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "tv",
+            "trakt": 2925521
+        },
+        "item_count": 21,
+        "likes": 0,
+        "name": "TV",
+        "privacy": "public",
+        "sort_by": "title",
+        "sort_how": "asc",
+        "updated_at": "2016-12-30T10:43:50.000Z",
+        "user": {
+            "ids": {
+                "slug": "bigfatfat"
+            },
+            "name": null,
+            "private": false,
+            "username": "bigfatfat",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-11-19T05:27:10.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "fav-seasons",
+            "trakt": 2919857
+        },
+        "item_count": 316,
+        "likes": 0,
+        "name": "Fav seasons",
+        "privacy": "public",
+        "sort_by": "released",
+        "sort_how": "desc",
+        "updated_at": "2016-11-19T07:12:59.000Z",
+        "user": {
+            "ids": {
+                "slug": "xlalalalovely"
+            },
+            "name": "",
+            "private": false,
+            "username": "xlalalalovely",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-11-14T16:41:07.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "tv-shows-watched",
+            "trakt": 2904829
+        },
+        "item_count": 532,
+        "likes": 0,
+        "name": "TV SHOWS WATCHED",
+        "privacy": "public",
+        "sort_by": "title",
+        "sort_how": "asc",
+        "updated_at": "2016-11-18T15:59:19.000Z",
+        "user": {
+            "ids": {
+                "slug": "zsv"
+            },
+            "name": "",
+            "private": false,
+            "username": "ZSV",
+            "vip": false,
+            "vip_ep": false
+        }
+    }
+]

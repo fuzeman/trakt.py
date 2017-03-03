@@ -1,27 +1,17 @@
 # flake8: noqa: F403, F405
 
-from tests.core.helpers import pagination_response
+from tests.core import mock
 from trakt import Trakt
 
 from hamcrest import *
+from httmock import HTTMock
 from six.moves import xrange
-import responses
 
 
-@responses.activate
 def test_basic():
-    responses.add_callback(
-        responses.GET, 'http://mock/sync/history/movies',
-        callback=pagination_response(
-            'fixtures/sync/history/movies.json',
-            authenticated=True
-        )
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        history = Trakt['sync/history'].movies(pagination=True, per_page=5)
+    with HTTMock(mock.fixtures, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            history = Trakt['sync/history'].movies(pagination=True, per_page=5)
 
     # Ensure collection is valid
     assert_that(history, not_none())

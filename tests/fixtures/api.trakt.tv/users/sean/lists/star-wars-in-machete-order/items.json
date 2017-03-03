@@ -1,0 +1,103 @@
+[
+  {
+    "rank": "1",
+    "listed_at": "2014-06-16T06:07:12.000Z",
+    "type": "movie",
+    "movie": {
+      "title": "Star Wars: Episode IV - A New Hope",
+      "year": 1977,
+      "ids": {
+        "trakt": 12,
+        "slug": "star-wars-episode-iv-a-new-hope-1977",
+        "imdb": "tt0076759",
+        "tmdb": 11
+      }
+    }
+  },
+  {
+    "rank": "2",
+    "listed_at": "2014-06-16T06:07:12.000Z",
+    "type": "show",
+    "show": {
+      "title": "The Walking Dead",
+      "year": 2010,
+      "ids": {
+        "trakt": 2,
+        "slug": "the-walking-dead",
+        "tvdb": 153021,
+        "imdb": "tt1520211",
+        "tmdb": 1402,
+        "tvrage": null
+      }
+    }
+  },
+  {
+    "rank": "3",
+    "listed_at": "2014-06-16T06:07:12.000Z",
+    "type": "season",
+    "season": {
+      "number": 1,
+      "ids": {
+        "tvdb": 30272,
+        "tmdb": 3572,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Breaking Bad",
+      "year": 2008,
+      "ids": {
+        "trakt": 1,
+        "slug": "breaking-bad",
+        "tvdb": 81189,
+        "imdb": "tt0903747",
+        "tmdb": 1396,
+        "tvrage": 18164
+      }
+    }
+  },
+  {
+    "rank": "4",
+    "listed_at": "2014-06-17T06:52:03.000Z",
+    "type": "episode",
+    "episode": {
+      "season": 0,
+      "number": 2,
+      "title": "Wedding Day",
+      "ids": {
+        "trakt": 2,
+        "tvdb": 3859791,
+        "imdb": null,
+        "tmdb": 62133,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "Breaking Bad",
+      "year": 2008,
+      "ids": {
+        "trakt": 1,
+        "slug": "breaking-bad",
+        "tvdb": 81189,
+        "imdb": "tt0903747",
+        "tmdb": 1396,
+        "tvrage": 18164
+      }
+    }
+  },
+  {
+    "rank": "5",
+    "listed_at": "2014-06-17T06:52:03.000Z",
+    "type": "person",
+    "person": {
+      "name": "Garrett Hedlund",
+      "ids": {
+        "trakt": 1,
+        "slug": "garrett-hedlund",
+        "imdb": "nm1330560",
+        "tmdb": 9828,
+        "tvrage": null
+      }
+    }
+  }
+]

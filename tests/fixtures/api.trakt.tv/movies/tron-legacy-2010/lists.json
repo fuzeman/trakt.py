@@ -1,0 +1,282 @@
+[
+    {
+        "allow_comments": true,
+        "comment_count": 1,
+        "created_at": "2014-04-28T13:12:38.000Z",
+        "description": "",
+        "display_numbers": true,
+        "ids": {
+            "slug": "sci-fi-1970-2013",
+            "trakt": 840022
+        },
+        "item_count": 1293,
+        "likes": 44,
+        "name": "Sci-Fi 1970-2013",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-02-25T03:36:38.000Z",
+        "user": {
+            "ids": {
+                "slug": "batarela"
+            },
+            "name": null,
+            "private": false,
+            "username": "batarela",
+            "vip": true,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2015-07-03T11:23:44.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "science-fiction",
+            "trakt": 1211473
+        },
+        "item_count": 100,
+        "likes": 121,
+        "name": "Science Fiction",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-02-28T22:04:26.000Z",
+        "user": {
+            "ids": {
+                "slug": "movistapp"
+            },
+            "name": "MOVIST",
+            "private": false,
+            "username": "movistapp",
+            "vip": true,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2016-07-13T03:50:20.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "movies",
+            "trakt": 2465950
+        },
+        "item_count": 3323,
+        "likes": 15,
+        "name": "Movies",
+        "privacy": "public",
+        "sort_by": "title",
+        "sort_how": "asc",
+        "updated_at": "2017-02-27T19:30:16.000Z",
+        "user": {
+            "ids": {
+                "slug": "kodimasteraccount"
+            },
+            "name": "",
+            "private": false,
+            "username": "KodiMasterAccount",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2015-07-03T11:21:30.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "adventure",
+            "trakt": 1211459
+        },
+        "item_count": 100,
+        "likes": 69,
+        "name": "Adventure",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-02-28T22:01:38.000Z",
+        "user": {
+            "ids": {
+                "slug": "movistapp"
+            },
+            "name": "MOVIST",
+            "private": false,
+            "username": "movistapp",
+            "vip": true,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-04-23T12:09:34.000Z",
+        "description": "The All-Time Worldwide Box office list includes movies that have grossed over $200,000,000 at the box office during their theatrical runs. Only theatrical box office receipts (movie ticket sales) are included, video rentals, television rights and other revenues are thus ignored. The total may include theatrical re-release receipts. Figures are not adjusted for inflation.",
+        "display_numbers": true,
+        "ids": {
+            "slug": "all-time-worldwide-box-office-update-10-10-2016",
+            "trakt": 2183985
+        },
+        "item_count": 660,
+        "likes": 60,
+        "name": "All-Time Worldwide Box office (update 10/10/2016)",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-01-31T22:08:54.000Z",
+        "user": {
+            "ids": {
+                "slug": "dc921"
+            },
+            "name": "dc921",
+            "private": false,
+            "username": "dc921",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 5,
+        "created_at": "2015-07-31T16:28:39.000Z",
+        "description": "Underground network, alternative communication.",
+        "display_numbers": false,
+        "ids": {
+            "slug": "underground-network",
+            "trakt": 1289835
+        },
+        "item_count": 29,
+        "likes": 198,
+        "name": "Underground Network",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-02-20T07:52:46.000Z",
+        "user": {
+            "ids": {
+                "slug": "justin"
+            },
+            "name": "Justin Nemeth",
+            "private": false,
+            "username": "justin",
+            "vip": true,
+            "vip_ep": true
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2017-01-04T23:15:46.000Z",
+        "description": "MHG Grubundan Gelen \u00d6neriler",
+        "display_numbers": true,
+        "ids": {
+            "slug": "1-geek-movie-list",
+            "trakt": 3136539
+        },
+        "item_count": 296,
+        "likes": 2,
+        "name": "1.Geek Movie List",
+        "privacy": "public",
+        "sort_by": "title",
+        "sort_how": "asc",
+        "updated_at": "2017-02-23T22:53:12.000Z",
+        "user": {
+            "ids": {
+                "slug": "eonder87"
+            },
+            "name": "Erhan \u00d6nder",
+            "private": false,
+            "username": "eonder87",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-07-26T13:21:27.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "scifi-2010s",
+            "trakt": 2508030
+        },
+        "item_count": 237,
+        "likes": 2,
+        "name": "SciFi: 2010s",
+        "privacy": "public",
+        "sort_by": "popularity",
+        "sort_how": "desc",
+        "updated_at": "2017-02-20T20:51:09.000Z",
+        "user": {
+            "ids": {
+                "slug": "blom-00"
+            },
+            "name": "Nathan the Blom",
+            "private": false,
+            "username": "Blom-00",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": true,
+        "comment_count": 0,
+        "created_at": "2016-01-26T20:23:30.000Z",
+        "description": "",
+        "display_numbers": false,
+        "ids": {
+            "slug": "movies",
+            "trakt": 1789302
+        },
+        "item_count": 2182,
+        "likes": 15,
+        "name": "Movies",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2016-12-13T23:42:49.000Z",
+        "user": {
+            "ids": {
+                "slug": "estrobien"
+            },
+            "name": null,
+            "private": false,
+            "username": "estrobien",
+            "vip": false,
+            "vip_ep": false
+        }
+    },
+    {
+        "allow_comments": false,
+        "comment_count": 0,
+        "created_at": "2013-09-08T11:20:59.000Z",
+        "description": "List of Disney Movies\n\nDoes not include since not on Trakt:\n1955 - The Littlest Outlaw\n1960 - Ten Who Dared\n1960 - The Sign of Zorro\n1965 - Those Calloways\n1967 - Monkeys, Go Home!\n1967 - The Gnome-Mobile\n1969 - Smith!\n1970 - Smoke\n1970 - The Wild Country\n1971 - Scandalous John\n1972 - Chandar, the Black Leopard of Ceylon\n1972 - Run, Cougar, Run\n1973 - Mustang\n1974 - The Bears and I\n1975 - The Boy Who Talked to Badgers\n1976 - Escape From The Dark (The Littlest Horse Thieves)\n1976 - Gus\n1976 - Treasure of Matecumbe\n1977 - A Tale of Two Critters\n1981 - Amy\n1983 - Trenchcoat\n1984 - Love Leads the Way\n1984 - Where the Toys Come From\n1997 - Northern Lights\n1998 - You Lucky Dog\n1999 - Endurance\n2000 - Geppetto\n2000 - Whispers: An Elephant's Tale\n2001 - The Jennie Project\n2002 - Gotta Kick It Up!\n2002 - The Scream Team\n2004 - Stuck in the Suburbs\n2005 - Buffalo Dreams\n\n2013 - The Hill\n2013 - McFarland\n2013 - Phineas and Ferb Movie\n2013 - Magic Kingdom\n2013 - Tink\n2014 - Alexander and the Terrible, Horrible, No Good, Very Bad Day\n2014 - Into the Woods\n2014 - Million Dollar Arm\n2014 - Planes: Fire and Rescue\n2015 - Cinderella\n2016 - Giants\n2016 - Zootopia\n2018 - Moana\n",
+        "display_numbers": true,
+        "ids": {
+            "slug": "disney-movies",
+            "trakt": 823403
+        },
+        "item_count": 473,
+        "likes": 29,
+        "name": "Disney Movies",
+        "privacy": "public",
+        "sort_by": "rank",
+        "sort_how": "asc",
+        "updated_at": "2017-02-24T03:54:22.000Z",
+        "user": {
+            "ids": {
+                "slug": "samoxle"
+            },
+            "name": "jackson",
+            "private": false,
+            "username": "samoxle",
+            "vip": false,
+            "vip_ep": false
+        }
+    }
+]

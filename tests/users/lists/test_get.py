@@ -1,26 +1,18 @@
 # flake8: noqa: F403, F405
 
-from tests.core.helpers import authenticated_response
+from tests.core import mock
 from trakt import Trakt
 
 from datetime import datetime
 from dateutil.tz import tzutc
 from hamcrest import *
-import responses
+from httmock import HTTMock
 
 
-@responses.activate
 def test_movies():
-    responses.add_callback(
-        responses.GET, 'http://mock/users/me/lists/movies',
-        callback=authenticated_response('fixtures/users/me/lists/movies.json'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        value = Trakt['users/me/lists/movies'].get()
+    with HTTMock(mock.fixtures, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            value = Trakt['users/me/lists/movies'].get()
 
     # Validate movies list
     assert_that(value, has_properties({
@@ -40,18 +32,10 @@ def test_movies():
     }))
 
 
-@responses.activate
 def test_shows():
-    responses.add_callback(
-        responses.GET, 'http://mock/users/me/lists/shows',
-        callback=authenticated_response('fixtures/users/me/lists/shows.json'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        value = Trakt['users/me/lists/shows'].get()
+    with HTTMock(mock.fixtures, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            value = Trakt['users/me/lists/shows'].get()
 
     # Validate shows list
     assert_that(value, has_properties({

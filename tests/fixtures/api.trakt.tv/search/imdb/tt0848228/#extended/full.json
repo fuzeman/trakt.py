@@ -1,0 +1,66 @@
+[
+    {
+        "movie": {
+            "available_translations": [
+                "bg",
+                "cs",
+                "da",
+                "de",
+                "el",
+                "en",
+                "es",
+                "fa",
+                "fi",
+                "fr",
+                "he",
+                "hr",
+                "hu",
+                "id",
+                "it",
+                "ja",
+                "ko",
+                "lv",
+                "nl",
+                "no",
+                "pl",
+                "pt",
+                "ro",
+                "ru",
+                "sk",
+                "sr",
+                "sv",
+                "th",
+                "tr",
+                "uk",
+                "vi",
+                "zh"
+            ],
+            "certification": "PG-13",
+            "genres": [
+                "action",
+                "adventure",
+                "science-fiction"
+            ],
+            "homepage": "http://marvel.com/avengers_movie/",
+            "ids": {
+                "imdb": "tt0848228",
+                "slug": "the-avengers-2012",
+                "tmdb": 24428,
+                "trakt": 14701
+            },
+            "language": "en",
+            "overview": "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+            "rating": 8.30135,
+            "released": "2012-05-04",
+            "runtime": 143,
+            "tagline": "Some assembly required.",
+            "title": "The Avengers",
+            "trailer": "http://youtube.com/watch?v=hIR8Ar-Z4hw",
+            "updated_at": "2017-02-18T08:46:30.000Z",
+            "votes": 27148,
+            "year": 2012
+        },
+        "score": null,
+        "type": "movie"
+    }
+]

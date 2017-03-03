@@ -13,4 +13,4 @@ pytest-cov>=2.1.0, < 2.4.0
 tox>=1.7.2
 
 # Test helpers
-git+git://github.com/fuzeman/responses.git@master#egg=responses-0.2.2
+httmock>=1.2.0, < 2.0.0

@@ -1,0 +1,56 @@
+[
+  {
+    "first_aired": "2014-06-30T02:00:00.000Z",
+    "episode": {
+      "season": 1,
+      "number": 1,
+      "title": "Pilot",
+      "ids": {
+        "trakt": 497,
+        "tvdb": null,
+        "imdb": "tt3203968",
+        "tmdb": 983732,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "The Leftovers",
+      "year": 2014,
+      "ids": {
+        "trakt": 7,
+        "slug": "the-leftovers",
+        "tvdb": 269689,
+        "imdb": "tt2699128",
+        "tmdb": 54344,
+        "tvrage": null
+      }
+    }
+  },
+  {
+    "first_aired": "2014-10-13T01:00:00.000Z",
+    "episode": {
+      "season": 5,
+      "number": 1,
+      "title": "5x1",
+      "ids": {
+        "trakt": 163,
+        "tvdb": null,
+        "imdb": "",
+        "tmdb": 975949,
+        "tvrage": null
+      }
+    },
+    "show": {
+      "title": "The Walking Dead",
+      "year": 2010,
+      "ids": {
+        "trakt": 2,
+        "slug": "the-walking-dead",
+        "tvdb": 153021,
+        "imdb": "tt1520211",
+        "tmdb": 1402,
+        "tvrage": 25056
+      }
+    }
+  }
+]

@@ -1,129 +1,73 @@
-from tests.core.helpers import authenticated_response
+from tests.core import mock
 from trakt import Trakt
 
-import responses
+from httmock import HTTMock
 
 
-@responses.activate
-def test_add():
-    responses.add_callback(
-        responses.POST, 'http://mock/users/me/lists/shows/items',
-        callback=authenticated_response(data='{"mock": "mock"}'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        result = Trakt['users/me/lists/shows'].add({
-            'shows': [
-                {'ids': {'tvdb': 121361}}
-            ]
-        })
-
-    assert result is not None
-
-
-@responses.activate
 def test_delete():
-    responses.add_callback(
-        responses.DELETE, 'http://mock/users/me/lists/shows',
-        callback=authenticated_response(data='{"mock": "mock"}'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        success = Trakt['users/me/lists/shows'].delete()
+    with HTTMock(mock.list_delete, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            success = Trakt['users/sean/lists/star-wars-in-machete-order'].delete()
 
     assert success is True
 
 
-@responses.activate
 def test_update_data():
-    responses.add_callback(
-        responses.PUT, 'http://mock/users/me/lists/shows',
-        callback=authenticated_response('fixtures/users/me/lists/shows.json'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        result = Trakt['users/me/lists/shows'].update(
-            name="Shows (2)",
-            return_type='data'
-        )
+    with HTTMock(mock.list_update, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            result = Trakt['users/sean/lists/star-wars-in-machete-order'].update(
+                name="Shows (2)",
+                return_type='data'
+            )
 
     assert result is not None
 
 
-@responses.activate
 def test_update_object():
-    responses.add_callback(
-        responses.PUT, 'http://mock/users/me/lists/shows',
-        callback=authenticated_response('fixtures/users/me/lists/shows.json'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        result = Trakt['users/me/lists/shows'].update(
-            name="Shows (2)"
-        )
+    with HTTMock(mock.list_update, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            result = Trakt['users/sean/lists/star-wars-in-machete-order'].update(
+                name="Shows (2)"
+            )
 
     assert result is not None
 
 
-@responses.activate
-def test_remove():
-    responses.add_callback(
-        responses.POST, 'http://mock/users/me/lists/shows/items/remove',
-        callback=authenticated_response(data='{"mock": "mock"}'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        result = Trakt['users/me/lists/shows'].remove({
-            'shows': [
-                {'ids': {'tvdb': 121361}}
-            ]
-        })
-
-    assert result is not None
-
-
-@responses.activate
 def test_like():
-    responses.add_callback(
-        responses.POST, 'http://mock/users/me/lists/shows/like',
-        callback=authenticated_response(data='{"mock": "mock"}'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        success = Trakt['users/me/lists/shows'].like()
+    with HTTMock(mock.list_like, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            success = Trakt['users/sean/lists/star-wars-in-machete-order'].like()
 
     assert success is True
 
 
-@responses.activate
 def test_unlike():
-    responses.add_callback(
-        responses.DELETE, 'http://mock/users/me/lists/shows/like',
-        callback=authenticated_response(data='{"mock": "mock"}'),
-        content_type='application/json'
-    )
-
-    Trakt.base_url = 'http://mock'
-
-    with Trakt.configuration.auth('mock', 'mock'):
-        success = Trakt['users/me/lists/shows'].unlike()
+    with HTTMock(mock.list_unlike, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            success = Trakt['users/sean/lists/star-wars-in-machete-order'].unlike()
 
     assert success is True
+
+
+def test_item_add():
+    with HTTMock(mock.list_item_add, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            result = Trakt['users/sean/lists/star-wars-in-machete-order'].add({
+                'shows': [
+                    {'ids': {'tvdb': 121361}}
+                ]
+            })
+
+    assert result is not None
+
+
+def test_item_remove():
+    with HTTMock(mock.list_item_remove, mock.unknown):
+        with Trakt.configuration.auth('mock', 'mock'):
+            result = Trakt['users/sean/lists/star-wars-in-machete-order'].remove({
+                'shows': [
+                    {'ids': {'tvdb': 121361}}
+                ]
+            })
+
+    assert result is not None

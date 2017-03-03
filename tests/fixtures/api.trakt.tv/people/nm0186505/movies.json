@@ -1,0 +1,2345 @@
+{
+    "cast": [
+        {
+            "character": "(voice)",
+            "movie": {
+                "available_translations": [
+                    "en"
+                ],
+                "certification": null,
+                "genres": [
+                    "comedy",
+                    "animation"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt5104604",
+                    "slug": "isle-of-dogs-2018",
+                    "tmdb": 399174,
+                    "trakt": 268663
+                },
+                "language": "en",
+                "overview": "A boy in Japan sets out on an adventure to find his dog.",
+                "rating": 10.0,
+                "released": "2018-12-31",
+                "runtime": 0,
+                "tagline": "",
+                "title": "Isle of Dogs",
+                "trailer": null,
+                "updated_at": "2017-02-24T08:32:23.000Z",
+                "votes": 1,
+                "year": 2018
+            }
+        },
+        {
+            "character": "Zordon",
+            "movie": {
+                "available_translations": [
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fr",
+                    "he",
+                    "hu",
+                    "nl",
+                    "pt",
+                    "ru",
+                    "uk"
+                ],
+                "certification": null,
+                "genres": [
+                    "action",
+                    "science-fiction",
+                    "adventure"
+                ],
+                "homepage": "http://www.powerrangers.movie/",
+                "ids": {
+                    "imdb": "tt3717490",
+                    "slug": "power-rangers-2017",
+                    "tmdb": 305470,
+                    "trakt": 194894
+                },
+                "language": "en",
+                "overview": "A group of high-school kids, who are infused with unique superpowers, harness their abilities in order to save the world.",
+                "rating": 6.25,
+                "released": "2017-03-24",
+                "runtime": 124,
+                "tagline": "Together we are more.",
+                "title": "Power Rangers",
+                "trailer": "http://youtube.com/watch?v=5IACbxbHneU",
+                "updated_at": "2017-02-28T09:03:08.000Z",
+                "votes": 8,
+                "year": 2017
+            }
+        },
+        {
+            "character": "Sheriff",
+            "movie": {
+                "available_translations": [
+                    "en",
+                    "fr",
+                    "pt",
+                    "ru",
+                    "sr"
+                ],
+                "certification": "R",
+                "genres": [
+                    "drama"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt4411618",
+                    "slug": "in-dubious-battle-2017",
+                    "tmdb": 337844,
+                    "trakt": 218424
+                },
+                "language": "en",
+                "overview": "In the California apple country, nine hundred migratory workers rise up \"in dubious battle\" against the landowners. The group takes on a life of its own-stronger than its individual members and more frightening. Led by the doomed Jim Nolan, the strike is founded on his tragic idealism-on the \"courage never to submit or yield.\" Published in 1936, In Dubious Battle is considered the first major work of Pulitzer Prize-winning author John Steinbeck.",
+                "rating": 6.9125,
+                "released": "2017-02-17",
+                "runtime": 110,
+                "tagline": "",
+                "title": "In Dubious Battle",
+                "trailer": "http://youtube.com/watch?v=dsFfBINb21Q",
+                "updated_at": "2017-02-20T03:18:16.000Z",
+                "votes": 80,
+                "year": 2017
+            }
+        },
+        {
+            "character": "Himself",
+            "movie": {
+                "available_translations": [
+                    "en",
+                    "fr"
+                ],
+                "certification": "R",
+                "genres": [
+                    "drama",
+                    "comedy"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt3521126",
+                    "slug": "the-disaster-artist-2017",
+                    "tmdb": 371638,
+                    "trakt": 224277
+                },
+                "language": "en",
+                "overview": "An aspiring actor in Hollywood meets an enigmatic stranger by the name of Tommy Wiseau, the meeting leads the actor down a path nobody could have predicted; creating the worst movie ever made.",
+                "rating": 7.0,
+                "released": "2017-03-12",
+                "runtime": 98,
+                "tagline": "Life Inside The Room",
+                "title": "The Disaster Artist",
+                "trailer": null,
+                "updated_at": "2017-02-20T08:31:50.000Z",
+                "votes": 3,
+                "year": 2017
+            }
+        },
+        {
+            "character": "Buddusky",
+            "movie": {
+                "available_translations": [
+                    "en"
+                ],
+                "certification": null,
+                "genres": [],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt6018306",
+                    "slug": "last-flag-flying-2017",
+                    "tmdb": 419709,
+                    "trakt": 264725
+                },
+                "language": "en",
+                "overview": "A quasi-sequel to Hal Ashby\u2019s 1973 film \u201cThe Last Detail\u201d, set during the Iraq War. \u201cLast Flag Flying\u201d sees the return of the classic characters Billy Bad-Ass, Mule, and Meadows. The former Navy petty officers (played by Jack Nicholson and Otis Young in the original film) come to the aid of an ex-con (originally played by Randy Quaid) trying to bring home the body of his son, who has been killed in Iraq.",
+                "rating": 0.0,
+                "released": "2017-12-31",
+                "runtime": 0,
+                "tagline": "",
+                "title": "Last Flag Flying",
+                "trailer": null,
+                "updated_at": "2016-10-07T08:48:50.000Z",
+                "votes": 0,
+                "year": 2017
+            }
+        },
+        {
+            "character": "Li (voice)",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "bs",
+                    "ca",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fa",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hr",
+                    "hu",
+                    "id",
+                    "it",
+                    "ko",
+                    "nl",
+                    "no",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sk",
+                    "sr",
+                    "sv",
+                    "th",
+                    "tr",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "PG",
+                "genres": [
+                    "action",
+                    "adventure",
+                    "animation",
+                    "comedy",
+                    "family"
+                ],
+                "homepage": "http://www.kungfupanda.com/",
+                "ids": {
+                    "imdb": "tt2267968",
+                    "slug": "kung-fu-panda-3-2016",
+                    "tmdb": 140300,
+                    "trakt": 93870
+                },
+                "language": "en",
+                "overview": "Continuing his \"legendary adventures of awesomeness\", Po must face two hugely epic, but different threats: one supernatural and the other a little closer to his home.",
+                "rating": 7.67278,
+                "released": "2016-01-29",
+                "runtime": 95,
+                "tagline": "Grab destiny by the rice dumplings.",
+                "title": "Kung Fu Panda 3",
+                "trailer": "http://youtube.com/watch?v=fGPPfZIvtCw",
+                "updated_at": "2017-02-23T08:53:19.000Z",
+                "votes": 8401,
+                "year": 2016
+            }
+        },
+        {
+            "character": "Roger Davis",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fr",
+                    "he",
+                    "it",
+                    "ko",
+                    "nl",
+                    "pt",
+                    "ru",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "R",
+                "genres": [
+                    "comedy"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt1468846",
+                    "slug": "get-a-job-2016",
+                    "tmdb": 186759,
+                    "trakt": 116989
+                },
+                "language": "en",
+                "overview": "A recent college graduate and his friends are forced to lower life expectations when they leave school for the real world. Life after college graduation is not exactly going as planned for Will and Jillian who find themselves lost in a sea of increasingly strange jobs. But with help from their family, friends and coworkers they soon discover that the most important (and hilarious) adventures are the ones that we don't see coming.",
+                "rating": 6.63723,
+                "released": "2016-03-25",
+                "runtime": 93,
+                "tagline": "Graduating was the easy part",
+                "title": "Get a Job",
+                "trailer": "http://youtube.com/watch?v=VOhRKseKN2E",
+                "updated_at": "2016-12-12T08:35:21.000Z",
+                "votes": 2718,
+                "year": 2016
+            }
+        },
+        {
+            "character": "Robert Mazur",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ko",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sv",
+                    "tr",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "R",
+                "genres": [
+                    "crime",
+                    "drama",
+                    "thriller"
+                ],
+                "homepage": "http://www.theinfiltrator.com/",
+                "ids": {
+                    "imdb": "tt1355631",
+                    "slug": "the-infiltrator-2016",
+                    "tmdb": 325789,
+                    "trakt": 214309
+                },
+                "language": "en",
+                "overview": "A U.S Customs official uncovers a massive money laundering scheme involving Pablo Escobar.",
+                "rating": 7.65296,
+                "released": "2016-07-13",
+                "runtime": 127,
+                "tagline": "The true story of one man against the biggest drug cartel in history.",
+                "title": "The Infiltrator",
+                "trailer": "http://youtube.com/watch?v=7cnUI_ryp2w",
+                "updated_at": "2017-02-26T09:42:22.000Z",
+                "votes": 6178,
+                "year": 2016
+            }
+        },
+        {
+            "character": "Ned Fleming",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "cs",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sr",
+                    "tr",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "R",
+                "genres": [
+                    "comedy"
+                ],
+                "homepage": "http://www.foxmovies.com/movies/why-him",
+                "ids": {
+                    "imdb": "tt4501244",
+                    "slug": "why-him-2016",
+                    "tmdb": 356305,
+                    "trakt": 230555
+                },
+                "language": "en",
+                "overview": "A dad forms a bitter rivalry with his daughter's young rich boyfriend.",
+                "rating": 7.23046,
+                "released": "2016-12-25",
+                "runtime": 111,
+                "tagline": "",
+                "title": "Why Him?",
+                "trailer": "http://youtube.com/watch?v=CO6qLC4cL8E",
+                "updated_at": "2017-02-01T08:53:10.000Z",
+                "votes": 1766,
+                "year": 2016
+            }
+        },
+        {
+            "character": "Lyndon B. Johnson",
+            "movie": {
+                "available_translations": [
+                    "cs",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ru",
+                    "sv",
+                    "tr",
+                    "zh"
+                ],
+                "certification": "TV-14",
+                "genres": [
+                    "drama",
+                    "history",
+                    "tv-movie"
+                ],
+                "homepage": "http://www.hbo.com/movies/all-the-way",
+                "ids": {
+                    "imdb": "tt3791216",
+                    "slug": "all-the-way-2016",
+                    "tmdb": 347123,
+                    "trakt": 231247
+                },
+                "language": "en",
+                "overview": "Lyndon B. Johnson's amazing 11-month journey from taking office after JFK's assassination, through the fight to pass the 1964 Civil Rights Act and his own presidential campaign, culminating on the night LBJ is actually elected to the office \u2013 no longer the 'accidental President.'",
+                "rating": 7.52804,
+                "released": "2016-05-23",
+                "runtime": 132,
+                "tagline": "Politics Is War.",
+                "title": "All the Way",
+                "trailer": null,
+                "updated_at": "2017-02-24T09:14:31.000Z",
+                "votes": 642,
+                "year": 2016
+            }
+        },
+        {
+            "character": "Howard Wakefield",
+            "movie": {
+                "available_translations": [
+                    "en"
+                ],
+                "certification": null,
+                "genres": [
+                    "drama"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt5195412",
+                    "slug": "wakefield-2016",
+                    "tmdb": 369894,
+                    "trakt": 258813
+                },
+                "language": "en",
+                "overview": "A man's nervous breakdown causes him to leave his wife and live in his attic for several months.",
+                "rating": 7.5,
+                "released": "2016-09-13",
+                "runtime": 106,
+                "tagline": "",
+                "title": "Wakefield",
+                "trailer": null,
+                "updated_at": "2016-09-01T08:31:01.000Z",
+                "votes": 2,
+                "year": 2016
+            }
+        },
+        {
+            "character": "Dalton Trumbo",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "bs",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ko",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ru",
+                    "sv",
+                    "tr",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "R",
+                "genres": [
+                    "drama"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt3203606",
+                    "slug": "trumbo-2015",
+                    "tmdb": 294016,
+                    "trakt": 190767
+                },
+                "language": "en",
+                "overview": "The career of screenwriter Dalton Trumbo is halted by a witch hunt in the late 1940s when he defies the anti-communist HUAC committee and is blacklisted.",
+                "rating": 7.29095,
+                "released": "2015-11-25",
+                "runtime": 124,
+                "tagline": "Are you now or have you ever been...",
+                "title": "Trumbo",
+                "trailer": "http://youtube.com/watch?v=jLuxQhdUqLY",
+                "updated_at": "2017-01-04T08:46:00.000Z",
+                "votes": 1990,
+                "year": 2015
+            }
+        },
+        {
+            "character": "Joe Brody",
+            "movie": {
+                "available_translations": [
+                    "ar",
+                    "bg",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ja",
+                    "ko",
+                    "lt",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sk",
+                    "sv",
+                    "th",
+                    "tr",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "PG-13",
+                "genres": [
+                    "action",
+                    "science-fiction",
+                    "thriller"
+                ],
+                "homepage": "http://www.godzillamovie.com/",
+                "ids": {
+                    "imdb": "tt0831387",
+                    "slug": "godzilla-2014",
+                    "tmdb": 124905,
+                    "trakt": 85943
+                },
+                "language": "en",
+                "overview": "Fifteen years after an 'incident' at a Japanese nuclear power plant, physicist Joe Brody joins forces with his soldier son Ford to discover for themselves what really happened.  What they uncover is prelude to global-threatening devastation.  An epic rebirth to Toho's iconic Godzilla, this spectacular adventure pits the world's most famous monster against malevolent creatures who, bolstered by humanity's scientific arrogance, threaten our very existence.",
+                "rating": 6.54695,
+                "released": "2014-05-16",
+                "runtime": 123,
+                "tagline": "A king's arrival is never silent.",
+                "title": "Godzilla",
+                "trailer": "http://youtube.com/watch?v=oHKGx1pzczg",
+                "updated_at": "2017-02-20T08:56:54.000Z",
+                "votes": 9478,
+                "year": 2014
+            }
+        },
+        {
+            "character": "Himself",
+            "movie": {
+                "available_translations": [
+                    "en"
+                ],
+                "certification": null,
+                "genres": [
+                    "music",
+                    "tv-movie"
+                ],
+                "homepage": "http://www.theconcertforvalor.com",
+                "ids": {
+                    "imdb": "tt4083124",
+                    "slug": "the-concert-for-valor-2014",
+                    "tmdb": 315085,
+                    "trakt": 195430
+                },
+                "language": "en",
+                "overview": "A live HBO concert honoring United States veterans in Washington DC.",
+                "rating": 0.0,
+                "released": "2014-11-11",
+                "runtime": 172,
+                "tagline": "Saluting America's Veterans",
+                "title": "The Concert for Valor",
+                "trailer": null,
+                "updated_at": "2016-12-12T08:39:29.000Z",
+                "votes": 0,
+                "year": 2014
+            }
+        },
+        {
+            "character": "Topo",
+            "movie": {
+                "available_translations": [
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ru",
+                    "sv",
+                    "tr",
+                    "zh"
+                ],
+                "certification": null,
+                "genres": [
+                    "crime",
+                    "drama",
+                    "thriller"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt2511428",
+                    "slug": "cold-comes-the-night-2013",
+                    "tmdb": 210047,
+                    "trakt": 130109
+                },
+                "language": "en",
+                "overview": "A struggling motel owner and her daughter are taken hostage by a nearly blind career criminal to be his eyes as he attempts to retrieve his cash package from a crooked cop.",
+                "rating": 5.75516,
+                "released": "2013-09-20",
+                "runtime": 90,
+                "tagline": "Sometimes the fight of your life comes in the dead of night.",
+                "title": "Cold Comes the Night",
+                "trailer": "http://youtube.com/watch?v=80C3yttlDjU",
+                "updated_at": "2016-07-30T14:31:43.000Z",
+                "votes": 339,
+                "year": 2013
+            }
+        },
+        {
+            "character": "",
+            "movie": {
+                "available_translations": [
+                    "en"
+                ],
+                "certification": null,
+                "genres": [],
+                "homepage": "",
+                "ids": {
+                    "imdb": "tt2760792",
+                    "slug": "writer-s-block-2013",
+                    "tmdb": 235588,
+                    "trakt": 143735
+                },
+                "language": "en",
+                "overview": "The short film is a poetic interpretation of the writer's mental journey during the writing process. The writer, played by Bryan Cranston (AMC\u2019s Breaking Bad), creates a woman in his mind, played by Lela Edgar, while working on his next script.",
+                "rating": 6.0,
+                "released": "2013-11-01",
+                "runtime": 14,
+                "tagline": "",
+                "title": "Writer's Block",
+                "trailer": "http://youtube.com/watch?v=lywCmKqGv24",
+                "updated_at": "2017-01-26T13:15:30.000Z",
+                "votes": 1,
+                "year": 2013
+            }
+        },
+        {
+            "character": "Himself",
+            "movie": {
+                "available_translations": [
+                    "cs",
+                    "en",
+                    "hu",
+                    "ro"
+                ],
+                "certification": null,
+                "genres": [
+                    "documentary"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt3345310",
+                    "slug": "david-blaine-real-or-magic-2013",
+                    "tmdb": 238466,
+                    "trakt": 145562
+                },
+                "language": "en",
+                "overview": "David Blaine's signature brand of street magic mystifies the most recognisable celebrities in the world, such as Jamie Foxx, Bryan Cranston, Aaron Paul, Ricky Gervais, Katy Perry, Woody Allen, and Robert DeNiro, to name a few. He goes to the homes of Kanye West and Harrison Ford, Will Smith and Olivia Wilde. He pays a visit to Stephen Hawking at his office in Cambridge University. Blaine also travels the world, astonishing people from all walks of life with never-before seen, inconceivable magic.",
+                "rating": 7.73148,
+                "released": "2013-11-18",
+                "runtime": 63,
+                "tagline": "",
+                "title": "David Blaine: Real or Magic",
+                "trailer": null,
+                "updated_at": "2017-01-14T09:00:50.000Z",
+                "votes": 108,
+                "year": 2013
+            }
+        },
+        {
+            "character": "Himself",
+            "movie": {
+                "available_translations": [
+                    "en",
+                    "es",
+                    "it",
+                    "ru"
+                ],
+                "certification": null,
+                "genres": [
+                    "documentary"
+                ],
+                "homepage": "http://www.amctv.com/shows/breaking-bad",
+                "ids": {
+                    "imdb": "tt3088036",
+                    "slug": "no-half-measures-creating-the-final-season-of-breaking-bad-2013",
+                    "tmdb": 239459,
+                    "trakt": 146124
+                },
+                "language": "en",
+                "overview": "A documentary about the making of season five of the acclaimed AMC series Breaking Bad.",
+                "rating": 8.4878,
+                "released": "2013-11-26",
+                "runtime": 120,
+                "tagline": "",
+                "title": "No Half Measures: Creating the Final Season of Breaking Bad",
+                "trailer": null,
+                "updated_at": "2016-06-19T09:16:20.000Z",
+                "votes": 82,
+                "year": 2013
+            }
+        },
+        {
+            "character": "",
+            "movie": {
+                "available_translations": [
+                    "en"
+                ],
+                "certification": "PG-13",
+                "genres": [],
+                "homepage": "http://www.youtube.com/channel/UCzS3-65Y91JhOxFiM7j6grg",
+                "ids": {
+                    "imdb": "tt2836520",
+                    "slug": "seth-rogen-worst-person-in-the-world-2013",
+                    "tmdb": 333118,
+                    "trakt": 214058
+                },
+                "language": "en",
+                "overview": "In this short from Funny Or Die, Seth Rogen realizes that after raising millions of dollars for charity, he's done with good deeds -- and can finally do all the terrible things he's always wanted to do. Like rob banks. And cook meth with Walter White. And vote Romney.",
+                "rating": 6.0,
+                "released": "2013-04-10",
+                "runtime": 4,
+                "tagline": "Seth Rogen Becomes Worst Person In The World, 'Cause He Can",
+                "title": "Seth Rogen = Worst Person in the World",
+                "trailer": null,
+                "updated_at": "2015-04-20T08:37:07.000Z",
+                "votes": 2,
+                "year": 2013
+            }
+        },
+        {
+            "character": "Powell",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ja",
+                    "ko",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sk",
+                    "sv",
+                    "th",
+                    "tr",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "PG-13",
+                "genres": [
+                    "action",
+                    "adventure",
+                    "fantasy",
+                    "science-fiction"
+                ],
+                "homepage": "http://disney.go.com/johncarter/",
+                "ids": {
+                    "imdb": "tt0401729",
+                    "slug": "john-carter-2012",
+                    "tmdb": 49529,
+                    "trakt": 34515
+                },
+                "language": "en",
+                "overview": "Civil War vet John Carter is suddenly transported to Mars, where he discovers a lush, wildly diverse planet whose main inhabitants are 12-foot tall green barbarians. Finding himself a prisoner of these creatures, he escapes, only to encounter Dejah Thoris, Princess of Helium, who is in desperate need of a savior.",
+                "rating": 6.91477,
+                "released": "2012-03-07",
+                "runtime": 132,
+                "tagline": "Lost in Our World. Found in Another.",
+                "title": "John Carter",
+                "trailer": "http://youtube.com/watch?v=6Rf55GTEZ_E",
+                "updated_at": "2017-02-25T08:34:25.000Z",
+                "votes": 5573,
+                "year": 2012
+            }
+        },
+        {
+            "character": "Cohaagen",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "ca",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "et",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hr",
+                    "hu",
+                    "it",
+                    "ja",
+                    "ko",
+                    "lt",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sk",
+                    "sr",
+                    "sv",
+                    "th",
+                    "tr",
+                    "uk",
+                    "vi",
+                    "zh"
+                ],
+                "certification": "PG-13",
+                "genres": [
+                    "action",
+                    "adventure",
+                    "science-fiction",
+                    "thriller"
+                ],
+                "homepage": "http://www.welcometorecall.com/",
+                "ids": {
+                    "imdb": "tt1386703",
+                    "slug": "total-recall-2012",
+                    "tmdb": 64635,
+                    "trakt": 46685
+                },
+                "language": "en",
+                "overview": "Welcome to Rekall, the company that can turn your dreams into real memories. For a factory worker named Douglas Quaid, even though he's got a beautiful wife who he loves, the mind-trip sounds like the perfect vacation from his frustrating life - real memories of life as a super-spy might be just what he needs. But when the procedure goes horribly wrong, Quaid becomes a hunted man. Finding himself on the run from the police - controlled by Chancellor Cohaagen, the leader of the free world - Quaid teams up with a rebel fighter to find the head of the underground resistance and stop Cohaagen. The line between fantasy and reality gets blurred and the fate of his world hangs in the balance as Quaid discovers his true identity, his true love, and his true fate.",
+                "rating": 6.6738,
+                "released": "2012-08-03",
+                "runtime": 121,
+                "tagline": "What Is Real?",
+                "title": "Total Recall",
+                "trailer": "http://youtube.com/watch?v=4SerZm7DheA",
+                "updated_at": "2017-02-20T09:38:03.000Z",
+                "votes": 6827,
+                "year": 2012
+            }
+        },
+        {
+            "character": "Jack O'Donnell",
+            "movie": {
+                "available_translations": [
+                    "ar",
+                    "bg",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fa",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hr",
+                    "hu",
+                    "it",
+                    "ja",
+                    "ko",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sk",
+                    "sl",
+                    "sv",
+                    "th",
+                    "tr",
+                    "uk",
+                    "vi",
+                    "zh"
+                ],
+                "certification": "R",
+                "genres": [
+                    "drama",
+                    "thriller"
+                ],
+                "homepage": "http://argothemovie.warnerbros.com/",
+                "ids": {
+                    "imdb": "tt1024648",
+                    "slug": "argo-2012",
+                    "tmdb": 68734,
+                    "trakt": 50144
+                },
+                "language": "en",
+                "overview": "As the Iranian revolution reaches a boiling point, a CIA 'exfiltration' specialist concocts a risky plan to free six Americans who have found shelter at the home of the Canadian ambassador.",
+                "rating": 7.7886,
+                "released": "2012-10-12",
+                "runtime": 120,
+                "tagline": "The movie was fake. The mission was real.",
+                "title": "Argo",
+                "trailer": "http://youtube.com/watch?v=Zshg1jEH9tI",
+                "updated_at": "2017-01-30T08:56:11.000Z",
+                "votes": 8756,
+                "year": 2012
+            }
+        },
+        {
+            "character": "Colonel William Mortamus",
+            "movie": {
+                "available_translations": [
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sr",
+                    "sv",
+                    "tr",
+                    "vi",
+                    "zh"
+                ],
+                "certification": "PG-13",
+                "genres": [
+                    "action",
+                    "adventure",
+                    "drama",
+                    "history",
+                    "war"
+                ],
+                "homepage": "http://www.redtails2012.com/",
+                "ids": {
+                    "imdb": "tt0485985",
+                    "slug": "red-tails-2012",
+                    "tmdb": 72431,
+                    "trakt": 53205
+                },
+                "language": "en",
+                "overview": "The story of the Tuskegee Airmen, the first African-American pilots to fly in a combat squadron during World War II.",
+                "rating": 6.93053,
+                "released": "2012-01-20",
+                "runtime": 125,
+                "tagline": "High-Octane Action and Daring Dogfights!",
+                "title": "Red Tails",
+                "trailer": "http://youtube.com/watch?v=NVq6Xr5fcfk",
+                "updated_at": "2017-03-01T08:48:18.000Z",
+                "votes": 619,
+                "year": 2012
+            }
+        },
+        {
+            "character": "Vitaly (voice)",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ja",
+                    "ko",
+                    "nl",
+                    "no",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sk",
+                    "sr",
+                    "sv",
+                    "th",
+                    "tr",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "PG",
+                "genres": [
+                    "animation",
+                    "family"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt1277953",
+                    "slug": "madagascar-3-europe-s-most-wanted-2012",
+                    "tmdb": 80321,
+                    "trakt": 59799
+                },
+                "language": "en",
+                "overview": "Alex, Marty, Gloria and Melman are still trying to get back to the Big Apple and their beloved Central Park zoo, but first they need to find the penguins. When they travel to Monte Carlo, they attract the attention of Animal Control after gate crashing a party and are joined by the penguins, King Julian and Co., and the monkeys. How do a lion, zebra, hippo, giraffe, four penguins, two monkeys, three lemurs travel through Europe without attracting attention and get back to New York? They join a traveling circus. Their attempts to get back to New York are consistently hampered by the Captain of Animal Control who wants to make Alex part of her collection. Once they make it back to New York Marty, Alex, Gloria and Melman realize that they want to be part of the traveling circus.",
+                "rating": 7.23635,
+                "released": "2012-06-08",
+                "runtime": 93,
+                "tagline": "Six years ago, they disappeared without a trace. Next summer, they finally resurface.",
+                "title": "Madagascar 3: Europe's Most Wanted",
+                "trailer": "http://youtube.com/watch?v=PlkWVkpP59U",
+                "updated_at": "2017-02-13T09:29:39.000Z",
+                "votes": 4286,
+                "year": 2012
+            }
+        },
+        {
+            "character": "Mayor Mike Whitmore",
+            "movie": {
+                "available_translations": [
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ja",
+                    "ko",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ru",
+                    "sv",
+                    "th",
+                    "tr",
+                    "vi",
+                    "zh"
+                ],
+                "certification": "PG-13",
+                "genres": [
+                    "comedy",
+                    "drama",
+                    "romance",
+                    "music"
+                ],
+                "homepage": "http://www.warnerbros.com/rock-ages",
+                "ids": {
+                    "imdb": "tt1336608",
+                    "slug": "rock-of-ages-2012",
+                    "tmdb": 80585,
+                    "trakt": 60021
+                },
+                "language": "en",
+                "overview": "A small town girl and a city boy meet on the Sunset Strip, while pursuing their Hollywood dreams.",
+                "rating": 6.48892,
+                "released": "2012-06-15",
+                "runtime": 123,
+                "tagline": "Nothin' but a good time",
+                "title": "Rock of Ages",
+                "trailer": "http://youtube.com/watch?v=JftYuqWGYD0",
+                "updated_at": "2017-02-20T09:46:51.000Z",
+                "votes": 1399,
+                "year": 2012
+            }
+        },
+        {
+            "character": "Rear Admiral Lyle Haggerty",
+            "movie": {
+                "available_translations": [
+                    "ca",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ja",
+                    "ko",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sr",
+                    "sv",
+                    "tr",
+                    "zh"
+                ],
+                "certification": "PG-13",
+                "genres": [
+                    "drama",
+                    "science-fiction",
+                    "thriller"
+                ],
+                "homepage": "http://contagionmovie.warnerbros.com/",
+                "ids": {
+                    "imdb": "tt1598778",
+                    "slug": "contagion-2011",
+                    "tmdb": 39538,
+                    "trakt": 25724
+                },
+                "language": "en",
+                "overview": "As an epidemic of a lethal airborne virus - that kills within days - rapidly grows, the worldwide medical community races to find a cure and control the panic that spreads faster than the virus itself.",
+                "rating": 6.76731,
+                "released": "2011-09-09",
+                "runtime": 106,
+                "tagline": "Nothing spreads like fear",
+                "title": "Contagion",
+                "trailer": "http://youtube.com/watch?v=4sYSyuuLk5g",
+                "updated_at": "2017-02-02T08:44:12.000Z",
+                "votes": 3597,
+                "year": 2011
+            }
+        },
+        {
+            "character": "Detective Lankford",
+            "movie": {
+                "available_translations": [
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ko",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ru",
+                    "sl",
+                    "sv",
+                    "th",
+                    "tr",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "R",
+                "genres": [
+                    "crime",
+                    "drama",
+                    "thriller"
+                ],
+                "homepage": "http://www.thelincolnlawyermovie.com/",
+                "ids": {
+                    "imdb": "tt1189340",
+                    "slug": "the-lincoln-lawyer-2011",
+                    "tmdb": 50348,
+                    "trakt": 35197
+                },
+                "language": "en",
+                "overview": "A lawyer conducts business from the back of his Lincoln town car while representing a high-profile client in Beverly Hills.",
+                "rating": 7.63211,
+                "released": "2011-03-18",
+                "runtime": 119,
+                "tagline": "This Case is a Dangerous Game of Life and Death",
+                "title": "The Lincoln Lawyer",
+                "trailer": "http://youtube.com/watch?v=xU4ReVEemN0",
+                "updated_at": "2017-02-24T08:42:59.000Z",
+                "votes": 2778,
+                "year": 2011
+            }
+        },
+        {
+            "character": "Dean Tainot",
+            "movie": {
+                "available_translations": [
+                    "ar",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ja",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sv",
+                    "tr",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "PG-13",
+                "genres": [
+                    "comedy",
+                    "drama",
+                    "romance"
+                ],
+                "homepage": "http://www.larrycrowne.com/",
+                "ids": {
+                    "imdb": "tt1583420",
+                    "slug": "larry-crowne-2011",
+                    "tmdb": 59861,
+                    "trakt": 42811
+                },
+                "language": "en",
+                "overview": "After losing his job, a middle-aged man reinvents himself by going back to college.",
+                "rating": 6.31172,
+                "released": "2011-06-30",
+                "runtime": 98,
+                "tagline": "Rediscover life and love",
+                "title": "Larry Crowne",
+                "trailer": "http://youtube.com/watch?v=x_-tWhlcQok",
+                "updated_at": "2017-02-20T09:37:43.000Z",
+                "votes": 725,
+                "year": 2011
+            }
+        },
+        {
+            "character": "Shannon",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fa",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ja",
+                    "ko",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sr",
+                    "sv",
+                    "tr",
+                    "uk",
+                    "vi",
+                    "zh"
+                ],
+                "certification": "R",
+                "genres": [
+                    "action",
+                    "crime",
+                    "drama",
+                    "thriller"
+                ],
+                "homepage": "http://www.sonypictures.com/movies/drive/",
+                "ids": {
+                    "imdb": "tt0780504",
+                    "slug": "drive-2011",
+                    "tmdb": 64690,
+                    "trakt": 46736
+                },
+                "language": "en",
+                "overview": "A Hollywood stunt performer who moonlights as a wheelman for criminals discovers that a contract has been put on him after a heist gone wrong.",
+                "rating": 7.70136,
+                "released": "2011-09-16",
+                "runtime": 100,
+                "tagline": "There are no clean getaways.",
+                "title": "Drive",
+                "trailer": "http://youtube.com/watch?v=octqcbtFxj0",
+                "updated_at": "2017-02-24T08:45:08.000Z",
+                "votes": 8137,
+                "year": 2011
+            }
+        },
+        {
+            "character": "Lt. James Gordon",
+            "movie": {
+                "available_translations": [
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "nl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "zh"
+                ],
+                "certification": "PG-13",
+                "genres": [
+                    "action",
+                    "adventure",
+                    "animation",
+                    "crime",
+                    "science-fiction"
+                ],
+                "homepage": "http://www.watchvideoseries.com/movies/batman-year-one-2011/",
+                "ids": {
+                    "imdb": "tt1672723",
+                    "slug": "batman-year-one-2011",
+                    "tmdb": 69735,
+                    "trakt": 50979
+                },
+                "language": "en",
+                "overview": "Two men come to Gotham City: Bruce Wayne after years abroad feeding his lifelong obsession for justice and Jim Gordon after being too honest a cop with the wrong people elsewhere. After learning painful lessons about the city's corruption on its streets and police department respectively, this pair learn how to fight back their own way. With that, Gotham's evildoers from top to bottom are terrorized by the mysterious Batman and the equally heroic Gordon is assigned to catch him by comrades who both hate and fear him themselves. In the ensuing manhunt, both find much in common as the seeds of an unexpected friendship are laid with additional friends and rivals helping to start the legend.",
+                "rating": 7.668,
+                "released": "2011-10-18",
+                "runtime": 64,
+                "tagline": "A merciless crime turns a man into an outlaw.",
+                "title": "Batman: Year One",
+                "trailer": "http://youtube.com/watch?v=8o8O3E9XSgo",
+                "updated_at": "2016-09-29T09:54:21.000Z",
+                "votes": 1003,
+                "year": 2011
+            }
+        },
+        {
+            "character": "Richard Dearden",
+            "movie": {
+                "available_translations": [
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ko",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ru",
+                    "sl",
+                    "sv",
+                    "tr",
+                    "zh"
+                ],
+                "certification": "NR",
+                "genres": [
+                    "drama"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt1683526",
+                    "slug": "detachment-2011",
+                    "tmdb": 74308,
+                    "trakt": 54694
+                },
+                "language": "en",
+                "overview": "A chronicle of three weeks in the lives of several high school teachers, administrators and students through the eyes of substitute teacher, Henry Barthes. Henry roams from school to school, imparting modes of knowledge, but never staying long enough to form any semblance of sentient attachment.",
+                "rating": 7.78555,
+                "released": "2011-04-25",
+                "runtime": 97,
+                "tagline": "",
+                "title": "Detachment",
+                "trailer": "http://youtube.com/watch?v=I-gS8OBt-yk",
+                "updated_at": "2017-01-07T09:03:05.000Z",
+                "votes": 858,
+                "year": 2011
+            }
+        },
+        {
+            "character": "Elliot",
+            "movie": {
+                "available_translations": [
+                    "en",
+                    "ru"
+                ],
+                "certification": "R",
+                "genres": [
+                    "mystery",
+                    "thriller"
+                ],
+                "homepage": "http://www.thefilm-leave.com/",
+                "ids": {
+                    "imdb": "tt1446695",
+                    "slug": "leave-2011",
+                    "tmdb": 135678,
+                    "trakt": 91500
+                },
+                "language": "en",
+                "overview": "Henry Harper is a successful novelist who has it all. But after surviving a recent trauma he finds himself haunted by a dream that terrifies him. Convinced that the only way to understand what the dream means is to write his way through it, Henry decides to go to a remote second home to begin work on his next novel, a thriller. While on his way there he encounters a strangely familiar drifter who confronts him with information that threatens to turn everything he knows to be true, upside down. Written by producer",
+                "rating": 5.4,
+                "released": "2011-05-03",
+                "runtime": 84,
+                "tagline": "",
+                "title": "Leave",
+                "trailer": "http://youtube.com/watch?v=e0-F3nSf2AQ",
+                "updated_at": "2017-02-21T15:34:46.000Z",
+                "votes": 5,
+                "year": 2011
+            }
+        },
+        {
+            "character": "James Pettis",
+            "movie": {
+                "available_translations": [
+                    "cs",
+                    "de",
+                    "en",
+                    "fr",
+                    "he",
+                    "hu",
+                    "nl",
+                    "pl",
+                    "pt"
+                ],
+                "certification": "R",
+                "genres": [
+                    "drama"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt1125929",
+                    "slug": "love-ranch-2010",
+                    "tmdb": 39845,
+                    "trakt": 26004
+                },
+                "language": "en",
+                "overview": "Story of a couple that starts the first legal brothel in Nevada and a boxer they own a piece of.",
+                "rating": 5.375,
+                "released": "2010-06-30",
+                "runtime": 117,
+                "tagline": "When It Comes To Love... Everyone Pays A Price.",
+                "title": "Love Ranch",
+                "trailer": null,
+                "updated_at": "2016-05-22T09:19:57.000Z",
+                "votes": 16,
+                "year": 2010
+            }
+        },
+        {
+            "character": "Walter White",
+            "movie": {
+                "available_translations": [
+                    "en"
+                ],
+                "certification": null,
+                "genres": [
+                    "thriller",
+                    "crime",
+                    "drama"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": null,
+                    "slug": "breaking-bad-pilot-2008",
+                    "tmdb": 435686,
+                    "trakt": 282348
+                },
+                "language": "en",
+                "overview": "Diagnosed with terminal lung cancer, chemistry teacher Walter White teams up with his former student, Jesse Pinkman, to cook and sell crystal meth.",
+                "rating": 0.0,
+                "released": "2008-01-20",
+                "runtime": 58,
+                "tagline": "",
+                "title": "Breaking Bad Pilot",
+                "trailer": null,
+                "updated_at": "2017-01-19T08:34:00.000Z",
+                "votes": 0,
+                "year": 2008
+            }
+        },
+        {
+            "character": "Stan Grossman",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fr",
+                    "he",
+                    "hr",
+                    "hu",
+                    "it",
+                    "ja",
+                    "ko",
+                    "nl",
+                    "pl",
+                    "pt",
+                    "ru",
+                    "sv",
+                    "tr",
+                    "zh"
+                ],
+                "certification": "R",
+                "genres": [
+                    "comedy",
+                    "drama"
+                ],
+                "homepage": "http://www.foxsearchlight.com/littlemisssunshine/",
+                "ids": {
+                    "imdb": "tt0449059",
+                    "slug": "little-miss-sunshine-2006",
+                    "tmdb": 773,
+                    "trakt": 616
+                },
+                "language": "en",
+                "overview": "A family loaded with quirky, colorful characters piles into an old van and road trips to California for little Olive to compete in a beauty pageant.",
+                "rating": 7.85412,
+                "released": "2006-07-26",
+                "runtime": 102,
+                "tagline": "A family on the verge of a breakdown",
+                "title": "Little Miss Sunshine",
+                "trailer": "http://youtube.com/watch?v=VWyH_twcMl0",
+                "updated_at": "2017-02-24T09:12:43.000Z",
+                "votes": 4490,
+                "year": 2006
+            }
+        },
+        {
+            "character": "Peter",
+            "movie": {
+                "available_translations": [
+                    "de",
+                    "en",
+                    "fr",
+                    "pt"
+                ],
+                "certification": null,
+                "genres": [
+                    "comedy",
+                    "drama",
+                    "romance"
+                ],
+                "homepage": "",
+                "ids": {
+                    "imdb": "tt0362129",
+                    "slug": "seeing-other-people-2004",
+                    "tmdb": 32298,
+                    "trakt": 20762
+                },
+                "language": "en",
+                "overview": "Two months shy of their wedding, a couple decide to allow each other last flings until their wedding.",
+                "rating": 4.42857,
+                "released": "2004-01-01",
+                "runtime": 90,
+                "tagline": "",
+                "title": "Seeing Other People",
+                "trailer": null,
+                "updated_at": "2017-02-21T05:27:18.000Z",
+                "votes": 14,
+                "year": 2004
+            }
+        },
+        {
+            "character": "David",
+            "movie": {
+                "available_translations": [
+                    "en"
+                ],
+                "certification": "PG-13",
+                "genres": [
+                    "drama",
+                    "romance"
+                ],
+                "homepage": "http://www.illusionthemovie.com/",
+                "ids": {
+                    "imdb": "tt0290218",
+                    "slug": "illusion-2004",
+                    "tmdb": 79463,
+                    "trakt": 59041
+                },
+                "language": "en",
+                "overview": "A once-powerful, but now ailing movie director nears the end of his life. As he awaits death, he slips into a \"dream\" and is shown three \"snippets\" of the movie of his son's life. At first suspicious, then curious, and ultimately captivated, he watches his son's growth from mid-teens to mid-thirties as the son pursues his life-long love, Isabelle. The two constants through these snippets are his pursuit of Isabelle and the imagined voice of his father, telling him that he is worthless and unwanted. It is not until the story reaches its conclusion, that the old man discovers the surprising truth about his son and himself.",
+                "rating": 5.0,
+                "released": "2004-10-25",
+                "runtime": 106,
+                "tagline": "The only person who could change the story of his life...was the father he never knew.",
+                "title": "Illusion",
+                "trailer": null,
+                "updated_at": "2015-05-09T08:41:38.000Z",
+                "votes": 1,
+                "year": 2004
+            }
+        },
+        {
+            "character": "Woodrow Snider",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "en",
+                    "hu"
+                ],
+                "certification": "PG-13",
+                "genres": [
+                    "comedy"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0374275",
+                    "slug": "holiday-reunion-2003",
+                    "tmdb": 18038,
+                    "trakt": 11026
+                },
+                "language": "en",
+                "overview": "Against the ardent wishes of his wife, eleven-year-old son, and sixteen-year-old daughter, ALBERT SNIDER (Judge Reinhold) is determined to have a festive family holiday. Albert doesn't seem to realize that his kids would rather stick needles in their eyes then spend time with their stuffy dad, and his wife is equally fed up by their dull life. When he receives an invitation from his long lost cousin Woodrow (Bryan Cranston), he decides to take his family out to the country for a down-home family holiday. However, Cousin Woodrow and his family turn out to be nuttier than a holiday fruitcake! What follows is a full course meal of nonstop laughs and holiday hilarity when the neurotic 'burbs clash with the hippy hicks from hell in National Lampoon's most outrageous family misadventure yet!",
+                "rating": 5.5,
+                "released": "2003-11-23",
+                "runtime": 91,
+                "tagline": "All Mitch Snider wants for his family is a traditional holiday feast with the relatives. The problem is that he doesn't have any..",
+                "title": "Holiday Reunion",
+                "trailer": null,
+                "updated_at": "2016-07-10T08:44:35.000Z",
+                "votes": 2,
+                "year": 2003
+            }
+        },
+        {
+            "character": "Santa Claus (voice)",
+            "movie": {
+                "available_translations": [
+                    "en",
+                    "ru"
+                ],
+                "certification": "G",
+                "genres": [
+                    "animation",
+                    "fantasy",
+                    "family"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0307410",
+                    "slug": "the-santa-claus-brothers-2002",
+                    "tmdb": 39945,
+                    "trakt": 26100
+                },
+                "language": "en",
+                "overview": "This tale of Santa's 3 sons seeks the true meaning of Christmas. Kevin McDonald and Richard Kind add voices that instill a genuine comedy feel. With a southern California twist and unique animation, it's a great story for the whole family.",
+                "rating": 1.0,
+                "released": "2002-07-12",
+                "runtime": 60,
+                "tagline": "",
+                "title": "The Santa Claus Brothers",
+                "trailer": null,
+                "updated_at": "2016-09-21T08:32:25.000Z",
+                "votes": 1,
+                "year": 2002
+            }
+        },
+        {
+            "character": "Ron Gatley",
+            "movie": {
+                "available_translations": [
+                    "de",
+                    "en",
+                    "es",
+                    "fr",
+                    "hu",
+                    "pt"
+                ],
+                "certification": null,
+                "genres": [
+                    "comedy",
+                    "horror",
+                    "thriller"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0211661",
+                    "slug": "terror-tract-2001",
+                    "tmdb": 87867,
+                    "trakt": 65958
+                },
+                "language": "en",
+                "overview": "Bob Carter, a suburban real estate agent, tries to get a kindly couple, Allen and Mary Ann Doyle, to buy a house only to give them horrifying stories about the pasts of three of them. In the first story \"Nightmare\" a businessman discovers his wife cheating on him only to be killed by his spouse and her boyfriend in which she begins having dreams of her husband not staying dead. The second story \"Bobo\" involves increasing fear and paranoia from a kindly family man whose young daughter finds and adopts a stray monkey who turns out to be more than meets the eye. The third story \"Come To Granny\" involves a trouble teenager with psychic abilities who visits a therapist to warn her that she happends to be the next victim of a vicious serial killer called The Granny.",
+                "rating": 5.11111,
+                "released": "2001-06-27",
+                "runtime": 96,
+                "tagline": "",
+                "title": "Terror Tract",
+                "trailer": null,
+                "updated_at": "2015-02-17T08:47:46.000Z",
+                "votes": 18,
+                "year": 2001
+            }
+        },
+        {
+            "character": "Nick Wrigley",
+            "movie": {
+                "available_translations": [
+                    "de",
+                    "en",
+                    "hu",
+                    "ru"
+                ],
+                "certification": "G",
+                "genres": [
+                    "family"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0282223",
+                    "slug": "twas-the-night-2001",
+                    "tmdb": 103014,
+                    "trakt": 73634
+                },
+                "language": "en",
+                "overview": "A mischievous 14-year-old boy and his irresponsible uncle almost ruin Christmas when they decide to take Santa's new high-tech sleigh for a joyride.",
+                "rating": 5.16,
+                "released": "2001-12-07",
+                "runtime": 84,
+                "tagline": "",
+                "title": "'Twas the Night",
+                "trailer": null,
+                "updated_at": "2016-08-29T08:45:36.000Z",
+                "votes": 25,
+                "year": 2001
+            }
+        },
+        {
+            "character": "War Department Colonel",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fa",
+                    "fi",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ja",
+                    "ko",
+                    "nl",
+                    "no",
+                    "pl",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "sk",
+                    "sr",
+                    "sv",
+                    "tr",
+                    "uk",
+                    "zh"
+                ],
+                "certification": "R",
+                "genres": [
+                    "drama",
+                    "history",
+                    "war"
+                ],
+                "homepage": "http://https://www.facebook.com/SavingPrivateRyanMovie",
+                "ids": {
+                    "imdb": "tt0120815",
+                    "slug": "saving-private-ryan-1998",
+                    "tmdb": 857,
+                    "trakt": 700
+                },
+                "language": "en",
+                "overview": "As U.S. troops storm the beaches of Normandy, three brothers lie dead on the battlefield, with a fourth trapped behind enemy lines. Ranger captain John Miller and seven men are tasked with penetrating German-held territory and bringing the boy home.",
+                "rating": 8.50207,
+                "released": "1998-07-24",
+                "runtime": 169,
+                "tagline": "The mission is a man.",
+                "title": "Saving Private Ryan",
+                "trailer": "http://youtube.com/watch?v=vwAxi4A2YcY",
+                "updated_at": "2017-02-21T08:45:24.000Z",
+                "votes": 10397,
+                "year": 1998
+            }
+        },
+        {
+            "character": "Braddock",
+            "movie": {
+                "available_translations": [
+                    "de",
+                    "en"
+                ],
+                "certification": null,
+                "genres": [
+                    "action",
+                    "science-fiction"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0117912",
+                    "slug": "time-under-fire-1997",
+                    "tmdb": 114322,
+                    "trakt": 80014
+                },
+                "language": "en",
+                "overview": "A US submarine runs into a time rift. A special unit goes on a mission to see what's on the other side. They find themselves in an alternate dystopian America, now a one-man dictatorship. They decide to help the rebels.",
+                "rating": 6.0,
+                "released": "1997-11-12",
+                "runtime": 82,
+                "tagline": "",
+                "title": "Time Under Fire",
+                "trailer": "http://youtube.com/watch?v=bl73XA0hpZk",
+                "updated_at": "2016-11-24T09:05:54.000Z",
+                "votes": 2,
+                "year": 1997
+            }
+        },
+        {
+            "character": "Virgil \"Gus\" Grissom",
+            "movie": {
+                "available_translations": [
+                    "bg",
+                    "cs",
+                    "da",
+                    "de",
+                    "el",
+                    "en",
+                    "es",
+                    "fr",
+                    "he",
+                    "hu",
+                    "it",
+                    "ko",
+                    "pt",
+                    "ro",
+                    "ru",
+                    "tr",
+                    "zh"
+                ],
+                "certification": "PG",
+                "genres": [
+                    "comedy",
+                    "drama"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0117887",
+                    "slug": "that-thing-you-do-1996",
+                    "tmdb": 9591,
+                    "trakt": 4867
+                },
+                "language": "en",
+                "overview": "A Pennsylvania band scores a hit in 1964 and rides the star-making machinery as long as it can, with lots of help from its manager.",
+                "rating": 7.3604,
+                "released": "1996-10-04",
+                "runtime": 108,
+                "tagline": "In every life there comes a time when that dream you dream becomes that thing you do.",
+                "title": "That Thing You Do!",
+                "trailer": "http://youtube.com/watch?v=Vs_h7YdIe_k",
+                "updated_at": "2017-01-29T08:40:19.000Z",
+                "votes": 505,
+                "year": 1996
+            }
+        },
+        {
+            "character": "Eddie",
+            "movie": {
+                "available_translations": [
+                    "de",
+                    "en",
+                    "fr",
+                    "it",
+                    "nl"
+                ],
+                "certification": null,
+                "genres": [
+                    "animation",
+                    "science-fiction",
+                    "thriller"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0109151",
+                    "slug": "armitage-iii-poly-matrix-1996",
+                    "tmdb": 33322,
+                    "trakt": 21332
+                },
+                "language": "ja",
+                "overview": "Ross Sylibus is assigned to a police unit on a Martian colony, to find that women are being murdered by a psychotic named D'anclaude. He is assigned a very unorthodox partner named Naomi Armitage, who seems to have links to the victims. To stir things up more, every victim is found to be an illegally made third-generation android.",
+                "rating": 7.19231,
+                "released": "1997-04-08",
+                "runtime": 90,
+                "tagline": "",
+                "title": "Armitage III: Poly Matrix",
+                "trailer": null,
+                "updated_at": "2017-02-26T09:44:27.000Z",
+                "votes": 26,
+                "year": 1996
+            }
+        },
+        {
+            "character": "Patrick Dougherty",
+            "movie": {
+                "available_translations": [
+                    "en",
+                    "ru"
+                ],
+                "certification": null,
+                "genres": [
+                    "tv-movie"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0117501",
+                    "slug": "the-rockford-files-punishment-and-crime-1996",
+                    "tmdb": 219732,
+                    "trakt": 135295
+                },
+                "language": "en",
+                "overview": "Laid-back private eye Jim Rockford and his brown Pontiac Firebird become embroiled in another case when he runs across an old flame, blind book editor Megan. Her no-good playboy cousin Patrick is involved with the Russian Mob, which puts everyone's life in danger. The weary Rockford must also deal with his old friend Angel, who is painting Jim's trailer to work off a debt.",
+                "rating": 0.0,
+                "released": "1996-09-18",
+                "runtime": 120,
+                "tagline": "Rockford rekindles a hot romance and faces some ruthless stone-cold killers.",
+                "title": "The Rockford Files: Punishment and Crime",
+                "trailer": null,
+                "updated_at": "2015-04-23T08:35:44.000Z",
+                "votes": 0,
+                "year": 1996
+            }
+        },
+        {
+            "character": "Dr. Byron Stern",
+            "movie": {
+                "available_translations": [
+                    "de",
+                    "en"
+                ],
+                "certification": null,
+                "genres": [],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0109742",
+                    "slug": "erotique-1995",
+                    "tmdb": 46643,
+                    "trakt": 32027
+                },
+                "language": "en",
+                "overview": "Four women filmmakers examine sexuality in this anthology. Segment 1 is entitled \"Let's Talk About Sex\" and is the story of an aspiring actress whose day job is as a phone-sex operator. Tiring of listening to callers' fantasies, she finds a caller who is willing to listen to hers. Segment 2 is called \"Taboo Palor\" and tells the story of two lesbians, who, for variety, pick up a man for sex. He ends up getting more than he bargained for. Segment 3 is \"Wonton Soup.\" Here an Australian-Chinese man tries to rekindle his affair with a Chinese woman by returning to their roots: both in the kitchen and in the bedroom.",
+                "rating": 4.5,
+                "released": "1995-01-20",
+                "runtime": 93,
+                "tagline": "",
+                "title": "Erotique",
+                "trailer": null,
+                "updated_at": "2017-02-01T08:40:18.000Z",
+                "votes": 2,
+                "year": 1995
+            }
+        },
+        {
+            "character": "Alan",
+            "movie": {
+                "available_translations": [
+                    "en"
+                ],
+                "certification": "R",
+                "genres": [
+                    "science-fiction"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0109464",
+                    "slug": "the-companion-1994",
+                    "tmdb": 252316,
+                    "trakt": 152990
+                },
+                "language": "en",
+                "overview": "In the near-distant future, a female romance writer is planning to write her next book in a remote mountain cabin. A friend convinces her to bring along a \"companion\", a nearly-human android to cook and clean. She settles on a male companion named \"Geoffrey.\" Bored with some of Geoffrey's behavior, she tinkers with his programming -- first his personality, then his sexuality. Real trouble comes when she gives his mind access to \"random data.\"",
+                "rating": 0.0,
+                "released": "1994-10-14",
+                "runtime": 94,
+                "tagline": "She wanted the ultimate man. She created the ultimate terror.",
+                "title": "The Companion",
+                "trailer": null,
+                "updated_at": "2015-03-15T08:45:20.000Z",
+                "votes": 0,
+                "year": 1994
+            }
+        },
+        {
+            "character": "Father Brophy",
+            "movie": {
+                "available_translations": [
+                    "en",
+                    "hu"
+                ],
+                "certification": "R",
+                "genres": [],
+                "homepage": "",
+                "ids": {
+                    "imdb": "tt0117761",
+                    "slug": "street-corner-justice-1992",
+                    "tmdb": 268397,
+                    "trakt": 166715
+                },
+                "language": null,
+                "overview": "Pittsburgh cop Mike Justus is kicked off the force and moves away to relax in sunny Los Angeles. Unfortunately his dream retirement turns out to be a nightmare and he is forced to deal out his own brand of street corner justice.",
+                "rating": 0.0,
+                "released": "1992-09-29",
+                "runtime": 102,
+                "tagline": "The law of the land just came home to stay.",
+                "title": "Street Corner Justice",
+                "trailer": null,
+                "updated_at": "2017-02-02T12:24:59.000Z",
+                "votes": 0,
+                "year": 1992
+            }
+        },
+        {
+            "character": "Darden",
+            "movie": {
+                "available_translations": [
+                    "de",
+                    "en",
+                    "es",
+                    "fr"
+                ],
+                "certification": null,
+                "genres": [
+                    "horror",
+                    "science-fiction"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0101675",
+                    "slug": "dead-space-1991",
+                    "tmdb": 48291,
+                    "trakt": 33427
+                },
+                "language": "en",
+                "overview": "Phaebon had been thought to be a safe and controlled research facility until a distress signal calls for Commander Kreiger and his robot Tinpan. Together, they try to save the planet from a spreading virus and an odd and growing cocoon. Remake of \"Forbidden World\" (1982).",
+                "rating": 5.41667,
+                "released": "1991-10-21",
+                "runtime": 80,
+                "tagline": "No Place To Hide",
+                "title": "Dead Space",
+                "trailer": null,
+                "updated_at": "2016-06-12T08:53:04.000Z",
+                "votes": 12,
+                "year": 1991
+            }
+        },
+        {
+            "character": "Darren",
+            "movie": {
+                "available_translations": [
+                    "en"
+                ],
+                "certification": null,
+                "genres": [
+                    "comedy"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0099305",
+                    "slug": "corporate-affairs-1990",
+                    "tmdb": 279930,
+                    "trakt": 177431
+                },
+                "language": "en",
+                "overview": "An executive discovers that his former lover has given their firm's CEO a fatal heart attack during sex.",
+                "rating": 0.0,
+                "released": "1990-10-05",
+                "runtime": 82,
+                "tagline": "",
+                "title": "Corporate Affairs",
+                "trailer": "http://youtube.com/watch?v=9A2AbbcdFA8",
+                "updated_at": "2017-02-13T09:25:55.000Z",
+                "votes": 0,
+                "year": 1990
+            }
+        },
+        {
+            "character": "Jim",
+            "movie": {
+                "available_translations": [
+                    "en"
+                ],
+                "certification": null,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt0204165",
+                    "slug": "the-big-turnaround-1988",
+                    "tmdb": 214736,
+                    "trakt": 132662
+                },
+                "language": "en",
+                "overview": "Two trained men, one angry local woman and the local priest take on the local crime lord and his crew of narcotic smugglers and human traffickers in a small town next to the US-Mexico border.",
+                "rating": 0.0,
+                "released": "1988-01-01",
+                "runtime": 98,
+                "tagline": "",
+                "title": "The Big Turnaround",
+                "trailer": null,
+                "updated_at": "2016-09-22T08:55:56.000Z",
+                "votes": 0,
+                "year": 1988
+            }
+        },
+        {
+            "character": "Marty Tohn (English Dub)",
+            "movie": {
+                "available_translations": [
+                    "da",
+                    "de",
+                    "en",
+                    "es",
+                    "fr",
+                    "it",
+                    "ja",
+                    "ko",
+                    "nl",
+                    "pl",
+                    "ru",
+                    "uk"
+                ],
+                "certification": null,
+                "genres": [
+                    "animation",
+                    "drama",
+                    "science-fiction"
+                ],
+                "homepage": "http://www.gainax.co.jp/anime/honeamis/index.html",
+                "ids": {
+                    "imdb": "tt0093207",
+                    "slug": "royal-space-force-the-wings-of-honneamise-1987",
+                    "tmdb": 20043,
+                    "trakt": 12301
+                },
+                "language": "ja",
+                "overview": "Shiro Lhadatt joins the Royal Space Force only because his low grades bar him from the air force; he encounters ridicule from manipulative leaders and shares apathy with his fellow co-workers. A chance encounter with devout young Riquinni spurs him towards his destiny\u2014to become the first man in space.",
+                "rating": 6.85507,
+                "released": "1987-03-14",
+                "runtime": 125,
+                "tagline": "Love. War. And the final frontier.",
+                "title": "Royal Space Force: The Wings of Honn\u00eaamise",
+                "trailer": "http://youtube.com/watch?v=aVe9D02dTaU",
+                "updated_at": "2016-11-25T08:31:22.000Z",
+                "votes": 69,
+                "year": 1987
+            }
+        },
+        {
+            "character": "Phillip",
+            "movie": {
+                "available_translations": [
+                    "en",
+                    "fr"
+                ],
+                "certification": null,
+                "genres": [
+                    "comedy",
+                    "drama"
+                ],
+                "homepage": null,
+                "ids": {
+                    "imdb": "tt1987680",
+                    "slug": "the-untouchables",
+                    "tmdb": 440472,
+                    "trakt": 286245
+                },
+                "language": "en",
+                "overview": "A comedic look at the relationship between a wealthy paraplegic and a unemployed man with a criminal record who's hired to help him.",
+                "rating": 0.0,
+                "released": null,
+                "runtime": 0,
+                "tagline": "",
+                "title": "The Untouchables",
+                "trailer": null,
+                "updated_at": "2017-02-09T08:58:06.000Z",
+                "votes": 0,
+                "year": null
+            }
+        }
+    ],
+    "crew": {
+        "production": [
+            {
+                "job": "Executive Producer",
+                "movie": {
+                    "available_translations": [
+                        "bg",
+                        "cs",
+                        "da",
+                        "de",
+                        "el",
+                        "en",
+                        "es",
+                        "fi",
+                        "fr",
+                        "he",
+                        "hu",
+                        "it",
+                        "ko",
+                        "nl",
+                        "pl",
+                        "pt",
+                        "ro",
+                        "ru",
+                        "sv",
+                        "tr",
+                        "uk",
+                        "zh"
+                    ],
+                    "certification": "R",
+                    "genres": [
+                        "crime",
+                        "drama",
+                        "thriller"
+                    ],
+                    "homepage": "http://www.theinfiltrator.com/",
+                    "ids": {
+                        "imdb": "tt1355631",
+                        "slug": "the-infiltrator-2016",
+                        "tmdb": 325789,
+                        "trakt": 214309
+                    },
+                    "language": "en",
+                    "overview": "A U.S Customs official uncovers a massive money laundering scheme involving Pablo Escobar.",
+                    "rating": 7.65296,
+                    "released": "2016-07-13",
+                    "runtime": 127,
+                    "tagline": "The true story of one man against the biggest drug cartel in history.",
+                    "title": "The Infiltrator",
+                    "trailer": "http://youtube.com/watch?v=7cnUI_ryp2w",
+                    "updated_at": "2017-02-26T09:42:22.000Z",
+                    "votes": 6178,
+                    "year": 2016
+                }
+            },
+            {
+                "job": "Executive Producer",
+                "movie": {
+                    "available_translations": [
+                        "cs",
+                        "de",
+                        "el",
+                        "en",
+                        "es",
+                        "fr",
+                        "he",
+                        "hu",
+                        "it",
+                        "nl",
+                        "pl",
+                        "pt",
+                        "ru",
+                        "sv",
+                        "tr",
+                        "zh"
+                    ],
+                    "certification": "TV-14",
+                    "genres": [
+                        "drama",
+                        "history",
+                        "tv-movie"
+                    ],
+                    "homepage": "http://www.hbo.com/movies/all-the-way",
+                    "ids": {
+                        "imdb": "tt3791216",
+                        "slug": "all-the-way-2016",
+                        "tmdb": 347123,
+                        "trakt": 231247
+                    },
+                    "language": "en",
+                    "overview": "Lyndon B. Johnson's amazing 11-month journey from taking office after JFK's assassination, through the fight to pass the 1964 Civil Rights Act and his own presidential campaign, culminating on the night LBJ is actually elected to the office \u2013 no longer the 'accidental President.'",
+                    "rating": 7.52804,
+                    "released": "2016-05-23",
+                    "runtime": 132,
+                    "tagline": "Politics Is War.",
+                    "title": "All the Way",
+                    "trailer": null,
+                    "updated_at": "2017-02-24T09:14:31.000Z",
+                    "votes": 642,
+                    "year": 2016
+                }
+            }
+        ]
+    }
+}

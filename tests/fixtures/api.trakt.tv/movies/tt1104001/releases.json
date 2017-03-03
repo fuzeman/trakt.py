@@ -1,0 +1,114 @@
+[
+    {
+        "certification": "PG",
+        "country": "us",
+        "note": "World Premiere",
+        "release_date": "2010-12-10",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "\u041114",
+        "country": "kz",
+        "note": null,
+        "release_date": "2010-12-15",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "PG",
+        "country": "gr",
+        "note": null,
+        "release_date": "2010-12-16",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "PG",
+        "country": "au",
+        "note": null,
+        "release_date": "2010-12-16",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "PG",
+        "country": "us",
+        "note": null,
+        "release_date": "2010-12-17",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "PG",
+        "country": "gb",
+        "note": null,
+        "release_date": "2010-12-17",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "",
+        "country": "ca",
+        "note": null,
+        "release_date": "2010-12-17",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "12",
+        "country": "br",
+        "note": null,
+        "release_date": "2010-12-17",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "",
+        "country": "it",
+        "note": null,
+        "release_date": "2010-12-29",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "\uc804\uccb4 \uad00\ub78c\uac00",
+        "country": "kr",
+        "note": null,
+        "release_date": "2010-12-29",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "12",
+        "country": "sk",
+        "note": null,
+        "release_date": "2011-01-06",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "12",
+        "country": "de",
+        "note": null,
+        "release_date": "2011-01-26",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "PG-13",
+        "country": "tr",
+        "note": null,
+        "release_date": "2011-01-28",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "12",
+        "country": "nl",
+        "note": null,
+        "release_date": "2011-01-28",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "U",
+        "country": "fr",
+        "note": null,
+        "release_date": "2011-02-09",
+        "release_type": "theatrical"
+    },
+    {
+        "certification": "PG",
+        "country": "us",
+        "note": "The Ultimate TRON Collection Blu-Ray Combo (5 Disc), Blu-Ray 3D Combo (4 Disc), Blu-Ray (2 Disc) & DVD",
+        "release_date": "2011-04-05",
+        "release_type": "physical"
+    }
+]

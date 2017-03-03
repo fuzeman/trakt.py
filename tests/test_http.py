@@ -1,37 +1,27 @@
-from tests.core.helpers import read
+from tests.core import mock
 from trakt import Trakt
 
-import responses
+from httmock import HTTMock
 
 
-@responses.activate
 def test_shows_updates():
-    responses.add(
-        responses.GET, 'http://mock/shows/updates',
-        body=read('fixtures/shows/updates.json'), status=200,
-        content_type='application/json'
-    )
+    with HTTMock(mock.fixtures, mock.unknown):
+        response = Trakt.http.get('/shows/updates')
 
-    Trakt.base_url = 'http://mock'
+    items = response.json()
 
-    response = Trakt.http.get('/shows/updates')
-    data = response.json()
-
-    assert data[0]['show']['title'] == 'Breaking Bad'
-    assert data[1]['show']['title'] == 'The Walking Dead'
+    assert [item['show']['title'] for item in items] == [
+        'The Pop Game',
+        'The Pop Game',
+        'Abandoned Engineering'
+    ]
 
 
-@responses.activate
 def test_show_progress_collection():
-    responses.add(
-        responses.GET, 'http://mock/shows/tt0944947/progress/collection',
-        body=read('fixtures/shows/tt0944947/progress/collection.json'), status=200,
-        content_type='application/json'
-    )
+    # TODO Add missing fixture
+    with HTTMock(mock.fixtures, mock.unknown):
+        response = Trakt.http.get('/shows/tt0944947/progress/collection')
 
-    Trakt.base_url = 'http://mock'
-
-    response = Trakt.http.get('/shows/tt0944947/progress/collection')
     data = response.json()
 
     assert data['aired'] == 10
