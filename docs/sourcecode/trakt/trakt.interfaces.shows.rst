@@ -5,5 +5,5 @@
 .. automodule:: trakt.interfaces.shows
 
   .. autoclass:: ShowsInterface
-    :members: episode, get, season, seasons, trending
+    :members: episode, get, last_episode, next_episode, season, seasons, trending
     :undoc-members:

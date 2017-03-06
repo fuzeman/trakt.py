@@ -5,5 +5,5 @@
 .. automodule:: trakt.interfaces.sync.playback
 
   .. autoclass:: SyncPlaybackInterface
-    :members: episodes, flags, get, movies, shows
+    :members: delete, episodes, flags, get, movies, shows
     :undoc-members:
