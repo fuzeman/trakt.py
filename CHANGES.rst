@@ -2,7 +2,7 @@
 -------------------
 **Added**
 
- - :code:`__future__` imports to :code:`trakt/hooks.py`
+- :code:`__future__` imports to :code:`trakt/hooks.py`
 
 2.14.0 (2017-03-07)
 -------------------
