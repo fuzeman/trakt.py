@@ -12,9 +12,8 @@ python:
   - 3.5
   - nightly
 install:
-  - travis_retry pip install -r requirements.txt
-  - travis_retry pip install -r requirements_test.txt
-  - travis_retry pip install -r requirements_travis.txt
+  - travis_retry pip install -r travis-requirements.txt
+  - if [[ $TRAVIS_PYTHON_VERSION != 'pypy'* ]]; then travis_retry pip install pyOpenSSL>=16.2.0; fi
 script:
   - tox
 after_success:
