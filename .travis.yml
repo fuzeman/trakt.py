@@ -19,3 +19,24 @@ script:
 after_success:
   - coveralls
   - python setup.py bdist_wheel sdist
+deploy:
+  - provider: releases
+    api_key:
+      secure: YNBgqm+CPtUk5fJdQbwOaj51mcgX+N5Npjf1QBq5+nonU+dH7RlCDpIxKqbgyHKX4wsOHLu3dnbQ1lgUsjIkAR/OTs+PPgTtoNmZ/ZX64UfeNlAtWs23ap3omwyjFs1UrCBD54c8SqcTzxA44NpR2g/ywuv+b3pAFYF4YLmgyKU=
+    skip_cleanup: true
+    file_glob: true
+    file: "dist/trakt.py-*"
+    on:
+      condition: $TRAVIS_PYTHON_VERSION = "3.6"
+      repo: fuzeman/trakt.py
+      tags: true
+  - provider: pypi
+    distributions: "bdist_wheel sdist"
+    user: "fm-build"
+    password:
+      secure: FaZa7IRrF+tsJ+8tZ19olfu+GW3kfAuXLzePjzA8SFIukDWhi4zi2hpiDOsq5M3f/UouAAB0Nr8fsP1339d9aznQwGm+8CBLgBg0NpffGrcqpegSsf0Phw47R8q4fYz0bXPM1P8okOVpN6Dk9DVOarpygxS3amRROLQpbBYwDOI=
+    skip_cleanup: true
+    on:
+      condition: $TRAVIS_PYTHON_VERSION = "3.6"
+      repo: fuzeman/trakt.py
+      tags: true
