@@ -15,15 +15,15 @@ Please explain the bug and include any details which might help reproduce the is
 - Platform details *(e.g. Operating System, CPU Type, Device Model)*
 - Python version:
 
- .. code-block:: shell
+  .. code-block:: shell
 
-   python -V
+    python -V
 
 - Installed packages:
 
- .. code-block:: shell
+  .. code-block:: shell
 
-   pip freeze
+    pip freeze
 
 Requesting features
 -------------------
@@ -48,49 +48,49 @@ Pull Requests
 
 - Your changes are based on the *develop* branch, before starting development checkout the correct branch:
 
- .. code-block:: shell
+  .. code-block:: shell
 
-   git checkout develop
+    git checkout develop
 
 - Tests pass, either:
 
- - Use `tox`_ to run tests against each version of Python and PyPy:
+  - Use `tox`_ to run tests against each version of Python and PyPy:
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    tox
+      tox
 
- - Test against your current version of Python:
+  - Test against your current version of Python:
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    python setup.py test
+      python setup.py test
 
- - Create your pull request, and wait for the test results to be posted by Travis CI. *(this may take a few minutes)*
+  - Create your pull request, and wait for the test results to be posted by Travis CI. *(this may take a few minutes)*
 
 - No issues are reported by `flake8`_, either:
 
- - Use `tox`_ to run `flake8`_:
+  - Use `tox`_ to run `flake8`_:
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    tox flake8
+      tox flake8
 
- - Create your pull request, and wait for the test results to be posted by Travis CI. *(this may take a few minutes)*
+  - Create your pull request, and wait for the test results to be posted by Travis CI. *(this may take a few minutes)*
 
-   **Note:** `flake8`_ results will be displayed under the "Python 3.6" job.
+    **Note:** `flake8`_ results will be displayed under the "Python 3.6" job.
 
 - Test coverage hasn't fallen *(lines added without tests)*
 
- - Use `tox`_ to run tests against each version of Python and PyPy:
+  - Use `tox`_ to run tests against each version of Python and PyPy:
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    tox
+      tox
 
-  *Coverage details will be displayed in the "stats" task.*
+    *Coverage details will be displayed in the "stats" task.*
 
- - Create your pull request, and wait for the coverage details to be posted by Coveralls. *(this may take a few minutes)*
+  - Create your pull request, and wait for the coverage details to be posted by Coveralls. *(this may take a few minutes)*
 
 If you aren't sure how to write tests or are confused about any of the above steps, just post the pull request anyway. I'll either let you
 know what needs to be changed, or can just cleanup your code and write the required tests (if requested).
