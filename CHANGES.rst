@@ -1,3 +1,33 @@
+2.14.0 (2017-03-07)
+-------------------
+**Added**
+
+- Support for Python 3.6
+- Package version is now automatically written into the :code:`trakt.version` module on :code:`python setup.py egg_info`
+- :code:`__future__` imports for more consistent Python 3 compatibility
+- :code:`SummaryMapper.episode` method now accepts the "parse_show" parameter
+- Interfaces:
+
+  - :code:`Trakt['calendars']` (#56)
+
+**Changed**
+
+- Dropped support for Python 3.2
+- Cleaned up documentation
+- Switched to pbr setup configuration
+- Ordering of import statements has been updated to be more consistent
+
+**Tests**
+
+- Replaced usage of :code:`responses` in tests with :code:`httmock`
+- Updated :code:`tox.ini` with additional test environments and flake8 plugins
+- Improved the :code:`fixtures` directory structure
+
+**Travis CI**
+
+- Switched to using "tox-travis", instead of running pytest directly
+- Releases are now automatically uploaded to PyPI and GitHub Releases
+
 2.13.0 (2017-02-16)
 -------------------
 **Added**
