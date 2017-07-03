@@ -7,7 +7,7 @@ from __future__ import absolute_import, division, print_function
 from setuptools import setup
 import sys
 
-NEEDS_PYTEST = {'pytest', 'test', 'ptr'}.intersection(sys.argv)
+NEEDS_PYTEST = set(['pytest', 'test', 'ptr']).intersection(sys.argv)
 PYTEST_RUNNER = ['pytest-runner>=2.0.0'] if NEEDS_PYTEST else []
 
 
