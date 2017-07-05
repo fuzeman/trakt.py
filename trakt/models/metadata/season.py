@@ -4,7 +4,7 @@ from trakt.models.metadata.base import Media, Summary
 from trakt.models.metadata.episode import Episode
 
 from byte.model import Property
-from byte.types import List
+from byte.types import Dictionary
 
 
 class Season(Media):
@@ -14,7 +14,7 @@ class Season(Media):
     media_type = 'season'
 
     show = Property('Show')
-    episodes = Property(List(Episode))
+    episodes = Property(Dictionary(Episode), exclude=True)
 
     title = Property(str)
     number = Property(int)
