@@ -2,7 +2,7 @@ from __future__ import absolute_import, division, print_function
 
 from trakt.core.helpers import popitems
 from trakt.interfaces.base import Interface, authenticated
-from trakt.mapper.summary import SummaryMapper
+from trakt.mapper.basic import BasicMapper
 
 from datetime import datetime
 import requests
@@ -127,12 +127,9 @@ class Base(Interface):
 
         # Map items
         if media == 'shows':
-            return SummaryMapper.episodes(
-                self.client, items,
-                parse_show=True
-            )
+            return BasicMapper.episodes(self.client, items)
 
-        return SummaryMapper.movies(self.client, items)
+        return BasicMapper.movies(self.client, items)
 
 
 class AllCalendarsInterface(Base):

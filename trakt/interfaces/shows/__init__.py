@@ -1,7 +1,7 @@
 from __future__ import absolute_import, division, print_function
 
 from trakt.interfaces.base import Interface
-from trakt.mapper.summary import SummaryMapper
+from trakt.mapper.basic import BasicMapper
 
 import requests
 
@@ -19,7 +19,7 @@ class ShowsInterface(Interface):
         if isinstance(item, requests.Response):
             return item
 
-        return SummaryMapper.show(self.client, item)
+        return BasicMapper.show(self.client, item)
 
     def trending(self, extended=None, **kwargs):
         response = self.http.get('trending', query={
@@ -31,7 +31,7 @@ class ShowsInterface(Interface):
         if isinstance(items, requests.Response):
             return items
 
-        return SummaryMapper.shows(self.client, items)
+        return BasicMapper.shows(self.client, items)
 
     def next_episode(self, id, extended=None, **kwargs):
         response = self.http.get(str(id), 'next_episode', query={
@@ -43,7 +43,7 @@ class ShowsInterface(Interface):
         if isinstance(item, requests.Response):
             return item
 
-        return SummaryMapper.episode(self.client, item)
+        return BasicMapper.episode(self.client, item)
 
     def last_episode(self, id, extended=None, **kwargs):
         response = self.http.get(str(id), 'last_episode', query={
@@ -55,7 +55,7 @@ class ShowsInterface(Interface):
         if isinstance(item, requests.Response):
             return item
 
-        return SummaryMapper.episode(self.client, item)
+        return BasicMapper.episode(self.client, item)
 
     def seasons(self, id, extended=None, **kwargs):
         response = self.http.get(str(id), [
@@ -69,7 +69,7 @@ class ShowsInterface(Interface):
         if isinstance(items, requests.Response):
             return items
 
-        return SummaryMapper.seasons(self.client, items)
+        return BasicMapper.seasons(self.client, items)
 
     def season(self, id, season, extended=None, **kwargs):
         response = self.http.get(str(id), [
@@ -83,7 +83,7 @@ class ShowsInterface(Interface):
         if isinstance(items, requests.Response):
             return items
 
-        return SummaryMapper.episodes(self.client, items)
+        return BasicMapper.episodes(self.client, items)
 
     def episode(self, id, season, episode, extended=None, **kwargs):
         response = self.http.get(str(id), [
@@ -98,4 +98,4 @@ class ShowsInterface(Interface):
         if isinstance(item, requests.Response):
             return item
 
-        return SummaryMapper.episode(self.client, item)
+        return BasicMapper.episode(self.client, item)

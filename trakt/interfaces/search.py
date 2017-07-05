@@ -1,7 +1,7 @@
 from __future__ import absolute_import, division, print_function
 
 from trakt.interfaces.base import Interface
-from trakt.mapper.search import SearchMapper
+from trakt.mapper.basic import BasicMapper
 
 import requests
 import six
@@ -96,9 +96,9 @@ class SearchInterface(Interface):
         count = len(items)
 
         if count > 1:
-            return SearchMapper.process_many(self.client, items)
+            return BasicMapper.process_many(self.client, items)
         elif count == 1:
-            return SearchMapper.process(self.client, items[0])
+            return BasicMapper.process(self.client, items[0])
 
         return None
 
@@ -182,6 +182,6 @@ class SearchInterface(Interface):
             return items
 
         if items is not None:
-            return SearchMapper.process_many(self.client, items)
+            return BasicMapper.process_many(self.client, items)
 
         return None

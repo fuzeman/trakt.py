@@ -1,7 +1,7 @@
 from __future__ import absolute_import, division, print_function
 
 from trakt.interfaces.base import Interface
-from trakt.mapper.summary import SummaryMapper
+from trakt.mapper.basic import BasicMapper
 
 import requests
 
@@ -20,7 +20,7 @@ class MoviesInterface(Interface):
             return items
 
         # Parse response
-        return SummaryMapper.movie(self.client, items)
+        return BasicMapper.movie(self.client, items)
 
     def trending(self, extended=None, **kwargs):
         response = self.http.get('trending', query={
@@ -32,4 +32,4 @@ class MoviesInterface(Interface):
         if isinstance(items, requests.Response):
             return items
 
-        return SummaryMapper.movies(self.client, items)
+        return BasicMapper.movies(self.client, items)

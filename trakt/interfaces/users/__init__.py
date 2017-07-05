@@ -2,7 +2,8 @@ from __future__ import absolute_import, division, print_function
 
 from trakt.core.helpers import popitems
 from trakt.interfaces.base import Interface, authenticated
-from trakt.mapper import CommentMapper, ListMapper
+from trakt.mapper.comment import CommentMapper
+from trakt.mapper.list import ListMapper
 
 # Import child interfaces
 from trakt.interfaces.users.lists import UsersListInterface, UsersListsInterface  # noqa: I100
