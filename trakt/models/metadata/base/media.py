@@ -1,12 +1,10 @@
 from trakt.core.helpers import deprecated
-from trakt.models.calendar import CalendarItem
 from trakt.models.core.helpers import property_proxy
-from trakt.models.identifier import Identifier
-from trakt.models.media.core.helpers import build_keys
-from trakt.models.search import SearchItem
+from trakt.models.metadata.base.identifier import Identifier
+from trakt.models.metadata.core.helpers import build_keys
 
 from byte.model import Model, Property
-from byte.types import Dictionary, Embedded
+from byte.types import Dictionary
 import six
 
 
@@ -15,9 +13,6 @@ class Media(Model):
         slots = True
 
     media_type = None
-
-    calendar = Property(Embedded(CalendarItem))
-    search = Property(Embedded(SearchItem))
 
     identifiers = Property(Dictionary(Identifier), name='ids')
 
@@ -42,8 +37,8 @@ class Media(Model):
     # Compatibility Properties
     #
 
-    score = property_proxy('score', ['search'], deprecated=True)
-    type = property_proxy('type', ['search'], deprecated=True)
+    score = property_proxy('search.score', deprecated=True)
+    type = property_proxy('search.type', deprecated=True)
 
     @property
     @deprecated('`Media.keys` has been deprecated, use: `Media.identifiers`, `Media.ids`')

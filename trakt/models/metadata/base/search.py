@@ -1,6 +1,6 @@
 from byte.model import Model, Property
 
 
-class SearchItem(Model):
+class Search(Model):
     score = Property(float, nullable=True)
     type = Property(str)

@@ -1,4 +1,4 @@
-from trakt.models.media.base import Media
+from trakt.models.metadata.base import Media
 
 from byte.model import Property
 from datetime import date

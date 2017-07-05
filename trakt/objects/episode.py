@@ -1,6 +1,6 @@
 from __future__ import absolute_import, division, print_function
 
-from trakt.models.media.episode import Episode
+from trakt.models.metadata.episode import Episode
 
 
 __all__ = (

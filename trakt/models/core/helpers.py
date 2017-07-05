@@ -1,31 +1,40 @@
 import warnings
 
 
-def property_proxy(name, targets, deprecated=False, message=None):
+def get_path(value, path):
+    for name in path.split('.'):
+        if not hasattr(value, name):
+            return None
+
+        value = getattr(value, name)
+
+    return value
+
+
+def property_proxy(target, deprecated=False, message=None):
     @property
     def prop(self):
         # Display deprecation warning (if enabled)
         if deprecated:
-            warnings.warn(message or build_message(self.__class__, name, targets), DeprecationWarning, stacklevel=2)
+            warnings.warn(message or build_message(self.__class__, target), DeprecationWarning, stacklevel=2)
 
-        # Find property in `targets`
-        for target in targets:
-            instance = getattr(self, target)
-
-            if not hasattr(instance, name):
-                continue
-
-            return getattr(instance, name)
-
-        return None
+        # Retrieve property value
+        return get_path(self, target)
 
     return prop
 
 
-def build_message(cls, name, targets):
-    return '`%s.%s` has been deprecated, use: %s' % (
-        cls.__name__, name, ', '.join([
-            '`%s.%s.%s`' % (cls.__name__, target, name)
-            for target in targets
-        ])
+def build_message(cls, target):
+    pos = target.rfind('.')
+
+    if pos < 0:
+        pos = 0
+    else:
+        pos += 1
+
+    key = target[pos:]
+
+    return '`%s.%s` has been deprecated, use: `%s.%s`' % (
+        cls.__name__, key,
+        cls.__name__, target
     )

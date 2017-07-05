@@ -1,17 +1,18 @@
-from trakt.models.airs import Airs
+from trakt.models.metadata.base.airs import Airs
 
 from byte.model import Model, Property
-from byte.types import Embedded, List
-from datetime import datetime, date
+from byte.types import List
+from datetime import date, datetime
 
 
-class SummaryItem(Model):
+class Summary(Model):
     overview = Property(str)
     tagline = Property(str, nullable=True)
 
     available_translations = Property(List(str))
-    certification = Property(str)
     genres = Property(List(str))
+
+    certification = Property(str)
     language = Property(str)
     runtime = Property(int)
 
@@ -33,11 +34,11 @@ class SummaryItem(Model):
     # Television
     #
 
-    airs = Property(Embedded(Airs), nullable=True)
-    status = Property(str, nullable=True)
+    airs = Property(Airs, nullable=True)
 
     aired_episodes = Property(int, nullable=True)
     episode_count = Property(int)
+    status = Property(str, nullable=True)
 
     country = Property(str, nullable=True)
     network = Property(str, nullable=True)

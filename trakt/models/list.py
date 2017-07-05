@@ -1,13 +1,13 @@
 from trakt.models.user import User
 
 from byte.model import Model, Property
-from byte.types import Dictionary, Embedded
+from byte.types import Dictionary
 from datetime import datetime
 
 
 class List(Model):
     ids = Property(Dictionary(str))
-    user = Property(Embedded(User))
+    user = Property(User)
 
     name = Property(str)
     description = Property(str)
