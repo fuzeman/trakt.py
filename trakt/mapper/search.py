@@ -44,46 +44,17 @@ class SearchMapper(Mapper):
 
     @classmethod
     def movie(cls, client, item, **kwargs):
-        if 'movie' in item:
-            i_movie = item['movie']
-        else:
-            i_movie = item
-
-        # Retrieve item keys
-        pk, keys = cls.get_ids('movie', i_movie)
-
-        if pk is None:
+        if not item:
             return None
 
-        # Create object
-        movie = cls.construct(client, 'movie', i_movie, keys, **kwargs)
-
-        if 'movie' in item:
-            movie._update(item)
-
-        return movie
+        return cls.construct(client, 'movie', item, **kwargs)
 
     @classmethod
     def list(cls, client, item, **kwargs):
-        if 'list' in item:
-            i_list = item['list']
-        else:
-            i_list = item
-
-        # Retrieve item keys
-        pk, keys = cls.get_ids('custom_list', i_list)
-
-        if pk is None:
+        if not item:
             return None
 
-        # Create object
-        custom_list = cls.construct(client, 'custom_list', i_list, keys, **kwargs)
-
-        # Update with root info
-        if 'list' in item:
-            custom_list._update(item)
-
-        return custom_list
+        return cls.construct(client, 'custom_list', item, **kwargs)
 
     @classmethod
     def officiallist(cls, client, item, **kwargs):
@@ -91,47 +62,17 @@ class SearchMapper(Mapper):
 
     @classmethod
     def person(cls, client, item, **kwargs):
-        if 'person' in item:
-            i_person = item['person']
-        else:
-            i_person = item
-
-        # Retrieve item keys
-        pk, keys = cls.get_ids('person', i_person)
-
-        if pk is None:
+        if not item:
             return None
 
-        # Create object
-        person = cls.construct(client, 'person', i_person, keys, **kwargs)
-
-        # Update with root info
-        if 'person' in item:
-            person._update(item)
-
-        return person
+        return cls.construct(client, 'person', item, **kwargs)
 
     @classmethod
     def show(cls, client, item, **kwargs):
-        if 'show' in item:
-            i_show = item['show']
-        else:
-            i_show = item
-
-        # Retrieve item keys
-        pk, keys = cls.get_ids('show', i_show)
-
-        if pk is None:
+        if not item:
             return None
 
-        # Create object
-        show = cls.construct(client, 'show', i_show, keys, **kwargs)
-
-        # Update with root info
-        if 'show' in item:
-            show._update(item)
-
-        return show
+        return cls.construct(client, 'show', item, **kwargs)
 
     @classmethod
     def episodes(cls, client, items, **kwargs):
@@ -139,28 +80,12 @@ class SearchMapper(Mapper):
 
     @classmethod
     def episode(cls, client, item, **kwargs):
-        if 'episode' in item:
-            i_episode = item['episode']
-        else:
-            i_episode = item
-
-        # Retrieve item keys
-        pk, keys = cls.get_ids('episode', i_episode)
-
-        if pk is None:
+        if not item:
             return None
 
-        # Create object
-        episode = cls.construct(client, 'episode', i_episode, keys, **kwargs)
+        episode = cls.construct(client, 'episode', item, **kwargs)
 
         if 'show' in item:
             episode.show = cls.show(client, item['show'])
-
-        if 'season' in item:
-            episode.season = cls.season(client, item['season'])
-
-        # Update with root info
-        if 'episode' in item:
-            episode._update(item)
 
         return episode

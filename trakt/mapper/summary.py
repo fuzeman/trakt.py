@@ -16,25 +16,7 @@ class SummaryMapper(Mapper):
         if not item:
             return None
 
-        if 'movie' in item:
-            i_movie = item['movie']
-        else:
-            i_movie = item
-
-        # Retrieve item keys
-        pk, keys = cls.get_ids('movie', i_movie)
-
-        if pk is None:
-            return None
-
-        # Create object
-        movie = cls.construct(client, 'movie', i_movie, keys, **kwargs)
-
-        # Update with root info
-        if 'movie' in item:
-            movie._update(item)
-
-        return movie
+        return cls.construct(client, 'movie', item, **kwargs)
 
     @classmethod
     def shows(cls, client, items, **kwargs):
@@ -48,25 +30,7 @@ class SummaryMapper(Mapper):
         if not item:
             return None
 
-        if 'show' in item:
-            i_show = item['show']
-        else:
-            i_show = item
-
-        # Retrieve item keys
-        pk, keys = cls.get_ids('show', i_show)
-
-        if pk is None:
-            return None
-
-        # Create object
-        show = cls.construct(client, 'show', i_show, keys, **kwargs)
-
-        # Update with root info
-        if 'show' in item:
-            show._update(item)
-
-        return show
+        return cls.construct(client, 'show', item, **kwargs)
 
     @classmethod
     def seasons(cls, client, items, **kwargs):
@@ -80,34 +44,18 @@ class SummaryMapper(Mapper):
         if not item:
             return None
 
-        if 'season' in item:
-            i_season = item['season']
-        else:
-            i_season = item
+        episodes = item.pop('episodes', [])
 
-        # Retrieve item keys
-        pk, keys = cls.get_ids('season', i_season)
+        # Construct season
+        season = cls.construct(client, 'season', item, **kwargs)
 
-        if pk is None:
-            return None
-
-        # Create object
-        season = cls.construct(client, 'season', i_season, keys, **kwargs)
-
-        # Update with root info
-        if 'season' in item:
-            season._update(item)
-
-        # Process any episodes in the item
-        for i_episode in item.get('episodes', []):
-            episode_num = i_episode.get('number')
-
-            cls.season_episode(client, season, episode_num, i_episode, **kwargs)
+        for i_episode in episodes:
+            cls.season_episode(client, season, i_episode, **kwargs)
 
         return season
 
     @classmethod
-    def season_episode(cls, client, season, episode_num, item=None, **kwargs):
+    def season_episode(cls, client, season, item=None, **kwargs):
         if not item:
             return
 
@@ -117,7 +65,10 @@ class SummaryMapper(Mapper):
         episode.season = season
 
         # Store episode in `season`
-        season.episodes[episode_num] = episode
+        if season.episodes is None:
+            season.episodes = {}
+
+        season.episodes[episode.number] = episode
 
     @classmethod
     def episodes(cls, client, items, **kwargs):
@@ -127,29 +78,13 @@ class SummaryMapper(Mapper):
         return [cls.episode(client, item, **kwargs) for item in items]
 
     @classmethod
-    def episode(cls, client, item, parse_show=False, **kwargs):
+    def episode(cls, client, item, **kwargs):
         if not item:
             return None
 
-        if 'episode' in item:
-            i_episode = item['episode']
-        else:
-            i_episode = item
+        episode = cls.construct(client, 'episode', item, **kwargs)
 
-        # Retrieve item keys
-        pk, keys = cls.get_ids('episode', i_episode)
-
-        if pk is None:
-            return None
-
-        # Create object
-        episode = cls.construct(client, 'episode', i_episode, keys, **kwargs)
-
-        if parse_show:
-            episode.show = cls.show(client, item)
-
-        # Update with root info
-        if 'episode' in item:
-            episode._update(item)
+        if 'show' in item:
+            episode.show = cls.show(client, item['show'])
 
         return episode
