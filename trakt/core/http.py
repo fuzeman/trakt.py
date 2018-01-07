@@ -8,12 +8,16 @@ from trakt.core.keylock import KeyLock
 from trakt.core.request import TraktRequest
 
 from requests.adapters import DEFAULT_POOLBLOCK, HTTPAdapter
+from requests.exceptions import ConnectionError, SSLError
+from requests.packages.urllib3.exceptions import ReadTimeoutError
 from threading import RLock
 import calendar
 import datetime
 import logging
 import requests
+import six
 import socket
+import sys
 import time
 
 try:
@@ -116,15 +120,20 @@ class HttpClient(object):
         timeout = self.client.configuration.get('http.timeout', DEFAULT_HTTP_TIMEOUT)
 
         # Send request
+        exc_info = None
         response = None
 
         for i in range(max_retries + 1):
             if i > 0:
                 log.warn('Retry # %s', i)
 
+            exc_info = None
+
             # Send request
             try:
                 response = self.session.send(request, timeout=timeout)
+            except (ConnectionError, ReadTimeoutError, SSLError):
+                exc_info = sys.exc_info()
             except socket.gaierror as e:
                 code, _ = e
 
@@ -135,13 +144,30 @@ class HttpClient(object):
 
                 response = self.rebuild().send(request, timeout=timeout)
 
-            # Retry requests on errors >= 500 (when enabled)
-            if not retry or response.status_code < 500:
+            # Retry requests on exceptions or 5xx errors (when enabled)
+            if not retry or (not exc_info and response.status_code < 500):
                 break
 
-            log.warn('Continue retry since status is %s, waiting %s seconds', response.status_code, retry_sleep)
-            time.sleep(retry_sleep)
+            if exc_info:
+                log.warn(
+                    'Continue retry since "%s" exception was raised, waiting %s seconds',
+                    exc_info[0].__name__, retry_sleep
+                )
+            else:
+                log.warn(
+                    'Continue retry since status is %s, waiting %s seconds',
+                    response.status_code, retry_sleep
+                )
 
+            # Sleep until next request attempt
+            if i < max_retries:
+                time.sleep(retry_sleep)
+
+        # Raise last exception
+        if exc_info:
+            six.reraise(*exc_info)
+
+        # Return last response
         return response
 
     def delete(self, path=None, params=None, data=None, **kwargs):
