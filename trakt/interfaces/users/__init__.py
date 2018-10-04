@@ -58,4 +58,4 @@ class UsersInterface(Interface):
                     self.client, item
                 )
             else:
-                log.warn('Unknown item returned, type: %r', item_type)
+                log.warning('Unknown item returned, type: %r', item_type)
