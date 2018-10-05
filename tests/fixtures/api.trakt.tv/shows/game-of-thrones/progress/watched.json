@@ -1,0 +1,87 @@
+{
+  "aired": 10,
+  "completed": 6,
+  "last_watched_at": "2015-03-21T19:03:58.000Z",
+  "reset_at": null,
+  "seasons": [
+    {
+      "number": 1,
+      "aired": 8,
+      "completed": 6,
+      "episodes": [
+        {
+          "number": 1,
+          "completed": true,
+          "last_watched_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 2,
+          "completed": true,
+          "last_watched_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 3,
+          "completed": true,
+          "last_watched_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 4,
+          "completed": true,
+          "last_watched_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 5,
+          "completed": true,
+          "last_watched_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 6,
+          "completed": true,
+          "last_watched_at": "2015-03-21T19:03:58.000Z"
+        },
+        {
+          "number": 7,
+          "completed": false,
+          "last_watched_at": null
+        },
+        {
+          "number": 8,
+          "completed": false,
+          "last_watched_at": null
+        },
+        {
+          "number": 9,
+          "completed": false,
+          "last_watched_at": null
+        },
+        {
+          "number": 10,
+          "completed": false,
+          "last_watched_at": null
+        }
+      ]
+    }
+  ],
+  "hidden_seasons": [
+    {
+      "number": 2,
+      "ids": {
+        "trakt": 3051,
+        "tvdb": 498968,
+        "tmdb": 53334
+      }
+    }
+  ],
+  "next_episode": {
+    "season": 1,
+    "number": 7,
+    "title": "You Win or You Die",
+    "ids": {
+      "trakt": 73646,
+      "tvdb": 3436461,
+      "imdb": "tt1837863",
+      "tmdb": 63062,
+      "tvrage": 1065036404
+    }
+  }
+}

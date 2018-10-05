@@ -38,16 +38,16 @@ def test_authorize_url():
 
 def test_pin_url():
     with Trakt.configuration.app(id=1234):
-        assert_url(Trakt['oauth'].pin_url(), '/pin/1234')
+        assert_url(Trakt['oauth/pin'].url(), '/pin/1234')
 
     with pytest.raises(ValueError):
-        Trakt['oauth'].pin_url()
+        Trakt['oauth/pin'].url()
 
 
 def test_token():
     with HTTMock(mock.oauth_token, mock.unknown):
         # Validate `token_exchange` request/response
-        assert Trakt['oauth'].token('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob') == {
+        assert Trakt['oauth'].token_exchange('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob') == {
             'access_token': 'mock-access_token',
             'token_type': 'bearer',
             'expires_in': 7200,
@@ -57,7 +57,7 @@ def test_token():
 
         # Ensure `token_exchange` raises a `ValueError` on incorrect configuration
         with pytest.raises(ValueError):
-            assert TraktClient()['oauth'].token('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob')
+            assert TraktClient()['oauth'].token_exchange('ABCD1234', 'urn:ietf:wg:oauth:2.0:oob')
 
 
 def test_token_exchange():
