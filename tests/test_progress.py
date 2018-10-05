@@ -7,10 +7,10 @@ from hamcrest import assert_that, has_entries
 from httmock import HTTMock
 
 
-def test_watched_progress():
+def test_progress_watched():
     with HTTMock(mock.fixtures, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
-            progress = Trakt['shows'].watched_progress(1390)
+            progress = Trakt['shows'].progress_watched(1390)
 
     assert progress is not None
     assert progress.reset_at is not None
@@ -31,10 +31,10 @@ def test_watched_progress():
     assert progress.last_episode.pk == (1, 5)
 
 
-def test_watched_progress_plus_hidden():
+def test_progress_watched_plus_hidden():
     with HTTMock(mock.fixtures, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
-            progress = Trakt['shows'].watched_progress('game-of-thrones', hidden=True)
+            progress = Trakt['shows'].progress_watched('game-of-thrones', hidden=True)
 
     assert progress is not None
     assert progress.reset_at is None
@@ -130,10 +130,10 @@ def test_watched_progress_plus_hidden():
     }))
 
 
-def test_collection_progress():
+def test_progress_collection():
     with HTTMock(mock.fixtures, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
-            progress = Trakt['shows'].collection_progress(1390)
+            progress = Trakt['shows'].progress_collection(1390)
 
     assert progress is not None
     assert progress.reset_at is None

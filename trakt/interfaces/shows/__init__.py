@@ -103,14 +103,6 @@ class ShowsInterface(Interface):
         return SummaryMapper.episode(self.client, item)
 
     @authenticated
-    def watched_progress(self, id, hidden=False, specials=False, count_specials=True, **kwargs):
-        return self.progress('watched', id, hidden, specials, count_specials, **kwargs)
-
-    @authenticated
-    def collection_progress(self, id, hidden=False, specials=False, count_specials=True, **kwargs):
-        return self.progress('collection', id, hidden, specials, count_specials, **kwargs)
-
-    @authenticated
     def progress(self, progress_type, id, hidden=False, specials=False, count_specials=True, **kwargs):
         query = {
             'hidden': hidden,
@@ -132,3 +124,11 @@ class ShowsInterface(Interface):
             return item
 
         return ProgressMapper.progress(self.client, progress_type, item)
+
+    @authenticated
+    def progress_collection(self, id, hidden=False, specials=False, count_specials=True, **kwargs):
+        return self.progress('collection', id, hidden, specials, count_specials, **kwargs)
+
+    @authenticated
+    def progress_watched(self, id, hidden=False, specials=False, count_specials=True, **kwargs):
+        return self.progress('watched', id, hidden, specials, count_specials, **kwargs)
