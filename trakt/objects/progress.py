@@ -2,8 +2,6 @@ from __future__ import absolute_import, division, print_function
 
 from trakt.core.helpers import from_iso8601_datetime, popitems, to_iso8601_datetime
 from trakt.objects.core.helpers import update_attributes
-from trakt.objects.episode import Episode
-from trakt.objects.season import Season
 
 LABELS = {
     'last_progress_change': {
@@ -53,17 +51,17 @@ class BaseProgress(object):
 
 
 class Progress(BaseProgress):
-    def __init__(self, client, progress_type, aired=None, completed=None):
+    progress_type = None
+    """
+    :type: :class:`~python:str`
+
+    Progress Type (:code:`watched` or :code:`collection`)
+    """
+
+    def __init__(self, client, aired=None, completed=None):
         super(Progress, self).__init__(aired, completed)
 
         self._client = client
-
-        self.progress_type = progress_type
-        """
-        :type: :class:`~python:str`
-
-        Progress Type (:code:`watched` or :code:`collection`)
-        """
 
         self.last_progress_change = None
         """
@@ -150,6 +148,7 @@ class Progress(BaseProgress):
         super(Progress, self)._update(info, **kwargs)
 
         label = LABELS['last_progress_change'][self.progress_type]
+
         if label in info:
             self.last_progress_change = from_iso8601_datetime(info.get(label))
 
@@ -159,28 +158,28 @@ class Progress(BaseProgress):
         if 'seasons' in info:
             for season in info['seasons']:
                 season_progress = SeasonProgress._construct(season, progress_type=self.progress_type)
+
                 if season_progress:
                     self.seasons[season_progress.pk] = season_progress
 
         if 'hidden_seasons' in info:
             self.hidden_seasons = {}
-            from trakt.mapper import ProgressMapper
+
             for season in info['hidden_seasons']:
-                _, keys = ProgressMapper.get_ids('season', season)
-                hidden_season = Season._construct(self._client, keys, season)
+                hidden_season = self._client.construct('season', season)
+
                 if hidden_season:
                     self.hidden_seasons[hidden_season.pk] = hidden_season
 
         if 'next_episode' in info:
-            from trakt.mapper import ProgressMapper
-            _, keys = ProgressMapper.get_ids('episode', info['next_episode'])
-            episode = Episode._construct(self._client, keys, info['next_episode'])
+            episode = self._client.construct('episode', info['next_episode'])
+
             if episode:
                 self.next_episode = episode
 
         if 'last_episode' in info:
-            _, keys = ProgressMapper.get_ids('episode', info['last_episode'])
-            episode = Episode._construct(self._client, keys, info['last_episode'])
+            episode = self._client.construct('episode', info['last_episode'])
+
             if episode:
                 self.last_episode = episode
 
@@ -196,13 +195,11 @@ class Progress(BaseProgress):
 
 
 class WatchedProgress(Progress):
-    def __init__(self, client):
-        super(WatchedProgress, self).__init__(client, 'watched')
+    progress_type = 'watched'
 
 
 class CollectionProgress(Progress):
-    def __init__(self, client):
-        super(CollectionProgress, self).__init__(client, 'collection')
+    progress_type = 'collection'
 
 
 class SeasonProgress(BaseProgress):
@@ -240,9 +237,11 @@ class SeasonProgress(BaseProgress):
         super(SeasonProgress, self)._update(info, **kwargs)
 
         self.pk = info['number']
+
         if 'episodes' in info:
             for episode in info['episodes']:
                 episode_progress = EpisodeProgress._construct(episode, **kwargs)
+
                 if episode_progress:
                     self.episodes[episode_progress.pk] = episode_progress
 
@@ -292,6 +291,7 @@ class EpisodeProgress(object):
             label = LABELS['episode_progress_change'][self.progress_type]
         else:
             label = 'progress_timestamp'
+
         result[label] = to_iso8601_datetime(self.progress_timestamp)
 
         return result
@@ -301,6 +301,7 @@ class EpisodeProgress(object):
             return
 
         self.pk = info['number']
+
         if 'progress_type' in kwargs:
             self.progress_type = kwargs['progress_type']
 
@@ -308,6 +309,7 @@ class EpisodeProgress(object):
 
         if 'last_watched_at' in info:
             self.progress_timestamp = from_iso8601_datetime(info.get('last_watched_at'))
+
         elif 'collected_at' in info:
             self.progress_timestamp = from_iso8601_datetime(info.get('collected_at'))
 
