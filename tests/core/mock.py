@@ -104,12 +104,12 @@ def unknown(url, request):
     return httmock.response(501, request=request)
 
 
-@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path='/calendars/all/\w+/\d{4}-\d{2}-\d{2}(/\d{1,2})?')
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/calendars/all/\w+/\d{4}-\d{2}-\d{2}(/\d{1,2})?')
 def calendars_all_period(url, request):
     return fixtures(url, request)
 
 
-@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path='/calendars/my/\w+')
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/calendars/my/\w+')
 @authenticated
 def calendars_my(url, request):
     return fixtures(url, request)
@@ -381,13 +381,13 @@ def scrobble_stop(url, request):
     )
 
 
-@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path='/sync/\w+')
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/sync/\w+')
 @authenticated
 def sync_get(url, request):
     return fixtures(url, request)
 
 
-@httmock.urlmatch(netloc='api.trakt.tv', method='DELETE', path='/sync/playback/\d+')
+@httmock.urlmatch(netloc='api.trakt.tv', method='DELETE', path=r'/sync/playback/\d+')
 @authenticated
 def sync_playback_delete(url, request):
     return httmock.response(204, request=request)
