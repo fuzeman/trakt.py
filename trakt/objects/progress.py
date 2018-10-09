@@ -172,13 +172,15 @@ class Progress(BaseProgress):
                     self.hidden_seasons[hidden_season.pk] = hidden_season
 
         if 'next_episode' in info:
-            episode = self._client.construct('episode', info['next_episode'])
+            _, keys = self._client.get_ids('episode', info['next_episode'])
+            episode = self._client.construct('episode', info['next_episode'], keys=keys)
 
             if episode:
                 self.next_episode = episode
 
         if 'last_episode' in info:
-            episode = self._client.construct('episode', info['last_episode'])
+            _, keys = self._client.get_ids('episode', info['last_episode'])
+            episode = self._client.construct('episode', info['last_episode'], keys=keys)
 
             if episode:
                 self.last_episode = episode
