@@ -41,7 +41,19 @@ def test_progress_watched():
         ('trakt', '73646')
     ]
 
-    # Last Episode
+    assert_that(progress.next_episode.to_dict(), has_entries({
+        'number': 7,
+        'title': 'You Win or You Die',
+        'ids': {
+            'trakt': '73646',
+            'tvrage': '1065036404',
+            'tvdb': '3436461',
+            'tmdb': '63062',
+            'imdb': 'tt1837863'
+        }
+    }))
+
+# Last Episode
     assert progress.last_episode is not None
     assert progress.last_episode.pk == (1, 5)
 
@@ -54,6 +66,18 @@ def test_progress_watched():
         ('tvrage', '1065036404'),
         ('trakt', '73646')
     ]
+
+    assert_that(progress.last_episode.to_dict(), has_entries({
+        'number': 5,
+        'title': 'You Die and You Win',
+        'ids': {
+            'trakt': '73646',
+            'tvrage': '1065036404',
+            'tvdb': '3436461',
+            'tmdb': '63062',
+            'imdb': 'tt1837863'
+        }
+    }))
 
 
 def test_progress_watched_plus_hidden():
@@ -179,3 +203,15 @@ def test_progress_collection():
         ('tvrage', '1065036404'),
         ('trakt', '73646')
     ]
+
+    assert_that(progress.next_episode.to_dict(), has_entries({
+        'number': 7,
+        'title': 'You Win or You Die',
+        'ids': {
+            'trakt': '73646',
+            'tvrage': '1065036404',
+            'tvdb': '3436461',
+            'tmdb': '63062',
+            'imdb': 'tt1837863'
+        }
+    }))
