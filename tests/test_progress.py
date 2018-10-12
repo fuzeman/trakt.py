@@ -27,8 +27,33 @@ def test_progress_watched():
 
     assert len(progress.hidden_seasons) == 0
 
+    # Next Episode
+    assert progress.next_episode is not None
     assert progress.next_episode.pk == (1, 7)
+
+    assert progress.next_episode.keys == [
+        (1, 7),
+
+        ('tvdb', '3436461'),
+        ('tmdb', '63062'),
+        ('imdb', 'tt1837863'),
+        ('tvrage', '1065036404'),
+        ('trakt', '73646')
+    ]
+
+    # Last Episode
+    assert progress.last_episode is not None
     assert progress.last_episode.pk == (1, 5)
+
+    assert progress.last_episode.keys == [
+        (1, 5),
+
+        ('tvdb', '3436461'),
+        ('tmdb', '63062'),
+        ('imdb', 'tt1837863'),
+        ('tvrage', '1065036404'),
+        ('trakt', '73646')
+    ]
 
 
 def test_progress_watched_plus_hidden():
@@ -140,3 +165,17 @@ def test_progress_collection():
     assert progress.last_progress_change is not None
 
     assert progress.seasons[1].episodes[1].progress_timestamp is not None
+
+    # Next Episode
+    assert progress.next_episode is not None
+    assert progress.next_episode.pk == (1, 7)
+
+    assert progress.next_episode.keys == [
+        (1, 7),
+
+        ('tvdb', '3436461'),
+        ('tmdb', '63062'),
+        ('imdb', 'tt1837863'),
+        ('tvrage', '1065036404'),
+        ('trakt', '73646')
+    ]
