@@ -9,7 +9,9 @@ class SyncHistoryInterface(Get, Add, Remove):
     path = 'sync/history'
     flags = {'is_watched': True}
 
-    def get(self, media=None, id=None, page=1, per_page=10, start_at=None, end_at=None, store=None, extended=None, **kwargs):
+    def get(self, media=None, id=None, page=1, per_page=10, start_at=None, end_at=None,
+            store=None, extended=None, **kwargs):
+
         if not media and id:
             raise ValueError('The "id" parameter also requires the "media" parameter to be defined')
 
