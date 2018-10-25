@@ -36,8 +36,7 @@ def is_authenticated(request):
 
     # xAuth
     return (
-        request.headers.get('trakt-user-login') == 'mock' and
-        request.headers.get('trakt-user-token') == 'mock'
+        request.headers.get('trakt-user-login') == 'mock' and request.headers.get('trakt-user-token') == 'mock'
     )
 
 
