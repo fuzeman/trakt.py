@@ -30,7 +30,7 @@ class SyncWatchlistInterface(Get, Add, Remove):
     def seasons(self, store=None, **kwargs):
         return self.get(
             'seasons',
-            store,
+            store=store,
             **kwargs
         )
 
@@ -38,6 +38,6 @@ class SyncWatchlistInterface(Get, Add, Remove):
     def episodes(self, store=None, **kwargs):
         return self.get(
             'episodes',
-            store,
+            store=store,
             **kwargs
         )
