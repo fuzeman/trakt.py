@@ -110,13 +110,12 @@ class ShowsInterface(Interface):
             'count_specials': count_specials
         }
 
-        response = self.http.get(str(id),
-                                 ['progress', progress_type],
-                                 query=query,
-                                 **popitems(kwargs, [
-                                     'authenticated',
-                                     'validate_token'
-                                 ]))
+        response = self.http.get(str(id), [
+            'progress', progress_type
+        ], query=query, **popitems(kwargs, [
+            'authenticated',
+            'validate_token'
+        ]))
 
         item = self.get_data(response, **kwargs)
 
