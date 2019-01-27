@@ -51,6 +51,13 @@ class Episode(Video):
         Available translations (for title, overview, etc..)
         """
 
+        self.absolute_number = None
+        """
+        :type: :class:`~python:int`
+
+        Absolute episode number
+        """
+
     def to_identifier(self):
         """Retrieve the episode identifier.
 
@@ -114,6 +121,9 @@ class Episode(Video):
         if self.available_translations:
             result['available_translations'] = self.available_translations
 
+        if self.absolute_number:
+            result['absolute_number'] = self.absolute_number
+
         return result
 
     def _update(self, info=None, **kwargs):
@@ -135,6 +145,9 @@ class Episode(Video):
 
         if 'updated_at' in info:
             self.updated_at = from_iso8601_datetime(info.get('updated_at'))
+
+        if 'number_abs' in info:
+            self.absolute_number = info.get('number_abs')
 
     @classmethod
     def _construct(cls, client, keys, info=None, index=None, **kwargs):
