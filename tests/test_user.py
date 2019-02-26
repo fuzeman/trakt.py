@@ -15,7 +15,7 @@ def test_likes():
 
             likes = list(likes)
 
-    assert len(likes) is 3
+    assert len(likes) == 3
 
     assert likes[0].keys == [
         ('trakt', 1519)
@@ -39,7 +39,7 @@ def test_likes_invalid_response():
 
         likes = list(likes)
 
-    assert len(likes) is 0
+    assert len(likes) == 0
 
 
 def test_likes_invalid_type():
