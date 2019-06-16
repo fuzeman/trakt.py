@@ -56,7 +56,7 @@ class Season(Media):
         return {
             'number': self.pk,
             'episodes': [
-                episode.to_dict()
+                episode[0].to_dict()
                 for episode in self.episodes.values()
             ]
         }
