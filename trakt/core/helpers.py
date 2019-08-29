@@ -8,7 +8,7 @@ import warnings
 try:
     import arrow
     from arrow.factory import ArrowParseWarning
-    warnings.simplefilter("ignore", ArrowParseWarning)
+    warnings.simplefilter('ignore', ArrowParseWarning)
 except ImportError:
     arrow = None
 

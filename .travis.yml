@@ -3,11 +3,11 @@ sudo: false
 language: python
 python:
   - 2.7
-  - 3.6
+  - 3.7
   - pypy-5.4.1
   - pypy3.5
-  - 3.4
   - 3.5
+  - 3.6
   - nightly
 install:
   - travis_retry pip install -r travis-requirements.txt
@@ -25,7 +25,7 @@ deploy:
     file_glob: true
     file: "dist/trakt.py-*"
     on:
-      condition: $TRAVIS_PYTHON_VERSION = "3.6"
+      condition: $TRAVIS_PYTHON_VERSION = "3.7"
       repo: fuzeman/trakt.py
       tags: true
   - provider: pypi
@@ -35,6 +35,6 @@ deploy:
       secure: FaZa7IRrF+tsJ+8tZ19olfu+GW3kfAuXLzePjzA8SFIukDWhi4zi2hpiDOsq5M3f/UouAAB0Nr8fsP1339d9aznQwGm+8CBLgBg0NpffGrcqpegSsf0Phw47R8q4fYz0bXPM1P8okOVpN6Dk9DVOarpygxS3amRROLQpbBYwDOI=
     skip_cleanup: true
     on:
-      condition: $TRAVIS_PYTHON_VERSION = "3.6"
+      condition: $TRAVIS_PYTHON_VERSION = "3.7"
       repo: fuzeman/trakt.py
       tags: true

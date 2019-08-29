@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 def print_lookup(id, service):
-    print('Trakt[\'search\'].lookup(%r, %r)' % (id, service))
+    print("Trakt['search'].lookup(%r, %r)" % (id, service))
 
     item = Trakt['search'].lookup(id, service)
 
@@ -22,7 +22,7 @@ def print_lookup(id, service):
 
 
 def print_query(query, media=None, year=None):
-    print('Trakt[\'search\'].query(%r, %r, %r)' % (query, media, year))
+    print("Trakt['search'].query(%r, %r, %r)" % (query, media, year))
 
     items = Trakt['search'].query(query, media, year)
 
