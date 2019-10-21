@@ -13,7 +13,7 @@ class Rating(object):
 
         Rating value (0 - 10)
         """
-        
+
         self.votes = votes
         """
         :type: :class:`~python:int`
