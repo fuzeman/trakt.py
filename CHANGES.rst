@@ -1,3 +1,14 @@
+3.1.0 (2019-10-22)
+------------------
+**Added**
+
+- Support for absolute episode numbers (#63)
+- Support for rating votes (#68)
+
+**Changed**
+
+- Dropped support for Python 3.4
+
 3.0.0 (2018-10-26)
 ------------------
 **Added**
