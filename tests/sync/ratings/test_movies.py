@@ -25,6 +25,7 @@ def test_basic():
 
         'rating': has_properties({
             'value': 8,
+            'votes': None,
             'timestamp': datetime(2015, 1, 28, 2, 26, 37, tzinfo=tzutc())
         }),
 
@@ -45,6 +46,7 @@ def test_basic():
 
         'rating': has_properties({
             'value': 10,
+            'votes': None,
             'timestamp': datetime(2014, 11, 1, 0, 24, 54, tzinfo=tzutc())
         }),
 
@@ -75,6 +77,7 @@ def test_rating_filter():
 
         'rating': has_properties({
             'value': 8,
+            'votes': None,
             'timestamp': datetime(2015, 1, 28, 2, 26, 37, tzinfo=tzutc())
         }),
 

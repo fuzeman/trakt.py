@@ -25,6 +25,10 @@ def test_lookup_movie():
     assert movie.overview is not None
     assert movie.score is None
 
+    assert movie.rating is not None
+    assert movie.rating.value == 8.30135
+    assert movie.rating.votes == 27148
+
 
 def test_lookup_show():
     with HTTMock(mock.fixtures, mock.unknown):
@@ -47,6 +51,10 @@ def test_lookup_show():
     assert show.overview is not None
     assert show.score is None
 
+    assert show.rating is not None
+    assert show.rating.value == 9.42404
+    assert show.rating.votes == 44177
+
 
 def test_lookup_episode():
     with HTTMock(mock.fixtures, mock.unknown):
@@ -68,6 +76,10 @@ def test_lookup_episode():
     assert episode.overview is not None
     assert episode.score is None
 
+    assert episode.rating is not None
+    assert episode.rating.value == 8.44087
+    assert episode.rating.votes == 4854
+
     assert episode.show.keys == [
         ('tvdb', '81189'),
         ('tmdb', '1396'),
@@ -79,6 +91,10 @@ def test_lookup_episode():
 
     assert episode.show.title == "Breaking Bad"
     assert episode.show.year == 2008
+
+    assert episode.show.rating is not None
+    assert episode.show.rating.value == 9.42404
+    assert episode.show.rating.votes == 44177
 
 
 def test_query_movie():

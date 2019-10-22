@@ -30,6 +30,7 @@ def test_ratings():
 
         'rating': has_properties({
             'value': 10,
+            'votes': None,
             'timestamp': datetime(2014, 10, 19, 23, 2, 23, tzinfo=tzutc())
         }),
 
@@ -42,6 +43,7 @@ def test_ratings():
                 # Rating
                 'rating': has_properties({
                     'value': 10,
+                    'votes': None,
                     'timestamp': datetime(2015, 3, 11, 23, 29, 35, tzinfo=tzutc())
                 }),
 
@@ -54,6 +56,7 @@ def test_ratings():
                         # Rating
                         'rating': has_properties({
                             'value': 10,
+                            'votes': None,
                             'timestamp': datetime(2014, 10, 19, 23, 2, 24, tzinfo=tzutc())
                         }),
 
