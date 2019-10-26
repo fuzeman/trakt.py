@@ -147,7 +147,8 @@ class Episode(Video):
             'title',
 
             # Extended Info
-            'available_translations'
+            'available_translations',
+            'runtime',
         ])
 
         # Extended Info
@@ -159,9 +160,6 @@ class Episode(Video):
 
         if 'number_abs' in info:
             self.number_abs = info.get('number_abs')
-
-        if 'runtime' in info:
-            self.runtime = info['runtime']
 
     @classmethod
     def _construct(cls, client, keys, info=None, index=None, **kwargs):
