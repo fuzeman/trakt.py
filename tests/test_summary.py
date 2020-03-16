@@ -170,6 +170,8 @@ def test_episode_basic():
         ('trakt', '73640')
     ]
 
+    assert episode.runtime is 61
+
 
 def test_episode_not_found():
     with HTTMock(mock.fixtures, mock.unknown):
