@@ -65,7 +65,8 @@ class Season(Media):
     def to_info(self):
         """Dump season to a dictionary.
 
-        **Deprecated:** use the :code:`to_dict()` method instead."""
+        **Deprecated:** use the :code:`to_dict()` method instead.
+        """
         return self.to_dict()
 
     def to_dict(self):
