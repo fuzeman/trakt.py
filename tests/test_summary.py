@@ -170,7 +170,7 @@ def test_episode_basic():
         ('trakt', '73640')
     ]
 
-    assert episode.runtime is 61
+    assert episode.runtime == 61
 
 
 def test_episode_not_found():
