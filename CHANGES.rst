@@ -1,3 +1,10 @@
+3.2.0 (2020-03-17)
+------------------
+**Added**
+
+- Exposed episode runtime (#69)
+- Support :code:`extended` parameter on list :code:`items()` function (#71)
+
 3.1.0 (2019-10-22)
 ------------------
 **Added**
