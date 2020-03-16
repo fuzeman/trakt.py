@@ -58,6 +58,13 @@ class Episode(Video):
         Absolute episode number
         """
 
+        self.runtime = None
+        """
+        :type: :class:`~python:int`
+
+        Runtime
+        """
+
     def to_identifier(self):
         """Retrieve the episode identifier.
 
@@ -125,6 +132,9 @@ class Episode(Video):
         if self.number_abs:
             result['number_abs'] = self.number_abs
 
+        if self.runtime:
+            result['runtime'] = self.runtime
+
         return result
 
     def _update(self, info=None, **kwargs):
@@ -137,7 +147,8 @@ class Episode(Video):
             'title',
 
             # Extended Info
-            'available_translations'
+            'available_translations',
+            'runtime',
         ])
 
         # Extended Info
