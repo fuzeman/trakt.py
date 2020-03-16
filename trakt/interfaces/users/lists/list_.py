@@ -31,11 +31,11 @@ class UsersListInterface(Interface):
             username=username
         )
 
-    def items(self, username, id, **kwargs):
+    def items(self, username, id, extended=None, **kwargs):
         # Send request
-        response = self.http.get(
-            '/users/%s/lists/%s/items' % (clean_username(username), id),
-        )
+        response = self.http.get('/users/%s/lists/%s/items' % (clean_username(username), id), query={
+            'extended': extended
+        })
 
         # Parse response
         items = self.get_data(response, **kwargs)
