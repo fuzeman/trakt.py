@@ -19,7 +19,7 @@ def test_basic():
     assert_that(items, not_none())
 
     # Validate items
-    assert_that(items, contains(
+    assert_that(items, contains_exactly(
         # Bryan Cranston
         all_of(
             instance_of(Person),
