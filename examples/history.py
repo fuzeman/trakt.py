@@ -4,7 +4,10 @@ from examples.helpers import authenticate
 from trakt import Trakt
 
 from datetime import datetime
+import logging
 import os
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 if __name__ == '__main__':

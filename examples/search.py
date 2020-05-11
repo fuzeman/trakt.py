@@ -12,7 +12,8 @@ logging.basicConfig(level=logging.DEBUG)
 def print_lookup(id, service):
     print("Trakt['search'].lookup(%r, %r)" % (id, service))
 
-    item = Trakt['search'].lookup(id, service)
+    items = Trakt['search'].lookup(id, service, per_page=10)
+    item = items[0]
 
     if type(item) is Episode and item.show:
         sk, ek = item.pk
@@ -24,9 +25,9 @@ def print_lookup(id, service):
 def print_query(query, media=None, year=None):
     print("Trakt['search'].query(%r, %r, %r)" % (query, media, year))
 
-    items = Trakt['search'].query(query, media, year)
+    items = Trakt['search'].query(query, media, year, pagination=True, per_page=10)
 
-    for item in items:
+    for item in items.get(1):  # Retrieve first page
         if type(item) is Episode and item.show:
             sk, ek = item.pk
             print('\t[%.2d%%] %s (%s) - S%02dE%02d %r' % (item.score, item.show.title, item.show.year,
@@ -49,4 +50,4 @@ if __name__ == '__main__':
     # Search by name
     print_query('The Avengers', 'movie')
     print_query('Breaking Bad', 'show')
-    print_query('Breaking Bad', 'episode')
+    print_query('Fly', 'episode')

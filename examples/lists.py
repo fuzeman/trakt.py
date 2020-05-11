@@ -22,14 +22,32 @@ if __name__ == '__main__':
         authenticate()
     )
 
-    for x, liked_list in enumerate(Trakt['users'].likes('lists', pagination=True)):
-        print('[%s] %r' % (x + 1, liked_list))
+    # Retrieve lists
+    lists = Trakt['users'].likes('lists', pagination=True)
 
-        items = liked_list.items()
+    print('Found %d list(s) [%d page(s)]' % (
+        lists.total_items,
+        lists.total_pages
+    ))
 
-        if not items:
-            print(' - ERROR')
-            continue
+    for x, liked_list in enumerate(lists):
+        items = liked_list.items(pagination=True, per_page=10)
 
-        items = list(items)
-        print(' - %d item(s)' % len(items))
+        print('[%d/%d] %r [%d item(s), %d page(s)]' % (
+            x + 1,
+            lists.total_items,
+            liked_list,
+            items.total_items,
+            items.total_pages
+        ))
+
+        for y, item in enumerate(items):
+            print('\t[%s/%s] %r' % (
+                y + 1,
+                items.total_items,
+                item
+            ))
+
+            # Only print 20 items in the list
+            if y + 1 >= 20:
+                break
