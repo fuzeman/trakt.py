@@ -15,7 +15,7 @@ class PaginationIterator(object):
         self.response = response
 
         # Retrieve pagination headers
-        self.per_page = try_convert(response.headers.get('x-pagination-limit'), int)
+        self.per_page = try_convert(response.headers.get('x-pagination-limit'), int) or 10
         self.total_items = try_convert(response.headers.get('x-pagination-item-count'), int)
         self.total_pages = try_convert(response.headers.get('x-pagination-page-count'), int)
 
@@ -26,11 +26,11 @@ class PaginationIterator(object):
         self.query = dict(parse_qsl(query))
 
     def fetch(self, page, per_page=None):
-        if int(page) == int(self.query.get('page', 1)):
-            return self.response
-
         if per_page is None:
-            per_page = self.per_page or 10
+            per_page = self.per_page
+
+        if int(page) == int(self.query.get('page', 1)) and per_page == self.per_page:
+            return self.response
 
         # Retrieve request details
         request = self.response.request.copy()
