@@ -8,24 +8,24 @@ class SyncWatchlistInterface(Get, Add, Remove):
     path = 'sync/watchlist'
     flags = {'in_watchlist': True}
 
-    def get(self, media=None, page=1, per_page=10, start_at=None, end_at=None, store=None, extended=None, **kwargs):
+    def get(self, media=None, start_at=None, end_at=None, store=None, extended=None, flat=False, page=None,
+            per_page=None, **kwargs):
+
+        if media and not flat and page is not None:
+            raise ValueError('`page` parameter is only supported with `flat=True`')
+
         # Build query
-        query = {}
-
-        if page:
-            query['page'] = page
-
-        if per_page:
-            query['limit'] = per_page
-
-        if extended:
-            query['extended'] = extended
+        query = {
+            'extended': extended,
+            'page': page,
+            'limit': per_page
+        }
 
         # Request watched history
         return super(SyncWatchlistInterface, self).get(
             media, store,
             query=query,
-            flat=media is None,
+            flat=flat or media is None,
             **kwargs
         )
 

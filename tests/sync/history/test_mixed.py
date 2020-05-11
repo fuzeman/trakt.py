@@ -9,15 +9,15 @@ from six.moves import xrange
 
 
 def test_basic():
-    with HTTMock(mock.fixtures, mock.unknown):
+    with HTTMock(mock.sync_history, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
             history = Trakt['sync/history'].get(pagination=True, per_page=5)
 
-    # Ensure collection is valid
-    assert_that(history, not_none())
+            # Ensure collection is valid
+            assert_that(history, not_none())
 
-    # Resolve all pages
-    items = list(history)
+            # Resolve all pages
+            items = list(history)
 
     # Ensure all items have been returned
     assert_that(items, has_length(3))

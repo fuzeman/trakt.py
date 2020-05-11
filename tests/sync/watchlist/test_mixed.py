@@ -11,15 +11,15 @@ from httmock import HTTMock
 
 
 def test_basic():
-    with HTTMock(mock.fixtures, mock.unknown):
+    with HTTMock(mock.sync_watchlist, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
             watchlist = Trakt['sync/watchlist'].get(pagination=True, per_page=3)
 
-    # Ensure collection is valid
-    assert_that(watchlist, not_none())
+            # Ensure collection is valid
+            assert_that(watchlist, not_none())
 
-    # Resolve all pages
-    items = list(watchlist)
+            # Resolve all pages
+            items = list(watchlist)
 
     # Validate items
     assert_that(items, contains_exactly(
@@ -109,15 +109,15 @@ def test_basic():
 
 
 def test_pagination_disabled():
-    with HTTMock(mock.fixtures, mock.unknown):
+    with HTTMock(mock.sync_watchlist, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
             watchlist = Trakt['sync/watchlist'].get(page=None, per_page=None)
 
-    # Ensure collection is valid
-    assert_that(watchlist, not_none())
+            # Ensure collection is valid
+            assert_that(watchlist, not_none())
 
-    # Resolve iterator
-    items = list(watchlist)
+            # Resolve iterator
+            items = list(watchlist)
 
     # Validate items
     assert_that(items, contains_exactly(

@@ -7,21 +7,21 @@ from httmock import HTTMock
 
 
 def test_iterator():
-    with HTTMock(mock.lists, mock.unknown):
+    with HTTMock(mock.likes, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
-            lists = Trakt['users/me/lists'].get(pagination=True)
+            lists = Trakt['users'].likes(pagination=True)
 
             # Resolve all pages
             items = list(lists)
 
     # Ensure items were returned correctly
-    assert [int(i.id) for i in items] == list(range(1, 38))
+    assert len(items) == 3
 
 
 def test_invalid_content_type():
-    with HTTMock(mock.lists_invalid_content_type, mock.unknown):
+    with HTTMock(mock.likes_invalid_content_type, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
-            lists = Trakt['users/me/lists'].get(pagination=True)
+            lists = Trakt['users'].likes(pagination=True)
 
             # Resolve all pages
             items = list(lists)
@@ -31,24 +31,24 @@ def test_invalid_content_type():
 
 
 def test_invalid_json():
-    with HTTMock(mock.lists_invalid_json, mock.unknown):
+    with HTTMock(mock.likes_invalid_json, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
-            lists = Trakt['users/me/lists'].get(pagination=True)
+            lists = Trakt['users'].likes(pagination=True, per_page=1)
 
             # Resolve all pages
             items = list(lists)
 
     # Ensure items were returned correctly
-    assert len(items) == 10
+    assert len(items) == 1
 
 
 def test_request_failure():
-    with HTTMock(mock.lists_request_failure, mock.unknown):
+    with HTTMock(mock.likes_request_failure, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
-            lists = Trakt['users/me/lists'].get(pagination=True)
+            lists = Trakt['users'].likes(pagination=True, per_page=1)
 
             # Resolve all pages
             items = list(lists)
 
     # Ensure items were returned correctly
-    assert len(items) == 10
+    assert len(items) == 1

@@ -8,7 +8,10 @@ class SyncRatingsInterface(Get, Add, Remove):
     path = 'sync/ratings'
 
     @authenticated
-    def get(self, media=None, store=None, rating=None, extended=None, **kwargs):
+    def get(self, media=None, store=None, rating=None, extended=None, flat=False, page=None, per_page=None, **kwargs):
+        if media and not flat and page is not None:
+            raise ValueError('`page` parameter is only supported with `flat=True`')
+
         # Build parameters
         params = []
 
@@ -16,15 +19,16 @@ class SyncRatingsInterface(Get, Add, Remove):
             params.append(rating)
 
         # Build query
-        query = {}
-
-        if extended:
-            query['extended'] = extended
+        query = {
+            'extended': extended,
+            'page': page,
+            'limit': per_page
+        }
 
         # Request ratings
         return super(SyncRatingsInterface, self).get(
             media, store, params,
-            flat=media is None,
+            flat=flat or media is None,
             query=query,
             **kwargs
         )

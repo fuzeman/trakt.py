@@ -89,6 +89,51 @@ def get_fixture(netloc, path, query=None, request=None):
     )
 
 
+def paginate(url, request, content_type='application/json'):
+    parameters = dict(parse_qsl(url.query))
+
+    page = try_convert(parameters.get('page'), int) or 1
+    limit = try_convert(parameters.get('limit'), int) or 10
+
+    # Retrieve items from fixture
+    items = get_json(url.netloc, url.path, url.query)
+
+    if items is None:
+        return httmock.response(404, request=request)
+
+    # Calculate page count and item offset
+    offset = (page - 1) * limit
+    page_count = int(math.ceil(float(len(items)) / limit))
+
+    if request.method == 'HEAD':
+        return httmock.response(
+            200, '', {
+                'Content-Type': content_type,
+
+                'X-Pagination-Page': page,
+                'X-Pagination-Limit': limit,
+                'X-Pagination-Page-Count': page_count,
+                'X-Pagination-Item-Count': len(items)
+            },
+            request=request
+        )
+
+    if request.method == 'GET':
+        return httmock.response(
+            200, json.dumps(items[offset:offset + limit]), {
+                'Content-Type': content_type,
+
+                'X-Pagination-Page': page,
+                'X-Pagination-Limit': limit,
+                'X-Pagination-Page-Count': page_count,
+                'X-Pagination-Item-Count': len(items)
+            },
+            request=request
+        )
+
+    return httmock.response(404, request=request)
+
+
 @httmock.urlmatch(netloc='api.trakt.tv')
 def fixtures(url, request):
     return get_fixture(
@@ -188,51 +233,26 @@ def oauth_device_token(url, request):
     })
 
 
-@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
+@httmock.urlmatch(netloc='api.trakt.tv', path=r'/users/likes')
 @authenticated
-def lists(url, request, content_type='application/json'):
-    parameters = dict(parse_qsl(url.query))
-
-    page = try_convert(parameters.get('page'), int) or 1
-    limit = try_convert(parameters.get('limit'), int) or 10
-
-    # Retrieve items from fixture
-    items = get_json(url.netloc, url.path, url.query)
-
-    if items is None:
-        return httmock.response(404, request=request)
-
-    # Calculate page count and item offset
-    offset = (page - 1) * limit
-    page_count = int(math.ceil(float(len(items)) / limit))
-
-    return httmock.response(
-        200, json.dumps(items[offset:offset + limit]), {
-            'Content-Type': content_type,
-
-            'X-Pagination-Page': page,
-            'X-Pagination-Limit': limit,
-            'X-Pagination-Page-Count': page_count,
-            'X-Pagination-Item-Count': len(items)
-        },
-        request=request
-    )
+def likes(url, request, content_type='application/json'):
+    return paginate(url, request, content_type=content_type)
 
 
-@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
-def lists_invalid_content_type(url, request):
-    return lists(url, request, content_type='text/plain')
+@httmock.urlmatch(netloc='api.trakt.tv', path=r'/users/likes')
+def likes_invalid_content_type(url, request):
+    return likes(url, request, content_type='text/plain')
 
 
-@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
+@httmock.urlmatch(netloc='api.trakt.tv', path=r'/users/likes')
 @authenticated
-def lists_invalid_json(url, request):
+def likes_invalid_json(url, request):
     parameters = dict(parse_qsl(url.query))
 
     page = try_convert(parameters.get('page'), int) or 1
 
     # Return invalid response for page #2
-    if page == 2:
+    if request.method == 'GET' and page == 2:
         return httmock.response(
             200, '<invalid-json-response>', {
                 'Content-Type': 'application/json'
@@ -241,22 +261,28 @@ def lists_invalid_json(url, request):
         )
 
     # Return page
-    return lists(url, request)
+    return likes(url, request)
 
 
-@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
+@httmock.urlmatch(netloc='api.trakt.tv', path=r'/users/likes')
 @authenticated
-def lists_request_failure(url, request):
+def likes_request_failure(url, request):
     parameters = dict(parse_qsl(url.query))
 
     page = try_convert(parameters.get('page'), int) or 1
 
     # Return invalid response for page #2
-    if page == 2:
+    if request.method == 'GET' and page == 2:
         return httmock.response(400, request=request)
 
     # Return page
-    return lists(url, request)
+    return likes(url, request)
+
+
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/[\w-]+/lists')
+@authenticated
+def lists(url, request):
+    return fixtures(url, request)
 
 
 @httmock.urlmatch(netloc='api.trakt.tv', method='POST', path=r'/users/[\w-]+/lists')
@@ -386,7 +412,19 @@ def sync_get(url, request):
     return fixtures(url, request)
 
 
+@httmock.urlmatch(netloc='api.trakt.tv', path=r'/sync/history(/\w+)?')
+@authenticated
+def sync_history(url, request):
+    return paginate(url, request)
+
+
 @httmock.urlmatch(netloc='api.trakt.tv', method='DELETE', path=r'/sync/playback/\d+')
 @authenticated
 def sync_playback_delete(url, request):
     return httmock.response(204, request=request)
+
+
+@httmock.urlmatch(netloc='api.trakt.tv', path=r'/sync/watchlist(/\w+)?')
+@authenticated
+def sync_watchlist(url, request):
+    return paginate(url, request)

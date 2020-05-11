@@ -8,7 +8,11 @@ from httmock import HTTMock
 
 def test_lookup_movie():
     with HTTMock(mock.fixtures, mock.unknown):
-        movie = Trakt['search'].lookup('tt0848228', 'imdb', extended='full')
+        movies = Trakt['search'].lookup('tt0848228', 'imdb', extended='full')
+
+    assert isinstance(movies, list)
+
+    movie = movies[0]
 
     assert movie is not None
 
@@ -32,7 +36,11 @@ def test_lookup_movie():
 
 def test_lookup_show():
     with HTTMock(mock.fixtures, mock.unknown):
-        show = Trakt['search'].lookup('tt0903747', 'imdb', extended='full')
+        shows = Trakt['search'].lookup('tt0903747', 'imdb', extended='full')
+
+    assert isinstance(shows, list)
+
+    show = shows[0]
 
     assert show is not None
 
@@ -58,7 +66,11 @@ def test_lookup_show():
 
 def test_lookup_episode():
     with HTTMock(mock.fixtures, mock.unknown):
-        episode = Trakt['search'].lookup('tt0959621', 'imdb', extended='full')
+        episodes = Trakt['search'].lookup('tt0959621', 'imdb', extended='full')
+
+    assert isinstance(episodes, list)
+
+    episode = episodes[0]
 
     assert episode is not None
 

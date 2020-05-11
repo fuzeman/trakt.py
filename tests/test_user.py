@@ -35,11 +35,8 @@ def test_likes():
 def test_likes_invalid_response():
     with HTTMock(mock.fixtures, mock.unknown):
         likes = Trakt['users'].likes()
-        assert likes is not None
 
-        likes = list(likes)
-
-    assert len(likes) == 0
+    assert likes is None
 
 
 def test_likes_invalid_type():
