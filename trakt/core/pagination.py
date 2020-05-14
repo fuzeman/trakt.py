@@ -121,9 +121,9 @@ class PaginationIterator(object):
     def __iter__(self):
         if self.total_pages is None:
             if self.exceptions:
-                raise ValueError('Pagination state hasn\'t been resolved')
+                raise ValueError("Pagination state hasn't been resolved")
 
-            log.warning('Pagination state hasn\'t been resolved')
+            log.warning("Pagination state hasn't been resolved")
             return
 
         # Retrieve current page number

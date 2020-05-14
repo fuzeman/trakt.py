@@ -2,7 +2,6 @@ from __future__ import absolute_import, division, print_function
 
 from trakt.core.errors import log_request_error
 from trakt.core.exceptions import RequestFailedError, ServerError, ClientError
-from trakt.core.helpers import try_convert
 from trakt.core.pagination import PaginationIterator
 from trakt.helpers import setdefault
 
