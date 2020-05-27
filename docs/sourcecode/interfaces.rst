@@ -20,6 +20,11 @@ Interfaces
    trakt/trakt.interfaces.sync.watched
    trakt/trakt.interfaces.sync.watchlist
    trakt/trakt.interfaces.users
+   trakt/trakt.interfaces.users.following
+   trakt/trakt.interfaces.users.friends
+   trakt/trakt.interfaces.users.history
    trakt/trakt.interfaces.users.lists
    trakt/trakt.interfaces.users.lists.list_
+   trakt/trakt.interfaces.users.ratings
    trakt/trakt.interfaces.users.settings
+   trakt/trakt.interfaces.users.watchlist

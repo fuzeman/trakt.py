@@ -13,4 +13,5 @@ Objects
    trakt/trakt.objects.rating
    trakt/trakt.objects.season
    trakt/trakt.objects.show
+   trakt/trakt.objects.user
    trakt/trakt.objects.video
