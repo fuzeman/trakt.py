@@ -3,8 +3,13 @@ from __future__ import absolute_import, division, print_function
 from trakt.core.helpers import dictfilter
 from trakt.core.pagination import PaginationIterator
 from trakt.interfaces.base import Interface, authenticated
+from trakt.interfaces.users.following import UsersFollowingInterface
+from trakt.interfaces.users.friends import UsersFriendsInterface
+from trakt.interfaces.users.history import UsersHistoryInterface
 from trakt.interfaces.users.lists import UsersListInterface, UsersListsInterface
+from trakt.interfaces.users.ratings import UsersRatingsInterface
 from trakt.interfaces.users.settings import UsersSettingsInterface
+from trakt.interfaces.users.watchlist import UsersWatchlistInterface
 from trakt.mapper import CommentMapper, ListMapper
 
 import logging
@@ -14,9 +19,14 @@ log = logging.getLogger(__name__)
 
 __all__ = (
     'UsersInterface',
+    'UsersFollowingInterface',
+    'UsersFriendsInterface',
+    'UsersHistoryInterface',
     'UsersListsInterface',
     'UsersListInterface',
-    'UsersSettingsInterface'
+    'UsersRatingsInterface',
+    'UsersSettingsInterface',
+    'UsersWatchlistInterface'
 )
 
 
