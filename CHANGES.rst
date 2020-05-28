@@ -1,3 +1,36 @@
+4.1.0 (2020-05-28)
+------------------
+**Added**
+
+- Documentation is now generated for a number of modules that were previously missing
+
+- **Interfaces:**
+
+  - :code:`Trakt['sync/watchlist']`
+
+    - Now supports the :code:`sort` parameter
+
+  - :code:`Trakt['users/*/following']`
+  - :code:`Trakt['users/*/friends']`
+  - :code:`Trakt['users/*/history']`
+  - :code:`Trakt['users/*/ratings']`
+  - :code:`Trakt['users/*/watchlist']`
+
+- **Methods:**
+
+  - :code:`Trakt['sync/history']` :code:`seasons()`, :code:`episodes()`
+  - :code:`Trakt['sync/ratings']` :code:`all()`
+
+- **Objects:**
+
+  - :code:`User`
+
+**Changed**
+
+- **Methods:**
+
+  - :code:`Trakt['users/*/lists']` :code:`create()` now cleans the provided :code:`username` parameter.
+
 4.0.0 (2020-05-15)
 ------------------
 **BREAKING**
