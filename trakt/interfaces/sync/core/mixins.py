@@ -59,18 +59,22 @@ class Get(Interface):
             **self.flags
         )
 
-    @authenticated
-    def shows(self, store=None, **kwargs):
-        return self.get(
-            'shows',
-            store=store,
-            **kwargs
-        )
+    #
+    # Shortcut methods
+    #
 
     @authenticated
     def movies(self, store=None, **kwargs):
         return self.get(
             'movies',
+            store=store,
+            **kwargs
+        )
+
+    @authenticated
+    def shows(self, store=None, **kwargs):
+        return self.get(
+            'shows',
             store=store,
             **kwargs
         )

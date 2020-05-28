@@ -42,18 +42,50 @@ class SyncHistoryInterface(Get, Add, Remove):
             **kwargs
         )
 
+    #
+    # Shortcut methods
+    #
+
     @authenticated
-    def shows(self, *args, **kwargs):
+    def movies(self, id=None, start_at=None, end_at=None, store=None, **kwargs):
         return self.get(
-            'shows',
-            *args,
+            'movies',
+            id=id,
+            start_at=start_at,
+            end_at=end_at,
+            store=store,
             **kwargs
         )
 
     @authenticated
-    def movies(self, *args, **kwargs):
+    def shows(self, id=None, start_at=None, end_at=None, store=None, **kwargs):
         return self.get(
-            'movies',
-            *args,
+            'shows',
+            id=id,
+            start_at=start_at,
+            end_at=end_at,
+            store=store,
+            **kwargs
+        )
+
+    @authenticated
+    def seasons(self, id=None, start_at=None, end_at=None, store=None, **kwargs):
+        return self.get(
+            'seasons',
+            id=id,
+            start_at=start_at,
+            end_at=end_at,
+            store=store,
+            **kwargs
+        )
+
+    @authenticated
+    def episodes(self, id=None, start_at=None, end_at=None, store=None, **kwargs):
+        return self.get(
+            'episodes',
+            id=id,
+            start_at=start_at,
+            end_at=end_at,
+            store=store,
             **kwargs
         )
