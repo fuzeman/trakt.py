@@ -5,6 +5,7 @@ Interfaces
    :maxdepth: 1
 
    trakt/trakt.interfaces.auth
+   trakt/trakt.interfaces.calendars
    trakt/trakt.interfaces.movies
    trakt/trakt.interfaces.oauth
    trakt/trakt.interfaces.oauth.device

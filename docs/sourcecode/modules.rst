@@ -27,10 +27,10 @@ Modules
    trakt/trakt.mapper.core.base
    trakt/trakt.mapper.list
    trakt/trakt.mapper.list_item
+   trakt/trakt.mapper.progress
    trakt/trakt.mapper.search
    trakt/trakt.mapper.summary
    trakt/trakt.mapper.sync
    trakt/trakt.mapper.user
    trakt/trakt.objects.core
    trakt/trakt.objects.core.helpers
-   trakt/trakt.objects.list

@@ -10,6 +10,8 @@ Objects
    trakt/trakt.objects.list.custom
    trakt/trakt.objects.media
    trakt/trakt.objects.movie
+   trakt/trakt.objects.person
+   trakt/trakt.objects.progress
    trakt/trakt.objects.rating
    trakt/trakt.objects.season
    trakt/trakt.objects.show

@@ -127,7 +127,7 @@ def refresh_autodoc_index():
             if any([module_name.startswith(exclude)
                     for exclude
                     in EXCLUDED_MODULES]):
-                print('Excluded module %s.' % module_name)
+                print('EXCLUDED: %s' % module_name)
                 continue
 
             mod_path = os.path.join(path, *module_name.split('.'))
@@ -145,6 +145,7 @@ def refresh_autodoc_index():
             module_type = refresh_autodoc(source_path, generated_path, module_name)
 
             if not module_type:
+                print('IGNORED: %s' % module_name)
                 continue
 
             # Append module to the `modules` dictionary
