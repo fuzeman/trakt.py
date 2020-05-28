@@ -14,9 +14,9 @@ def test_ratings():
         collection = {}
 
         with Trakt.configuration.auth('mock', 'mock'):
-            Trakt['sync/ratings'].shows(collection)
-            Trakt['sync/ratings'].seasons(collection)
-            Trakt['sync/ratings'].episodes(collection)
+            Trakt['sync/ratings'].shows(store=collection)
+            Trakt['sync/ratings'].seasons(store=collection)
+            Trakt['sync/ratings'].episodes(store=collection)
 
     # Ensure collection is valid
     assert_that(collection, not_none())
