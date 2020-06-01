@@ -25,3 +25,30 @@ class ListMapper(Mapper):
             custom_list._update(item)
 
         return custom_list
+
+    @classmethod
+    def lists(cls, client, items, **kwargs):
+        if not items:
+            return None
+
+        return [
+            item for item in [ListMapper.public_list(client, item) for item in items]
+            if item
+        ]
+        print(items)
+
+    @classmethod
+    def public_list(cls, client, item, **kwargs):
+        if 'list' in item:
+            i_list = item['list']
+        else:
+            i_list = item
+
+        pk, keys = cls.get_ids('list', i_list)
+
+        public_list = cls.construct(client, 'list', i_list, keys, **kwargs)
+
+        if 'list' in item:
+            public_list._update(item)
+
+        return public_list

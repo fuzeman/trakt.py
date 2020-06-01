@@ -85,6 +85,8 @@ class List(object):
         Number of items
         """
 
+        self.user = None
+
     @property
     def id(self):
         """Retrieve the list identifier.
@@ -133,6 +135,19 @@ class List(object):
             'comment_count',
             'item_count'
         ])
+
+        if 'user' in info:
+            from trakt.mapper import UserMapper
+            self.user = UserMapper.user(self._client, info['user'])
+
+    @classmethod
+    def _construct(cls, client, keys, info, **kwargs):
+        if not info:
+            return None
+
+        obj = cls(client, keys, **kwargs)
+        obj._update(info)
+        return obj
 
     def __getstate__(self):
         state = self.__dict__
