@@ -206,6 +206,8 @@ class SyncMapper(Mapper):
 
     @classmethod
     def iterate_items(cls, client, store, items, func, **kwargs):
+        media = kwargs.get('media')
+
         if store is None:
             store = {}
 
@@ -223,6 +225,9 @@ class SyncMapper(Mapper):
 
         for item in items:
             i_type = item.get('type')
+
+            if not i_type and media:
+                i_type = media[:-1]
 
             if i_type == 'movie':
                 i_store = store['movies']

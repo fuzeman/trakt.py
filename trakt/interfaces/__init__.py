@@ -60,6 +60,9 @@ INTERFACES = [
     # /users/ratings
     users.UsersRatingsInterface,
 
+    # /users/watched
+    users.UsersWatchedInterface,
+
     # /users/watchlist
     users.UsersWatchlistInterface
 
