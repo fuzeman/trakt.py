@@ -42,6 +42,7 @@ INTERFACES = [
 
     # /users/
     users.UsersInterface,
+    users.UsersProfileInterface,
     users.UsersSettingsInterface,
 
     # /users/following
