@@ -18,7 +18,7 @@ def test_watched():
     assert_that(items, has_length(3))
 
     # Validate items
-    assert_that(items, contains_exactly(
+    assert_that(items, contains(
         # Game of Thrones (2011)
         all_of(
             instance_of(Show),

@@ -22,7 +22,7 @@ def test_basic():
             items = list(watchlist)
 
     # Validate items
-    assert_that(items, contains_exactly(
+    assert_that(items, contains(
         # TRON: Legacy (2010)
         all_of(
             instance_of(Movie),
@@ -120,7 +120,7 @@ def test_pagination_disabled():
             items = list(watchlist)
 
     # Validate items
-    assert_that(items, contains_exactly(
+    assert_that(items, contains(
         # TRON: Legacy (2010)
         all_of(
             instance_of(Movie),
