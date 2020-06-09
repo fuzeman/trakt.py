@@ -75,8 +75,12 @@ class SyncMapper(Mapper):
         return cls.map_items(client, store, items, cls.show, **kwargs)
 
     @classmethod
-    def show(cls, client, store, item, **kwargs):
-        show = cls.map_item(client, store, item, 'show', **kwargs)
+    def show(cls, client, store, item, append=False, **kwargs):
+        show = cls.map_item(
+            client, store, item, 'show',
+            append=append,
+            **kwargs
+        )
 
         # Update with root info
         if 'show' in item:
