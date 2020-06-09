@@ -1,8 +1,7 @@
 from __future__ import absolute_import, division, print_function
 
-from trakt.core.helpers import dictfilter
-from trakt.mapper.user import UserMapper
 from trakt.mapper.core.base import Mapper
+from trakt.mapper.user import UserMapper
 
 
 class ListMapper(Mapper):

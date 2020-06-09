@@ -17,7 +17,7 @@ from trakt.objects.video import Video
 __all__ = (
     'Comment',
     'Episode',
-    'CustomList', 'List',
+    'CustomList', 'PublicList', 'List',
     'Media',
     'Movie',
     'Rating',

@@ -20,7 +20,7 @@ class UsersListsInterface(Interface):
 
     def create(self, username, name, description=None, privacy='private', display_numbers=False,
                allow_comments=True, sort_by='rank', sort_how='asc', **kwargs):
-        """Create a new list
+        """Create a new list.
 
         :param username: Username (or :code:`me`)
         :type username: :class:`~python:str`
@@ -91,7 +91,7 @@ class UsersListsInterface(Interface):
         )
 
     def get(self, username, **kwargs):
-        """Retrieve lists for user
+        """Retrieve lists for user.
 
         :param username: Username (or :code:`me`)
         :type username: :class:`~python:str`

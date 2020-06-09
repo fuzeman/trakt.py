@@ -25,7 +25,7 @@ class List(object):
         self.user = user
         """
         :type: :class:`trakt.objects.User`
-        
+
         Author
         """
 
@@ -81,7 +81,7 @@ class List(object):
         :type: :class:`~python:str`
 
         Sort By
-        
+
         **Possible values:**
          - :code:`rank`
          - :code:`added`
@@ -102,7 +102,7 @@ class List(object):
         :type: :class:`~python:str`
 
         Sort Direction
-        
+
         **Possible values:**
          - :code:`asc`
          - :code:`desc`
@@ -172,7 +172,7 @@ class List(object):
 
     @property
     def username(self):
-        """Author Username
+        """Retrieve author username.
 
         :rtype: :class:`~python:str`
         """
@@ -183,7 +183,7 @@ class List(object):
 
     @property
     def like_count(self):
-        """Number of likes
+        """Retrieve the number of likes.
 
         :rtype: :class:`~python:int`
         """

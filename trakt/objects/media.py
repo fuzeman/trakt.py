@@ -134,7 +134,7 @@ class Media(object):
         self.reset_at = None
         """
         :type: :class:`~python:datetime.datetime`
-    
+
         Timestamp of when this item was reset (or `None`)
         """
 
