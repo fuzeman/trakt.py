@@ -1,0 +1,66 @@
+[
+  {
+    "like_count": 109,
+    "comment_count": 20,
+    "list": {
+      "name": "Top Chihuahua Movies",
+      "description": "So cute.",
+      "privacy": "public",
+      "display_numbers": true,
+      "allow_comments": true,
+      "sort_by": "rank",
+      "sort_how": "asc",
+      "created_at": "2015-10-11T17:00:54.000Z",
+      "updated_at": "2015-10-11T17:00:54.000Z",
+      "item_count": 50,
+      "comment_count": 20,
+      "likes": 109,
+      "ids": {
+        "trakt": 1338,
+        "slug": "top-chihuahua-movies"
+      },
+      "user": {
+        "username": "justin",
+        "private": false,
+        "name": "Justin Nemeth",
+        "vip": true,
+        "vip_ep": false,
+        "ids": {
+          "slug": "justin"
+        }
+      }
+    }
+  },
+  {
+    "like_count": 99,
+    "comment_count": 10,
+    "list": {
+      "name": "Incredible Thoughts",
+      "description": "How could my brain conceive them?",
+      "privacy": "public",
+      "display_numbers": true,
+      "allow_comments": true,
+      "sort_by": "rank",
+      "sort_how": "asc",
+      "created_at": "2014-10-11T17:00:54.000Z",
+      "updated_at": "2014-10-11T17:00:54.000Z",
+      "item_count": 50,
+      "comment_count": 10,
+      "likes": 99,
+      "ids": {
+        "trakt": 1337,
+        "slug": "incredible-thoughts"
+      },
+      "user": {
+        "username": "justin",
+        "private": false,
+        "name": "Justin Nemeth",
+        "vip": true,
+        "vip_ep": false,
+        "ids": {
+          "slug": "justin"
+        }
+      }
+    }
+  }
+]
