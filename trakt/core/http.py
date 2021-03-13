@@ -152,8 +152,8 @@ class HttpClient(object):
 
                 response = self.rebuild().send(request, timeout=timeout)
 
-            # Retry requests on exceptions or 5xx errors (when enabled)
-            if not retry or (not exc_info and response.status_code < 500):
+            # Retry requests on exceptions or 5xx/429 errors (when enabled)
+            if not retry or (not exc_info and response.status_code < 500 and response.status_code != 429):
                 break
 
             if exc_info:
