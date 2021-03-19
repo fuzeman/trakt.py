@@ -1,3 +1,12 @@
+4.4.0 (2021-03-19)
+------------------
+**Added**
+
+- **Interfaces:**
+
+  - :code:`Trakt['movies']` :code:`recommended()`
+  - :code:`Trakt['shows']` :code:`recommended()`
+
 4.3.0 (2021-03-19)
 ------------------
 **Added**
