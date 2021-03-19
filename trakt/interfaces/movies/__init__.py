@@ -45,3 +45,25 @@ class MoviesInterface(Interface):
             return items
 
         return SummaryMapper.movies(self.client, items)
+
+    def popular(self, extended=None, page=None, per_page=None, **kwargs):
+        response = self.http.get('popular', query={
+            'extended': extended,
+            'page': page,
+            'limit': per_page
+        }, **dictfilter(kwargs, get=[
+            'exceptions'
+        ], pop=[
+            'pagination'
+        ]))
+
+        # Parse response
+        items = self.get_data(response, **kwargs)
+
+        if isinstance(items, PaginationIterator):
+            return items.with_mapper(lambda items: SummaryMapper.movies(self.client, items))
+
+        if isinstance(items, requests.Response):
+            return items
+
+        return SummaryMapper.movies(self.client, items)
