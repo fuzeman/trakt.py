@@ -25,24 +25,24 @@ class ShowsInterface(Interface):
         return SummaryMapper.show(self.client, item)
 
     def trending(self, extended=None, page=None, per_page=None, **kwargs):
-        return self.parse_list('trending', extended=extended, page=page, per_page=per_page, **kwargs)
+        return self.__get_list('trending', extended=extended, page=page, per_page=per_page, **kwargs)
 
     def popular(self, extended=None, page=None, per_page=None, **kwargs):
-        return self.parse_list('popular', extended=extended, page=page, per_page=per_page, **kwargs)
+        return self.__get_list('popular', extended=extended, page=page, per_page=per_page, **kwargs)
 
     def recommended(self, period=None, extended=None, page=None, per_page=None, **kwargs):
-        return self.parse_list('recommended', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
+        return self.__get_list('recommended', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
 
     def played(self, period=None, extended=None, page=None, per_page=None, **kwargs):
-        return self.parse_list('played', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
+        return self.__get_list('played', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
 
     def watched(self, period=None, extended=None, page=None, per_page=None, **kwargs):
-        return self.parse_list('watched', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
+        return self.__get_list('watched', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
 
     def collected(self, period=None, extended=None, page=None, per_page=None, **kwargs):
-        return self.parse_list('collected', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
+        return self.__get_list('collected', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
 
-    def parse_list(self, list_type, period=None, extended=None, page=None, per_page=None, **kwargs):
+    def __get_list(self, list_type, period=None, extended=None, page=None, per_page=None, **kwargs):
         # Build parameters
         params = [period] if period else None
 
