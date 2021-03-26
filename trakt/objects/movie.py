@@ -28,16 +28,46 @@ class Movie(Video):
         """
         :type: :class:`~python:int`
 
-        Number of active watchers (returned by the :code:`Trakt['movies'].trending()`
-        and :code:`Trakt['shows'].trending()` methods)
+        Number of active watchers (returned by the :code:`Trakt['movies'].trending()` method)
         """
 
         self.user_count = None  # recommended
         """
         :type: :class:`~python:int`
 
-        Number of user recommendations (returned by the :code:`Trakt['movies'].recommended()`
-        and :code:`Trakt['shows'].recommended()` methods)
+        Number of user recommendations (returned by the :code:`Trakt['movies'].recommended()` method)
+        """
+
+        self.watcher_count = None  # watched, collected, and played
+        """
+        :type: :class:`~python:int`
+
+        Number of user watching (returned by the :code:`Trakt['movies'].watched()`, 
+        :code:`Trakt['movies'].collected()`, and :code:`Trakt['movies'].played()` methods)
+        """
+
+        self.play_count = None  # watched, collected, and played
+        """
+        :type: :class:`~python:int`
+
+        Number of user watching (returned by the :code:`Trakt['movies'].watched()`, 
+        :code:`Trakt['movies'].collected()`, and :code:`Trakt['movies'].played()` methods)
+        """
+
+        self.collected_count = None  # watched, collected, and played
+        """
+        :type: :class:`~python:int`
+
+        Number of user watching (returned by the :code:`Trakt['movies'].watched()`, 
+        :code:`Trakt['movies'].collected()`, and :code:`Trakt['movies'].played()` methods)
+        """
+
+        self.collector_count = None  # watched, collected, and played
+        """
+        :type: :class:`~python:int`
+
+        Number of user watching (returned by the :code:`Trakt['movies'].watched()`, 
+        :code:`Trakt['movies'].collected()`, and :code:`Trakt['movies'].played()` methods)
         """
 
         self.tagline = None
@@ -202,6 +232,12 @@ class Movie(Video):
 
         update_attributes(self, info, [
             'title',
+
+            # Watched, Collected, and Played
+            'watcher_count',
+            'play_count',
+            'collected_count',
+            'collector_count',
 
             # Recommended
             'user_count',

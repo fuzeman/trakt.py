@@ -38,16 +38,46 @@ class Show(Media):
         """
         :type: :class:`~python:int`
 
-        Number of active watchers (returned by the :code:`Trakt['movies'].trending()`
-        and :code:`Trakt['shows'].trending()` methods)
+        Number of active watchers (returned by the :code:`Trakt['shows'].trending()` method)
         """
 
         self.user_count = None  # recommended
         """
         :type: :class:`~python:int`
 
-        Number of user recommendations (returned by the :code:`Trakt['movies'].recommended()`
-        and :code:`Trakt['shows'].recommended()` methods)
+        Number of user recommendations (returned by the :code:`Trakt['shows'].recommended()` method)
+        """
+
+        self.watcher_count = None  # watched, collected, and played
+        """
+        :type: :class:`~python:int`
+
+        Number of user watching (returned by the :code:`Trakt['shows'].watched()`, 
+        :code:`Trakt['shows'].collected()`, and :code:`Trakt['shows'].played()` methods)
+        """
+
+        self.play_count = None  # watched, collected, and played
+        """
+        :type: :class:`~python:int`
+
+        Number of user watching (returned by the :code:`Trakt['shows'].watched()`, 
+        :code:`Trakt['shows'].collected()`, and :code:`Trakt['shows'].played()` methods)
+        """
+
+        self.collected_count = None  # watched, collected, and played
+        """
+        :type: :class:`~python:int`
+
+        Number of user watching (returned by the :code:`Trakt['shows'].watched()`, 
+        :code:`Trakt['shows'].collected()`, and :code:`Trakt['shows'].played()` methods)
+        """
+
+        self.collector_count = None  # watched, collected, and played
+        """
+        :type: :class:`~python:int`
+
+        Number of user watching (returned by the :code:`Trakt['shows'].watched()`, 
+        :code:`Trakt['shows'].collected()`, and :code:`Trakt['shows'].played()` methods)
         """
 
         self.first_aired = None
@@ -250,6 +280,12 @@ class Show(Media):
 
         update_attributes(self, info, [
             'title',
+
+            # Watched, Collected, and Played
+            'watcher_count',
+            'play_count',
+            'collected_count',
+            'collector_count',
 
             # Recommended
             'user_count',
