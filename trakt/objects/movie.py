@@ -42,7 +42,7 @@ class Movie(Video):
         """
         :type: :class:`~python:int`
 
-        Number of user watching (returned by the :code:`Trakt['movies'].watched()`, 
+        Number of user watching (returned by the :code:`Trakt['movies'].watched()`,
         :code:`Trakt['movies'].collected()`, and :code:`Trakt['movies'].played()` methods)
         """
 
@@ -50,7 +50,7 @@ class Movie(Video):
         """
         :type: :class:`~python:int`
 
-        Number of user watching (returned by the :code:`Trakt['movies'].watched()`, 
+        Number of user watching (returned by the :code:`Trakt['movies'].watched()`,
         :code:`Trakt['movies'].collected()`, and :code:`Trakt['movies'].played()` methods)
         """
 
@@ -58,7 +58,7 @@ class Movie(Video):
         """
         :type: :class:`~python:int`
 
-        Number of user watching (returned by the :code:`Trakt['movies'].watched()`, 
+        Number of user watching (returned by the :code:`Trakt['movies'].watched()`,
         :code:`Trakt['movies'].collected()`, and :code:`Trakt['movies'].played()` methods)
         """
 
@@ -66,7 +66,7 @@ class Movie(Video):
         """
         :type: :class:`~python:int`
 
-        Number of user watching (returned by the :code:`Trakt['movies'].watched()`, 
+        Number of user watching (returned by the :code:`Trakt['movies'].watched()`,
         :code:`Trakt['movies'].collected()`, and :code:`Trakt['movies'].played()` methods)
         """
 

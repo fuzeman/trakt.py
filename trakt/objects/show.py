@@ -52,7 +52,7 @@ class Show(Media):
         """
         :type: :class:`~python:int`
 
-        Number of user watching (returned by the :code:`Trakt['shows'].watched()`, 
+        Number of user watching (returned by the :code:`Trakt['shows'].watched()`,
         :code:`Trakt['shows'].collected()`, and :code:`Trakt['shows'].played()` methods)
         """
 
@@ -60,7 +60,7 @@ class Show(Media):
         """
         :type: :class:`~python:int`
 
-        Number of user watching (returned by the :code:`Trakt['shows'].watched()`, 
+        Number of user watching (returned by the :code:`Trakt['shows'].watched()`,
         :code:`Trakt['shows'].collected()`, and :code:`Trakt['shows'].played()` methods)
         """
 
@@ -68,7 +68,7 @@ class Show(Media):
         """
         :type: :class:`~python:int`
 
-        Number of user watching (returned by the :code:`Trakt['shows'].watched()`, 
+        Number of user watching (returned by the :code:`Trakt['shows'].watched()`,
         :code:`Trakt['shows'].collected()`, and :code:`Trakt['shows'].played()` methods)
         """
 
@@ -76,7 +76,7 @@ class Show(Media):
         """
         :type: :class:`~python:int`
 
-        Number of user watching (returned by the :code:`Trakt['shows'].watched()`, 
+        Number of user watching (returned by the :code:`Trakt['shows'].watched()`,
         :code:`Trakt['shows'].collected()`, and :code:`Trakt['shows'].played()` methods)
         """
 
