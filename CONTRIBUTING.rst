@@ -41,16 +41,43 @@ Please detail your suggested enhancement and include any relevant information, f
 - Current library functionality (on the latest official release)
 - Would this enhancement break compatibility? could this be resolved in any way (e.g. method proxies)?
 
-Pull Requests
--------------
+Development
+-----------
 
 **Please ensure:**
 
-- Your changes are based on the *develop* branch, before starting development checkout the correct branch:
+- Your changes should be based on the *develop* branch, before starting development checkout the correct branch:
 
   .. code-block:: shell
 
     git checkout develop
+
+- You have installed the development dependencies if you plan to work on the build system or run tests without using tox
+
+  - If you are using `pipenv`_
+  
+    .. code-block:: shell
+
+      pipenv install
+  
+  - Otherwise, you can install the 'test_requirements.txt' for running tests and 'build_requirements.txt' for building
+
+Building
+--------
+
+- To build a distribution, after you have installed the build requirements:
+  
+  .. code-block:: shell
+
+    python -m build --no-isolation
+
+  **Note:** The build is currently required to not run in an isolated environment because there is an issue with build 
+  requirements are not being properly installed in that environment.  This may change in the future
+
+Pull Requests
+-------------
+
+**Please ensure:**
 
 - Tests pass, either:
 
@@ -64,7 +91,7 @@ Pull Requests
 
     .. code-block:: shell
 
-      python setup.py test
+      pytest
 
   - Create your pull request, and wait for the test results to be posted by Travis CI. *(this may take a few minutes)*
 
@@ -78,7 +105,7 @@ Pull Requests
 
   - Create your pull request, and wait for the test results to be posted by Travis CI. *(this may take a few minutes)*
 
-    **Note:** `flake8`_ results will be displayed under the "Python 3.6" job.
+    **Note:** `flake8`_ results will be displayed under the "Python 3.10" job.
 
 - Test coverage hasn't fallen *(lines added without tests)*
 
@@ -96,5 +123,6 @@ If you aren't sure how to write tests or are confused about any of the above ste
 know what needs to be changed, or can just cleanup your code and write the required tests (if requested).
 
 .. _flake8: http://flake8.pycqa.org
-.. _Trakt.tv API Specification: http://docs.trakt.apiary.io
+.. _Trakt.tv API Specification: http://trakt.docs.apiary.io
 .. _tox: https://tox.readthedocs.io
+.. _pipenv: https://pipenv.pypa.io/en/latest/index.html
