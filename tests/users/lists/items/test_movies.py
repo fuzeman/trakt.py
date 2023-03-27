@@ -19,7 +19,7 @@ def test_basic():
     assert_that(items, not_none())
 
     # Validate items
-    assert_that(items, contains(
+    assert_that(items, contains_exactly(
         # Mad Max: Fury Road
         all_of(
             instance_of(Movie),

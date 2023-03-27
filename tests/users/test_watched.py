@@ -1,5 +1,5 @@
 # flake8: noqa: F403, F405
-from __future__ import absolute_import, division, print_function
+
 
 from tests.core import mock
 from trakt import Trakt
@@ -23,7 +23,7 @@ def test_shows():
 
     assert_that(items, all_of(
         has_length(2),
-        contains(
+        contains_exactly(
             all_of(
                 instance_of(Show),
                 has_properties({
@@ -221,7 +221,7 @@ def test_movies():
 
     assert_that(items, all_of(
         has_length(2),
-        contains(
+        contains_exactly(
             all_of(
                 instance_of(Movie),
                 has_properties({
