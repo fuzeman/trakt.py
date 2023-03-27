@@ -1,8 +1,7 @@
 # flake8: noqa: E241
 
 from datetime import datetime
-from six import string_types
-from six.moves.urllib_parse import ParseResult, parse_qsl, urlparse
+from urllib.parse import ParseResult, parse_qsl, urlparse
 import itertools
 import json
 import os
@@ -77,7 +76,7 @@ def download_one(url):
 
 
 def build_destination_path(url):
-    if isinstance(url, string_types):
+    if isinstance(url, str):
         url = urlparse(url)
     elif not isinstance(url, ParseResult):
         raise ValueError('Invalid value provided for "url" parameter (expected string or urlparse result)')

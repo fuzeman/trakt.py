@@ -1,10 +1,9 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt import Trakt
 
 import json
 import os
-import six
 
 
 def authenticate():
@@ -15,7 +14,7 @@ def authenticate():
 
     print('Navigate to: %s' % Trakt['oauth'].authorize_url('urn:ietf:wg:oauth:2.0:oob'))
 
-    code = six.moves.input('Authorization code:')
+    code = input('Authorization code:')
     if not code:
         exit(1)
 

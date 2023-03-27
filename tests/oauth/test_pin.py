@@ -1,4 +1,4 @@
-from __future__ import absolute_import, division, print_function
+
 
 from tests.core.helpers import assert_url
 from trakt import Trakt

@@ -1,10 +1,10 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.core.errors import log_request_error
 from trakt.core.exceptions import ServerError, ClientError, RequestFailedError
 from trakt.core.helpers import try_convert
 
-from six.moves.urllib.parse import urlsplit, urlunsplit, parse_qsl
+from urllib.parse import urlsplit, urlunsplit, parse_qsl
 import logging
 
 log = logging.getLogger(__name__)

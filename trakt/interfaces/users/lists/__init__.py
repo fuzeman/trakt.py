@@ -1,4 +1,4 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.core.helpers import clean_username
 from trakt.interfaces.base import Interface

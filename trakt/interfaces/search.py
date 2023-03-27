@@ -1,4 +1,4 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.core.helpers import dictfilter
 from trakt.core.pagination import PaginationIterator
@@ -6,7 +6,6 @@ from trakt.interfaces.base import Interface
 from trakt.mapper.search import SearchMapper
 
 import requests
-import six
 import warnings
 
 
@@ -76,7 +75,7 @@ class SearchInterface(Interface):
             'limit': per_page
         }
 
-        if isinstance(media, six.string_types):
+        if isinstance(media, str):
             query['type'] = media
         elif isinstance(media, list):
             query['type'] = ','.join(media)

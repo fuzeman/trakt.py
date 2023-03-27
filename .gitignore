@@ -69,6 +69,9 @@ pyvenv.cfg
 pip-selfcheck.json
 .venv*/
 
+# Pipenv
+Pipfile*
+
 /_html
 /.idea
 *.iml

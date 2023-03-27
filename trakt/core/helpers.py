@@ -1,6 +1,5 @@
-from __future__ import absolute_import, division, print_function
 
-from six import string_types
+
 import functools
 import logging
 import warnings
@@ -56,7 +55,7 @@ def dictfilter(d, **kwargs):
 def synchronized(f_lock, mode='full'):
     if mode == 'full':
         mode = ['acquire', 'release']
-    elif isinstance(mode, string_types):
+    elif isinstance(mode, str):
         mode = [mode]
 
     def wrap(func):
@@ -100,7 +99,16 @@ def try_convert(value, value_type, default=None):
     except (ValueError, TypeError):
         return default
 
-
+def reraise(tp, value, tb=None):
+    try:
+        if value is None:
+            value = tp()
+        if value.__traceback__ is not tb:
+            raise value.with_traceback(tb)
+        raise value
+    finally:
+        value = None
+        tb = None
 #
 # Date/Time Conversion
 #

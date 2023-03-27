@@ -1,10 +1,9 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.core.helpers import synchronized
 
-from six.moves import xrange
-from six.moves import _thread as thread
 from threading import RLock
+import _thread
 import logging
 
 log = logging.getLogger(__name__)
@@ -71,7 +70,7 @@ class ListCollection(object):
         if len(self) != len(other):
             return False
 
-        for x in xrange(len(self)):
+        for x in range(len(self)):
             if self[x] != other[x]:
                 return False
 
@@ -134,7 +133,7 @@ class ContextCollection(object):
 
     @property
     def current(self):
-        ident = thread.get_ident()
+        ident = _thread.get_ident()
 
         try:
             return self._threads[ident]
@@ -146,7 +145,7 @@ class ContextCollection(object):
 
     @synchronized(lambda self: self._lock)
     def clear(self):
-        ident = thread.get_ident()
+        ident = _thread.get_ident()
 
         if ident not in self._threads:
             return

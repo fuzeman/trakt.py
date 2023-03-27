@@ -1,4 +1,4 @@
-from __future__ import absolute_import, division, print_function, unicode_literals
+, unicode_literals
 
 from trakt import interfaces
 import trakt  # noqa: I902
@@ -10,7 +10,6 @@ from docutils.statemachine import ViewList
 from sphinx.util.nodes import nested_parse_with_titles
 import collections
 import inspect
-import six
 
 
 def _get_methods(obj):
@@ -28,8 +27,8 @@ def _format_apis(apis):
     def make_path(path_dict, api_path):
 
         sorted_paths = collections.OrderedDict(
-            sorted(six.iteritems(path_dict)))
-        for k, v in six.iteritems(sorted_paths):
+            sorted(path_dict.iteritems()))
+        for k, v in sorted_paths.iteritems():
             if k is None:
                 k = ''
             api_path.append(k)

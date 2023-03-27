@@ -1,4 +1,4 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.core.helpers import clean_username, dictfilter, to_iso8601_datetime
 from trakt.core.pagination import PaginationIterator

@@ -1,6 +1,5 @@
-from __future__ import absolute_import, division, print_function
 
-from six.moves import xrange
+
 import os
 
 PACKAGE_DIR = os.path.dirname(__file__)
@@ -40,7 +39,7 @@ def write_version(command):
     lines = contents.split('\n')
 
     # Update version attribute
-    for x in xrange(len(lines)):
+    for x in range(len(lines)):
         line = lines[x]
 
         if line.startswith('__version__ ='):

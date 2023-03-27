@@ -1,4 +1,4 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.core.errors import log_request_error
 from trakt.core.exceptions import RequestFailedError, ServerError, ClientError
