@@ -49,7 +49,7 @@ class Emitter(object):
 
     def __wrap(self, callback, *args, **kwargs):
         def wrap(func):
-            callback(func=func, *args, **kwargs)
+            callback(*args, func=func, **kwargs)
             return func
 
         return wrap

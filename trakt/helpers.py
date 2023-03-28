@@ -1,6 +1,6 @@
 
 
-from urllib.parse import urlencode
+import urllib.parse as parse
 
 
 def setdefault(d, defaults, func=None):
@@ -28,5 +28,5 @@ def build_url(*args, **kwargs):
 
     return ''.join([
         '/'.join([str(x) for x in args]),
-        ('?' + urlencode(parameters)) if parameters else ''
+        ('?' + parse.urlencode(parameters)) if parameters else ''
     ])

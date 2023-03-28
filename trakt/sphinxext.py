@@ -1,5 +1,3 @@
-, unicode_literals
-
 from trakt import interfaces
 import trakt  # noqa: I902
 

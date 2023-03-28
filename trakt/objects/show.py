@@ -5,7 +5,6 @@ from trakt.objects.core.helpers import update_attributes
 from trakt.objects.media import Media
 
 
-
 class Show(Media):
     def __init__(self, client, keys, index=None):
         super(Show, self).__init__(client, keys, index)

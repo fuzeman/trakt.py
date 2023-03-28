@@ -1,6 +1,5 @@
 
 
-
 def update_attributes(obj, dictionary, keys):
     if not dictionary:
         return

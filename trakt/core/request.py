@@ -1,8 +1,8 @@
 
 
 from requests import Request
-from urllib.parse import urlencode
 import json
+import urllib.parse as parse
 
 
 class TraktRequest(object):
@@ -121,7 +121,7 @@ class TraktRequest(object):
         if not parameters:
             return ''
 
-        return urlencode([
+        return parse.urlencode([
             (key, cls.encode_query_parameter(value))
             for key, value in parameters.items()
             if value is not None
