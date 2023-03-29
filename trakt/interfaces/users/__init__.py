@@ -5,6 +5,7 @@ from trakt.core.pagination import PaginationIterator
 from trakt.interfaces.base import Interface, authenticated
 from trakt.interfaces.users.following import UsersFollowingInterface
 from trakt.interfaces.users.friends import UsersFriendsInterface
+from trakt.interfaces.users.hidden import UsersHiddenInterface
 from trakt.interfaces.users.history import UsersHistoryInterface
 from trakt.interfaces.users.lists import UsersListInterface, UsersListsInterface
 from trakt.interfaces.users.profile import UsersProfileInterface
@@ -23,6 +24,7 @@ __all__ = (
     'UsersInterface',
     'UsersFollowingInterface',
     'UsersFriendsInterface',
+    'UsersHiddenInterface',
     'UsersHistoryInterface',
     'UsersListsInterface',
     'UsersListInterface',

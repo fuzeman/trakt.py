@@ -1,0 +1,16 @@
+[
+    {
+      "hidden_at": "2023-03-29T10:58:34.000Z",
+      "type": "user",
+      "user": {
+        "username": "sean",
+        "private": false,
+        "name": "",
+        "vip": false,
+        "vip_ep": false,
+        "ids": {
+          "slug": "sean"
+        }
+      }
+    }
+  ]

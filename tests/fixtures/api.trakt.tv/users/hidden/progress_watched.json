@@ -1,0 +1,39 @@
+[
+    {
+        "hidden_at": "2015-03-30T23:18:42.000Z",
+        "type": "show",
+        "show": {
+          "title": "Gossip Girl",
+          "year": 2007,
+            "ids": {
+            "trakt": 48,
+            "slug": "gossip-girl",
+            "tvdb": 80547,
+            "imdb": "tt0397442",
+            "tmdb": 1395
+          }
+        }
+      },
+      {
+        "hidden_at": "2023-03-29T10:46:20.000Z",
+        "type": "season",
+        "season": {
+          "number": 1,
+          "ids": {
+            "trakt": 260038,
+            "tmdb": 198941
+          }
+        },
+        "show": {
+          "title": "The Wonder Years",
+          "year": 2021,
+          "ids": {
+            "trakt": 182038,
+            "slug": "the-wonder-years-2021",
+            "tvdb": 402907,
+            "imdb": "tt12682076",
+            "tmdb": 126164
+          }
+        }
+      }
+  ]

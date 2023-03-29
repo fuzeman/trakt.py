@@ -1,0 +1,31 @@
+[
+    {
+      "hidden_at": "2015-03-30T23:18:42.000Z",
+      "type": "show",
+      "show": {
+        "title": "Gossip Girl",
+        "year": 2007,
+          "ids": {
+          "trakt": 48,
+          "slug": "gossip-girl",
+          "tvdb": 80547,
+          "imdb": "tt0397442",
+          "tmdb": 1395
+        }
+      }
+    },
+    {
+      "hidden_at":"2015-06-24T05:50:21.000Z",
+      "type":"movie",
+      "movie":{
+        "title":"Mad Max: Fury Road",
+        "year":2015,
+        "ids":{
+          "trakt":56360,
+          "slug":"mad-max-fury-road-2015",
+          "imdb":"tt1392190",
+          "tmdb":76341
+        }
+      }
+    }
+  ]

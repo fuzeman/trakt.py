@@ -2,6 +2,7 @@
 
 from trakt.objects.comment import Comment
 from trakt.objects.episode import Episode
+from trakt.objects.hidden import HiddenMovie, HiddenSeason, HiddenShow, HiddenUser
 from trakt.objects.list import CustomList, List, PublicList
 from trakt.objects.media import Media
 from trakt.objects.movie import Movie
@@ -17,6 +18,7 @@ from trakt.objects.video import Video
 __all__ = (
     'Comment',
     'Episode',
+    'HiddenMovie', 'HiddenSeason', 'HiddenShow', 'HiddenUser',
     'CustomList', 'PublicList', 'List',
     'Media',
     'Movie',

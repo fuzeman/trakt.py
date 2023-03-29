@@ -234,6 +234,28 @@ def oauth_device_token(url, request):
     })
 
 
+@httmock.urlmatch(netloc='api.trakt.tv', method='GET', path=r'/users/hidden/[\w-]+')
+@authenticated
+def hidden_get(url, request):
+    return fixtures(url, request)
+
+
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path=r'/users/hidden/[\w-]+')
+@authenticated
+def hidden_add(url, request):
+    return get_fixture(
+        url.netloc, f'{url.path}/add',
+        query=url.query,
+        request=request
+    )
+
+
+@httmock.urlmatch(netloc='api.trakt.tv', method='POST', path=r'/users/hidden/[\w-]+/remove')
+@authenticated
+def hidden_remove(url, request):
+    return fixtures(url, request)
+
+
 @httmock.urlmatch(netloc='api.trakt.tv', path=r'/users/likes')
 @authenticated
 def likes(url, request, content_type='application/json'):

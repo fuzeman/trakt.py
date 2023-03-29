@@ -9,8 +9,7 @@ from trakt.core.pagination import PaginationIterator
 from trakt.core.request import TraktRequest
 
 from requests.adapters import DEFAULT_POOLBLOCK, HTTPAdapter
-from requests.exceptions import ConnectionError, SSLError
-from requests.packages.urllib3.exceptions import ReadTimeoutError
+from requests.exceptions import ConnectionError, SSLError, ReadTimeout
 from threading import RLock
 import calendar
 import datetime
@@ -139,7 +138,7 @@ class HttpClient(object):
             # Send request
             try:
                 response = self.session.send(request, timeout=timeout)
-            except (ConnectionError, ReadTimeoutError, SSLError):
+            except (ConnectionError, ReadTimeout, SSLError):
                 exc_info = sys.exc_info()
             except socket.gaierror as e:
                 code, _ = e

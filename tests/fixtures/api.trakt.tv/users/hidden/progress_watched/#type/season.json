@@ -1,0 +1,24 @@
+[
+  {
+    "hidden_at": "2023-03-29T10:46:20.000Z",
+    "type": "season",
+    "season": {
+      "number": 1,
+      "ids": {
+        "trakt": 260038,
+        "tmdb": 198941
+      }
+    },
+    "show": {
+      "title": "The Wonder Years",
+      "year": 2021,
+      "ids": {
+        "trakt": 182038,
+        "slug": "the-wonder-years-2021",
+        "tvdb": 402907,
+        "imdb": "tt12682076",
+        "tmdb": 126164
+      }
+    }
+  }
+]

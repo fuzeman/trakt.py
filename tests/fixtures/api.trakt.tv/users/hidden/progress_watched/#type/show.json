@@ -1,0 +1,18 @@
+[
+    {
+      "hidden_at": "2015-03-30T23:18:42.000Z",
+      "type": "show",
+      "show": {
+        "title": "Gossip Girl",
+        "year": 2007,
+          "ids": {
+          "trakt": 48,
+          "slug": "gossip-girl",
+          "tvdb": 80547,
+          "imdb": "tt0397442",
+          "tmdb": 1395
+        }
+      }
+    }
+      
+  ]

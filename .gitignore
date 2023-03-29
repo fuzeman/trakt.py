@@ -70,6 +70,8 @@ pyvenv.cfg
 pip-selfcheck.json
 .venv*/
 
+# IDE
+.vscode/
 
 /_html
 /.idea

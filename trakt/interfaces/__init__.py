@@ -55,6 +55,9 @@ INTERFACES = [
     # /users/following
     users.UsersFriendsInterface,
 
+    # /users/hidden
+    users.UsersHiddenInterface,
+
     # /users/history
     users.UsersHistoryInterface,
 
