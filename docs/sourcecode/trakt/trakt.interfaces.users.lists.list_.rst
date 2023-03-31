@@ -1,7 +1,6 @@
 ================================
 :code:`Trakt['users/*/lists/*']`
 ================================
-
 .. automodule:: trakt.interfaces.users.lists.list_
 
   .. autoclass:: UsersListInterface

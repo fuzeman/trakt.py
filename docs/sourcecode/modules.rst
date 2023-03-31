@@ -19,12 +19,14 @@ Modules
    trakt/trakt.core.request
    trakt/trakt.helpers
    trakt/trakt.interfaces.base
+   trakt/trakt.interfaces.calendars.base
    trakt/trakt.interfaces.sync.core
    trakt/trakt.interfaces.sync.core.mixins
    trakt/trakt.mapper
    trakt/trakt.mapper.comment
    trakt/trakt.mapper.core
    trakt/trakt.mapper.core.base
+   trakt/trakt.mapper.hidden
    trakt/trakt.mapper.list
    trakt/trakt.mapper.list_item
    trakt/trakt.mapper.progress

@@ -1,14 +1,12 @@
-
-
 from trakt.core.helpers import dictfilter
-from trakt.interfaces.base import Interface, authenticated
+from trakt.interfaces.base import Interface
 from trakt.mapper.summary import SummaryMapper
 
 from datetime import datetime
 import requests
 
 
-class Base(Interface):
+class CalendarsInterface(Interface):
     def new(self, media, **kwargs):
         if media != 'shows':
             raise ValueError("Media '%s' does not support the `new()` method" % (media,))
@@ -133,28 +131,3 @@ class Base(Interface):
             )
 
         return SummaryMapper.movies(self.client, items)
-
-
-class AllCalendarsInterface(Base):
-    path = 'calendars/all/*'
-
-    def get(self, media, collection=None, start_date=None, days=None, **kwargs):
-        return super(AllCalendarsInterface, self).get(
-            'all', media, collection,
-            start_date=start_date,
-            days=days,
-            **kwargs
-        )
-
-
-class MyCalendarsInterface(Base):
-    path = 'calendars/my/*'
-
-    @authenticated
-    def get(self, media, collection=None, start_date=None, days=None, **kwargs):
-        return super(MyCalendarsInterface, self).get(
-            'my', media, collection,
-            start_date=start_date,
-            days=days,
-            **kwargs
-        )

@@ -5,7 +5,9 @@ Interfaces
    :maxdepth: 1
 
    trakt/trakt.interfaces.auth
-   trakt/trakt.interfaces.calendars
+   trakt/trakt.interfaces.calendars.all
+   trakt/trakt.interfaces.calendars.my
+   trakt/trakt.interfaces.lists
    trakt/trakt.interfaces.movies
    trakt/trakt.interfaces.oauth
    trakt/trakt.interfaces.oauth.device
@@ -23,9 +25,12 @@ Interfaces
    trakt/trakt.interfaces.users
    trakt/trakt.interfaces.users.following
    trakt/trakt.interfaces.users.friends
+   trakt/trakt.interfaces.users.hidden
    trakt/trakt.interfaces.users.history
    trakt/trakt.interfaces.users.lists
    trakt/trakt.interfaces.users.lists.list_
+   trakt/trakt.interfaces.users.profile
    trakt/trakt.interfaces.users.ratings
    trakt/trakt.interfaces.users.settings
+   trakt/trakt.interfaces.users.watched
    trakt/trakt.interfaces.users.watchlist

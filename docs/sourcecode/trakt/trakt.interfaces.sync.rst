@@ -1,7 +1,6 @@
 =====================
 :code:`Trakt['sync']`
 =====================
-
 .. automodule:: trakt.interfaces.sync
 
   .. autoclass:: SyncInterface

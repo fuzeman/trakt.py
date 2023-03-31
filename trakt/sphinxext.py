@@ -5,9 +5,13 @@ from docutils import nodes
 from docutils.parsers import rst
 from docutils.parsers.rst import directives
 from docutils.statemachine import ViewList
+from sphinx.util import logging
 from sphinx.util.nodes import nested_parse_with_titles
 import collections
 import inspect
+
+
+logger = logging.getLogger(__name__)
 
 
 def _get_methods(obj):
@@ -34,8 +38,7 @@ def _format_apis(apis):
             if isinstance(v, dict):
                 api_path = make_path(v, api_path)
             else:
-                api_ref = '     Interface Class: :py:class:`%s.%s`' % (
-                    v.__module__, v.__class__.__name__)
+                api_ref = f'     Interface Class: :py:class:`{v.__module__}.{v.__class__.__name__}`'
                 output.append(('``' + '/'.join(api_path) + '``',
                                api_ref,
                                list(_get_methods(v))))
@@ -64,7 +67,7 @@ class ListInterfacesDirective(rst.Directive):
         app = env.app
 
         iface_type = ' '.join(self.content).strip()
-        app.info('documenting service interface %r' % iface_type)
+        app.info(f'documenting service interface {iface_type}')
 
         source_name = '<' + __name__ + '>'
 
@@ -92,5 +95,5 @@ class ListInterfacesDirective(rst.Directive):
 
 
 def setup(app):
-    app.info('loading trakt.sphinxext')
+    logger.info('loading trakt.sphinxext')
     app.add_directive('list-interfaces', ListInterfacesDirective)

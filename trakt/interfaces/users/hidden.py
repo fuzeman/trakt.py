@@ -9,16 +9,16 @@ from trakt.mapper.hidden import HiddenItemMapper
 
 class UsersHiddenInterface(Interface):
     path = 'users/hidden/*'
-    valid_sections = ['calendar', 'progress_watched', 'progress_collected', 
+    _valid_sections = ['calendar', 'progress_watched', 'progress_collected', 
                       'recommendations', 'comments']
-    valid_types = ['movie', 'show', 'season', 'user']
+    _valid_types = ['movie', 'show', 'season', 'user']
 
     @authenticated
     def get(self, section, type=None, page=None, per_page=None, **kwargs):
-        if section not in self.valid_sections:
+        if section not in self._valid_sections:
             raise ValueError(f'Unknown section specified: {section}')
         
-        if type and type not in self.valid_types:
+        if type and type not in self._valid_types:
             raise ValueError(f'Unknown type specified: {type}')
         
         response = self.http.get(f'/users/hidden/{section}', query={
@@ -45,7 +45,7 @@ class UsersHiddenInterface(Interface):
 
     @authenticated
     def add(self, section, items, **kwargs):
-        if section not in self.valid_sections:
+        if section not in self._valid_sections:
             raise ValueError(f'Unknown section specified: {section}')
         
         response = self.http.post(f'/users/hidden/{section}',
@@ -61,7 +61,7 @@ class UsersHiddenInterface(Interface):
 
     @authenticated
     def remove(self, section, items, **kwargs):
-        if section not in self.valid_sections:
+        if section not in self._valid_sections:
             raise ValueError(f'Unknown section specified: {section}')
 
         response = self.http.post(f'/users/hidden/{section}/remove',

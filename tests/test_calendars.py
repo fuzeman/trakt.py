@@ -3,7 +3,7 @@
 
 from tests.core import mock
 from trakt import Trakt
-from trakt.interfaces.calendars import Base
+from trakt.interfaces.calendars import CalendarsInterface
 
 from datetime import date, datetime
 from dateutil.tz import tzutc
@@ -404,10 +404,10 @@ def test_premieres_validation():
 def test_get_validation():
     with HTTMock(mock.fixtures, mock.unknown):
         with pytest.raises(ValueError):
-            Base(None).get('invalid', 'movies')
+            CalendarsInterface(None).get('invalid', 'movies')
 
         with pytest.raises(ValueError):
-            Base(None).get('all', 'invalid')
+            CalendarsInterface(None).get('all', 'invalid')
 
 
 def test_start_date():

@@ -1,9 +1,8 @@
 ==================================
 :code:`Trakt['users/*/watchlist']`
 ==================================
-
 .. automodule:: trakt.interfaces.users.watchlist
 
   .. autoclass:: UsersWatchlistInterface
-    :members: flags, get
+    :members: episodes, flags, get, movies, seasons, shows
     :undoc-members:

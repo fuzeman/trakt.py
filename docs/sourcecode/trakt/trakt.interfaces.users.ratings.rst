@@ -1,9 +1,8 @@
 ================================
 :code:`Trakt['users/*/ratings']`
 ================================
-
 .. automodule:: trakt.interfaces.users.ratings
 
   .. autoclass:: UsersRatingsInterface
-    :members: get
+    :members: all, episodes, get, movies, seasons, shows
     :undoc-members:

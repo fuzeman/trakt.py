@@ -1,7 +1,7 @@
 ====================
 :code:`BaseProgress`
 ====================
-.. automodule:: trakt.objects.progress
+.. automodule:: trakt.objects.progress.base
   :inherited-members:
   :members:
   :undoc-members:

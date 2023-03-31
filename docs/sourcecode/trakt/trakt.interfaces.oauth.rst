@@ -1,7 +1,6 @@
 ======================
 :code:`Trakt['oauth']`
 ======================
-
 .. automodule:: trakt.interfaces.oauth
 
   .. autoclass:: OAuthInterface

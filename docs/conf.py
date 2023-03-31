@@ -18,6 +18,9 @@ import inspect
 import os
 import sys
 
+from sphinx.util import logging
+
+logger = logging.getLogger(__name__)
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -36,7 +39,6 @@ MODULE_TYPE_ORDER = [
 IGNORED_INTERFACE_MEMBERS = [
     'http',
     'path',
-
     'get_data'
 ]
 
@@ -53,7 +55,7 @@ def refresh_autodoc_index():
 
         os.chdir(os.path.join(sourcedir, module_name))
 
-        print('SEARCHING %s' % sourcedir)
+        logger.info(f'SEARCHING {sourcedir}')
 
         for root, dirs, files in os.walk('.'):
             for filename in files:
@@ -99,20 +101,19 @@ def refresh_autodoc_index():
 
         fp = open(path, 'w')
         fp.write('=================\n')
-        fp.write('%s\n' % name)
+        fp.write(f'{name}\n')
         fp.write('=================\n')
         return fp
 
     fp_indices = {
         'interfaces': open_index('interfaces.rst', 'Interfaces'),
         'objects': open_index('objects.rst', 'Objects'),
-
         'modules': open_index('modules.rst', 'Modules')
     }
 
     # Generate documentation for modules
     for base, path in SRCS.items():
-        sys.stdout.write('Generating source documentation for %s\n' % base)
+        sys.stdout.write(f'Generating source documentation for {base}\n')
 
         MOD_DIR = os.path.join(RSTDIR, base)
         CURRENT_SOURCES[MOD_DIR] = []
@@ -126,11 +127,11 @@ def refresh_autodoc_index():
             if any([module_name.startswith(exclude)
                     for exclude
                     in EXCLUDED_MODULES]):
-                print('EXCLUDED: %s' % module_name)
+                logger.info(f'EXCLUDED: {module_name}')
                 continue
 
             mod_path = os.path.join(path, *module_name.split('.'))
-            generated_path = os.path.join(MOD_DIR, '%s.rst' % module_name)
+            generated_path = os.path.join(MOD_DIR, f'{module_name}.rst')
 
             # Find the __init__.py module if this is a directory
             if os.path.isdir(mod_path):
@@ -138,20 +139,20 @@ def refresh_autodoc_index():
             else:
                 source_path = '.'.join((os.path.join(mod_path), 'py'))
 
-            CURRENT_SOURCES[MOD_DIR].append('%s.rst' % module_name)
+            CURRENT_SOURCES[MOD_DIR].append(f'{module_name}.rst')
 
             # Refresh autodoc file
             module_type = refresh_autodoc(source_path, generated_path, module_name)
 
             if not module_type:
-                print('IGNORED: %s' % module_name)
+                logger.info(f'IGNORED: {module_name}')
                 continue
 
             # Append module to the `modules` dictionary
             if module_type not in modules:
                 modules[module_type] = []
 
-            modules[module_type].append('%s/%s' % (base, module_name))
+            modules[module_type].append(f'{base}/{module_name}')
 
         # Write modules to index
         for module_type in MODULE_TYPE_ORDER:
@@ -164,7 +165,7 @@ def refresh_autodoc_index():
             fp_index.write('\n')
 
             for name in modules[module_type]:
-                fp_index.write('   %s\n' % name)
+                fp_index.write(f'   {name}\n')
 
     for fp in fp_indices.values():
         fp.close()
@@ -173,7 +174,7 @@ def refresh_autodoc_index():
     for directory, subdirs, files in list(os.walk(RSTDIR)):
         for old_file in files:
             if old_file not in CURRENT_SOURCES.get(directory, []):
-                print('Removing outdated file for %s' % old_file)
+                print(f'Removing outdated file for {old_file}')
                 os.remove(os.path.join(directory, old_file))
 
 
@@ -198,16 +199,19 @@ def refresh_autodoc(source_path, generated_path, module_name):
     return module_type
 
 
+def write_autodoc_header(fp, header):
+    fp.write(f'{("=" * len(header))}\n')
+    fp.write(f'{header}\n')
+    fp.write(f'{("=" * len(header))}\n')
+
+
 def write_autodoc_module(fp, module_name):
     # Write header
-    header = ":mod:`%s`" % module_name
-
-    fp.write('%s\n' % ('=' * len(header),))
-    fp.write('%s\n' % header)
-    fp.write('%s\n' % ('=' * len(header),))
+    header = f":mod:`{module_name}`"
+    write_autodoc_header(fp, header)
 
     # Write modules
-    fp.write('.. automodule:: %s\n' % module_name)
+    fp.write(f'.. automodule:: {module_name}\n')
     fp.write('  :members:\n')
     fp.write('  :undoc-members:\n')
     fp.write('  :show-inheritance:\n')
@@ -218,14 +222,14 @@ def write_autodoc_interface(fp, module_name):
     interface = import_subclass(module_name, Interface)
 
     if not interface:
-        print('Unable to find interface in module %r' % module_name)
+        logger.warn(f'Unable to find interface in module {module_name}')
         return False
 
     # Retrieve interface path
     path = interface.path
 
     if not path:
-        print('Invalid "path" property found on %r' % interface)
+        logger.warn(f'Invalid "path" property found on {interface}')
         return False
 
     # Retrieve interface members
@@ -235,16 +239,13 @@ def write_autodoc_interface(fp, module_name):
     ]
 
     # Write header
-    header = ":code:`Trakt['%s']`" % path
-
-    fp.write('%s\n' % ('=' * len(header),))
-    fp.write('%s\n' % header)
-    fp.write('%s\n\n' % ('=' * len(header),))
+    header = f":code:`Trakt['{path}']`"
+    write_autodoc_header(fp, header)
 
     # Write modules
-    fp.write('.. automodule:: %s\n\n' % module_name)
-    fp.write('  .. autoclass:: %s\n' % interface.__name__)
-    fp.write('    :members: %s\n' % ', '.join(members))
+    fp.write(f'.. automodule:: {module_name}\n\n')
+    fp.write(f'  .. autoclass:: {interface.__name__}\n')
+    fp.write(f'    :members: {", ".join(members)}\n')
     fp.write('    :undoc-members:\n')
     return True
 
@@ -254,18 +255,15 @@ def write_autodoc_object(fp, module_name):
     obj = import_subclass(module_name, object)
 
     if not obj:
-        print('Unable to find object in module %r' % module_name)
+        logger.warn(f"Unable to find object in module {module_name}")
         return False
 
     # Write header
-    header = ":code:`%s`" % obj.__name__
-
-    fp.write('%s\n' % ('=' * len(header),))
-    fp.write('%s\n' % header)
-    fp.write('%s\n' % ('=' * len(header),))
+    header = f":code:`{obj.__name__}`"
+    write_autodoc_header(fp, header)
 
     # Write modules
-    fp.write('.. automodule:: %s\n' % module_name)
+    fp.write(f'.. automodule:: {module_name}\n')
     fp.write('  :inherited-members:\n')
     fp.write('  :members:\n')
     fp.write('  :undoc-members:\n')
@@ -274,10 +272,10 @@ def write_autodoc_object(fp, module_name):
 
 
 def import_subclass(module_name, base):
-    # TODO display a warning if multiple classes have been found?
 
     module = __import__(module_name, fromlist='*')
     result = None
+    extras = []
 
     for name in dir(module):
         value = getattr(module, name)
@@ -289,8 +287,12 @@ def import_subclass(module_name, base):
             continue
 
         if issubclass(value, base):
-            result = value
-            break
+            if result:
+                extras.append(name)
+            else:
+                result = value
+    if len(extras) > 0:
+        logger.warn(f'multiple {base.__name__} classes found in {module_name}. These may not have been captured: {", ".join(extras)}')
 
     return result
 
@@ -353,7 +355,7 @@ release = _version['__version__']
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'  # set to 'en' to avoid warning message during docs generation
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -394,7 +396,7 @@ todo_include_todos = False
 
 # Intersphinx mappings
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/2', None)
+    'python': ('https://docs.python.org/3', None)
 }
 
 
@@ -431,7 +433,7 @@ html_theme = 'alabaster'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+#html_static_path = ['_static']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -519,6 +521,6 @@ import sphinx.environment
 
 def _warn_node(self, msg, node, **kwargs):
     if not msg.startswith('nonlocal image URI found:'):
-        self._warnfunc(msg, '%s:%s' % get_source_line(node))
+        self._warnfunc(msg, f'{":".join(get_source_line(node))}')
 
 sphinx.environment.BuildEnvironment.warn_node = _warn_node

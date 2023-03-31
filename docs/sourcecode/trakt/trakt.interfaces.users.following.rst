@@ -1,7 +1,6 @@
 ==================================
 :code:`Trakt['users/*/following']`
 ==================================
-
 .. automodule:: trakt.interfaces.users.following
 
   .. autoclass:: UsersFollowingInterface

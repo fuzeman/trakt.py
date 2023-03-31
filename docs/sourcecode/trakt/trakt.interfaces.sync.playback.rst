@@ -1,7 +1,6 @@
 ==============================
 :code:`Trakt['sync/playback']`
 ==============================
-
 .. automodule:: trakt.interfaces.sync.playback
 
   .. autoclass:: SyncPlaybackInterface

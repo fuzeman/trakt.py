@@ -1,6 +1,7 @@
 
 from trakt.core.helpers import from_iso8601_datetime, to_iso8601_datetime
 
+
 class HiddenItem(object):
     """
     Base object for hidden items
@@ -24,6 +25,11 @@ class HiddenItem(object):
         """
 
         self.hidden_item = hidden_item
+        """
+        :type: :class:`trakt.objects.movie.Movie` | :class:`trakt.objects.show.Show` | :class:`trakt.objects.season.Season` | :class:`trakt.objects.user.User`
+
+        This attribute will correspond to :code:`hidden_type`
+        """
         self.hidden_type = hidden_type
         
     
@@ -57,6 +63,7 @@ class HiddenItem(object):
         hidden._update(info, **kwargs)
 
         return hidden
+
 
 class HiddenShow(HiddenItem):
     """
@@ -97,10 +104,11 @@ class HiddenSeason(HiddenItem):
         if 'show' in info:
             self.show = self._client.construct('show', info['show'])
 
+
 class HiddenUser(HiddenItem):
     """
     A hidden user
 
-    Users can be hidden in te :code:`comments` section
+    Users can be hidden in the :code:`comments` section
     """
     hidden_type = 'user'

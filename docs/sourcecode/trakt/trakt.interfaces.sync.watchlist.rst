@@ -1,7 +1,6 @@
 ===============================
 :code:`Trakt['sync/watchlist']`
 ===============================
-
 .. automodule:: trakt.interfaces.sync.watchlist
 
   .. autoclass:: SyncWatchlistInterface

@@ -1,7 +1,6 @@
 ================================
 :code:`Trakt['users/*/friends']`
 ================================
-
 .. automodule:: trakt.interfaces.users.friends
 
   .. autoclass:: UsersFriendsInterface
