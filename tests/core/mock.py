@@ -1,14 +1,15 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.core.helpers import try_convert
 
-from six.moves.urllib_parse import parse_qsl
 import functools
 import httmock
 import itertools
 import json
 import math
 import os
+import urllib.parse as parse
+
 
 CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
 FIXTURES_DIR = os.path.abspath(os.path.join(CURRENT_DIR, '..', 'fixtures'))
@@ -42,7 +43,7 @@ def is_authenticated(request):
 
 def get_content(netloc, path, query=None):
     components = path.strip('/').split('/') + list(itertools.chain.from_iterable([
-        ('#' + key, value) for key, value in sorted(parse_qsl(query or ''))
+        ('#' + key, value) for key, value in sorted(parse.parse_qsl(query or ''))
     ]))
     path = None
 
@@ -90,7 +91,7 @@ def get_fixture(netloc, path, query=None, request=None):
 
 
 def paginate(url, request, content_type='application/json'):
-    parameters = dict(parse_qsl(url.query))
+    parameters = dict(parse.parse_qsl(url.query))
 
     page = try_convert(parameters.get('page'), int) or 1
     limit = try_convert(parameters.get('limit'), int) or 10
@@ -247,7 +248,7 @@ def likes_invalid_content_type(url, request):
 @httmock.urlmatch(netloc='api.trakt.tv', path=r'/users/likes')
 @authenticated
 def likes_invalid_json(url, request):
-    parameters = dict(parse_qsl(url.query))
+    parameters = dict(parse.parse_qsl(url.query))
 
     page = try_convert(parameters.get('page'), int) or 1
 
@@ -267,7 +268,7 @@ def likes_invalid_json(url, request):
 @httmock.urlmatch(netloc='api.trakt.tv', path=r'/users/likes')
 @authenticated
 def likes_request_failure(url, request):
-    parameters = dict(parse_qsl(url.query))
+    parameters = dict(parse.parse_qsl(url.query))
 
     page = try_convert(parameters.get('page'), int) or 1
 

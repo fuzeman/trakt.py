@@ -1,9 +1,8 @@
-from __future__ import absolute_import, division, print_function
+
 
 from requests import Request
-from six.moves.urllib_parse import urlencode
 import json
-import six
+import urllib.parse as parse
 
 
 class TraktRequest(object):
@@ -51,7 +50,7 @@ class TraktRequest(object):
         # Transform `params` into list
         self.params = self.kwargs.get('params') or []
 
-        if isinstance(self.params, six.string_types):
+        if isinstance(self.params, str):
             self.params = [self.params]
 
         # Transform `query`
@@ -122,7 +121,7 @@ class TraktRequest(object):
         if not parameters:
             return ''
 
-        return urlencode([
+        return parse.urlencode([
             (key, cls.encode_query_parameter(value))
             for key, value in parameters.items()
             if value is not None

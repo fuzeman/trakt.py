@@ -1,9 +1,9 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.core.configuration import DEFAULT_HTTP_RETRY, DEFAULT_HTTP_MAX_RETRIES, DEFAULT_HTTP_TIMEOUT, \
     DEFAULT_HTTP_RETRY_SLEEP
 from trakt.core.context_stack import ContextStack
-from trakt.core.helpers import synchronized
+from trakt.core.helpers import synchronized, reraise
 from trakt.core.keylock import KeyLock
 from trakt.core.pagination import PaginationIterator
 from trakt.core.request import TraktRequest
@@ -16,7 +16,6 @@ import calendar
 import datetime
 import logging
 import requests
-import six
 import socket
 import sys
 import time
@@ -173,7 +172,7 @@ class HttpClient(object):
 
         # Raise last exception
         if exc_info:
-            six.reraise(*exc_info)
+            reraise(*exc_info)
 
         # Return last response
         return response

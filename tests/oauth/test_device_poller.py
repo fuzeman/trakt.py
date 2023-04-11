@@ -1,4 +1,4 @@
-from __future__ import absolute_import, division, print_function
+
 
 from tests.core import mock
 from trakt import Trakt
@@ -144,7 +144,7 @@ def test_double_start():
 
         try:
             # Ensure an exception is raised when attempting to start the poller again
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match='Poller already started'):
                 poller.start()
         finally:
             # Stop polling

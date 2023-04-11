@@ -1,19 +1,12 @@
 # flake8: noqa: E241
 
-from six.moves.urllib_parse import urlparse, parse_qsl
+from urllib.parse import urlparse, parse_qsl
 import json
 import math
 import os
 import pytest
-import six
 
-if six.PY2:
-    try:
-        from six import cStringIO as BufferIO
-    except ImportError:
-        from six import StringIO as BufferIO
-else:
-    from io import BytesIO as BufferIO
+from io import BytesIO as BufferIO
 
 TESTS_PATH = os.path.abspath(os.path.dirname(__file__) + os.path.sep + '..')
 

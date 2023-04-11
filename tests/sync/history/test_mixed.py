@@ -5,7 +5,6 @@ from trakt import Trakt
 
 from hamcrest import *
 from httmock import HTTMock
-from six.moves import xrange
 
 
 def test_basic():
@@ -25,5 +24,5 @@ def test_basic():
     # Verify item identifiers
     assert_that(
         [item.id for item in items],
-        equal_to(list(xrange(1, 4)))
+        equal_to(list(range(1, 4)))
     )

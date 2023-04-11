@@ -1,10 +1,8 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.core.helpers import from_iso8601_datetime, to_iso8601_datetime, deprecated
 from trakt.objects.core.helpers import update_attributes
 from trakt.objects.media import Media
-
-from six import iteritems
 
 
 class Show(Media):
@@ -150,9 +148,9 @@ class Show(Media):
         :rtype: iterator
         """
 
-        for sk, season in iteritems(self.seasons):
+        for sk, season in self.seasons.iteritems():
             # Yield each episode in season
-            for ek, episode in iteritems(season.episodes):
+            for ek, episode in season.episodes.iteritems():
                 yield (sk, ek), episode
 
     def to_identifier(self):

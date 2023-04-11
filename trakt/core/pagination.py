@@ -1,11 +1,11 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.core.errors import log_request_error
 from trakt.core.exceptions import ServerError, ClientError, RequestFailedError
 from trakt.core.helpers import try_convert
 
-from six.moves.urllib.parse import urlsplit, urlunsplit, parse_qsl
 import logging
+import urllib.parse as parse
 
 log = logging.getLogger(__name__)
 
@@ -23,10 +23,10 @@ class PaginationIterator(object):
         self._mapper = None
 
         # Parse request url
-        scheme, netloc, path, query = urlsplit(self.request.url)[:4]
+        scheme, netloc, path, query = parse.urlsplit(self.request.url)[:4]
 
-        self.url = urlunsplit([scheme, netloc, path, '', ''])
-        self.query = dict(parse_qsl(query))
+        self.url = parse.urlunsplit([scheme, netloc, path, '', ''])
+        self.query = dict(parse.parse_qsl(query))
 
         # Resolve pagination details
         self.resolve()

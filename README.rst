@@ -4,8 +4,8 @@ trakt.py
 .. image:: https://img.shields.io/pypi/v/trakt.py.svg?style=flat-square
    :target: https://pypi.python.org/pypi/trakt.py
 
-.. image:: https://img.shields.io/travis/fuzeman/trakt.py.svg?style=flat-square
-   :target: https://travis-ci.org/fuzeman/trakt.py
+.. image:: https://github.com/fuzeman/trakt.py/actions/workflows/test.yml/badge.svg
+   :target: https://github.com/fuzeman/trakt.py/actions/workflows/test.yml
 
 .. image:: https://img.shields.io/codeclimate/github/fuzeman/trakt.py.svg?style=flat-square
    :target: https://codeclimate.com/github/fuzeman/trakt.py

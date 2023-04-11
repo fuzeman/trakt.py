@@ -1,4 +1,4 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.client import TraktClient
 from trakt.core.errors import ERRORS
@@ -6,7 +6,6 @@ from trakt.core.exceptions import RequestError, ClientError, ServerError
 from trakt.helpers import has_attribute
 from trakt.version import __version__  # NOQA
 
-from six import add_metaclass
 import logging
 
 
@@ -45,8 +44,7 @@ class TraktMeta(type):
         return self.client[key]
 
 
-@add_metaclass(TraktMeta)
-class Trakt(object):
+class Trakt(object, metaclass=TraktMeta):
     client = None
 
     @classmethod

@@ -1,4 +1,4 @@
-from __future__ import absolute_import, division, print_function
+
 
 from trakt.objects import User, Movie, Show, Episode, Season, CustomList, Comment, Person, PublicList,\
     WatchedProgress, CollectionProgress
