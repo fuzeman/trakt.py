@@ -15,7 +15,7 @@ on:
 jobs:
   # This workflow contains a single job called "test"
   test:
-    name: Test on ${{ matrix.os }}
+    name: Python ${{ matrix.python-version }} on ${{ matrix.os }} Test
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
     strategy:
@@ -34,10 +34,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install tox
+          pip install tox tox-gh-actions
       - name: Run tests with tox
         run: |
-          tox -e py
+          tox --skip-missing-interpreters false
   lint:
     needs: test
     name: Linting and coverage
@@ -61,5 +61,3 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: ./coverage.lcov
-      
-# TODO: build?
