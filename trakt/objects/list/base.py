@@ -143,6 +143,13 @@ class List(object):
         Number of items
         """
 
+        self.score = None
+        """
+        :type: :class:`~python:float`
+
+        Search score (or `None`)
+        """
+
     @property
     def id(self):
         """Retrieve the list identifier.
@@ -215,7 +222,10 @@ class List(object):
             'sort_how',
 
             'comment_count',
-            'item_count'
+            'item_count',
+
+            # Search
+            'score'
         ])
 
     def items(self, **kwargs):
