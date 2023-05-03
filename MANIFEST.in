@@ -2,6 +2,6 @@ exclude *
 recursive-include examples *.py
 recursive-include trakt *.py
 recursive-include tests *
-include AUTHORS *requirements.txt .coveragerc .gitignore *.cfg *.in *.ini *.py *.rst *.yml
+include AUTHORS *requirements.txt .coveragerc .gitignore *.cfg *.in *.ini *.py *.rst *.yml *.toml
 exclude .travis.yml travis-requirements.txt
 global-exclude *.iml *.pyc
