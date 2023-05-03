@@ -1,3 +1,13 @@
+5.0.0 (2023-05-04)
+------------------
+**Breaking Changes**
+
+- Dropped support for Python 2.7, 3.5, 3.6
+
+**Changed**
+
+- Switched to PEP 517 compatible build system
+
 4.4.0 (2021-03-19)
 ------------------
 **Added**
