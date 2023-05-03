@@ -1,0 +1,382 @@
+[
+    {
+        "list":
+        {
+            "allow_comments": true,
+            "comment_count": 4,
+            "created_at": "2016-04-11T20:13:18.000Z",
+            "description": "The IMDB top 250 movies, based on popularity. List updated daily.",
+            "display_numbers": true,
+            "ids":
+            {
+                "slug": "imdb-top-rated-movies",
+                "trakt": 2142753
+            },
+            "item_count": 250,
+            "likes": 2614,
+            "name": "IMDB: Top Rated Movies",
+            "privacy": "public",
+            "share_link": "https://trakt.tv/lists/2142753",
+            "sort_by": "rank",
+            "sort_how": "asc",
+            "type": "personal",
+            "updated_at": "2023-05-03T20:12:31.000Z",
+            "user":
+            {
+                "ids":
+                {
+                    "slug": "justin"
+                },
+                "name": "Justin Nemeth",
+                "private": false,
+                "username": "justin",
+                "vip": true,
+                "vip_ep": true
+            }
+        },
+        "score": 131.1829,
+        "type": "list"
+    },
+    {
+        "list":
+        {
+            "allow_comments": true,
+            "comment_count": 0,
+            "created_at": "2017-12-07T01:53:56.000Z",
+            "description": "",
+            "display_numbers": true,
+            "ids":
+            {
+                "slug": "imdb-top-rated-movies",
+                "trakt": 4362010
+            },
+            "item_count": 249,
+            "likes": 3,
+            "name": "IMDB: Top Rated Movies",
+            "privacy": "public",
+            "share_link": "https://trakt.tv/lists/4362010",
+            "sort_by": "rank",
+            "sort_how": "asc",
+            "type": "personal",
+            "updated_at": "2021-04-09T19:11:21.000Z",
+            "user":
+            {
+                "ids":
+                {
+                    "slug": "kayaaron13"
+                },
+                "name": "",
+                "private": false,
+                "username": "kayaaron13",
+                "vip": true,
+                "vip_ep": false
+            }
+        },
+        "score": 131.1829,
+        "type": "list"
+    },
+    {
+        "list":
+        {
+            "allow_comments": true,
+            "comment_count": 0,
+            "created_at": "2018-10-31T22:07:38.000Z",
+            "description": "",
+            "display_numbers": true,
+            "ids":
+            {
+                "slug": "top-rated-movies-imdb",
+                "trakt": 5735584
+            },
+            "item_count": 250,
+            "likes": 1,
+            "name": "Top Rated Movies - IMDB",
+            "privacy": "public",
+            "share_link": "https://trakt.tv/lists/5735584",
+            "sort_by": "rank",
+            "sort_how": "asc",
+            "type": "personal",
+            "updated_at": "2022-05-15T09:00:48.000Z",
+            "user":
+            {
+                "ids":
+                {
+                    "slug": "a925sw"
+                },
+                "name": "AW",
+                "private": false,
+                "username": "a925sw",
+                "vip": false,
+                "vip_ep": false
+            }
+        },
+        "score": 131.1829,
+        "type": "list"
+    },
+    {
+        "list":
+        {
+            "allow_comments": true,
+            "comment_count": 0,
+            "created_at": "2019-01-28T22:48:21.000Z",
+            "description": "Top 250 movies",
+            "display_numbers": true,
+            "ids":
+            {
+                "slug": "imdb-top-rated-movies",
+                "trakt": 6232443
+            },
+            "item_count": 250,
+            "likes": 1,
+            "name": "IMDB: Top Rated Movies",
+            "privacy": "public",
+            "share_link": "https://trakt.tv/lists/6232443",
+            "sort_by": "rank",
+            "sort_how": "asc",
+            "type": "personal",
+            "updated_at": "2020-02-29T14:16:17.000Z",
+            "user":
+            {
+                "ids":
+                {
+                    "slug": "dsnake1"
+                },
+                "name": "Dsnake1",
+                "private": false,
+                "username": "Dsnake1",
+                "vip": true,
+                "vip_ep": false
+            }
+        },
+        "score": 131.1829,
+        "type": "list"
+    },
+    {
+        "list":
+        {
+            "allow_comments": true,
+            "comment_count": 0,
+            "created_at": "2016-10-10T00:56:43.000Z",
+            "description": "",
+            "display_numbers": true,
+            "ids":
+            {
+                "slug": "imdb-top-rated-movies",
+                "trakt": 2770832
+            },
+            "item_count": 250,
+            "likes": 1,
+            "name": "IMDB: Top Rated Movies ",
+            "privacy": "public",
+            "share_link": "https://trakt.tv/lists/2770832",
+            "sort_by": "rank",
+            "sort_how": "asc",
+            "type": "personal",
+            "updated_at": "2019-08-29T08:46:52.000Z",
+            "user":
+            {
+                "ids":
+                {
+                    "slug": "bgreen4228"
+                },
+                "name": "MovieBuff",
+                "private": false,
+                "username": "bgreen4228",
+                "vip": false,
+                "vip_ep": false
+            }
+        },
+        "score": 131.1829,
+        "type": "list"
+    },
+    {
+        "list":
+        {
+            "allow_comments": true,
+            "comment_count": 0,
+            "created_at": "2021-01-05T19:03:18.000Z",
+            "description": "English Language and over 70% IMDB rating (minimum 50k votes) and released in 2020+This list is maintained by mdblist.comCreate your own: https://mdblist.com/lists/saltydude/top-rated-moviesUpdated at 2023-05-03 09:13:18",
+            "display_numbers": false,
+            "ids":
+            {
+                "slug": "top-rated-movies",
+                "trakt": 20572119
+            },
+            "item_count": 91,
+            "likes": 1,
+            "name": "Top Rated Movies",
+            "privacy": "public",
+            "share_link": "https://trakt.tv/lists/20572119",
+            "sort_by": "rank",
+            "sort_how": "asc",
+            "type": "personal",
+            "updated_at": "2023-05-03T18:30:39.000Z",
+            "user":
+            {
+                "ids":
+                {
+                    "slug": "saltydude"
+                },
+                "name": "salty",
+                "private": false,
+                "username": "saltydude",
+                "vip": false,
+                "vip_ep": false
+            }
+        },
+        "score": 131.1829,
+        "type": "list"
+    },
+    {
+        "list":
+        {
+            "allow_comments": true,
+            "comment_count": 0,
+            "created_at": "2019-07-09T11:19:04.000Z",
+            "description": "",
+            "display_numbers": true,
+            "ids":
+            {
+                "slug": "imdb-top-rated-movies",
+                "trakt": 9477082
+            },
+            "item_count": 250,
+            "likes": 0,
+            "name": "IMDB: Top Rated Movies",
+            "privacy": "public",
+            "share_link": "https://trakt.tv/lists/9477082",
+            "sort_by": "rank",
+            "sort_how": "asc",
+            "type": "personal",
+            "updated_at": "2019-08-29T14:21:17.000Z",
+            "user":
+            {
+                "ids":
+                {
+                    "slug": "rememberthistime"
+                },
+                "name": "",
+                "private": false,
+                "username": "rememberthistime",
+                "vip": false,
+                "vip_ep": false
+            }
+        },
+        "score": 131.1829,
+        "type": "list"
+    },
+    {
+        "list":
+        {
+            "allow_comments": true,
+            "comment_count": 0,
+            "created_at": "2019-08-04T16:14:54.000Z",
+            "description": "",
+            "display_numbers": false,
+            "ids":
+            {
+                "slug": "top-rated-movies",
+                "trakt": 9629599
+            },
+            "item_count": 250,
+            "likes": 0,
+            "name": "Top Rated Movies",
+            "privacy": "public",
+            "share_link": "https://trakt.tv/lists/9629599",
+            "sort_by": "rank",
+            "sort_how": "asc",
+            "type": "personal",
+            "updated_at": "2019-08-29T14:33:35.000Z",
+            "user":
+            {
+                "ids":
+                {
+                    "slug": "magge"
+                },
+                "name": "",
+                "private": false,
+                "username": "Magge",
+                "vip": false,
+                "vip_ep": false
+            }
+        },
+        "score": 131.1829,
+        "type": "list"
+    },
+    {
+        "list":
+        {
+            "allow_comments": true,
+            "comment_count": 0,
+            "created_at": "2020-04-03T14:34:11.000Z",
+            "description": "The IMDB top 250 movies, based on popularity. List updated daily.",
+            "display_numbers": true,
+            "ids":
+            {
+                "slug": "imdb-top-rated-movies",
+                "trakt": 11262221
+            },
+            "item_count": 250,
+            "likes": 0,
+            "name": "IMDB: Top Rated Movies",
+            "privacy": "public",
+            "share_link": "https://trakt.tv/lists/11262221",
+            "sort_by": "rank",
+            "sort_how": "asc",
+            "type": "personal",
+            "updated_at": "2020-04-03T14:37:13.000Z",
+            "user":
+            {
+                "ids":
+                {
+                    "slug": "roebling138"
+                },
+                "name": "Chris Eckman",
+                "private": false,
+                "username": "roebling138",
+                "vip": true,
+                "vip_ep": false
+            }
+        },
+        "score": 131.1829,
+        "type": "list"
+    },
+    {
+        "list":
+        {
+            "allow_comments": true,
+            "comment_count": 0,
+            "created_at": "2020-03-03T18:12:08.000Z",
+            "description": "The IMDB top 250 movies, based on popularity. List updated daily.",
+            "display_numbers": true,
+            "ids":
+            {
+                "slug": "imdb-top-rated-movies",
+                "trakt": 11034719
+            },
+            "item_count": 250,
+            "likes": 0,
+            "name": "IMDB: Top Rated Movies",
+            "privacy": "public",
+            "share_link": "https://trakt.tv/lists/11034719",
+            "sort_by": "rank",
+            "sort_how": "asc",
+            "type": "personal",
+            "updated_at": "2020-03-03T18:11:57.000Z",
+            "user":
+            {
+                "ids":
+                {
+                    "slug": "jnemmons78"
+                },
+                "name": "James",
+                "private": false,
+                "username": "jnemmons78",
+                "vip": true,
+                "vip_ep": false
+            }
+        },
+        "score": 131.1829,
+        "type": "list"
+    }
+]

@@ -1,7 +1,7 @@
 
 
 from trakt import Trakt
-from trakt.objects import Episode
+from trakt.objects import Episode, List
 
 import logging
 import os
@@ -28,10 +28,12 @@ def print_query(query, media=None, year=None):
     items = Trakt['search'].query(query, media, year, pagination=True, per_page=10)
 
     for item in items.get(1):  # Retrieve first page
-        if type(item) is Episode and item.show:
+        if isinstance(item, Episode) and item.show:
             sk, ek = item.pk
             print('\t[%.2d%%] %s (%s) - S%02dE%02d %r' % (item.score, item.show.title, item.show.year,
                                                           sk, ek, item.title))
+        elif isinstance(item, List):
+            print('\t[%.2d%%] %s: %s' % (item.score, item.user.name or item.user.username, item.name))
         else:
             print('\t[%.2d%%] %s (%s)' % (item.score, item.title, item.year))
 
@@ -50,4 +52,5 @@ if __name__ == '__main__':
     # Search by name
     print_query('The Avengers', 'movie')
     print_query('Breaking Bad', 'show')
+    print_query('Top Rated Movies', 'list')
     print_query('Fly', 'episode')

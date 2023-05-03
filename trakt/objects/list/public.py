@@ -5,8 +5,8 @@ from trakt.objects.list.base import List
 
 
 class PublicList(List):
-    def __init__(self, client, keys, user):
-        super(PublicList, self).__init__(client, keys, user)
+    def __init__(self, client, keys):
+        super(PublicList, self).__init__(client, keys)
 
         self.comment_total = None
         """
@@ -23,11 +23,11 @@ class PublicList(List):
         """
 
     @classmethod
-    def _construct(cls, client, keys, info, user):
+    def _construct(cls, client, keys, info):
         if not info:
             return None
 
-        obj = cls(client, keys, user)
+        obj = cls(client, keys)
         obj._update(info)
         return obj
 

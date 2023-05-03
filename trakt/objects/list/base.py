@@ -5,7 +5,7 @@ from trakt.objects.core.helpers import update_attributes
 
 
 class List(object):
-    def __init__(self, client, keys, user):
+    def __init__(self, client, keys):
         self._client = client
 
         self.keys = keys
@@ -22,7 +22,7 @@ class List(object):
 
         """
 
-        self.user = user
+        self.user = None
         """
         :type: :class:`trakt.objects.User`
 

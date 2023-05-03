@@ -1,6 +1,7 @@
 
 
 from trakt.mapper.core.base import Mapper
+from trakt.mapper.user import UserMapper
 
 import logging
 
@@ -71,6 +72,9 @@ class SearchMapper(Mapper):
 
         # Create object
         custom_list = cls.construct(client, 'custom_list', i_list, keys, **kwargs)
+
+        if 'user' in i_list:
+            custom_list.user = UserMapper.user(client, i_list['user'])
 
         # Update with root info
         if 'list' in item:
