@@ -7,9 +7,6 @@ trakt.py
 .. image:: https://github.com/fuzeman/trakt.py/actions/workflows/test.yml/badge.svg
    :target: https://github.com/fuzeman/trakt.py/actions/workflows/test.yml
 
-.. image:: https://img.shields.io/codeclimate/github/fuzeman/trakt.py.svg?style=flat-square
-   :target: https://codeclimate.com/github/fuzeman/trakt.py
-
 .. image:: https://img.shields.io/coveralls/fuzeman/trakt.py.svg?style=flat-square
    :target: https://coveralls.io/r/fuzeman/trakt.py?branch=master
 
