@@ -228,7 +228,7 @@ class List(object):
         :rtype: :class:`~python:list` of :class:`trakt.objects.media.Media`
         """
 
-        return self._client['users/*/lists/*'].items(self.user.username, self.id, **kwargs)
+        return self._client['users/*/lists/*'].items(self.user.id, self.id, **kwargs)
 
     #
     # Actions
@@ -244,7 +244,7 @@ class List(object):
         :rtype: :class:`~python:bool`
         """
 
-        return self._client['users/*/lists/*'].like(self.user.username, self.id, **kwargs)
+        return self._client['users/*/lists/*'].like(self.user.id, self.id, **kwargs)
 
     def unlike(self, **kwargs):
         """Un-like the list.
@@ -256,7 +256,7 @@ class List(object):
         :rtype: :class:`~python:bool`
         """
 
-        return self._client['users/*/lists/*'].unlike(self.user.username, self.id, **kwargs)
+        return self._client['users/*/lists/*'].unlike(self.user.id, self.id, **kwargs)
 
     def __getstate__(self):
         state = self.__dict__
