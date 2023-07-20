@@ -5,11 +5,11 @@ from trakt.objects.list.base import List
 
 class CustomList(List):
     @classmethod
-    def _construct(cls, client, keys, info, user):
+    def _construct(cls, client, keys, info):
         if not info:
             return None
 
-        obj = cls(client, keys, user)
+        obj = cls(client, keys)
         obj._update(info)
         return obj
 

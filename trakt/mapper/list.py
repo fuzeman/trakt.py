@@ -27,9 +27,10 @@ class ListMapper(Mapper):
         # Create list
         custom_list = cls.construct(
             client, 'custom_list', i_list, keys,
-            user=UserMapper.user(client, i_user),
             **kwargs
         )
+
+        custom_list.user = UserMapper.user(client, i_user)
 
         # Update with root info
         if 'list' in item:
@@ -67,9 +68,10 @@ class ListMapper(Mapper):
         # Create list
         public_list = cls.construct(
             client, 'public_list', i_list, keys,
-            user=UserMapper.user(client, i_list['user']),
             **kwargs
         )
+
+        public_list.user = UserMapper.user(client, i_list['user'])
 
         public_list._update({
             'comment_total': comment_total,

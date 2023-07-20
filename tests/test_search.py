@@ -159,5 +159,23 @@ def test_query_episode():
         (1.2728773,  ((   5, 16),   'Felina'),                      ('Breaking Bad', 2008)),
         (1.1314209,  ((   5, 14),   'Ozymandias'),                  ('Breaking Bad', 2008)),
         (1.1256235,  ((   1,  1),   'Pilot'),                       ('Breaking Bad', 2008)),
-        (1.0210383,  ((  5,  13),   "To'hajiilee"),                 ('Breaking Bad', 2008))
+        (1.0210383,  ((   5, 13),   "To'hajiilee"),                 ('Breaking Bad', 2008))
+    ]
+
+
+def test_query_list():
+    with HTTMock(mock.fixtures, mock.unknown):
+        lists = Trakt['search'].query('Top Rated Movies', 'list')
+
+    assert [(list.score, (list.username, list.name)) for list in lists] == [
+        (131.1829, ('justin',             'IMDB: Top Rated Movies')),
+        (131.1829,  ('kayaaron13',         'IMDB: Top Rated Movies')),
+        (131.1829,  ('a925sw',             'Top Rated Movies - IMDB')),
+        (131.1829,  ('Dsnake1',            'IMDB: Top Rated Movies')),
+        (131.1829,  ('bgreen4228',         'IMDB: Top Rated Movies ')),
+        (131.1829,  ('saltydude',          'Top Rated Movies')),
+        (131.1829,  ('rememberthistime',   'IMDB: Top Rated Movies')),
+        (131.1829,  ('Magge',              'Top Rated Movies')),
+        (131.1829,  ('roebling138',        'IMDB: Top Rated Movies')),
+        (131.1829,  ('jnemmons78',         'IMDB: Top Rated Movies'))
     ]

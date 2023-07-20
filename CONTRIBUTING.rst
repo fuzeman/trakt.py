@@ -55,24 +55,21 @@ Development
 - You have installed the development dependencies if you plan to work on the build system or run tests without using tox
 
   - If you are using `pipenv`_
-  
+
     .. code-block:: shell
 
       pipenv install
-  
+
   - Otherwise, you can install the 'test_requirements.txt' for running tests and 'build_requirements.txt' for building
 
 Building
 --------
 
 - To build a distribution, after you have installed the build requirements:
-  
+
   .. code-block:: shell
 
-    python -m build --no-isolation
-
-  **Note:** The build is currently required to not run in an isolated environment because there is an issue with build 
-  requirements are not being properly installed in that environment.  This may change in the future
+    python -m build
 
 Pull Requests
 -------------

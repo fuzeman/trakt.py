@@ -5,7 +5,7 @@ from trakt.objects.core.helpers import update_attributes
 
 
 class List(object):
-    def __init__(self, client, keys, user):
+    def __init__(self, client, keys):
         self._client = client
 
         self.keys = keys
@@ -22,7 +22,7 @@ class List(object):
 
         """
 
-        self.user = user
+        self.user = None
         """
         :type: :class:`trakt.objects.User`
 
@@ -143,6 +143,13 @@ class List(object):
         Number of items
         """
 
+        self.score = None
+        """
+        :type: :class:`~python:float`
+
+        Search score (or `None`)
+        """
+
     @property
     def id(self):
         """Retrieve the list identifier.
@@ -215,7 +222,10 @@ class List(object):
             'sort_how',
 
             'comment_count',
-            'item_count'
+            'item_count',
+
+            # Search
+            'score'
         ])
 
     def items(self, **kwargs):
