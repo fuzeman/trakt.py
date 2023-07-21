@@ -3,7 +3,7 @@
 
 from tests.core import mock
 from trakt import Trakt
-from trakt.interfaces.calendars import CalendarsInterface
+from trakt.interfaces.calendars.base import CalendarsInterface
 
 from datetime import date, datetime
 from dateutil.tz import tzutc

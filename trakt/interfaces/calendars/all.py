@@ -1,5 +1,5 @@
 
-from trakt.interfaces.calendars import CalendarsInterface
+from trakt.interfaces.calendars.base import CalendarsInterface
 
 
 class AllCalendarsInterface(CalendarsInterface):

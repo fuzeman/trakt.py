@@ -1,6 +1,6 @@
 
 from trakt.interfaces.base import authenticated
-from trakt.interfaces.calendars import CalendarsInterface
+from trakt.interfaces.calendars.base import CalendarsInterface
 
 
 class MyCalendarsInterface(CalendarsInterface):
