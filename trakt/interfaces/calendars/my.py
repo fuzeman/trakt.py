@@ -2,6 +2,7 @@
 from trakt.interfaces.base import authenticated
 from trakt.interfaces.calendars import CalendarsInterface
 
+
 class MyCalendarsInterface(CalendarsInterface):
     path = 'calendars/my/*'
 

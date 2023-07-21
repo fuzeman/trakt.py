@@ -7,7 +7,6 @@ from trakt.objects.progress.show import ShowProgress
 from trakt.objects.progress.watched import WatchedProgress
 
 
-
 __all__ = (
     'BaseProgress',
     'ShowProgress',

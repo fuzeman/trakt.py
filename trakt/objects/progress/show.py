@@ -9,6 +9,7 @@ LABELS = {
     'collection': 'last_collected_at'
 }
 
+
 class ShowProgress(BaseProgress):
     progress_type = None
     """

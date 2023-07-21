@@ -137,10 +137,10 @@ class Mapper(object):
 
         if media == 'hidden_movie':
             return HiddenMovie._construct(client, item, **kwargs)
-        
+
         if media == 'hidden_season':
             return HiddenSeason._construct(client, item, **kwargs)
-        
+
         if media == 'hidden_user':
             return HiddenUser._construct(client, item, **kwargs)
 

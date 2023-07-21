@@ -53,6 +53,4 @@ class Trakt(object, metaclass=TraktMeta):
 
 
 # Set default logging handler to avoid "No handler found" warnings.
-from logging import NullHandler
-
-logging.getLogger(__name__).addHandler(NullHandler())
+logging.getLogger(__name__).addHandler(logging.NullHandler())

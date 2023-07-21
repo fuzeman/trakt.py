@@ -4,7 +4,7 @@ from trakt import Trakt
 
 from datetime import datetime
 from dateutil.tz import tzutc
-from hamcrest import *
+from hamcrest import assert_that, equal_to, has_entries, has_properties
 from httmock import HTTMock
 
 
@@ -71,21 +71,20 @@ def assert_valid_season(hidden_item):
         }
     }))
 
+
 def assert_valid_user(hidden_item):
-    """
-    {
-      "user": {
-        'username': 'sean',
-        'private': false,
-        'name': '',
-        'vip': false,
-        'vip_ep': false,
-        'ids': {
-          'slug': 'sean'
-        }
-      }
-    }
-    """
+    # {
+    #   "user": {
+    #     'username': 'sean',
+    #     'private': false,
+    #     'name': '',
+    #     'vip': false,
+    #     'vip_ep': false,
+    #     'ids': {
+    #       'slug': 'sean'
+    #     }
+    #   }
+    # }
     assert_that(hidden_item, has_properties({
         'hidden_at': datetime(2023, 3, 29, 10, 58, 34, tzinfo=tzutc()),
         'hidden_type': 'user'
@@ -99,6 +98,7 @@ def assert_valid_user(hidden_item):
         'vip_ep': False,
         'pk': ('slug', 'sean')
     }))
+
 
 def test_hidden_in_calendar():
     with HTTMock(mock.hidden_get, mock.unknown):
@@ -149,6 +149,7 @@ def test_hidden_seasons_in_progress_watched():
     assert_that(len(hidden_items), equal_to(1))
     assert_valid_season(hidden_items[0])
 
+
 def test_hidden_in_progress_collected():
     with HTTMock(mock.hidden_get, mock.unknown):
         with Trakt.configuration.auth('mock', 'mock'):
@@ -197,7 +198,6 @@ def test_hidden_movies_in_recommendations():
             hidden_items = Trakt['users/hidden/recommendations'].get(type='movie')
     assert_that(len(hidden_items), equal_to(1))
     assert_valid_movie(hidden_items[0])
-
 
 
 def test_hidden_users_in_comments():

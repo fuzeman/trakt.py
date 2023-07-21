@@ -3,17 +3,15 @@ from trakt.core.helpers import from_iso8601_datetime, to_iso8601_datetime
 
 
 class HiddenItem(object):
-    """
-    Base object for hidden items
-    """
-   
+    """Base object for hidden items."""
+
     hidden_type = None
     """
     :type: :class:`~python:str`
 
     The type of hidden item (:code:`movie`, :code:`show`, :code:`season`, :code:`user`)
     """
-    
+
     def __init__(self, client, hidden_at=None, hidden_type=None, hidden_item=None):
         self._client = client
 
@@ -26,13 +24,13 @@ class HiddenItem(object):
 
         self.hidden_item = hidden_item
         """
-        :type: :class:`trakt.objects.movie.Movie` | :class:`trakt.objects.show.Show` | :class:`trakt.objects.season.Season` | :class:`trakt.objects.user.User`
+        :type: :class:`trakt.objects.movie.Movie` | :class:`trakt.objects.show.Show` |
+        :class:`trakt.objects.season.Season` | :class:`trakt.objects.user.User`
 
         This attribute will correspond to :code:`hidden_type`
         """
         self.hidden_type = hidden_type
-        
-    
+
     def to_dict(self):
         result = {
             'hidden_at': to_iso8601_datetime(self.hidden_at),
@@ -41,7 +39,7 @@ class HiddenItem(object):
 
         if self.hidden_item:
             result[self.hidden_type] = self.hidden_item.to_dict()
-        
+
         return result
 
     def _update(self, info=None, **kwargs):
@@ -67,29 +65,32 @@ class HiddenItem(object):
 
 class HiddenShow(HiddenItem):
     """
-    A hidden show
+    A hidden show.
 
-    Shows can be hidden in the :code:`calendar`, :code:`progress_watched`, :code:`progress_collected`, 
+    Shows can be hidden in the :code:`calendar`, :code:`progress_watched`, :code:`progress_collected`,
     and :code:`recommendations` sections
     """
+
     hidden_type = 'show'
 
 
 class HiddenMovie(HiddenItem):
     """
-    A hidden movie
+    A hidden movie.
 
     Movies can be hidden in the :code:`calendar` and :code:`recommendations` sections
     """
+
     hidden_type = 'movie'
 
 
 class HiddenSeason(HiddenItem):
     """
-    A hidden season
+    A hidden season.
 
     Seasons can be hidden in the :code:`progress_watched`, and :code:`progress_collected` sections
     """
+
     hidden_type = 'season'
 
     def to_dict(self):
@@ -97,7 +98,7 @@ class HiddenSeason(HiddenItem):
         if self.show:
             result['show'] = self.show.to_dict()
         return result
-    
+
     def _update(self, info=None, **kwargs):
         super(HiddenSeason, self)._update(info, **kwargs)
 
@@ -107,8 +108,9 @@ class HiddenSeason(HiddenItem):
 
 class HiddenUser(HiddenItem):
     """
-    A hidden user
+    A hidden user.
 
     Users can be hidden in the :code:`comments` section
     """
+
     hidden_type = 'user'
