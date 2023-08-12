@@ -24,12 +24,27 @@ class MoviesInterface(Interface):
         # Parse response
         return SummaryMapper.movie(self.client, items)
 
-    def recommended(self, period=None, extended=None, page=None, per_page=None, **kwargs):
-        # Build parameters
-        params = []
+    def trending(self, extended=None, page=None, per_page=None, **kwargs):
+        return self.__get_list('trending', extended=extended, page=page, per_page=per_page, **kwargs)
 
-        if period:
-            params.append(period)
+    def popular(self, extended=None, page=None, per_page=None, **kwargs):
+        return self.__get_list('popular', extended=extended, page=page, per_page=per_page, **kwargs)
+
+    def recommended(self, period=None, extended=None, page=None, per_page=None, **kwargs):
+        return self.__get_list('recommended', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
+
+    def played(self, period=None, extended=None, page=None, per_page=None, **kwargs):
+        return self.__get_list('played', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
+
+    def watched(self, period=None, extended=None, page=None, per_page=None, **kwargs):
+        return self.__get_list('watched', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
+
+    def collected(self, period=None, extended=None, page=None, per_page=None, **kwargs):
+        return self.__get_list('collected', period=period, extended=extended, page=page, per_page=per_page, **kwargs)
+
+    def __get_list(self, list_type, period=None, extended=None, page=None, per_page=None, **kwargs):
+        # Build parameters
+        params = [period] if period else None
 
         # Build query
         query = {
@@ -40,7 +55,7 @@ class MoviesInterface(Interface):
 
         # Send request
         response = self.http.get(
-            'recommended',
+            list_type,
             params=params,
             query=query,
             **dictfilter(kwargs, get=[
@@ -49,50 +64,6 @@ class MoviesInterface(Interface):
                 'pagination'
             ])
         )
-
-        # Parse response
-        items = self.get_data(response, **kwargs)
-
-        if isinstance(items, PaginationIterator):
-            return items.with_mapper(lambda items: SummaryMapper.movies(self.client, items))
-
-        if isinstance(items, requests.Response):
-            return items
-
-        return SummaryMapper.movies(self.client, items)
-
-    def trending(self, extended=None, page=None, per_page=None, **kwargs):
-        response = self.http.get('trending', query={
-            'extended': extended,
-            'page': page,
-            'limit': per_page
-        }, **dictfilter(kwargs, get=[
-            'exceptions'
-        ], pop=[
-            'pagination'
-        ]))
-
-        # Parse response
-        items = self.get_data(response, **kwargs)
-
-        if isinstance(items, PaginationIterator):
-            return items.with_mapper(lambda items: SummaryMapper.movies(self.client, items))
-
-        if isinstance(items, requests.Response):
-            return items
-
-        return SummaryMapper.movies(self.client, items)
-
-    def popular(self, extended=None, page=None, per_page=None, **kwargs):
-        response = self.http.get('popular', query={
-            'extended': extended,
-            'page': page,
-            'limit': per_page
-        }, **dictfilter(kwargs, get=[
-            'exceptions'
-        ], pop=[
-            'pagination'
-        ]))
 
         # Parse response
         items = self.get_data(response, **kwargs)
