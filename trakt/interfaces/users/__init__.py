@@ -3,6 +3,7 @@
 from trakt.core.helpers import dictfilter
 from trakt.core.pagination import PaginationIterator
 from trakt.interfaces.base import Interface, authenticated
+from trakt.interfaces.users.collection import UsersCollectionInterface
 from trakt.interfaces.users.following import UsersFollowingInterface
 from trakt.interfaces.users.friends import UsersFriendsInterface
 from trakt.interfaces.users.history import UsersHistoryInterface
@@ -21,6 +22,7 @@ log = logging.getLogger(__name__)
 
 __all__ = (
     'UsersInterface',
+    'UsersCollectionInterface',
     'UsersFollowingInterface',
     'UsersFriendsInterface',
     'UsersHistoryInterface',
